@@ -112,17 +112,13 @@ html {
   scroll-padding-top: 123px;
 }
 body {
-  &.scrollLock {
-    overflow: hidden;
-    touch-action: none;
-  }
   overflow: clip;
   min-width: 320px;
   -webkit-tap-highlight-color: transparent;
   background-color: var(--primary-900);
-  color: var(--secondary-400);
+  color: var(--primary--100);
   font-size: clamp(1rem, calc(18vw/7.68), calc(18rem/16));
-  line-height: 1.44;
+  line-height: 1.55;
 }
 
 main,
@@ -134,24 +130,22 @@ main,
 }
 main {
   display: grid;
-  row-gap: clamp(144px, calc(180vw/7.68), 240px);
-  margin: clamp(48px, calc(80vw/7.68), 80px) auto clamp(144px, calc(180vw/7.68), 240px);
+  row-gap: clamp(108px, calc(144vw/7.68), 240px);
+  margin: clamp(62px, calc(80vw/7.68), 98px) auto clamp(108px, calc(144vw/7.68), 240px);
 }
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
-  line-height: 124%;
+  line-height: 120%;
   overflow-wrap: anywhere;
+  font-family: var(--ibm-plex);
+  color: var(----primary--200);
   strong {
     font-weight: 400;
+    background: var(--gradients-100);
   }
 }
 h1, .h1, h2, .h2 {
-  font-size: clamp(calc(24rem/16), calc(42vw/7.68), calc(42rem/16));
-}
-p {
-  strong {
-    color: var(--secondary-300);
-  }
+  font-size: clamp(calc(32rem/16), calc(48vw/7.68), calc(48rem/16));
 }
 
 .link {

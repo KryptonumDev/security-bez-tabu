@@ -27,7 +27,7 @@ const IBMPlexSansHebrew = localFont({
   ],
   display: 'swap',
   fallback: ['sans-serif'],
-  variable: '--',
+  variable: '--ibm-plex',
 })
 
 export const viewport = {
