@@ -6,21 +6,33 @@ import Footer from '@/components/organisms/Footer'
 import SchemaOrganization from '@/global/Schema/Organization'
 import { locale } from '@/global/Seo'
 
-const Poppins = localFont({
+const Saira = localFont({
   src: [
     {
-      path: '../assets/fonts/Poppins-Regular.woff2',
+      path: '../assets/fonts/Saira-Regular.woff2',
       weight: '400',
       style: 'normal',
     },
   ],
+  display: 'swap',
   fallback: ['sans-serif'],
 })
+const IBMPlexSansHebrew = localFont({
+  src: [
+    {
+      path: '../assets/fonts/IBMPlexSansHebrew-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    }
+  ],
+  display: 'swap',
+  fallback: ['sans-serif'],
+  variable: '--',
+})
 
-// // Change themeColor to a color that matches the design
-// export const viewport = {
-//   themeColor: '#FBF7F6',
-// }
+export const viewport = {
+  themeColor: '#0D111F',
+}
 
 // export const runtime = 'edge'
 
@@ -30,7 +42,7 @@ export default function RootLayout({ children }) {
       <head>
         <SchemaOrganization />
       </head>
-        <body className={Poppins.className}>
+        <body className={`${Saira.className} ${IBMPlexSansHebrew.variable}`}>
           <Header />
           <SmoothScroll>
             <main id="main">
