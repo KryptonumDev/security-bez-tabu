@@ -1,35 +1,20 @@
-import Element from "./Element";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 
-const Button = ({
-  data,
-  theme = "primary",
-  children,
-  href,
-  className,
-  ...props
-}) => {
+const Button = ({ data, children, href, className, ...props }) => {
   if (data) {
-    theme = data.theme;
     href = data.href;
     children = data.text;
   }
   const commonProps = {
     className: `${styles.wrapper} cta ${className ? className : ""}`,
-    "data-theme": theme,
     ...props,
   };
-  const isExternal =
-    href &&
-    (href.startsWith("https://") ||
-      href.startsWith("mailto:") ||
-      href.startsWith("tel:"));
-  const As = href ? (isExternal ? "a" : Link) : "button";
+  const isExternal = href && (href.startsWith("https://") || href.startsWith("mailto:") || href.startsWith("tel:"));
+  const Item = href ? (isExternal ? "a" : Link) : "button";
 
   return (
-    <Element
-      As={As}
+    <Item
       {...(href && {
         href,
         ...(isExternal && { target: "_blank", rel: "noopener" }),
@@ -37,25 +22,27 @@ const Button = ({
       {...commonProps}
     >
       <span>{children}</span>
-      <Arrow />
-    </Element>
+      <div className={styles.border} />
+      <Corner className={styles.corner} />
+    </Item>
   );
 };
 
 export default Button;
 
-const Arrow = () => (
+const Corner = ({ ...props }) => (
   <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="18"
-    height="14"
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 18 14"
+    xmlns='http://www.w3.org/2000/svg'
+    fill='none'
+    width='18'
+    height='18'
+    viewBox='1.41 1.34 19.7 19.25'
+    stroke='#1DA4FD'
+    strokeWidth='1'
+    {...props}
   >
     <path
-      strokeLinecap="square"
-      d="M11.27.883c0 3.084 2.67 6 5.897 6m0 0H.5m16.667 0c-3.227 0-5.896 2.915-5.896 6"
+      d='M20.52 1.927L2 20h18.52V1.927z'
     ></path>
   </svg>
-);
+)
