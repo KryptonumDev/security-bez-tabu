@@ -1,6 +1,6 @@
 export default {
-  name: 'NotFoundPage',
-  title: 'Not Found Page',
+  name: 'WyzwanieSecurity_NotFound',
+  title: 'Nie znaleziono',
   type: 'document',
   icon: () => '🔍',
   fields: [

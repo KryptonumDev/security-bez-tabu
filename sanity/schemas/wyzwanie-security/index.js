@@ -1,6 +1,6 @@
 export default {
-  name: 'IndexPage',
-  title: 'Homepage',
+  name: 'WyzwanieSecurity_IndexPage',
+  title: 'Strona główna',
   type: 'document',
   icon: () => '⭐️',
   fields: [
