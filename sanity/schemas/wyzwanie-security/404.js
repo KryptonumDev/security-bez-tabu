@@ -26,6 +26,13 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'hero_Img',
+      type: 'image',
+      title: 'Zdjęcie',
+      fieldset: 'hero',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',

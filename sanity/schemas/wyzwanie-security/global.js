@@ -5,6 +5,12 @@ export default {
   icon: () => '🌍',
   fields: [
     {
+      name: 'countdown_Date',
+      type: 'datetime',
+      title: 'Data do odliczania',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'seo',
       type: 'global_Seo',
       title: 'Global SEO',
