@@ -1,8 +1,7 @@
 import fetchData from "@/utils/fetchData";
 
-// Change domain to project domain
-export const domain = 'https://milewski.me';
-export const locale = "en";
+export const domain = 'https://wyzwaniesecurity.pl';
+export const locale = "pl";
 
 const Seo = async ({ title, description, path, ...props }) => {
   const { global: {
