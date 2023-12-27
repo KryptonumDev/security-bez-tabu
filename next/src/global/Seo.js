@@ -56,7 +56,7 @@ export default Seo;
 const query = async () => {
   const { body: { data } } = await fetchData(`
     query {
-      global: Global(id: "global") {
+      global: WyzwanieSecurityGlobal(id: "WyzwanieSecurity_Global") {
         seo {
           og_Img {
             asset {
