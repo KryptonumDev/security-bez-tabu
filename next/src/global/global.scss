@@ -119,6 +119,12 @@ body {
   color: var(--primary-100);
   font-size: clamp(1rem, calc(18vw/7.68), calc(18rem/16));
   line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  footer {
+    margin-top: auto;
+  }
 }
 
 main,
@@ -142,6 +148,7 @@ h1, h2, h3, h4, h5, h6 {
   strong {
     font-weight: 400;
     background: var(--gradients-100);
+    padding: 0 5px;
   }
 }
 h1, .h1, h2, .h2 {
