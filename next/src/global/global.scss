@@ -216,3 +216,19 @@ html.lenis {
   display: grid;
   gap: clamp(4px, calc(8vw/7.68), 8px);
 }
+.unorderedList {
+  li {
+    list-style-type: none;
+    padding-left: 12px;
+    &::before {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      width: 4px;
+      height: 4px;
+      margin: 0 8px 0 -12px;
+      background-color: var(--secondary-600);
+      filter: blur(1px) drop-shadow(0px 0px 16px #1DA4FD) drop-shadow(0px 0px 8px #1DA4FD) drop-shadow(0px 0px 4px #98D6FF);
+    }
+  }
+}
