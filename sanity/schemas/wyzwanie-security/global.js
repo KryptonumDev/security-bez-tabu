@@ -11,6 +11,12 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'link',
+      type: 'url',
+      title: 'Link globalny (np. w nawigacji)',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'seo',
       type: 'global_Seo',
       title: 'Global SEO',
