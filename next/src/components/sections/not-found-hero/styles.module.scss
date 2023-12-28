@@ -22,7 +22,7 @@
   }
   display: grid;
   gap: 32px clamp(48px, calc(64vw/7.68), 82px);
-  @media (min-width: 800px){
+  @media (min-width: 1050px){
     grid-template-columns: 1.1fr 1fr;
   }
   .paragraph {
