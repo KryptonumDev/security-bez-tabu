@@ -1,8 +1,8 @@
 export default {
-  name: 'WyzwanieSecurity_NotFoundPage',
-  title: 'Nie znaleziono',
+  name: 'WyzwanieSecurity_PrivacyPolicyPage',
+  title: 'Polityka prywatności',
   type: 'document',
-  icon: () => '🔍',
+  icon: () => '📑',
   fields: [
     {
       name: 'hero_Heading',
@@ -19,24 +19,11 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'hero_Cta',
-      type: 'cta',
-      title: 'CTA',
-      fieldset: 'hero',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'hero_Img',
-      type: 'image',
-      title: 'Zdjęcie',
-      fieldset: 'hero',
-      validation: Rule => Rule.required(),
-    },
-    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
       group: 'seo',
+      validation: Rule => Rule.required(),
     },
   ],
   fieldsets: [

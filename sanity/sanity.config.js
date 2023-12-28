@@ -45,6 +45,8 @@ export default defineConfig({
                   ...WyzwanieSecurity.map((item) => createListItem(S, item)),
                 ])
             ),
+          S.divider(),
+          createListItem(S, schemaTypes.find(({ name }) => name === 'PrivacyPolicyPage')),
         ])
     }),
     visionTool(),

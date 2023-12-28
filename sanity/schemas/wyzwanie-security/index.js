@@ -61,6 +61,7 @@ export default {
       type: 'seo',
       title: 'SEO',
       group: 'seo',
+      validation: Rule => Rule.required(),
     },
   ],
   fieldsets: [
