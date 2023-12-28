@@ -21,7 +21,7 @@ const Button = ({ data, children, href, className, ...props }) => {
       })}
       {...commonProps}
     >
-      <span>{children}</span>
+      <span dangerouslySetInnerHTML={{ __html: children }} />
       <div className={styles.border} />
       <Corner className={styles.corner} />
     </Item>
