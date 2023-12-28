@@ -1,9 +1,11 @@
-'use client'
 import Link from 'next/link';
 import styles from './styles.module.scss';
 import Button from '@/components/atoms/Button';
+import fetchData from '@/utils/fetchData';
 
-const Header = () => {
+const Header = async () => {
+  const { global: { link } } = await query();
+
   return (
     <>
       <a href="#main" className={styles.skipToMainContent}>Przejdź do głównej treści</a>
@@ -12,19 +14,25 @@ const Header = () => {
           <Link href='/' aria-label="Strona główna" className={styles.logo}>
             <Logo />
           </Link>
-          <Button>Dołączam do wyzwania</Button>
+          <Button href={link}>Dołączam do wyzwania</Button>
         </div>
       </header>
-      <div
-        className={styles.overlay}
-        aria-hidden="true"
-        onClick={() => setNavOpened(false)}
-      />
     </>
   );
 };
 
 export default Header;
+
+const query = async () => {
+  const { body: { data } } = await fetchData(/* GraphQL */`
+    query {
+      global: WyzwanieSecurityGlobal(id: "WyzwanieSecurity_Global") {
+        link
+      }
+    }
+  `)
+  return data;
+}
 
 const Logo = () => (
   <svg

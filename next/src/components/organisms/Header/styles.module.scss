@@ -8,19 +8,6 @@
     justify-content: space-between;
     gap: 24px;
   }
-  + .overlay {
-    z-index: 8;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(29,30,29,.60);
-    backdrop-filter: blur(3px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .8s var(--easing);
-  }
   .logo {
     display: block;
     @media (min-width: 600px){
