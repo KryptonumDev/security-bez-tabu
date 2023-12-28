@@ -1,0 +1,5 @@
+.wrapper {
+  h1 {
+    margin-bottom: clamp(16px, calc(24vw/7.68), 28px);
+  }
+}
