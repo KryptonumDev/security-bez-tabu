@@ -3,6 +3,7 @@ import fetchData from "@/utils/fetchData";
 import Breadcrumbs from "@/components/moleculas/Breadcrumbs";
 import Hero from "@/components/sections/index-hero";
 import CtaSection from "@/components/sections/CtaSection";
+import Benefits from "@/components/sections/Benefits";
 
 const IndexPage = async () => {
   const { page: {
@@ -13,6 +14,8 @@ const IndexPage = async () => {
     hero_AdditionalInfo,
     hero_Img,
     hero_Products,
+    benefits_Heading,
+    benefits_List,
     ctaSection,
   } } = await query();
 
@@ -27,6 +30,10 @@ const IndexPage = async () => {
         additionalInfo: hero_AdditionalInfo,
         img: hero_Img,
         products: hero_Products,
+      }} />
+      <Benefits {...{
+        heading: benefits_Heading,
+        list: benefits_List,
       }} />
       <CtaSection {...ctaSection} />
     </>
@@ -70,6 +77,26 @@ const query = async () => {
           }
         }
         hero_Products {
+          title
+          description
+          img {
+            asset {
+              altText
+              url
+              metadata {
+                lqip
+                dimensions {
+                  width
+                  height
+                }
+              }
+            }
+          }
+        }
+
+        # Benefits
+        benefits_Heading
+        benefits_List {
           title
           description
           img {

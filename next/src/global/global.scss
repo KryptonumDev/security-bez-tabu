@@ -145,6 +145,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow-wrap: anywhere;
   font-family: var(--ibm-plex);
   color: var(----primary--200);
+  letter-spacing: -0.01em;
   strong {
     font-weight: 400;
     background: var(--gradients-100);
