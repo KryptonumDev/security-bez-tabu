@@ -2,6 +2,7 @@ import Seo from "@/global/Seo";
 import fetchData from "@/utils/fetchData";
 import Breadcrumbs from "@/components/moleculas/Breadcrumbs";
 import Hero from "@/components/sections/index-hero";
+import CtaSection from "@/components/sections/CtaSection";
 
 const IndexPage = async () => {
   const { page: {
@@ -12,6 +13,7 @@ const IndexPage = async () => {
     hero_AdditionalInfo,
     hero_Img,
     hero_Products,
+    ctaSection,
   } } = await query();
 
   return (
@@ -26,6 +28,7 @@ const IndexPage = async () => {
         img: hero_Img,
         products: hero_Products,
       }} />
+      <CtaSection {...ctaSection} />
     </>
   )
 }
@@ -82,6 +85,18 @@ const query = async () => {
               }
             }
           }
+        }
+
+        # CtaSection
+        ctaSection {
+          heading
+          cta {
+            theme
+            text
+            href
+          }
+          additionalInfo
+          isCountdown
         }
        
         # SEO

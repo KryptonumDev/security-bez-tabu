@@ -21,7 +21,8 @@ export const portableTextToMarkdown = (node) => {
 };
 
 export const slugify = text => {
-  text = text.toString().toLowerCase().trim();
+  text = text.toString().toLowerCase()
+.trim();
   const sets = [
     { to: 'a', from: '[ÀÁÂÃÄÅÆĀĂĄẠẢẤẦẨẪẬẮẰẲẴẶἀ]' },
     { to: 'c', from: '[ÇĆĈČ]' },
@@ -146,7 +147,7 @@ export const formatBytes = bytes => {
     return MB.toFixed(2) + 'MB';
   } else if (KB >= 1) {
     return KB.toFixed(2) + 'KB';
-  } else {
+  } 
     return bytes + 'B';
-  }
+  
 }
