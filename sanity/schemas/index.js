@@ -18,6 +18,7 @@ import cta from './components/cta'
 import seo from './components/seo'
 import { titleAndDescription, titleAndImage, imageAndLink, titleDescriptionAndImage } from './components/list'
 import { PrivacyPolicyPage_Content } from './privacy-policy'
+import CtaSection from './components/CtaSection'
 
 export const components = [
   global_Seo,
@@ -28,6 +29,7 @@ export const components = [
   imageAndLink,
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
+  CtaSection,
 ]
 
 export const schemaTypes = [

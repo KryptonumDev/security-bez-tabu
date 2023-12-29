@@ -1,4 +1,4 @@
-import removeMarkdown from "../../utils/RemoveMarkdown"
+import removeMarkdown from "../../utils/removeMarkdown"
 
 export const titleAndDescription = {
   name: "list_TitleAndDescription",

@@ -57,6 +57,12 @@ export default {
       validation: Rule => Rule.required().min(3).max(3),
     },
     {
+      name: 'ctaSection',
+      type: 'CtaSection',
+      options: { collapsible: true, collapsed: true },
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
