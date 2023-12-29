@@ -4,6 +4,7 @@ import Breadcrumbs from "@/components/moleculas/Breadcrumbs";
 import Hero from "@/components/sections/index-hero";
 import CtaSection from "@/components/sections/CtaSection";
 import Benefits from "@/components/sections/Benefits";
+import Perks from "@/components/sections/Perks";
 
 const IndexPage = async () => {
   const { page: {
@@ -16,6 +17,8 @@ const IndexPage = async () => {
     hero_Products,
     benefits_Heading,
     benefits_List,
+    perks_Heading,
+    perks_List,
     ctaSection,
   } } = await query();
 
@@ -34,6 +37,10 @@ const IndexPage = async () => {
       <Benefits {...{
         heading: benefits_Heading,
         list: benefits_List,
+      }} />
+      <Perks {...{
+        heading: perks_Heading,
+        list: perks_List,
       }} />
       <CtaSection {...ctaSection} />
     </>
@@ -112,6 +119,13 @@ const query = async () => {
               }
             }
           }
+        }
+
+        # Perks
+        perks_Heading
+        perks_List {
+          title
+          description
         }
 
         # CtaSection
