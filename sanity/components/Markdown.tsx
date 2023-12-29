@@ -8,7 +8,7 @@ export function CustomMarkdownInput(props) {
         options: {
           toolbar: ['guide', '|', 'bold', 'italic', 'link', 'image', '|', 'preview'],
           minHeight: '30px',
-          placeholder: '**Highlighted** text',
+          placeholder: '**Wyróżniony** tekst',
         },
       }
     }, [])
