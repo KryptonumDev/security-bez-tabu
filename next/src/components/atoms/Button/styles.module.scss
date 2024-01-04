@@ -1,5 +1,8 @@
 .wrapper {
   display: inline-flex;
+  width: fit-content;
+  gap: 8px;
+  align-items: center;
   color: var(--secondary-500);
   padding: 12px 24px;
   position: relative;

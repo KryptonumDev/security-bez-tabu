@@ -155,6 +155,9 @@ h1, h2, h3, h4, h5, h6 {
 h1, .h1, h2, .h2 {
   font-size: clamp(calc(32rem/16), calc(48vw/7.68), calc(48rem/16));
 }
+h3, .h3 {
+  font-size: clamp(calc(20rem/16), calc(28vw/7.68), calc(28rem/16));
+}
 
 .link {
   text-decoration: underline;

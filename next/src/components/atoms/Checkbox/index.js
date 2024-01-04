@@ -24,15 +24,17 @@ export default Checkbox;
 const Check = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='16'
-    height='16'
+    width='24'
+    height='24'
     fill='none'
-    stroke='currentColor'
-    viewBox='0 0 16 16'
+    viewBox='0 0 24 24'
   >
     <path
+      stroke='#53BAFD'
       strokeLinecap='round'
-      d='M2.666 8.666L5.999 12l7.334-7.333'
+      strokeLinejoin='round'
+      strokeWidth='1.5'
+      d='M7 12.9l3.143 3.6L18 7.5'
     ></path>
   </svg>
 )

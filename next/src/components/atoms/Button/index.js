@@ -1,7 +1,8 @@
+import Loader from "../Loader";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 
-const Button = ({ data, children, href, className, ...props }) => {
+const Button = ({ data, children, href, className, loading, ...props }) => {
   if (data) {
     href = data.href;
     children = data.text;
@@ -21,6 +22,7 @@ const Button = ({ data, children, href, className, ...props }) => {
       })}
       {...commonProps}
     >
+      {loading && <Loader />}
       <span dangerouslySetInnerHTML={{ __html: children }} />
       <div className={styles.border} />
       <Corner className={styles.corner} />

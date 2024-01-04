@@ -5,13 +5,12 @@ import { calculateTimeLeft } from '.';
 
 const Client = ({ date, BorderLeft, BorderRight }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(date));
-
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft(date));
     }, 1000);
     return () => clearInterval(timer);
-  }, []);
+  }, [date]);
 
   return (
     <div className={styles.counter}>

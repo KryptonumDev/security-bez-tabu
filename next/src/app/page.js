@@ -5,6 +5,7 @@ import Hero from "@/components/sections/index-hero";
 import CtaSection from "@/components/sections/CtaSection";
 import Benefits from "@/components/sections/Benefits";
 import Perks from "@/components/sections/Perks";
+import Faq from "@/components/sections/Faq";
 
 const IndexPage = async () => {
   const { page: {
@@ -19,6 +20,9 @@ const IndexPage = async () => {
     benefits_List,
     perks_Heading,
     perks_List,
+    faq_Heading,
+    faq_Paragraph,
+    faq_List,
     ctaSection,
   } } = await query();
 
@@ -34,6 +38,7 @@ const IndexPage = async () => {
         img: hero_Img,
         products: hero_Products,
       }} />
+      <CtaSection {...ctaSection} />
       <Benefits {...{
         heading: benefits_Heading,
         list: benefits_List,
@@ -41,6 +46,11 @@ const IndexPage = async () => {
       <Perks {...{
         heading: perks_Heading,
         list: perks_List,
+      }} />
+      <Faq {...{
+        heading: faq_Heading,
+        paragraph: faq_Paragraph,
+        list: faq_List,
       }} />
       <CtaSection {...ctaSection} />
     </>
@@ -138,6 +148,14 @@ const query = async () => {
           }
           additionalInfo
           isCountdown
+        }
+
+        # FAQ
+        faq_Heading
+        faq_Paragraph
+        faq_List {
+          question: title
+          answer: description
         }
        
         # SEO

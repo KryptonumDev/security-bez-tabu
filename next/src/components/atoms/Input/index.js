@@ -17,7 +17,7 @@ const Input = ({
       <p dangerouslySetInnerHTML={{ __html: label}} />
       {textarea ? (
         <Textarea
-          rows={2}
+          rows={5}
           {...register}
           name={register.name}
           {...props}
