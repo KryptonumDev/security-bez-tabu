@@ -8,6 +8,7 @@ import Perks from "@/components/sections/Perks";
 import Faq from "@/components/sections/Faq";
 import Reviews from "@/components/sections/Reviews";
 import Stats from "@/components/sections/Stats";
+import Recipients from "@/components/sections/Recipients";
 
 const IndexPage = async () => {
   const { page: {
@@ -23,6 +24,8 @@ const IndexPage = async () => {
     perks_Heading,
     perks_List,
     stats_List,
+    recipients_Heading,
+    recipients_List,
     reviews_Heading,
     reviews_List,
     faq_Heading,
@@ -43,7 +46,6 @@ const IndexPage = async () => {
         img: hero_Img,
         products: hero_Products,
       }} />
-      <CtaSection {...ctaSection} />
       <Benefits {...{
         heading: benefits_Heading,
         list: benefits_List,
@@ -52,8 +54,13 @@ const IndexPage = async () => {
         heading: perks_Heading,
         list: perks_List,
       }} />
+      <CtaSection {...ctaSection} />
       <Stats {...{
         list: stats_List,
+      }} />
+      <Recipients {...{
+        heading: recipients_Heading,
+        list: recipients_List,
       }} />
       <Reviews {...{
         heading: reviews_Heading,
@@ -166,6 +173,25 @@ const query = async () => {
         stats_List {
           number
           name
+        }
+
+        # Recipients
+        recipients_Heading
+        recipients_List {
+          title
+          img {
+            asset {
+              altText
+              url
+              metadata {
+                lqip
+                dimensions {
+                  width
+                  height
+                }
+              }
+            }
+          }
         }
 
         # Reviews
