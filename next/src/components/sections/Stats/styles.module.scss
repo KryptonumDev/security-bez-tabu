@@ -1,0 +1,23 @@
+.wrapper {
+  ul {
+    display: grid;
+    @media (min-width: 500px){
+      grid-template-columns: 1fr 1fr;
+    }
+    @media (min-width: 1050px){
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    gap: clamp(12px, calc(24vw/7.68), 32px);
+    li {
+      list-style-type: none;
+      padding: clamp(16px, calc(20vw/7.68), 20px);
+      border-left: 2px solid var(--secondary-500);
+      background: linear-gradient(135deg, var(--primary-900), var(--primary-700));
+      text-align: center;
+      p:first-child {
+        margin-bottom: 12px;
+        color: var(--primary-200);
+      }
+    }
+  }
+}

@@ -6,6 +6,8 @@ import CtaSection from "@/components/sections/CtaSection";
 import Benefits from "@/components/sections/Benefits";
 import Perks from "@/components/sections/Perks";
 import Faq from "@/components/sections/Faq";
+import Reviews from "@/components/sections/Reviews";
+import Stats from "@/components/sections/Stats";
 
 const IndexPage = async () => {
   const { page: {
@@ -20,6 +22,9 @@ const IndexPage = async () => {
     benefits_List,
     perks_Heading,
     perks_List,
+    stats_List,
+    reviews_Heading,
+    reviews_List,
     faq_Heading,
     faq_Paragraph,
     faq_List,
@@ -46,6 +51,13 @@ const IndexPage = async () => {
       <Perks {...{
         heading: perks_Heading,
         list: perks_List,
+      }} />
+      <Stats {...{
+        list: stats_List,
+      }} />
+      <Reviews {...{
+        heading: reviews_Heading,
+        list: reviews_List,
       }} />
       <Faq {...{
         heading: faq_Heading,
@@ -148,6 +160,33 @@ const query = async () => {
           }
           additionalInfo
           isCountdown
+        }
+
+        # Stats
+        stats_List {
+          number
+          name
+        }
+
+        # Reviews
+        reviews_Heading
+        reviews_List {
+          img {
+            asset {
+              altText
+              url
+              metadata {
+                lqip
+                dimensions {
+                  width
+                  height
+                }
+              }
+            }
+          }
+          name
+          position
+          content
         }
 
         # FAQ
