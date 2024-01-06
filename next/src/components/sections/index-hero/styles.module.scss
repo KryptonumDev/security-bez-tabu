@@ -20,6 +20,9 @@
     .btn {
       margin: clamp(16px, calc(24vw/7.68), 24px) 0 12px;
     }
+    .additionalInfo {
+      font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(16rem/16));
+    }
     .countdown {
       margin-top: clamp(24px, calc(36vw/7.68), 48px);
     }

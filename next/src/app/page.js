@@ -9,6 +9,7 @@ import Faq from "@/components/sections/Faq";
 import Reviews from "@/components/sections/Reviews";
 import Stats from "@/components/sections/Stats";
 import Recipients from "@/components/sections/Recipients";
+import Idea from "@/components/sections/Idea";
 
 const IndexPage = async () => {
   const { page: {
@@ -28,6 +29,13 @@ const IndexPage = async () => {
     recipients_List,
     reviews_Heading,
     reviews_List,
+    idea_Heading,
+    idea_Paragraph,
+    idea_Claim,
+    idea_Cta,
+    idea_AdditionalInfo,
+    idea_ChartParagraph,
+    idea_Chart,
     faq_Heading,
     faq_Paragraph,
     faq_List,
@@ -65,6 +73,15 @@ const IndexPage = async () => {
       <Reviews {...{
         heading: reviews_Heading,
         list: reviews_List,
+      }} />
+      <Idea {...{
+        heading: idea_Heading,
+        paragraph: idea_Paragraph,
+        claim: idea_Claim,
+        cta: idea_Cta,
+        additionalInfo: idea_AdditionalInfo,
+        chartParagraph: idea_ChartParagraph,
+        chart: idea_Chart,
       }} />
       <Faq {...{
         heading: faq_Heading,
@@ -213,6 +230,22 @@ const query = async () => {
           name
           position
           content
+        }
+
+        # Idea
+        idea_Heading
+        idea_Paragraph
+        idea_Claim
+        idea_Cta {
+          theme
+          text
+          href
+        }
+        idea_AdditionalInfo
+        idea_ChartParagraph
+        idea_Chart {
+          title
+          description
         }
 
         # FAQ
