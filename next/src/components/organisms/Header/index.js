@@ -14,7 +14,7 @@ const Header = async () => {
           <Link href='/' aria-label="Strona główna" className={styles.logo}>
             <Logo />
           </Link>
-          <Button href={link}>Dołączam do wyzwania</Button>
+          <Button href={link} className={styles.cta}>Dołączam do wyzwania</Button>
         </div>
       </header>
     </>
