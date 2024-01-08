@@ -10,6 +10,7 @@ import Reviews from "@/components/sections/Reviews";
 import Stats from "@/components/sections/Stats";
 import Recipients from "@/components/sections/Recipients";
 import Idea from "@/components/sections/Idea";
+import Lessons from "@/components/sections/Lessons";
 
 const IndexPage = async () => {
   const { page: {
@@ -36,6 +37,9 @@ const IndexPage = async () => {
     idea_AdditionalInfo,
     idea_ChartParagraph,
     idea_Chart,
+    lessons_Heading,
+    lessons_Paragraph,
+    lessons_List,
     faq_Heading,
     faq_Paragraph,
     faq_List,
@@ -82,6 +86,11 @@ const IndexPage = async () => {
         additionalInfo: idea_AdditionalInfo,
         chartParagraph: idea_ChartParagraph,
         chart: idea_Chart,
+      }} />
+      <Lessons {...{
+        heading: lessons_Heading,
+        paragraph: lessons_Paragraph,
+        list: lessons_List,
       }} />
       <Faq {...{
         heading: faq_Heading,
@@ -246,6 +255,14 @@ const query = async () => {
         idea_Chart {
           title
           description
+        }
+
+        # Lessons
+        lessons_Heading
+        lessons_Paragraph
+        lessons_List {
+          title
+          lessons
         }
 
         # FAQ
