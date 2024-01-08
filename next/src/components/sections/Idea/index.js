@@ -21,7 +21,7 @@ const Idea = ({
   return (
     <section className={styles.wrapper}>
       <header>
-        <Markdown.h1>{heading}</Markdown.h1>
+        <Markdown.h2>{heading}</Markdown.h2>
         <div>
           <Markdown className={styles.paragraph}>{paragraph}</Markdown>
           <h3 className={styles.claim}>{claim}</h3>
