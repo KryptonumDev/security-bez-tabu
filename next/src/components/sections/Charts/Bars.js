@@ -18,13 +18,11 @@ const Bars = ({ charts }) => {
         >
           <div className={styles.bar}>
             <motion.div
-              initial={ isMobile ? { width: 0 } : { height: 0 }}
               animate={
                 isMobile
                 ? { width: isInView ? `${number}%` : 0  }
                 : { height: isInView ? `${number}%` : 0 }
               }
-              exit={ isMobile ? { width: 0 } : { height: 0 }}
               transition={{ delay: i * .1 }}
             />
           </div>

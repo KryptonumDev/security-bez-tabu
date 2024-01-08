@@ -40,21 +40,14 @@ const List = ({ list, Border }) => {
         ))}
       </ol>
       {page < maxPage && (
-        <div className={styles.showMore}>
+        <button className={styles.showMore} onClick={handleShowMore}>
           <div className={styles.progress}>
-            {Array.from({ length: maxPage }, (_, i) => (
-              <motion.div
-                key={i}
-                animate={{
-                  'flex-grow': i === 0 ? 1 : 0,
-                }}
-              ></motion.div>
+            {Array.from({ length: maxPage + 1 - page }, (_, i) => (
+              <div key={i} />
             ))}
           </div>
-          <button onClick={handleShowMore}>
-            Wczytaj więcej ({page * limit}/{totalItems})
-          </button>
-        </div>
+          Wczytaj więcej ({page * limit}/{totalItems})
+        </button>
       )}
 		</>
 	);

@@ -97,6 +97,7 @@
     }
   }
   .showMore {
+    display: block;
     width: fit-content;
     margin: clamp(32px, calc(48vw/7.68), 80px) auto 0;
     .progress {
@@ -108,6 +109,7 @@
         height: 12px;
         background: var(--primary-700);
         &:first-child {
+          flex-grow: 1;
           background: linear-gradient(90deg, #53BAFD, rgba(83, 186, 253, 0.00));
         }
       }

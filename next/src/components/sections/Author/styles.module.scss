@@ -28,6 +28,7 @@
     }
     &::before, &::after {
       content: '';
+      pointer-events: none;
       position: absolute;
       left: 0;
       top: 0;
