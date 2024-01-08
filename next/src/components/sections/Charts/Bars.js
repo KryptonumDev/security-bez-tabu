@@ -23,7 +23,11 @@ const Bars = ({ charts }) => {
                 ? { width: isInView ? `${number}%` : 0  }
                 : { height: isInView ? `${number}%` : 0 }
               }
-              transition={{ delay: i * .1 }}
+              transition={{
+                type: "spring",
+                duration: .8,
+                delay: i * .1
+              }}
             />
           </div>
           <p className={styles.title}>{title}</p>

@@ -19,6 +19,10 @@ const Circle = ({
           initial={{ width: 0 }}
           animate={{ width: isInView ? `${number}%` : 0 }}
           exit={{ width: 0 }}
+          transition={{
+            type: "spring",
+            duration: .8,
+          }}
           data-visible={isInView}
         >
           <p className={styles.title}>{title}</p>
