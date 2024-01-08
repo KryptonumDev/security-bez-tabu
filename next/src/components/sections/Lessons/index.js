@@ -23,40 +23,38 @@ const Border = {
   Left: (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='22'
-      height='293'
-      viewBox='0 0 22 293'
+      width='21'
+      height='514'
+      viewBox='0 0 21 514'
       fill='none'
       className={styles.borderLeft}
     >
       <path
         fill='#53BAFD'
-        d='M19 1H1v291h16L1 271.984V17.796L19 1z'
+        d='M19 .937H1V512.75h16L1 490.578v-467.1L19 .938z'
       ></path>
       <path
         stroke='#53BAFD'
-        strokeWidth='2'
-        d='M1 17.796V1h18L1 17.796zm0 0v254.188m0 0V292h16L1 271.984z'
+        d='M1 23.478V.938h18L1 23.477zm0 0v467.1m0 0v22.172h16L1 490.578z'
       ></path>
     </svg>
   ),
   Right: (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='22'
-      height='293'
-      viewBox='0 0 22 293'
+      width='21'
+      height='514'
+      viewBox='0 0 21 514'
       fill='none'
       className={styles.borderRight}
     >
       <path
         fill='#53BAFD'
-        d='M3 1h18v291H5l16-20.016V17.796L3 1z'
+        d='M2 .937h18V512.75H4l16-22.172v-467.1L2 .938z'
       ></path>
       <path
         stroke='#53BAFD'
-        strokeWidth='2'
-        d='M21 17.796V1H3l18 16.796zm0 0v254.188m0 0V292H5l16-20.016z'
+        d='M20 23.478V.938H2l18 22.54zm0 0v467.1m0 0v22.172H4l16-22.172z'
       ></path>
     </svg>
   ),

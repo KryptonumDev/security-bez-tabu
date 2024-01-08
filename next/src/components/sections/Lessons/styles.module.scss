@@ -84,15 +84,15 @@
       }
       .borderLeft, .borderRight {
         position: absolute;
-        top: 0;
-        height: 100%;
+        top: -1px;
+        height: calc(100% + 2px);
         width: auto;
       }
       .borderLeft {
-        left: 0;
+        left: -1px;
       }
       .borderRight {
-        right: 0;
+        right: -1px;
       }
     }
   }
