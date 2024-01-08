@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./styles.module.scss";
 import { motion } from 'framer-motion';
 
-const List = ({ list }) => {
+const List = ({ list, Border }) => {
   const [page, setPage] = useState(1);
   const limit = 10;
   const totalItems = list.length;
@@ -29,10 +29,13 @@ const List = ({ list }) => {
             <ol>
               {lessons.map((item, i) => (
                 <li key={i}>
-                  {item}
+                  <span className={styles.counter}>Lekcja {i + 1}</span>
+                  <span>{item}</span>
                 </li>
               ))}
             </ol>
+            {Border.Left}
+            {Border.Right}
           </li>
         ))}
       </ol>
