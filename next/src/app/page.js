@@ -13,6 +13,7 @@ import Idea from "@/components/sections/Idea";
 import Lessons from "@/components/sections/Lessons";
 import Author from "@/components/sections/Author";
 import LargeImage from "@/components/sections/LargeImage";
+import Charts from "@/components/sections/Charts";
 
 const IndexPage = async () => {
   const { page: {
@@ -51,6 +52,7 @@ const IndexPage = async () => {
     author_Achievements,
     author_Paragraph,
     largeImage,
+    charts,
     ctaSection,
   } } = await query();
 
@@ -113,6 +115,7 @@ const IndexPage = async () => {
         paragraph: author_Paragraph,
       }} />
       <LargeImage img={largeImage} />
+      <Charts {...{charts}} />
       <CtaSection {...ctaSection} />
     </>
   )
@@ -334,6 +337,33 @@ const query = async () => {
                 width
                 height
               }
+            }
+          }
+        }
+
+        charts {
+          ... on ChartBars {
+            _type
+            title
+            charts {
+              number
+              title
+            }
+          }
+          ... on ChartLinear {
+            _type
+            title
+            item {
+              number
+              title
+            }
+          }
+          ... on ChartCircle {
+            _type
+            title
+            item {
+              number
+              title
             }
           }
         }

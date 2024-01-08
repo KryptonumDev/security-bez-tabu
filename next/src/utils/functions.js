@@ -147,7 +147,5 @@ export const formatBytes = bytes => {
     return MB.toFixed(2) + 'MB';
   } else if (KB >= 1) {
     return KB.toFixed(2) + 'KB';
-  } 
-    return bytes + 'B';
-  
+  } return bytes + 'B';
 }
