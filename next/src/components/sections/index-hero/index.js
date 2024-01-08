@@ -28,7 +28,10 @@ const Hero = ({
       <div className={styles.orbit}>
         <div></div>
         <div>
-          <div className={styles.product}>
+          <div
+            className={styles.product}
+            title={`${products[0].title} - ${products[0].description}`}
+          >
             <div>
               <Img
                 data={products[0].img}
@@ -37,7 +40,10 @@ const Hero = ({
               />
             </div>
           </div>
-          <div className={styles.product}>
+          <div
+            className={styles.product}
+            title={`${products[1].title} - ${products[1].description}`}
+          >
             <div>
               <Img
                 data={products[1].img}
@@ -48,7 +54,10 @@ const Hero = ({
           </div>
         </div>
         <div>
-          <div className={styles.product}>
+          <div
+            className={styles.product}
+            title={`${products[2].title} - ${products[2].description}`}
+          >
             <div>
               <Img
                 data={products[2].img}

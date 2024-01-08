@@ -34,6 +34,7 @@
     top: calc(clamp(62px, calc(80vw/7.68), 98px) * -1);
     mix-blend-mode: screen;
     filter: blur(75px);
+    pointer-events: none;
   }
 }
 
