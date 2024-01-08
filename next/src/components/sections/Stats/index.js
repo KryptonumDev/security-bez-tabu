@@ -1,3 +1,4 @@
+import Chips from './Chips';
 import Counter from './counter';
 import styles from './styles.module.scss';
 
@@ -14,6 +15,7 @@ const Stats = ({ list }) => {
           </li>
         ))}
       </ul>
+      <Chips />
     </section>
   );
 };
