@@ -23,12 +23,12 @@
   .img {
     grid-area: img;
     position: relative;
+    align-self: flex-start;
     img {
       display: block;
     }
     &::before, &::after {
       content: '';
-      pointer-events: none;
       position: absolute;
       left: 0;
       top: 0;
