@@ -13,7 +13,7 @@ const Author = ({
     <section className={styles.wrapper}>
       <Markdown.h2>{heading}</Markdown.h2>
       <div className={styles.img}>
-        <Img data={img} />
+        <Img data={img} sizes='(min-width: 700px) 33vw, 100vw' />
       </div>
       <Markdown.h3>{subheading}</Markdown.h3>
       <div className={styles.copy}>
