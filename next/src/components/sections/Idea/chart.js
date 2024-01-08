@@ -15,7 +15,11 @@ const Chart = ({ chart }) => {
           initial={{ y: '100%' }}
           animate={{ y: isInView ? 0 : '100%' }}
           exit={{ y: 0 }}
-          transition={{ delay: i * .1 }}
+          transition={{
+            type: "spring",
+            duration: .5,
+            delay: i * .15
+          }}
           className={styles.item}
         >
           {title}
