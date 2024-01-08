@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import styles from "./styles.module.scss";
-import { motion } from 'framer-motion';
 
 const List = ({ list, Border }) => {
   const [page, setPage] = useState(1);
