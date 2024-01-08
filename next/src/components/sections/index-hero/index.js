@@ -32,7 +32,7 @@ const Hero = ({
             <div>
               <Img
                 data={products[0].img}
-                sizes="72px"
+                sizes="124px"
                 priority={true}
               />
             </div>
@@ -41,7 +41,7 @@ const Hero = ({
             <div>
               <Img
                 data={products[1].img}
-                sizes="72px"
+                sizes="124px"
                 priority={true}
               />
             </div>
@@ -52,7 +52,7 @@ const Hero = ({
             <div>
               <Img
                 data={products[2].img}
-                sizes="72px"
+                sizes="124px"
                 priority={true}
               />
             </div>

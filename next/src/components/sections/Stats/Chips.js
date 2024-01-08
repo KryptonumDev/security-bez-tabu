@@ -33,7 +33,8 @@ const Chip = ({ filled, isInView, ...props }) => (
         initial: { pathLength: 0 },
         animate: { pathLength: isInView ? 1 : 0 },
         transition: {
-          duration: 5,
+          type: "spring",
+          duration: 8,
         },
       }}
     ></motion.path>
@@ -42,7 +43,7 @@ const Chip = ({ filled, isInView, ...props }) => (
         initial: { opacity: 0 },
         animate: { opacity: isInView ? 1 : 0 },
         transition: {
-          delay: 1.5,
+          delay: 1,
         },
       }}
     >
