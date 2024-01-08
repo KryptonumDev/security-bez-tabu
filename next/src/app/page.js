@@ -12,6 +12,7 @@ import Recipients from "@/components/sections/Recipients";
 import Idea from "@/components/sections/Idea";
 import Lessons from "@/components/sections/Lessons";
 import Author from "@/components/sections/Author";
+import LargeImage from "@/components/sections/LargeImage";
 
 const IndexPage = async () => {
   const { page: {
@@ -49,6 +50,7 @@ const IndexPage = async () => {
     author_Subheading,
     author_Achievements,
     author_Paragraph,
+    largeImage,
     ctaSection,
   } } = await query();
 
@@ -110,6 +112,7 @@ const IndexPage = async () => {
         achievements: author_Achievements,
         paragraph: author_Paragraph,
       }} />
+      <LargeImage img={largeImage} />
       <CtaSection {...ctaSection} />
     </>
   )
@@ -319,6 +322,21 @@ const query = async () => {
           }
         }
         author_Paragraph
+
+        # LargeImage
+        largeImage {
+          asset {
+            altText
+            url
+            metadata {
+              lqip
+              dimensions {
+                width
+                height
+              }
+            }
+          }
+        }
        
         # SEO
         seo {
