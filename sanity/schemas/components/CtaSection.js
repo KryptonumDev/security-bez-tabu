@@ -30,13 +30,6 @@ export default {
       initialValue: true,
       validation: Rule => Rule.required()
     },
-    {
-      name: 'isCountdown',
-      type: 'boolean',
-      title: 'Widoczne odliczanie czasu',
-      initialValue: true,
-      validation: Rule => Rule.required()
-    },
   ],
   preview: {
     select: {

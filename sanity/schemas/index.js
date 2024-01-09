@@ -19,6 +19,10 @@ import seo from './components/seo'
 import { titleAndDescription, titleAndImage, imageAndLink, titleDescriptionAndImage } from './components/list'
 import { PrivacyPolicyPage_Content } from './privacy-policy'
 import CtaSection from './components/CtaSection'
+import review from './components/review'
+import stats from './components/stats'
+import chapter from './components/chapter'
+import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
 
 export const components = [
   global_Seo,
@@ -30,6 +34,13 @@ export const components = [
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
   CtaSection,
+  review,
+  stats,
+  chapter,
+  chart_Bars,
+  chart_Linear,
+  chart_Circle,
+  chart_Item,
 ]
 
 export const schemaTypes = [
