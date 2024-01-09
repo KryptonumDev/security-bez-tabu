@@ -357,6 +357,7 @@ const query = async () => {
               number
               title
             }
+            isAngle
           }
           ... on ChartCircle {
             _type

@@ -17,8 +17,8 @@ const Chart = ({ chart }) => {
           exit={{ y: 0 }}
           transition={{
             type: "spring",
-            duration: .5,
-            delay: i * .15
+            duration: .8,
+            delay: i * .1
           }}
           className={styles.item}
         >

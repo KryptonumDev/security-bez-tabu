@@ -6,14 +6,15 @@ import { motion, useInView } from 'framer-motion';
 const Linear = ({
   item: {
     number,
-    title
+    title,
+    isAngle,
   }
 }) => {
   const wrapper = useRef(null);
   const isInView = useInView(wrapper, { once: true, margin: "0px 0px -33% 0px" });
 
   return (
-    <div className={styles.linear} ref={wrapper}>
+    <div className={styles.linear} data-angle={isAngle} ref={wrapper}>
       <div className={styles.bar}>
         <motion.div
           initial={{ width: 0 }}
@@ -21,7 +22,8 @@ const Linear = ({
           exit={{ width: 0 }}
           transition={{
             type: "spring",
-            duration: .8,
+            damping: 35,
+            duration: .5,
           }}
           data-visible={isInView}
         >
