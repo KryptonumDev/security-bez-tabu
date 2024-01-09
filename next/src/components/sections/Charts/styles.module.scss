@@ -76,16 +76,17 @@
   .bar {
     position: relative;
     height: 16px;
-    div {
+    .progressBar {
+      z-index: 2;
       position: absolute;
       height: 100%;
       left: 0;
-      background: linear-gradient(-90deg, #4DACEB 60%, rgba(255,255,255,0));
+      background: linear-gradient(-90deg, #4DACEB 60%, var(--primary-900));
       &::before {
         content: '';
         position: absolute;
         right: -10px;
-        top: 0;
+        top: -2px;
         width: 20px;
         height: 20px;
         background-color: var(--primary-700);
@@ -112,12 +113,30 @@
       }
     }
   }
+  &[data-angle='false']{
+    padding-bottom: 28px;
+    .placeholder {
+      position: absolute;
+      margin-top: 2px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      div {
+        width: 12px;
+        height: 12px;
+        background-color: var(--primary-700);
+      }
+    }
+  }
   &[data-angle='true']{
     .bar {
       transform: rotate(-15deg);
       transform-origin: left bottom;
       div {
-        transform: rotate(15deg) scale(0);
+        &::before {
+          transform: rotate(15deg) scale(0);
+        }
         .title {
           transform: rotate(15deg) translate(50%, -100%);
         }
