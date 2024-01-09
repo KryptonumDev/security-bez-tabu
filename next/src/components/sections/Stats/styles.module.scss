@@ -37,7 +37,9 @@
       &:last-child {
         position: absolute;
         top: 0;
-        animation: glow 5s infinite;
+        g {
+          animation: glow 8s infinite;
+        }
       }
     }
     @keyframes glow {
