@@ -1,6 +1,6 @@
 import fetchData from "@/utils/fetchData";
 
-export const domain = 'https://wyzwaniesecurity.pl';
+export const domain = 'https://wyzwanie-security.securitybeztabu.pl';
 export const locale = "pl";
 
 const Seo = async ({ title, description, path, ...props }) => {
