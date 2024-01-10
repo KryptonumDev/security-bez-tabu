@@ -7,6 +7,7 @@ export const chart_Bars = {
       name: 'title',
       type: 'string',
       title: 'Tytuł',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'charts',
@@ -43,11 +44,20 @@ export const chart_Linear = {
       name: 'title',
       type: 'string',
       title: 'Tytuł',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'item',
       type: 'chart_Item',
       title: 'Element wykresu',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'isAngle',
+      type: 'boolean',
+      title: 'Wykres pod skosem?',
+      inifialValue: false,
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -73,11 +83,13 @@ export const chart_Circle = {
       name: 'title',
       type: 'string',
       title: 'Tytuł',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'item',
       type: 'chart_Item',
       title: 'Element wykresu',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
