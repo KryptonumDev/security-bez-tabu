@@ -77,11 +77,9 @@ const Hero = ({
           </div>
         </div>
         <div className={styles.decorative}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+          {Array.from({ length: 5 }).map((_, i) => (
+            <div key={i} style={{ animationDelay: `-${4 + Math.random() * 4}s` }} />
+          ))}
         </div>
       </div>
       <Glow className={styles.glow} />
