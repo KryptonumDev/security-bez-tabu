@@ -1,6 +1,6 @@
 import { domain } from '../global/Seo';
 
-const staticPages = [ '', '/privacy-policy' ];
+const staticPages = [ '', '/polityka-prywatnosci' ];
 
 export default function sitemap() {
   const currentDate = new Date();
