@@ -3,7 +3,7 @@
   margin: 0 auto;
   text-align: center;
   h2 {
-    font-size: clamp(calc(20rem/16), calc(28vw/7.68), calc(28vw/16));
+    font-size: clamp(calc(20rem/16), calc(28vw/7.68), calc(28rem/16));
   }
   .cta {
     margin: clamp(16px, calc(24vw/7.68), 24px) 0 12px;
