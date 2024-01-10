@@ -1,6 +1,8 @@
 import Markdown from '@/components/atoms/Markdown';
 import styles from './styles.module.scss';
 import Img from '@/components/atoms/Img';
+import Heading from './heading';
+import Item from './item';
 
 const Reviews = ({
   heading,
@@ -14,12 +16,12 @@ const Reviews = ({
   
   return (
     <section className={styles.wrapper}>
-      <header>
+      <Heading>
         <Markdown.h2>{heading}</Markdown.h2>
-      </header>
+      </Heading>
       <ul className={styles.list}>
         {list.map(({ img, name, position, content }, i) => (
-          <li className={styles.item} key={i}>
+          <Item key={i} className={styles.item}>
             <div className={styles.author}>
               <div className={styles.img}>
                 {img}
@@ -30,7 +32,7 @@ const Reviews = ({
               </div>
             </div>
             {content}
-          </li>
+          </Item>
         ))}
       </ul>
     </section>

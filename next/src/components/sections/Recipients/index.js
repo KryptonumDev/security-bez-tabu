@@ -1,6 +1,8 @@
 import Markdown from '@/components/atoms/Markdown';
 import styles from './styles.module.scss';
 import Img from '@/components/atoms/Img';
+import Item from './item';
+import Heading from './heading';
 
 const Recipients = ({
   heading,
@@ -8,18 +10,18 @@ const Recipients = ({
 }) => {
   return (
     <section className={styles.wrapper}>
-      <header>
+      <Heading>
         <Markdown.h2>{heading}</Markdown.h2>
-      </header>
+      </Heading>
       <ul>
         {list.map(({ img, title }, i) => (
-          <li key={i}>
+          <Item key={i} index={i}>
             <div className={styles.icon}>
               <Img data={img} />
             </div>
             <Markdown>{title}</Markdown>
             <Decoration className={styles.decoration} />
-          </li>
+          </Item>
         ))}
       </ul>
     </section>

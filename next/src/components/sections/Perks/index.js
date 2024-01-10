@@ -1,6 +1,8 @@
 import Markdown from '@/components/atoms/Markdown';
 import styles from './styles.module.scss';
 import Chips from './Chips';
+import Heading from './heading';
+import Item from './item';
 
 const Perks = ({
   heading,
@@ -8,16 +10,18 @@ const Perks = ({
 }) => {
   return (
     <section className={styles.wrapper}>
-      <Markdown.h2>{heading}</Markdown.h2>
+      <Heading>
+        <Markdown.h2>{heading}</Markdown.h2>
+      </Heading>
       <ul>
         {list.map(({ title, description }, i) => (
-          <li key={i}>
+          <Item key={i} index={i}>
             <div>
               <Markdown.h3>{title}</Markdown.h3>
               <Markdown>{description}</Markdown>
             </div>
             <Decoration className={styles.decoration} />
-          </li>
+          </Item>
         ))}
       </ul>
       <Chips />
