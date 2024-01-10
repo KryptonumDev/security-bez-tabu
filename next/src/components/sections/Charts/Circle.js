@@ -13,21 +13,25 @@ const Circle = ({
   const isInView = useInView(wrapper, { once: true, margin: "0px 0px -33% 0px" });
 
   return (
-    <div className={styles.linear} ref={wrapper}>
-      <div className={styles.bar}>
-        <motion.div
-          initial={{ width: 0 }}
-          animate={{ width: isInView ? `${number}%` : 0 }}
-          exit={{ width: 0 }}
+    <div className={styles.circle} ref={wrapper} data-visible={isInView}>
+      <p className={styles.title}>{title}</p>
+      <svg viewBox="0 0 100 100">
+        <motion.circle
+          cx='50'
+          cy='50'
+          r='25'
+          fill='none'
+          stroke='var(--primary-700)'
+          initial={{ strokeDashoffset: 158 }}
+          animate={{
+            strokeDashoffset: isInView ? 158 - (number / 100) * 158 : 158,
+          }}
           transition={{
             type: "spring",
             duration: .8,
           }}
-          data-visible={isInView}
-        >
-          <p className={styles.title}>{title}</p>
-        </motion.div>
-      </div>
+        />
+      </svg>
     </div>
   );
 };

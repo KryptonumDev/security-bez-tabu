@@ -151,15 +151,37 @@
 }
 
 .circle {
-  .shape {
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    border: 1px solid var(--secondary-500);
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 100%;
+  border: 1px solid var(--secondary-500);
+  position: relative;
+  margin-bottom: 28px;
+  overflow: hidden;
+  svg {
     overflow: visible;
-    svg {
-      width: 100%;
-      height: 100%;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+    display: block;
+    circle {
+      stroke-width: 50;
+      stroke-dasharray: 158;
+    }
+  }
+  .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+    transition: opacity .5s var(--easing);
+  }
+  &[data-visible="true"] {
+    .title {
+      opacity: 1;
     }
   }
 }
