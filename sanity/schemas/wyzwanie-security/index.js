@@ -193,6 +193,27 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
+      name: 'certificate_Heading',
+      type: 'markdown',
+      title: 'Nagłówek',
+      fieldset: 'certificate',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'certificate_Paragraph',
+      type: 'markdown',
+      title: 'Pragraf',
+      fieldset: 'certificate',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'certificate_Img',
+      type: 'image',
+      title: 'Zdjęcie',
+      fieldset: 'certificate',
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'lessons_Heading',
       type: 'markdown',
       title: 'Nagłówek',
@@ -339,6 +360,11 @@ export default {
     {
       name: 'idea',
       title: 'Pomysł na kurs',
+      options: { collapsible: true, collapsed: true }
+    },
+    {
+      name: 'certificate',
+      title: 'Certyfikat',
       options: { collapsible: true, collapsed: true }
     },
     {

@@ -14,6 +14,7 @@ import Lessons from "@/components/sections/Lessons";
 import Author from "@/components/sections/Author";
 import LargeImage from "@/components/sections/LargeImage";
 import Charts from "@/components/sections/Charts";
+import Certificate from "@/components/sections/Certificate";
 
 const IndexPage = async () => {
   const { page: {
@@ -40,6 +41,9 @@ const IndexPage = async () => {
     idea_AdditionalInfo,
     idea_ChartParagraph,
     idea_Chart,
+    certificate_Heading,
+    certificate_Paragraph,
+    certificate_Img,
     lessons_Heading,
     lessons_Paragraph,
     lessons_List,
@@ -96,6 +100,11 @@ const IndexPage = async () => {
         additionalInfo: idea_AdditionalInfo,
         chartParagraph: idea_ChartParagraph,
         chart: idea_Chart,
+      }} />
+      <Certificate {...{
+        heading: certificate_Heading,
+        paragraph: certificate_Paragraph,
+        img: certificate_Img,
       }} />
       <Lessons {...{
         heading: lessons_Heading,
@@ -274,6 +283,23 @@ const query = async () => {
         idea_Chart {
           title
           description
+        }
+
+        # Certificate
+        certificate_Heading
+        certificate_Paragraph
+        certificate_Img {
+          asset {
+            altText
+            url
+            metadata {
+              lqip
+              dimensions {
+                width
+                height
+              }
+            }
+          }
         }
 
         # Lessons
