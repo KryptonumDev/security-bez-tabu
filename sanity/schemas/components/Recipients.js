@@ -14,7 +14,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'list_TitleAndImage',
+          type: 'TitleAndImage_Item',
         },
       ],
       title: 'Lista',

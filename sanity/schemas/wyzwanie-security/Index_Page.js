@@ -50,7 +50,7 @@ export default {
       name: 'hero_Products',
       type: 'array',
       of: [{
-        type: 'list_TitleDescriptionAndImage'
+        type: 'TitleDescriptionAndImage_Item'
       }],
       title: 'Produkty',
       fieldset: 'hero',
@@ -67,7 +67,7 @@ export default {
       name: 'benefits_List',
       type: 'array',
       of: [{
-        type: 'list_TitleDescriptionAndImage'
+        type: 'TitleDescriptionAndImage_Item'
       }],
       title: 'Lista',
       validation: Rule => Rule.required(),
@@ -84,7 +84,7 @@ export default {
       name: 'perks_List',
       type: 'array',
       of: [{
-        type: 'list_TitleAndDescription'
+        type: 'TitleAndDescription_Item'
       }],
       title: 'Lista',
       validation: Rule => Rule.required(),
@@ -117,7 +117,7 @@ export default {
       name: 'recipients_List',
       type: 'array',
       of: [{
-        type: 'list_TitleAndImage'
+        type: 'TitleAndImage_Item'
       }],
       title: 'List',
       validation: Rule => Rule.required(),
@@ -185,7 +185,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'list_TitleAndDescription'
+          type: 'TitleAndDescription_Item'
         }
       ],
       title: 'Wykres',
@@ -255,7 +255,7 @@ export default {
       name: 'faq_List',
       type: 'array',
       of: [{
-        type: 'list_TitleAndDescription'
+        type: 'TitleAndDescription_Item'
       }],
       title: 'Lista',
       validation: Rule => Rule.required(),
@@ -286,7 +286,7 @@ export default {
       name: 'author_Achievements',
       type: 'array',
       of: [{
-        type: 'list_TitleAndImage'
+        type: 'TitleAndImage_Item'
       }],
       title: 'Osiągnięcia',
       validation: Rule => Rule.required(),

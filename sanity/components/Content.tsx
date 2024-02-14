@@ -14,7 +14,7 @@ export default {
     {type: 'Lessons'},
     {type: 'Faq'},
     {type: 'Author'},
-    {type: 'image', name: 'largeImage', title: 'Duże zdjęcie'},
+    {type: 'image', name: 'LargeImage', title: 'Duże zdjęcie'},
     {type: 'Charts'},
   ],
 }

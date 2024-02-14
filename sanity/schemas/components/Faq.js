@@ -18,7 +18,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'list_TitleAndDescription'}],
+      of: [{type: 'TitleAndDescription_Item'}],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
     },

@@ -1,7 +1,7 @@
 import removeMarkdown from "../../utils/removeMarkdown"
 
 export const titleAndDescription = {
-  name: "list_TitleAndDescription",
+  name: "TitleAndDescription_Item",
   title: "Title and Description",
   type: "object",
   fields: [
@@ -31,7 +31,7 @@ export const titleAndDescription = {
 }
 
 export const titleAndImage = {
-  name: "list_TitleAndImage",
+  name: "TitleAndImage_Item",
   title: "Title & Image",
   type: "object",
   fields: [
@@ -61,7 +61,7 @@ export const titleAndImage = {
 }
 
 export const imageAndLink = {
-  name: "list_ImageAndLink",
+  name: "ImageAndLink_Item",
   title: "Title & Link",
   type: "object",
   fields: [
@@ -103,7 +103,7 @@ export const imageAndLink = {
 }
 
 export const titleDescriptionAndImage = {
-  name: "list_TitleDescriptionAndImage",
+  name: "TitleDescriptionAndImage_Item",
   title: "Title, Description & Image",
   type: "object",
   fields: [

@@ -16,7 +16,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'list_TitleAndDescription',
+          type: 'TitleAndDescription_Item',
         },
       ],
       title: 'Lista',
