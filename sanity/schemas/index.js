@@ -1,10 +1,10 @@
 // Single Types
 import global, { global_Seo } from './global'
 import WyzwanieSecurity_Global from './wyzwanie-security/global'
-import WyzwanieSecurity_IndexPage from './wyzwanie-security/index'
-import WyzwanieSecurity_PrivacyPolicyPage from './wyzwanie-security/privacy-policy'
-import WyzwanieSecurity_NotFoundPage from './wyzwanie-security/404'
-import PrivacyPolicyPage from './privacy-policy'
+import WyzwanieSecurity_IndexPage from './wyzwanie-security/Index_Page'
+import WyzwanieSecurity_PrivacyPolicyPage from './wyzwanie-security/PrivacyPolicy_Page'
+import WyzwanieSecurity_NotFoundPage from './wyzwanie-security/404_Page'
+import PrivacyPolicyPage from './PrivacyPolicy_Page'
 
 export const WyzwanieSecurity = [
   WyzwanieSecurity_Global,
@@ -17,12 +17,24 @@ export const WyzwanieSecurity = [
 import cta from './components/cta'
 import seo from './components/seo'
 import { titleAndDescription, titleAndImage, imageAndLink, titleDescriptionAndImage } from './components/list'
-import { PrivacyPolicyPage_Content } from './privacy-policy'
+import { PrivacyPolicyPage_Content } from './PrivacyPolicy_Page'
 import CtaSection from './components/CtaSection'
 import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
 import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
+import Perks from './components/Perks'
+import Benefits from './components/Benefits'
+import StatsList from './components/StatsList'
+import Recipients from './components/Recipients'
+import Reviews from './components/Reviews'
+import Idea from './components/Idea'
+import Certificate from './components/Certificate'
+import Lessons from './components/Lessons'
+import Faq from './components/Faq'
+import Author from './components/Author'
+import Charts from './components/Charts'
+import Content from '../components/Content'
 
 export const components = [
   global_Seo,
@@ -41,6 +53,18 @@ export const components = [
   chart_Linear,
   chart_Circle,
   chart_Item,
+  Perks,
+  Benefits,
+  StatsList,
+  Recipients,
+  Reviews,
+  Idea,
+  Certificate,
+  Lessons,
+  Faq,
+  Author,
+  Charts,
+  Content,
 ]
 
 export const schemaTypes = [

@@ -319,6 +319,11 @@ export default {
       fieldset: 'charts',
     },
     {
+      name: 'content',
+      type: 'content',
+      title: 'Komponenty podstrony'
+    },
+    {
       name: 'seo',
       type: 'seo',
       title: 'SEO',
