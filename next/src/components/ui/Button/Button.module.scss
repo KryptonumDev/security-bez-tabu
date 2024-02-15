@@ -1,0 +1,70 @@
+.Button {
+  display: inline-flex;
+  width: fit-content;
+  gap: 8px;
+  align-items: center;
+  color: var(--secondary-500);
+  padding: 12px 24px;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+  transform: translate3d(0, 0, 0);
+  filter: drop-shadow(0px 0px 16px rgba(29, 164, 253, 0.20)) drop-shadow(0px 0px 8px rgba(152, 214, 255, 0.20));
+
+  &:hover {
+    filter: drop-shadow(0px 0px 30px rgba(29, 164, 253, 0.60)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.60));
+
+    .corner {
+      transform: translate(1px, 1px);
+    }
+  }
+
+  transform-origin: bottom;
+
+  &:active {
+    transform: scale(.98);
+  }
+
+  backdrop-filter: blur(4px);
+
+  .border {
+    z-index: -1;
+    background-color: rgba(13, 17, 31, .8);
+    border: 1px solid var(--secondary-600);
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    clip-path: polygon(100% 0, 100% calc(100% - 26px), calc(100% - 26px) 100%, 0 100%, 0 0);
+
+    &::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      bottom: -.5px;
+      width: 36px;
+      height: 26px;
+      border-top: 1px solid var(--secondary-600);
+      transform: rotate(-45deg);
+      transform-origin: top right;
+    }
+  }
+
+  .corner {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    fill: rgba(13, 17, 31, .8);
+    clip-path: polygon(calc(100% - 1px) 0, 100% 0, 100% 100%, 0 100%, 0 calc(100% - 1px));
+  }
+
+  @media (max-width: 499px) {
+    width: 100%;
+  }
+
+  &:disabled {
+    opacity: .8;
+    pointer-events: none;
+  }
+}

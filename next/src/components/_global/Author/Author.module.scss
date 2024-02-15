@@ -1,0 +1,109 @@
+.Author {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  grid-template-columns: 1fr 1.75fr;
+  grid-template-areas: 'h2 h3' 'img copy';
+  column-gap: clamp(84px, calc(92vw/7.68), 134px);
+
+  @media (max-width: 999px) {
+    grid-template-columns: 1.66fr 1fr;
+    grid-template-areas: 'h2 img' 'h3 img' 'copy copy';
+  }
+
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'h2' 'h3' 'img' 'copy';
+  }
+
+  h2 {
+    grid-area: h2;
+    margin-bottom: clamp(16px, calc(24vw/7.68), 32px);
+  }
+
+  h3 {
+    grid-area: h3;
+    margin-bottom: clamp(20px, calc(36vw/7.68), 48px);
+  }
+
+  .img {
+    grid-area: img;
+    position: relative;
+    align-self: flex-start;
+
+    img {
+      display: block;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    &::before {
+      background: linear-gradient(#0D111F, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0D111F);
+    }
+
+    &::after {
+      background: linear-gradient(90deg, #0D111F, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0D111F);
+    }
+  }
+
+  .copy {
+    grid-area: copy;
+
+    @media (max-width: 999px) {
+      margin-top: clamp(20px, calc(28vw/7.68), 48px);
+    }
+
+    ul {
+      display: grid;
+
+      @media (min-width: 600px) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      gap: clamp(8px, calc(16vw/7.68), 20px) 32px;
+      list-style-type: none;
+
+      li {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: auto 1fr;
+
+        .icon {
+          width: clamp(36px, calc(48vw/7.68), 48px);
+          height: clamp(36px, calc(48vw/7.68), 48px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: var(--primary-700);
+          border-radius: 50%;
+
+          img {
+            width: 42%;
+            height: 42%;
+            transform: translate3d(0, 0, 0);
+            filter: drop-shadow(0px 0px 30px rgba(29, 164, 253, 0.60)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.60));
+          }
+        }
+
+        .title {
+          margin-top: 4px;
+        }
+      }
+    }
+
+    .paragraph {
+      margin-top: clamp(20px, calc(28vw/7.68), 48px);
+
+      &>*:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}

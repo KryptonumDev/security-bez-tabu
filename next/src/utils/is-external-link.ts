@@ -1,4 +1,4 @@
-import { domain } from '@/global/Seo';
+import { domain } from '@/global/constants';
 
 const isExternalLink = (href?: string) =>
   href &&

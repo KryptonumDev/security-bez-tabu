@@ -163,7 +163,7 @@ export async function getData() {
         }
       }
     },
-    _type == 'Idea' => @ {
+    _type == 'Idea' => {
       paragraph,
       additionalInfo,
       chartParagraph,
@@ -172,6 +172,11 @@ export async function getData() {
       chart[] {
         title,
         description
+      },
+      cta {
+        href,
+        text,
+        theme
       }
     },
     _type == 'Certificate' => @ {

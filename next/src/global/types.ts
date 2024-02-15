@@ -42,3 +42,9 @@ export type HomePageQueryProps = {
   slug?: string;
   content: ComponentProps[];
 } & generateMetadataProps;
+
+export type Cta = {
+  theme: string;
+  href: string;
+  text: string;
+};
