@@ -1,12 +1,13 @@
-import Markdown from '@/components/atoms/Markdown';
-import styles from './styles.module.scss';
-import Item from './item';
-import Heading from './heading';
+import styles from './Benefits.module.scss';
+import type { Props } from './Benefits.types';
+import Heading from './_Heading';
+import Item from './_Item';
+import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
 
-const Benefits = ({ heading, list }) => {
+const Benefits = ({ heading, list }: Props) => {
   return (
-    <section className={styles.wrapper}>
+    <section className={styles['Benefits']}>
       <Heading>
         <Markdown.h2>{heading}</Markdown.h2>
       </Heading>

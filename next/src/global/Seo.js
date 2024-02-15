@@ -1,29 +1,27 @@
-import fetchData from "@/utils/fetchData";
+import sanityFetch from '@/utils/sanity.fetch';
 
 export const domain = 'https://wyzwanie-security.securitybeztabu.pl';
-export const locale = "pl";
+export const locale = 'pl';
 
 const Seo = async ({ title, description, path, ...props }) => {
-  const { global: {
+  const {
     robotsIndex,
-    seo: {
-      og_Img
-    }
-  }} = await query();
+    seo: { og_Img },
+  } = await query();
 
   const seo = {
     title: title || '',
     description: description || '',
     url: `${domain}${path}` || '',
-    ogImage: og_Img?.asset?.url || ''
-  }
+    ogImage: og_Img?.asset?.url || '',
+  };
 
   const metadata = {
-    ...!robotsIndex && {
+    ...(!robotsIndex && {
       robots: {
         index: false,
       },
-    },
+    }),
     metadataBase: new URL(domain),
     title: seo.title,
     description: seo.description,
@@ -45,28 +43,23 @@ const Seo = async ({ title, description, path, ...props }) => {
       locale: locale,
       type: 'website',
     },
-    ...props
-  }
+    ...props,
+  };
 
   return metadata;
-}
+};
 
 export default Seo;
 
 const query = async () => {
-  const { body: { data } } = await fetchData(`
-    query {
-      global: WyzwanieSecurityGlobal(id: "WyzwanieSecurity_Global") {
-        seo {
-          og_Img {
-            asset {
-              url
-            }
-          }
-        }
-        robotsIndex
+  const data = await sanityFetch({
+    query: /* groq */ `
+    *[_id == "WyzwanieSecurity_Global"][0] {
+      robotsIndex,
+      seo {
+        'og_Img': og_Img.asset -> url+"?w=1200"
       }
-    }
-  `)
+    }`,
+  });
   return data;
-}
+};

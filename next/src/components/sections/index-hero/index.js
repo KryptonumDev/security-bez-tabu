@@ -1,4 +1,6 @@
-import Markdown from '@/components/atoms/Markdown';
+'use server';
+
+import Markdown from '@/components/ui/markdown';
 import styles from './styles.module.scss';
 import Button from '@/components/atoms/Button';
 import Img from '@/components/atoms/Img';
@@ -22,7 +24,7 @@ const Hero = ({
           <p className={styles.claim}>{claim}</p>
           <Button data={cta} className={styles.btn} />
           <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>
-          <Countdown className={styles.countdown} />
+          {/* <Countdown className={styles.countdown} /> */}
         </div>
       </header>
       <div className={styles.orbit}>

@@ -1,20 +1,35 @@
 import Link from 'next/link';
 import styles from './styles.module.scss';
 import Button from '@/components/atoms/Button';
-import fetchData from '@/utils/fetchData';
+import sanityFetch from '@/utils/sanity.fetch';
+import { draftMode } from 'next/headers';
 
 const Header = async () => {
-  const { global: { link } } = await query();
+  const { link } = await query();
 
   return (
     <>
-      <a href="#main" className={styles.skipToMainContent}>Przejdź do głównej treści</a>
+      <a
+        href='#main'
+        className={styles.skipToMainContent}
+      >
+        Przejdź do głównej treści
+      </a>
       <header className={styles.wrapper}>
-        <div className="max-width">
-          <Link href='/' aria-label="Strona główna" className={styles.logo}>
+        <div className='max-width'>
+          <Link
+            href='/'
+            aria-label='Strona główna'
+            className={styles.logo}
+          >
             <Logo />
           </Link>
-          <Button href={link} className={styles.cta}>Dołączam do wyzwania</Button>
+          <Button
+            href={link}
+            className={styles.cta}
+          >
+            Dołączam do wyzwania
+          </Button>
         </div>
       </header>
     </>
@@ -24,15 +39,15 @@ const Header = async () => {
 export default Header;
 
 const query = async () => {
-  const { body: { data } } = await fetchData(/* GraphQL */`
-    query {
-      global: WyzwanieSecurityGlobal(id: "WyzwanieSecurity_Global") {
-        link
-      }
-    }
-  `)
+  const data = await sanityFetch({
+    query: /* groq */ `
+    *[_id == "WyzwanieSecurity_Global"][0] {
+      link,
+    }`,
+    isDraftMode: draftMode().isEnabled,
+  });
   return data;
-}
+};
 
 const Logo = () => (
   <svg
@@ -48,9 +63,12 @@ const Logo = () => (
       x='1'
       y='3'
       maskUnits='userSpaceOnUse'
-      style={{ maskType: "luminance" }}
+      style={{ maskType: 'luminance' }}
     >
-      <path fill='#fff' d='M1.326 3.453h61.977V71.85H1.326V3.453z'></path>
+      <path
+        fill='#fff'
+        d='M1.326 3.453h61.977V71.85H1.326V3.453z'
+      ></path>
     </mask>
     <g mask='url(#a)'>
       <path
@@ -73,9 +91,12 @@ const Logo = () => (
       x='11'
       y='8'
       maskUnits='userSpaceOnUse'
-      style={{ maskType: "luminance" }}
+      style={{ maskType: 'luminance' }}
     >
-      <path fill='#fff' d='M11.635 8.488h41.062v54.988H11.635V8.488z'></path>
+      <path
+        fill='#fff'
+        d='M11.635 8.488h41.062v54.988H11.635V8.488z'
+      ></path>
     </mask>
     <g mask='url(#b)'>
       <path
@@ -96,9 +117,12 @@ const Logo = () => (
       x='11'
       y='25'
       maskUnits='userSpaceOnUse'
-      style={{ maskType: "luminance" }}
+      style={{ maskType: 'luminance' }}
     >
-      <path fill='#fff' d='M11.635 25.653h34.102V56.57H11.635V25.653z'></path>
+      <path
+        fill='#fff'
+        d='M11.635 25.653h34.102V56.57H11.635V25.653z'
+      ></path>
     </mask>
     <g mask='url(#c)'>
       <path
@@ -139,9 +163,12 @@ const Logo = () => (
       x='31'
       y='8'
       maskUnits='userSpaceOnUse'
-      style={{ maskType: "luminance" }}
+      style={{ maskType: 'luminance' }}
     >
-      <path fill='#fff' d='M31.486 8.488h16.24v10.259h-16.24V8.488z'></path>
+      <path
+        fill='#fff'
+        d='M31.486 8.488h16.24v10.259h-16.24V8.488z'
+      ></path>
     </mask>
     <g mask='url(#d)'>
       <path
@@ -178,9 +205,12 @@ const Logo = () => (
       x='15'
       y='25'
       maskUnits='userSpaceOnUse'
-      style={{ maskType: "luminance" }}
+      style={{ maskType: 'luminance' }}
     >
-      <path fill='#fff' d='M15.579 25.939h34.156V47.03H15.58V25.94z'></path>
+      <path
+        fill='#fff'
+        d='M15.579 25.939h34.156V47.03H15.58V25.94z'
+      ></path>
     </mask>
     <g mask='url(#e)'>
       <path
@@ -227,4 +257,4 @@ const Logo = () => (
       ></path>
     </g>
   </svg>
-)
+);

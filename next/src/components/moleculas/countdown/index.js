@@ -1,4 +1,6 @@
-import fetchData from '@/utils/fetchData';
+'use server';
+
+import sanityFetch from '@/utils/sanity.fetch';
 import Client from './client';
 
 export const calculateTimeLeft = (date) => {
@@ -21,26 +23,29 @@ export const calculateTimeLeft = (date) => {
 };
 
 const Countdown = async ({ ...props }) => {
-  const { global: { countdown_Date } } = await query();
+  const { countdown_Date } = await query();
   const targetDate = new Date(countdown_Date).getTime();
 
   return (
     <div {...props}>
-      <Client date={targetDate} BorderLeft={BorderLeft} BorderRight={BorderRight} />
+      <Client
+        date={targetDate}
+        BorderLeft={BorderLeft}
+        BorderRight={BorderRight}
+      />
     </div>
   );
 };
 
 const query = async () => {
-  const { body: { data } } = await fetchData(/* GraphQL */`
-    query {
-      global: WyzwanieSecurityGlobal(id: "WyzwanieSecurity_Global") {
-        countdown_Date
-      }
-    }
-  `)
+  const data = await sanityFetch({
+    query: /* groq */ `
+    *[_id == "WyzwanieSecurity_Global"][0] {
+      countdown_Date,
+    }`,
+  });
   return data;
-}
+};
 
 const BorderLeft = (
   <svg
@@ -60,7 +65,7 @@ const BorderLeft = (
       d='M1 56.912v9.213h16L1 56.912zm0 0V9.697m0 0V1.06h14L1 9.697z'
     ></path>
   </svg>
-)
+);
 const BorderRight = (
   <svg
     xmlns='http://www.w3.org/2000/svg'
@@ -69,13 +74,16 @@ const BorderRight = (
     fill='none'
     viewBox='0 0 21 68'
   >
-    <path fill='#53BAFD' d='M4 1h16v65.065H6l14-8.637V10.213L4 1z'></path>
+    <path
+      fill='#53BAFD'
+      d='M4 1h16v65.065H6l14-8.637V10.213L4 1z'
+    ></path>
     <path
       stroke='#53BAFD'
       strokeWidth='2'
       d='M20 10.213V1H4l16 9.213zm0 0v47.215m0 0v8.637H6l14-8.637z'
     ></path>
   </svg>
-)
+);
 
 export default Countdown;

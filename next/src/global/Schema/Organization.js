@@ -1,10 +1,9 @@
-import fetchData from '@/utils/fetchData';
 import React from 'react';
 import { domain } from '../Seo';
+import sanityFetch from '@/utils/sanity.fetch';
 
 const SchemaOrganization = async () => {
-  const {
-    page: { seo },
+  const {seo, 
     global: { email, phone, instagram, facebook },
   } = await query();
 
@@ -24,15 +23,7 @@ const SchemaOrganization = async () => {
           description: seo?.description,
           OpeningHoursSpecification: {
             '@type': 'OpeningHoursSpecification',
-            dayOfWeek: [
-              'Monday',
-              'Tuesday',
-              'Wednesday',
-              'Thursday',
-              'Friday',
-              'Saturday',
-              'Sunday',
-            ],
+            dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
             opens: '00:00',
             closes: '00:00',
           },
@@ -52,21 +43,21 @@ const SchemaOrganization = async () => {
 export default SchemaOrganization;
 
 const query = async () => {
-  const { body: { data } } = await fetchData(/* GraphQL */ `
-    query {
-      page: WyzwanieSecurityIndexPage(id: "WyzwanieSecurity_IndexPage") {
-        seo {
-          title
-          description
-        }
-      }
-      global: Global(id: "global") {
-        email
-        phone
-        instagram
-        facebook
+const data = await sanityFetch({
+    query: /* groq */ `
+    *[_id == "WyzwanieSecurity_IndexPage"][0] {
+      seo {
+        title,
+        description
+      },
+      "global": *[_id=="global"][0] {
+        email,
+        phone,
+        instagram,
+        facebook,
       }
     }
-  `);
+  `,
+  });
   return data;
 };
