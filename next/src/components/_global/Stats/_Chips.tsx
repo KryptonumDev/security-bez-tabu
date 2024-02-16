@@ -9,7 +9,7 @@ const MotionRect = (isInView: boolean, index = 0) => ({
   initial: { opacity: 0 },
   animate: { opacity: isInView ? 1 : 0 },
   transition: {
-    delay: (randomDurations[index] as number) * 0.35,
+    delay: (randomDurations[index]) * 0.35,
   },
 });
 const MotionPath = (isInView: boolean, index: number) => ({

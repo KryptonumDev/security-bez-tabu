@@ -1,0 +1,83 @@
+.Content {
+  margin-top: calc(clamp(72px, calc(80vw/7.68), 176px) * -1);
+
+  >ol {
+    counter-reset: counter;
+    display: grid;
+    gap: clamp(20px, calc(32vw/7.68), 32px);
+
+    >li {
+      list-style-type: none;
+      border: 1px solid var(--primary-800, #13182A);
+      background: linear-gradient(-90deg, #1B2138, #0D111F 50%);
+      padding: clamp(16px, calc(24vw/7.68), 24px);
+      display: grid;
+      align-items: flex-start;
+      gap: clamp(20px, calc(32vw/7.68), 32px);
+
+      @media (min-width: 1000px) {
+        grid-template-columns: 1fr 1.2fr;
+      }
+
+      counter-increment: counter;
+
+      .title {
+        font-size: clamp(calc(20rem/16), calc(28vw/7.68), calc(28rem/16));
+        display: grid;
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 12px;
+
+        &::before {
+          content: counter(counter);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: clamp(48px, calc(60vw/7.68), 60px);
+          height: clamp(48px, calc(60vw/7.68), 60px);
+          background-color: var(--primary-800);
+          border-radius: 50%;
+          color: var(--secondary-500);
+          text-shadow: 0px 0px 24px #1DA4FD, 0px 0px 10px #98D6FF;
+        }
+      }
+
+      >ol {
+        counter-reset: counter;
+        display: grid;
+        gap: 16px;
+
+        >li {
+          counter-increment: counter;
+          list-style-type: none;
+          display: grid;
+
+          @media (min-width: 500px) {
+            grid-template-columns: auto 1fr;
+          }
+
+          gap: 8px 16px;
+          align-items: flex-start;
+
+          &::before {
+            content: counter(counter);
+            width: 70px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 2px solid var(--secondary-500);
+            background-color: var(--primary-800);
+            font-size: 1rem;
+          }
+
+          >span {
+            &>*:not(:last-child) {
+              margin-bottom: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

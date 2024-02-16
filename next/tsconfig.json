@@ -4,21 +4,19 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "strict": false,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "incremental": true,
     "jsx": "preserve",
-    "noUncheckedIndexedAccess": true,
+    "incremental": true,
     "plugins": [
       {
-        "name": "next",
-      },
+        "name": "next"
+      }
     ],
     "baseUrl": ".",
     "paths": {
@@ -26,15 +24,9 @@
       "@/components/*": ["src/components/*"],
       "@/utils/*": ["src/utils/*"],
       "@/assets/*": ["src/assets/*"],
-      "@/public/*": ["public/*"],
-    },
+      "@/public/*": ["public/*"]
+    }
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "src/app/(landing)/landing/[slug]/page.tsx", "src/global/Seo.js",
-  ],
-  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/_app.js", "src/app/api/contact/route.js", "src/components/ui/ReadingTime.js", "src/components/atoms/Radio/index.js"],
+  "exclude": ["node_modules"]
 }

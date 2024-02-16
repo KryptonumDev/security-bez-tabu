@@ -43,8 +43,42 @@ export type HomePageQueryProps = {
   content: ComponentProps[];
 } & generateMetadataProps;
 
+export type NotFoundPageQueryProps = {
+  hero_Heading: string;
+  hero_Paragraph: string;
+  hero_Cta: Cta;
+  hero_Img: ImgType;
+} & generateMetadataProps;
+
+export type PrivacyPolicyPageQueryProps = {
+  hero_Heading: string;
+  hero_Paragraph: string;
+  content: {
+    title: string;
+    description: string[];
+  }[];
+} & generateMetadataProps;
+
+export type SeoProps = {
+  robotsIndex: boolean;
+  seo: {
+    og_Img: ImgType;
+  };
+};
+
 export type Cta = {
   theme: string;
   href: string;
   text: string;
 };
+
+export interface Node {
+  children?: Node[];
+  style?: string;
+  text?: string;
+  subheadings?: Node[];
+  slug?: string;
+  _type?: string;
+  marks?: string;
+  icon?: ImgType;
+}

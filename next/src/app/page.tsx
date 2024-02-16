@@ -1,6 +1,6 @@
 import Seo from '@/global/Seo';
-import Breadcrumbs from '@/components/moleculas/Breadcrumbs';
-import Hero from '@/components/sections/index-hero';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import Hero from '@/components/_index/Hero';
 import Components from '@/components/Components';
 import sanityFetch from '@/utils/sanity.fetch';
 import { type HomePageQueryProps } from '@/global/types';
@@ -35,8 +35,8 @@ export async function generateMetadata() {
     path: '/',
   });
 }
-export async function getData() {
-  const data = await sanityFetch({
+async function getData(): Promise<HomePageQueryProps> {
+  const data = await sanityFetch<HomePageQueryProps>({
     query: /* groq */ `
   *[_id=="WyzwanieSecurity_IndexPage"][0] {
     hero_Heading,
@@ -286,14 +286,14 @@ export async function getData() {
         }
       },
         seo {
-        descripition,
+          description,
         title
       }
     }
   `,
     isDraftMode: true,
   });
-  return data as HomePageQueryProps;
+  return data;
 }
 
 export default IndexPage;

@@ -12,14 +12,16 @@ type ImgProps = {
   width?: number;
   height?: number;
   sizes?: string;
+  priority?: boolean;
 };
 
-const Img = ({ data, src = '', alt = '', width, height, sizes, ...props }: ImgProps) => (
+const Img = ({ data, src = '', alt = '', width, height, sizes, priority = false, ...props }: ImgProps) => (
   <Image
     src={data?.asset.url || src}
     alt={data?.asset.altText || alt}
     width={data?.asset.metadata?.dimensions?.width || width}
     height={data?.asset.metadata?.dimensions?.height || height}
+    priority={priority}
     sizes={sizes}
     {...(((width || data?.asset.metadata.dimensions?.width) > 40 ||
       (height || data?.asset.metadata.dimensions?.height) > 40) && {

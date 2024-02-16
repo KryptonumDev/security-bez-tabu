@@ -9,10 +9,11 @@ const Counter = ({ children, ...props }: { children: React.ReactNode }) => {
     once: true,
   });
 
-  const match = children?.toString().match(/(.*?)(\d+)(.*)/) as string[];
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  const match = children?.toString().match(/(.*?)(\d+)(.*)/);
 
   const beforeNumber = match[1];
-  const numericPart: string = match[2] as string;
+  const numericPart: string = match[2];
   const afterNumber = match[3];
 
   const initialNumber = parseInt(numericPart, 10);

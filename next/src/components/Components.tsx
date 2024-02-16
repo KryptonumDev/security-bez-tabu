@@ -1,5 +1,4 @@
-import { type ImgType } from '@/global/types';
-import Author, { AuthorProps } from './_global/Author';
+import Author, { type AuthorProps } from './_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from './_global/Benefits';
 import Certificate, { type CertificateProps } from './_global/Certificate';
 import CtaSection, { type CtaSectionProps } from './_global/CtaSection';
@@ -11,7 +10,8 @@ import Perks, { type PerksProps, Perks_Query } from './_global/Perks';
 import Recipients, { type RecipientsProps } from './_global/Recipients';
 import Reviews, { type ReviewsProps } from './_global/Reviews';
 import Stats, { type StatsProps } from './_global/Stats';
-import Charts from './_global/Charts';
+import Charts, { type ChartsProps } from './_global/Charts';
+import { type ImgType } from '@/global/types';
 
 type ComponentMap = {
   Benefits: BenefitsProps;
@@ -20,7 +20,7 @@ type ComponentMap = {
 export type ComponentProps = ComponentMap[keyof ComponentMap] & { _type: string };
 
 const Components = ({ data }: { data: ComponentProps[] }) => {
-  return data?.map((item, index) => {
+  return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
       Benefits: <Benefits {...(item as BenefitsProps)} />,
