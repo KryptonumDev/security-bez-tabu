@@ -1,5 +1,5 @@
 import Hero from '@/components/_notFound/Hero';
-import Seo from '@/global/Seo';
+import Seo, { Seo_Query } from '@/global/Seo';
 import { type NotFoundPageQueryProps } from '@/global/types';
 import sanityFetch from '@/utils/sanity.fetch';
 
@@ -53,10 +53,7 @@ const getData = async () => {
           }
         }
       },
-      seo {
-        title,
-        description
-      }
+      ${Seo_Query}
     }
   `,
   });

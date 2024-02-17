@@ -1,4 +1,4 @@
-import Seo from '@/global/Seo';
+import Seo, { Seo_Query } from '@/global/Seo';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import sanityFetch from '@/utils/sanity.fetch';
 import { type PrivacyPolicyPageQueryProps } from '@/global/types';
@@ -48,10 +48,7 @@ const getData = async () => {
       _id == 'WyzwanieSecurity_PrivacyPolicyPage' => {
         hero_Heading,
         hero_Paragraph,
-        seo {
-          description,
-          title
-        }
+        ${Seo_Query}
       },
       _id == 'PrivacyPolicyPage' => {
         content[] {

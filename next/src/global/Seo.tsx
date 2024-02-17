@@ -64,3 +64,9 @@ const query = async () => {
   });
   return data;
 };
+
+export const Seo_Query = /* groq */ `
+  seo {
+    title,
+    description,
+  },`;

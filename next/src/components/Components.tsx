@@ -1,16 +1,16 @@
-import Author, { type AuthorProps } from './_global/Author';
+import Author, { Author_Query, type AuthorProps } from './_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from './_global/Benefits';
-import Certificate, { type CertificateProps } from './_global/Certificate';
-import CtaSection, { type CtaSectionProps } from './_global/CtaSection';
-import Faq, { type FaqProps } from './_global/Faq';
-import Idea, { type IdeaProps } from './_global/Idea';
-import LargeImage from './_global/LargeImage';
-import Lessons, { type LessonsProps } from './_global/Lessons';
+import Certificate, { Certificate_Query, type CertificateProps } from './_global/Certificate';
+import CtaSection, { CtaSection_Query, type CtaSectionProps } from './_global/CtaSection';
+import Faq, { Faq_Query, type FaqProps } from './_global/Faq';
+import Idea, { Idea_Query, type IdeaProps } from './_global/Idea';
+import LargeImage, { LargeImage_Query } from './_global/LargeImage';
+import Lessons, { Lessons_Query, type LessonsProps } from './_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from './_global/Perks';
-import Recipients, { type RecipientsProps } from './_global/Recipients';
-import Reviews, { type ReviewsProps } from './_global/Reviews';
-import Stats, { type StatsProps } from './_global/Stats';
-import Charts, { type ChartsProps } from './_global/Charts';
+import Recipients, { Recipients_Query, type RecipientsProps } from './_global/Recipients';
+import Reviews, { Reviews_Query, type ReviewsProps } from './_global/Reviews';
+import Stats, { Stats_Query, type StatsProps } from './_global/Stats';
+import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import { type ImgType } from '@/global/types';
 
 type ComponentMap = {
@@ -52,178 +52,16 @@ export const Components_Query = /* groq */ `
       _type,
       ${Benefits_Query}
       ${Perks_Query}
-     _type == 'CtaSection' => @ {
-       isCountdown,
-        heading,
-        additionalInfo,
-        cta {
-          theme,
-          href,
-          text
-        }
-     },
-    _type == 'StatsList' => @ {
-      list[] {
-        number,
-        name
-      }
-    },
-    _type == 'Recipients' => @ {
-      heading,
-      list[] {
-        title,
-        img {
-          asset -> {
-            altText,
-            url,
-            metadata {
-              lqip,
-              dimensions {
-                width,
-                height
-              }
-            }
-          }
-        }
-      }
-    },
-    _type == 'Reviews' => @ {
-      heading,
-      list[] {
-        name,
-        position,
-        content,
-        img {
-          asset -> {
-            altText,
-            url,
-            metadata {
-              lqip,
-              dimensions {
-                width,
-                height
-              }
-            }
-          }
-        }
-      }
-    },
-    _type == 'Idea' => @ {
-      paragraph,
-      additionalInfo,
-      chartParagraph,
-      heading,
-      claim,
-      chart[] {
-        title,
-        description
-      }
-    },
-    _type == 'Certificate' => @ {
-      paragraph,
-        heading,
-        img {
-          asset -> {
-            altText,
-            url,
-            metadata {
-              lqip,
-              dimensions {
-                width,
-                height
-              }
-            }
-          }
-        }
-      },
-      _type == 'Lessons' => @ {
-        paragraph,
-        heading,
-        list[] {
-          title,
-          lessons[]
-        }
-      },
-     _type == 'Faq' => @ {
-        heading,
-        paragraph,
-         list[] {
-           description,
-           title
-         }
-     },
-          _type == 'Author' => @ {
-            paragraph,
-            heading,
-            subheading,
-            achievements[] {
-                title,
-                img {
-                  asset -> {
-                    altText,
-                    url,
-                    metadata {
-                      lqip,
-                      dimensions {
-                        width,
-                        height
-                      }
-                    }
-                  }
-                }
-              },
-            img {
-              asset -> {
-                altText,
-                url,
-                metadata {
-                  lqip,
-                  dimensions {
-                    width,
-                    height
-                  }
-                }
-              }
-            }
-          },
-      _type == 'LargeImage' => @ {
-        asset -> {
-          altText,
-          url,
-          metadata {
-            lqip,
-            dimensions {
-              width,
-              height
-            }
-          }
-        }
-      },
-      _type == 'Charts' => @ {
-        charts[] {
-          title,
-          _type,
-          _type == 'chart_Bars' => @ {
-            charts[] {
-              title, 
-              number
-            }
-          },
-          _type == 'chart_Linear' => @ {
-            isAngle,
-              item {
-                number,
-                title
-              }
-          },
-          _type == 'chart_Circle' => @ {
-            item {
-              number,
-                title
-            }
-          }
-          }
-        }
-      }
-    }
+      ${CtaSection_Query}
+      ${Stats_Query}
+      ${Recipients_Query}
+      ${Reviews_Query}
+      ${Idea_Query}
+      ${Certificate_Query}
+      ${Lessons_Query}
+      ${Faq_Query}
+      ${Author_Query}
+      ${LargeImage_Query}
+      ${Charts_Query}
+  },
 `;
