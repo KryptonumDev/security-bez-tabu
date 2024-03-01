@@ -1,7 +1,6 @@
 import '@/global/global.scss';
 import localFont from 'next/font/local';
 import Script from 'next/script';
-import SmoothScroll from '@/utils/SmoothScroll';
 import Header from '@/components/_global/Header';
 import Footer from '@/components/_global/Footer';
 import SchemaOrganization from '@/global/Schema/Organization';
@@ -55,9 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${Saira.className} ${IBMPlexSansHebrew.variable}`}>
         <Header />
-        <SmoothScroll>
-          <main id='main'>{children}</main>
-        </SmoothScroll>
+        <main id='main'>{children}</main>
         <Footer />
         <noscript
           dangerouslySetInnerHTML={{
