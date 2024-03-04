@@ -32,7 +32,7 @@ export async function generateMetadata() {
 const getData = async () => {
   const data = await sanityFetch({
     query: /* groq */ `
-    *[_id == "WyzwanieSecurity_NotFoundPage"][0] {
+    *[_id == "NotFoundPage"][0] {
       hero_Heading,
       hero_Paragraph,
       hero_Cta {
@@ -56,6 +56,7 @@ const getData = async () => {
       ${Seo_Query}
     }
   `,
+    isDraftMode: true,
   });
   return data as NotFoundPageQueryProps;
 };

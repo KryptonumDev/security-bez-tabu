@@ -1,26 +1,25 @@
-import { defineConfig } from 'sanity'
-import { deskTool } from 'sanity/desk'
-import { visionTool } from '@sanity/vision'
-import { WyzwanieSecurity, schemaTypes } from './schemas'
-import { media } from 'sanity-plugin-media'
+import {defineConfig} from 'sanity'
+import {deskTool} from 'sanity/desk'
+import {visionTool} from '@sanity/vision'
+import {schemaTypes} from './schemas'
+import {media} from 'sanity-plugin-media'
 
-import { markdownSchema } from 'sanity-plugin-markdown'
-import { CustomMarkdownInput } from './components/Markdown'
-import { WyzwanieSecurityIcon } from './components/Icons'
+import {markdownSchema} from 'sanity-plugin-markdown'
+import {CustomMarkdownInput} from './components/Markdown'
+import {collectionTypes} from './schemas'
+import {singleTypes} from './schemas'
 
 const createListItem = (S, singleType) => {
-  const { title, name, icon } = singleType;
+  const {title, name, icon} = singleType
   return S.listItem()
     .title(title)
     .id(name)
     .icon(icon)
-    .child(
-      S.document()
-        .schemaType(name)
-        .title(title)
-        .documentId(name)
-    )
+    .child(S.document().schemaType(name).title(title).documentId(name))
 }
+
+const createDocumentTypeListItem = (S, name) =>
+  S.documentTypeListItem(collectionTypes.find((type) => type.name === name).name)
 
 export default defineConfig({
   name: 'default',
@@ -30,27 +29,21 @@ export default defineConfig({
   plugins: [
     deskTool({
       structure: (S) =>
-      S.list()
-        .title('Strony')
-        .items([
-          createListItem(S, schemaTypes.find(({ name }) => name === 'global')),
-          S.divider(),
-          S.listItem()
-            .title('Wyzwanie Security')
-            .icon(WyzwanieSecurityIcon)
-            .child(
-              S.list()
-                .title('Elementy')
-                .items([
-                  ...WyzwanieSecurity.map((item) => createListItem(S, item)),
-                ])
+        S.list()
+          .title('Strony')
+          .items([
+            createListItem(
+              S,
+              schemaTypes.find(({name}) => name === 'global'),
             ),
-          S.divider(),
-          createListItem(S, schemaTypes.find(({ name }) => name === 'PrivacyPolicyPage')),
-        ])
+            S.divider(),
+            createDocumentTypeListItem(S, 'landingPage_Collection'),
+            S.divider(),
+            ...singleTypes.map((item) => createListItem(S, item)),
+          ]),
     }),
     visionTool(),
-    markdownSchema({ input: CustomMarkdownInput }),
+    markdownSchema({input: CustomMarkdownInput}),
     media(),
   ],
   schema: {

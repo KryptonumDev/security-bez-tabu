@@ -31,7 +31,7 @@ const PrivacyPolicyPage = async () => {
 };
 
 export async function generateMetadata() {
-  const { seo } = await getData();
+  const { seo } = await getMetadata();
   return Seo({
     title: seo?.title,
     description: seo?.description,
@@ -42,30 +42,31 @@ export async function generateMetadata() {
 export default PrivacyPolicyPage;
 
 const getData = async () => {
-  const data: PrivacyPolicyPageQueryProps[] = await sanityFetch({
+  const data: PrivacyPolicyPageQueryProps = await sanityFetch({
     query: /* groq */ `
-    *[_id=='WyzwanieSecurity_PrivacyPolicyPage' || _id=='PrivacyPolicyPage'][] {
-      _id == 'WyzwanieSecurity_PrivacyPolicyPage' => {
+    *[_id=='PrivacyPolicyPage'][0] {
         hero_Heading,
         hero_Paragraph,
-        ${Seo_Query}
-      },
-      _id == 'PrivacyPolicyPage' => {
         content[] {
           title,
           description[]
         }
       }
+    `,
+    isDraftMode: true,
+  });
+
+  return data;
+};
+
+async function getMetadata() {
+  const data = await sanityFetch<PrivacyPolicyPageQueryProps>({
+    query: /* groq */ `
+    *[_id=='PrivacyPolicyPage'][0] {
+      ${Seo_Query}
     }
     `,
     isDraftMode: true,
   });
-  const mappedData = {
-    hero_Heading: (data[1] as { hero_Heading: string })?.hero_Heading,
-    hero_Paragraph: (data[1] as { hero_Paragraph: string })?.hero_Paragraph,
-    seo: (data[1] as { seo: { description: string; title: string } })?.seo,
-    content: (data[0] as { content: { title: string; description: string[] }[] })?.content,
-  };
-
-  return mappedData as unknown as PrivacyPolicyPageQueryProps;
-};
+  return data;
+}

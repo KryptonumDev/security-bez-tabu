@@ -10,6 +10,10 @@ import Perks, { type PerksProps, Perks_Query } from './_global/Perks';
 import Recipients, { Recipients_Query, type RecipientsProps } from './_global/Recipients';
 import Reviews, { Reviews_Query, type ReviewsProps } from './_global/Reviews';
 import Stats, { Stats_Query, type StatsProps } from './_global/Stats';
+import HeroWithRotatingElipsis, {
+  HeroWithRotatingElipsis_Query,
+  type HeroWithRotatingElipsisProps,
+} from './_global/HeroWithRotatingElipsis';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import { type ImgType } from '@/global/types';
 
@@ -23,6 +27,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
       CtaSection: <CtaSection {...(item as unknown as CtaSectionProps)} />,
@@ -50,6 +55,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${HeroWithRotatingElipsis_Query}
       ${Benefits_Query}
       ${Perks_Query}
       ${CtaSection_Query}
