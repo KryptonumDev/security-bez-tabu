@@ -18,12 +18,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'claim',
-      type: 'string',
-      title: 'Claim',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'cta',
       type: 'cta',
       title: 'CTA',
@@ -40,17 +34,6 @@ export default {
       type: 'image',
       title: 'Zdjęcie w orbicie',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'products',
-      type: 'array',
-      of: [
-        {
-          type: 'TitleDescriptionAndImage_Item',
-        },
-      ],
-      title: 'Produkty',
-      validation: (Rule) => Rule.required().min(3).max(3),
     },
   ],
   preview: {
