@@ -1,10 +1,10 @@
-import styles from './HeroColumnWithImageRefactor.module.scss';
-import type { Props } from './HeroColumnWithImageRefactor.types';
-import Img from '@/components/ui/image';
+import type { Props } from './HeroColumnWithImageReactor.types';
+import styles from './HeroColumnWithImageReactor.module.scss';
 import Button from '@/components/ui/Button';
+import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 
-const HeroColumnWithImageRefactor = ({ additionalInfo, cta, heading, img, paragraph }: Props) => {
+const HeroColumnWithImageReactor = ({ additionalInfo, cta, heading, img, paragraph }: Props) => {
   return (
     <section className={styles['HeroColumnWithImageRefactor']}>
       <Img
@@ -24,4 +24,4 @@ const HeroColumnWithImageRefactor = ({ additionalInfo, cta, heading, img, paragr
   );
 };
 
-export default HeroColumnWithImageRefactor;
+export default HeroColumnWithImageReactor;

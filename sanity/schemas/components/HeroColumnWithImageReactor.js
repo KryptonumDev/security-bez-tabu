@@ -1,7 +1,7 @@
 import removeMarkdown from '../../utils/removeMarkdown'
 
 export default {
-  name: 'HeroColumnWithImageRefactor',
+  name: 'HeroColumnWithImageReactor',
   title: 'Sekcja wstępna z kolumną i obrazem',
   type: 'object',
   fields: [

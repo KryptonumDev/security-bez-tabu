@@ -14,7 +14,7 @@ import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
   type HeroWithRotatingElipsisProps,
 } from './_global/HeroWithRotatingElipsis';
-import HeroColumnWithImageRefactor, { HeroColumnWithImageRefactor_Query } from './_global/HeroColumnWithImageRefactor';
+import HeroColumnWithImageReactor, { HeroColumnWithImageReactor_Query } from './_global/HeroColumnWithImageReactor';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import { type ImgType } from '@/global/types';
 
@@ -28,7 +28,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
-      HeroColumnWithImageRefactor: <HeroColumnWithImageRefactor {...(item as unknown as HeroWithImageRefactorProps)} />,
+      HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(item as unknown as HeroWithImageReactorProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
@@ -57,7 +57,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
-      ${HeroColumnWithImageRefactor_Query}
+      ${HeroColumnWithImageReactor_Query}
       ${HeroWithRotatingElipsis_Query}
       ${Benefits_Query}
       ${Perks_Query}

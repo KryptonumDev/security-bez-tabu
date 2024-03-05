@@ -37,7 +37,7 @@ import Faq from './components/Faq'
 import Author from './components/Author'
 import Charts from './components/Charts'
 import Content from '../components/Content'
-import HeroColumnWithImageRefactor from './components/HeroColumnWithImageRefactor'
+import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
 
 export const components = [
@@ -69,7 +69,7 @@ export const components = [
   Author,
   Charts,
   Content,
-  HeroColumnWithImageRefactor,
+  HeroColumnWithImageReactor,
   HeroWithRotatingElipsis,
 ]
 
