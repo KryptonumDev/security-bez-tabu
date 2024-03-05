@@ -1,4 +1,4 @@
-import { domain } from '@/global/constants';
+import { DOMAIN } from '@/global/constants';
 
 export default function robots() {
   return {
@@ -6,6 +6,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: `${domain}/sitemap.xml`,
+    sitemap: `${DOMAIN}/sitemap.xml`,
   };
 }
