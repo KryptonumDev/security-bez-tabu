@@ -5,6 +5,7 @@ export default {
   of: [
     {type: 'HeroColumnWithImageReactor'},
     {type: 'HeroWithRotatingElipsis'},
+    {type: 'RevealImage'},
     {type: 'Newsletter'},
     {type: 'CompaniesShowcase'},
     {type: 'KeyDetails'},
