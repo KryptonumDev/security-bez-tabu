@@ -1,13 +1,13 @@
-import styles from './Hero.module.scss';
-import type { Props } from './Hero.types';
+import styles from './HeroWithRotatingElipsis.module.scss';
+import type { Props } from './HeroWithRotatingElipsis.types';
 import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 import Img from '@/components/ui/image';
 import Countdown from '@/components/ui/Countdown';
 
-const Hero = ({ heading, paragraph, claim, cta, additionalInfo, img, products }: Props) => {
+const HeroWithRotatingElipsis = ({ heading, paragraph, claim, cta, additionalInfo, img, products }: Props) => {
   return (
-    <section className={styles['Hero']}>
+    <section className={styles['HeroWithRotatingElipsis']}>
       <header>
         <Markdown.h1>{heading}</Markdown.h1>
         <div>
@@ -86,7 +86,7 @@ const Hero = ({ heading, paragraph, claim, cta, additionalInfo, img, products }:
   );
 };
 
-export default Hero;
+export default HeroWithRotatingElipsis;
 
 const Glow = ({ ...props }) => (
   <svg

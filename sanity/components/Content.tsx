@@ -3,6 +3,13 @@ export default {
   type: 'array',
   title: 'Komponenty podstrony',
   of: [
+    {type: 'HeroColumnWithImageReactor'},
+    {type: 'HeroWithRotatingElipsis'},
+    {type: 'ListPillWithIconHeading'},
+    {type: 'RevealImage'},
+    {type: 'Newsletter'},
+    {type: 'CompaniesShowcase'},
+    {type: 'KeyDetails'},
     {type: 'Perks'},
     {type: 'Benefits'},
     {type: 'CtaSection'},

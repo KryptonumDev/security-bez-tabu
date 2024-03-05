@@ -1,42 +1,80 @@
-import removeMarkdown from "../utils/removeMarkdown"
+import removeMarkdown from '../utils/removeMarkdown'
 
 export default {
   name: 'PrivacyPolicyPage',
-  title: 'Globalna polityka prywatności',
+  title: 'Polityka prywatności',
   type: 'document',
   icon: () => '📑',
   fields: [
     {
+      name: 'hero_Heading',
+      type: 'markdown',
+      title: 'Nagłówek',
+      fieldset: 'hero',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'hero_Paragraph',
+      type: 'markdown',
+      title: 'Paragraf',
+      fieldset: 'hero',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'content',
       type: 'array',
-      of: [{
-        type: 'PrivacyPolicyPage_Content'
-      }],
+      of: [
+        {
+          type: 'PrivacyPolicyPage_Content',
+        },
+      ],
       title: 'Treść',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'seo',
+      type: 'seo',
+      title: 'SEO',
+      group: 'seo',
+      validation: (Rule) => Rule.required(),
+    },
+  ],
+  fieldsets: [
+    {
+      name: 'hero',
+      title: 'Hero',
+      options: {collapsible: true},
+    },
+  ],
+  groups: [
+    {
+      title: 'SEO',
+      name: 'seo',
     },
   ],
 }
 
 export const PrivacyPolicyPage_Content = {
-  name: "PrivacyPolicyPage_Content",
-  title: "Treść polityki prywatności",
-  type: "object",
+  name: 'PrivacyPolicyPage_Content',
+  title: 'Treść polityki prywatności',
+  type: 'object',
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Tytuł',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       type: 'array',
-      of: [{
-        type: 'markdown'
-      }],
+      of: [
+        {
+          type: 'markdown',
+        },
+      ],
       title: 'Opis',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
@@ -44,11 +82,11 @@ export const PrivacyPolicyPage_Content = {
       title: 'title',
       description: 'description',
     },
-    prepare({ title, description }) {
+    prepare({title, description}) {
       return {
         title: title,
         subtitle: removeMarkdown(description.join(' | ')),
       }
-    }
-  }
+    },
+  },
 }
