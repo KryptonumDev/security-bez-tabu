@@ -5,6 +5,7 @@ export default {
   of: [
     {type: 'HeroColumnWithImageRefactor'},
     {type: 'HeroWithRotatingElipsis'},
+    {type: 'ListPillWithIconHeading'},
     {type: 'Perks'},
     {type: 'Benefits'},
     {type: 'CtaSection'},
