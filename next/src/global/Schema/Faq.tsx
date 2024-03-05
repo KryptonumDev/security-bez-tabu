@@ -1,5 +1,5 @@
-import ReactMarkdown from 'react-markdown';
 import { renderToStaticMarkup } from 'react-dom/server';
+import Markdown from '@/components/ui/markdown';
 
 const SchemaFaq = ({ data }: { data: { question: string; answer: string }[] }) => {
   const schama = {
@@ -8,10 +8,10 @@ const SchemaFaq = ({ data }: { data: { question: string; answer: string }[] }) =
     mainEntity: data.map(({ question, answer }) => {
       return {
         '@type': 'Question',
-        name: renderToStaticMarkup(<ReactMarkdown>{question}</ReactMarkdown>),
+        name: renderToStaticMarkup(<Markdown>{question}</Markdown>),
         acceptedAnswer: {
           '@type': 'Answer',
-          text: renderToStaticMarkup(<ReactMarkdown>{answer}</ReactMarkdown>),
+          text: renderToStaticMarkup(<Markdown>{answer}</Markdown>),
         },
       };
     }),

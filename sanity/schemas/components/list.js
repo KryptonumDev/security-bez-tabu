@@ -1,9 +1,9 @@
-import removeMarkdown from "../../utils/removeMarkdown"
+import removeMarkdown from '../../utils/removeMarkdown'
 
 export const titleAndDescription = {
-  name: "TitleAndDescription_Item",
-  title: "Title and Description",
-  type: "object",
+  name: 'TitleAndDescription_Item',
+  title: 'Title and Description',
+  type: 'object',
   fields: [
     {
       name: 'title',
@@ -19,21 +19,21 @@ export const titleAndDescription = {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'description'
+      subtitle: 'description',
     },
-    prepare({ title, subtitle }) {
+    prepare({title, subtitle}) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
       }
-    }
-  }
+    },
+  },
 }
 
 export const titleAndImage = {
-  name: "TitleAndImage_Item",
-  title: "Title & Image",
-  type: "object",
+  name: 'TitleAndImage_Item',
+  title: 'Title & Image',
+  type: 'object',
   fields: [
     {
       name: 'title',
@@ -49,21 +49,21 @@ export const titleAndImage = {
   preview: {
     select: {
       title: 'title',
-      media: 'img'
+      media: 'img',
     },
-    prepare({ title, media }) {
+    prepare({title, media}) {
       return {
         title: removeMarkdown(title),
-        media
+        media,
       }
-    }
-  }
+    },
+  },
 }
 
 export const imageAndLink = {
-  name: "ImageAndLink_Item",
-  title: "Title & Link",
-  type: "object",
+  name: 'ImageAndLink_Item',
+  title: 'Title & Link',
+  type: 'object',
   fields: [
     {
       name: 'name',
@@ -75,12 +75,18 @@ export const imageAndLink = {
       type: 'string',
       title: 'Link (optional)',
       description: 'Relative or absolute link (https://)',
-      validation: Rule => Rule.custom(value => {
-        if (value && !value.startsWith('/') && !value.startsWith('https://') && !value.startsWith('#')) {
-          return 'Incorrect URL.';
-        }
-        return true;
-      }),
+      validation: (Rule) =>
+        Rule.custom((value) => {
+          if (
+            value &&
+            !value.startsWith('/') &&
+            !value.startsWith('https://') &&
+            !value.startsWith('#')
+          ) {
+            return 'Incorrect URL.'
+          }
+          return true
+        }),
     },
     {
       name: 'img',
@@ -91,21 +97,21 @@ export const imageAndLink = {
   preview: {
     select: {
       name: 'name',
-      media: 'img'
+      media: 'img',
     },
-    prepare({ name, media }) {
+    prepare({name, media}) {
       return {
         title: name,
-        media
+        media,
       }
-    }
-  }
+    },
+  },
 }
 
 export const titleDescriptionAndImage = {
-  name: "TitleDescriptionAndImage_Item",
-  title: "Title, Description & Image",
-  type: "object",
+  name: 'TitleDescriptionAndImage_Item',
+  title: 'Title, Description & Image',
+  type: 'object',
   fields: [
     {
       name: 'title',
@@ -127,14 +133,14 @@ export const titleDescriptionAndImage = {
     select: {
       title: 'title',
       subtitle: 'description',
-      media: 'img'
+      media: 'img',
     },
-    prepare({ title, subtitle, media }) {
+    prepare({title, subtitle, media}) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
-        media
+        media,
       }
-    }
-  }
+    },
+  },
 }
