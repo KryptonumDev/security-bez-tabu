@@ -14,7 +14,10 @@ import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
   type HeroWithRotatingElipsisProps,
 } from './_global/HeroWithRotatingElipsis';
-import HeroColumnWithImageReactor, { HeroColumnWithImageReactor_Query } from './_global/HeroColumnWithImageReactor';
+import HeroColumnWithImageReactor, {
+  HeroColumnWithImageReactor_Query,
+  type HeroColumnWithImageReactorProps,
+} from './_global/HeroColumnWithImageReactor';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import { type ImgType } from '@/global/types';
 
@@ -28,7 +31,9 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
-      HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(item as unknown as HeroWithImageReactorProps)} />,
+      HeroColumnWithImageReactor: (
+        <HeroColumnWithImageReactor {...(item as unknown as HeroColumnWithImageReactorProps)} />
+      ),
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
