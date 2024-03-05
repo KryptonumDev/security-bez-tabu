@@ -1,0 +1,38 @@
+.HeroColumnWithImageRefactor {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 50px;
+
+  @media (max-width: 999px) {
+    grid-template-columns: 1fr;
+  }
+
+  >img {
+    height: auto;
+    min-width: 450px;
+    width: auto;
+    margin-top: -100px;
+    display: block;
+
+    @media (max-width: 999px) {
+      order: 1;
+      min-width: unset;
+      width: 100%;
+      max-width: 750px;
+      justify-self: center;
+    }
+  }
+
+  header {
+    display: grid;
+    gap: 24px;
+
+    .btn {
+      margin-top: 36px;
+    }
+
+    >h1 {
+      padding-bottom: 12px;
+    }
+  }
+}

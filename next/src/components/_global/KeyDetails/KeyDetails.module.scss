@@ -1,0 +1,31 @@
+.KeyDetails {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: clamp(16px, calc(50vw/7.68), 50px);
+  row-gap: 48px;
+
+  @media(max-width: 899px) {
+    grid-template-columns: 1fr;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px;
+    align-items: flex-start;
+
+    .content {
+      display: grid;
+      gap: 8px;
+    }
+
+    .borderLeft {
+      height: 100%;
+      fill: var(--secondary-500, #53BAFD);
+      stroke-width: 2px;
+      stroke: var(--secondary-500, #53BAFD);
+      filter: drop-shadow(0px 0px 28px rgba(29, 164, 253, 0.80)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.40));
+    }
+  }
+}
