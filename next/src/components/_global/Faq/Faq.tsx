@@ -1,5 +1,3 @@
-'use server';
-
 import styles from './Faq.module.scss';
 import type { Props } from './Faq.types';
 import Form from './_Form';
