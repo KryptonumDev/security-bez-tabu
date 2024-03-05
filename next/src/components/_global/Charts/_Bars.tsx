@@ -2,7 +2,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import styles from './Charts.module.scss';
-import useMediaQuery from '@/utils/useMediaQuery';
+import { useMediaQuery } from '@/utils/use-media-query';
 
 const Bars = ({ charts }: { charts: { title: string; number: number }[] }) => {
   const wrapper = useRef(null);
