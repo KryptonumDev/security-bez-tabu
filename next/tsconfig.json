@@ -27,6 +27,15 @@
       "@/public/*": ["public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/_app.js", "src/app/api/contact/route.js", "src/components/ui/ReadingTime.js", "src/components/atoms/Radio/index.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/_app.js",
+    "src/app/api/contact/route.js",
+    "src/components/ui/ReadingTime.js",
+    "src/components/atoms/Radio/index.js"
+  ],
   "exclude": ["node_modules"]
 }
