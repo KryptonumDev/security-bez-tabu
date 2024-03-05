@@ -39,6 +39,7 @@ import Charts from './components/Charts'
 import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
+import KeyDetails from './components/KeyDetails'
 
 export const components = [
   global_Seo,
@@ -71,6 +72,7 @@ export const components = [
   Content,
   HeroColumnWithImageReactor,
   HeroWithRotatingElipsis,
+  KeyDetails,
 ]
 
 export const schemaTypes = [

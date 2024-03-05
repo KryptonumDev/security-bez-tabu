@@ -4,6 +4,7 @@ import Certificate, { Certificate_Query, type CertificateProps } from './_global
 import CtaSection, { CtaSection_Query, type CtaSectionProps } from './_global/CtaSection';
 import Faq, { Faq_Query, type FaqProps } from './_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from './_global/Idea';
+import KeyDetails, { type KeyDetailsProps, KeyDetails_Query } from './_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from './_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from './_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from './_global/Perks';
@@ -34,6 +35,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
       HeroColumnWithImageReactor: (
         <HeroColumnWithImageReactor {...(item as unknown as HeroColumnWithImageReactorProps)} />
       ),
+      KeyDetails: <KeyDetails {...(item as KeyDetailsProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
@@ -63,6 +65,7 @@ export const Components_Query = /* groq */ `
   content[] {
       _type,
       ${HeroColumnWithImageReactor_Query}
+      ${KeyDetails_Query}
       ${HeroWithRotatingElipsis_Query}
       ${Benefits_Query}
       ${Perks_Query}
