@@ -4,6 +4,7 @@ import Certificate, { Certificate_Query, type CertificateProps } from './_global
 import CtaSection, { CtaSection_Query, type CtaSectionProps } from './_global/CtaSection';
 import Faq, { Faq_Query, type FaqProps } from './_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from './_global/Idea';
+import KeyDetails, { type KeyDetailsProps, KeyDetails_Query } from './_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from './_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from './_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from './_global/Perks';
@@ -15,7 +16,12 @@ import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
   type HeroWithRotatingElipsisProps,
 } from './_global/HeroWithRotatingElipsis';
+import HeroColumnWithImageReactor, {
+  HeroColumnWithImageReactor_Query,
+  type HeroColumnWithImageReactorProps,
+} from './_global/HeroColumnWithImageReactor';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
+import CompaniesShowcase, { CompaniesShowcase_Query, type CompaniesShowcaseProps } from './_global/CompaniesShowcase';
 import { type ImgType } from '@/global/types';
 
 type ComponentMap = {
@@ -29,6 +35,11 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
       Newsletter: <Newsletter {...(item as unknown as NewsletterProps)} />,
+      CompaniesShowcase: <CompaniesShowcase {...(item as unknown as CompaniesShowcaseProps)} />,
+      HeroColumnWithImageReactor: (
+        <HeroColumnWithImageReactor {...(item as unknown as HeroColumnWithImageReactorProps)} />
+      ),
+      KeyDetails: <KeyDetails {...(item as KeyDetailsProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
@@ -58,6 +69,9 @@ export const Components_Query = /* groq */ `
   content[] {
       _type,
       ${Newsletter_Query}
+      ${CompaniesShowcase_Query}
+      ${HeroColumnWithImageReactor_Query}
+      ${KeyDetails_Query}
       ${HeroWithRotatingElipsis_Query}
       ${Benefits_Query}
       ${Perks_Query}
