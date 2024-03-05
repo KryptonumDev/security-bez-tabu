@@ -37,9 +37,12 @@ import Faq from './components/Faq'
 import Author from './components/Author'
 import Charts from './components/Charts'
 import Content from '../components/Content'
-import HeroColumnWithImageRefactor from './components/HeroColumnWithImageRefactor'
+import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
 import RevealImage from './components/RevealImage'
+import Newsletter from './components/Newsletter'
+import CompaniesShowcase from './components/CompaniesShowcase'
+import KeyDetails from './components/KeyDetails'
 
 export const components = [
   global_Seo,
@@ -70,9 +73,12 @@ export const components = [
   Author,
   Charts,
   Content,
-  HeroColumnWithImageRefactor,
+  HeroColumnWithImageReactor,
   HeroWithRotatingElipsis,
   RevealImage,
+  Newsletter,
+  CompaniesShowcase,
+  KeyDetails,
 ]
 
 export const schemaTypes = [

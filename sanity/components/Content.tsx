@@ -3,9 +3,12 @@ export default {
   type: 'array',
   title: 'Komponenty podstrony',
   of: [
-    {type: 'HeroColumnWithImageRefactor'},
+    {type: 'HeroColumnWithImageReactor'},
     {type: 'HeroWithRotatingElipsis'},
     {type: 'RevealImage'},
+    {type: 'Newsletter'},
+    {type: 'CompaniesShowcase'},
+    {type: 'KeyDetails'},
     {type: 'Perks'},
     {type: 'Benefits'},
     {type: 'CtaSection'},
