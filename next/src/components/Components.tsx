@@ -16,6 +16,7 @@ import HeroWithRotatingElipsis, {
 } from './_global/HeroWithRotatingElipsis';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import { type ImgType } from '@/global/types';
+import RevealImage, { RevealImage_Query, RevealImageProps } from './_global/RevealImage';
 
 type ComponentMap = {
   Benefits: BenefitsProps;
@@ -27,6 +28,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      RevealImage: <RevealImage {...(item as unknown as RevealImageProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
@@ -55,6 +57,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${RevealImage_Query}
       ${HeroWithRotatingElipsis_Query}
       ${Benefits_Query}
       ${Perks_Query}
