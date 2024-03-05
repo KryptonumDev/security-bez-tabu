@@ -39,6 +39,7 @@ import Charts from './components/Charts'
 import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
+import ListPillWithIconHeading from './components/ListPillWithIconHeading'
 import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
@@ -75,6 +76,7 @@ export const components = [
   Content,
   HeroColumnWithImageReactor,
   HeroWithRotatingElipsis,
+  ListPillWithIconHeading,
   RevealImage,
   Newsletter,
   CompaniesShowcase,

@@ -23,6 +23,10 @@ import HeroColumnWithImageReactor, {
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import CompaniesShowcase, { CompaniesShowcase_Query, type CompaniesShowcaseProps } from './_global/CompaniesShowcase';
 import { type ImgType } from '@/global/types';
+import ListPillWithIconHeading, {
+  ListPillWithIconHeading_Query,
+  ListPillWithIconHeadingProps,
+} from './_global/ListPillWithIconHeading';
 import RevealImage, { RevealImage_Query, RevealImageProps } from './_global/RevealImage';
 
 type ComponentMap = {
@@ -43,6 +47,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
       ),
       KeyDetails: <KeyDetails {...(item as KeyDetailsProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
+      ListPillWithIconHeading: <ListPillWithIconHeading {...(item as ListPillWithIconHeadingProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
       CtaSection: <CtaSection {...(item as unknown as CtaSectionProps)} />,
@@ -70,6 +75,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${ListPillWithIconHeading_Query}
       ${RevealImage_Query}
       ${Newsletter_Query}
       ${CompaniesShowcase_Query}
