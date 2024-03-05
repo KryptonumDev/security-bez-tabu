@@ -1,10 +1,12 @@
 import { createClient } from 'next-sanity';
 import type { QueryParams } from '@sanity/client';
 
+const NEXT_REVALIDATE = 900;
+
 const projectId = process.env.SANITY_PROJECT_ID;
 const dataset = process.env.SANITY_DATASET || 'production';
 const token = process.env.SANITY_API_TOKEN;
-const apiVersion = '2024-01-27';
+const apiVersion = '2024-03-05';
 
 export const client = createClient({
   projectId,
@@ -14,11 +16,9 @@ export const client = createClient({
   useCdn: false,
 });
 
-const DEFAULT_PARAMS = {} as QueryParams;
-
 export default async function sanityFetch<QueryResponse>({
   query,
-  params = DEFAULT_PARAMS,
+  params = {},
   isDraftMode = false,
 }: {
   query: string;
@@ -34,7 +34,7 @@ export default async function sanityFetch<QueryResponse>({
       perspective: 'previewDrafts',
     }),
     next: {
-      revalidate: 1,
+      revalidate: isDraftMode ? 0 : NEXT_REVALIDATE,
     },
   });
 }
