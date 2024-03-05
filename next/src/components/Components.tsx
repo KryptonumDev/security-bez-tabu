@@ -22,12 +22,12 @@ import HeroColumnWithImageReactor, {
 } from './_global/HeroColumnWithImageReactor';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
 import CompaniesShowcase, { CompaniesShowcase_Query, type CompaniesShowcaseProps } from './_global/CompaniesShowcase';
-import { type ImgType } from '@/global/types';
 import ListPillWithIconHeading, {
   ListPillWithIconHeading_Query,
-  ListPillWithIconHeadingProps,
+  type ListPillWithIconHeadingProps,
 } from './_global/ListPillWithIconHeading';
-import RevealImage, { RevealImage_Query, RevealImageProps } from './_global/RevealImage';
+import RevealImage, { RevealImage_Query, type RevealImageProps } from './_global/RevealImage';
+import { type ImgType } from '@/global/types';
 
 type ComponentMap = {
   Benefits: BenefitsProps;
