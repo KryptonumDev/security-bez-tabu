@@ -9,6 +9,7 @@ import Lessons, { Lessons_Query, type LessonsProps } from './_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from './_global/Perks';
 import Recipients, { Recipients_Query, type RecipientsProps } from './_global/Recipients';
 import Reviews, { Reviews_Query, type ReviewsProps } from './_global/Reviews';
+import Newsletter, { Newsletter_Query, type NewsletterProps } from './_global/Newsletter';
 import Stats, { Stats_Query, type StatsProps } from './_global/Stats';
 import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
@@ -27,6 +28,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      Newsletter: <Newsletter {...(item as unknown as NewsletterProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
@@ -55,6 +57,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${Newsletter_Query}
       ${HeroWithRotatingElipsis_Query}
       ${Benefits_Query}
       ${Perks_Query}
