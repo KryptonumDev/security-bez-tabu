@@ -20,6 +20,7 @@ import HeroColumnWithImageReactor, {
   type HeroColumnWithImageReactorProps,
 } from './_global/HeroColumnWithImageReactor';
 import Charts, { Charts_Query, type ChartsProps } from './_global/Charts';
+import CompaniesShowcase, { CompaniesShowcase_Query, type CompaniesShowcaseProps } from './_global/CompaniesShowcase';
 import { type ImgType } from '@/global/types';
 
 type ComponentMap = {
@@ -32,6 +33,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      CompaniesShowcase: <CompaniesShowcase {...(item as unknown as CompaniesShowcaseProps)} />,
       HeroColumnWithImageReactor: (
         <HeroColumnWithImageReactor {...(item as unknown as HeroColumnWithImageReactorProps)} />
       ),
@@ -64,6 +66,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${CompaniesShowcase_Query}
       ${HeroColumnWithImageReactor_Query}
       ${KeyDetails_Query}
       ${HeroWithRotatingElipsis_Query}
