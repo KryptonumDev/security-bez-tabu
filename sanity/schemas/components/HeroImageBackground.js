@@ -1,8 +1,8 @@
 import removeMarkdown from '../../utils/removeMarkdown'
 
 export default {
-  name: 'HeroCentralizedTextAndTransparentImage',
-  title: 'Sekcja wstępna z wycentrowanym tekstem i przezroczystym zdjęciem',
+  name: 'HeroImageBackground',
+  title: 'Sekcja wstępna ze zdjęciem w tle',
   type: 'object',
   fields: [
     {
@@ -42,7 +42,7 @@ export default {
     },
     prepare({heading}) {
       return {
-        title: `[Sekcja wstępna z tekstem i przezroczystym zdjęciem] - ${removeMarkdown(heading)}`,
+        title: `[Sekcja Sekcja wstępna ze zdjęciem w tle] - ${removeMarkdown(heading)}`,
       }
     },
   },
