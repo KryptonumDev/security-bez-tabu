@@ -1,4 +1,4 @@
-const scrollAnimation = (isInView: boolean, delay = 0) => ({
+export const scrollAnimation = (isInView: boolean, delay = 0) => ({
   initial: { opacity: 0, y: 20 },
   animate: {
     opacity: isInView ? 1 : 0,
@@ -9,5 +9,3 @@ const scrollAnimation = (isInView: boolean, delay = 0) => ({
     delay: delay,
   },
 });
-
-export default scrollAnimation;

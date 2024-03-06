@@ -1,5 +1,4 @@
-import { createClient } from 'next-sanity';
-import type { QueryParams } from '@sanity/client';
+import { createClient, type QueryParams } from 'next-sanity';
 
 const NEXT_REVALIDATE = 900;
 
