@@ -3,6 +3,8 @@ import '@/global/global.scss';
 import { Saira, IBM_Plex_Sans_Hebrew } from '@/global/fonts';
 import { LOCALE, THEME_COLOR } from '@/global/constants';
 import SchemaOrganization from '@/global/Schema/Organization';
+import Header from '@/components/_landing/Header';
+import Footer from '@/components/_landing/Footer';
 
 export const viewport = {
   themeColor: THEME_COLOR,
@@ -29,7 +31,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SchemaOrganization />
       </head>
       <body className={`${Saira.className} ${IBM_Plex_Sans_Hebrew.variable}`}>
-        {children}
+        <Header />
+        <main id='main'>{children}</main>
+        <Footer />
         {isProduction && (
           <noscript
             dangerouslySetInnerHTML={{
