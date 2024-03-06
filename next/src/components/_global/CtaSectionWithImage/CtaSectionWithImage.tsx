@@ -1,6 +1,6 @@
-import Img from '@/components/ui/image';
 import styles from './CtaSectionWithImage.module.scss';
 import type { Props } from './CtaSectionWithImage.types';
+import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 
