@@ -1,7 +1,12 @@
+import { notFound } from 'next/navigation';
 import sanityFetch from '@/utils/sanity.fetch';
 import Seo from '@/global/Seo';
 import type { Metadata } from 'next';
-import type { SeoQueryType } from './Seo.types';
+
+type QueryType = {
+  title: string;
+  description: string;
+};
 
 /**
  * Performs a SEO query.
@@ -10,12 +15,10 @@ import type { SeoQueryType } from './Seo.types';
  * @param {string} [dynamicSlug] - Optional. Used to query dynamic pages, like blog posts.
  * @returns {Promise<Metadata>} Returns a promise of the SEO object.
  */
-export const QueryMetadata = async (name: string, path: string, dynamicSlug: string): Promise<Metadata> => {
-  const customQuery = dynamicSlug ? `*[_id == "${name}"][0]` : `*[_type == '${name}' && slug.current == $slug][0]`;
+export const QueryMetadata = async (name: string, path: string, dynamicSlug?: string): Promise<Metadata> => {
+  const customQuery = dynamicSlug ? `*[_type == '${name}' && slug.current == $slug][0]` : `*[_id == "${name}"][0]`;
 
-  const {
-    seo: { title, description },
-  } = await query(customQuery, dynamicSlug);
+  const { title, description } = await query(customQuery, dynamicSlug);
 
   return Seo({
     title,
@@ -24,16 +27,17 @@ export const QueryMetadata = async (name: string, path: string, dynamicSlug: str
   });
 };
 
-const query = async (customQuery: string, dynamicSlug: string): Promise<SeoQueryType> => {
-  return await sanityFetch<SeoQueryType>({
+const query = async (customQuery: string, dynamicSlug: string): Promise<QueryType> => {
+  const seo = await sanityFetch<QueryType>({
     query: /* groq */ `
       ${customQuery} {
-        seo {
-          title,
-          description,
-        },
+        "title": seo.title,
+        "description": seo.description,
       }
     `,
     ...(dynamicSlug && { params: { slug: dynamicSlug } }),
   });
+  !seo && notFound();
+  const { title, description } = seo;
+  return { title, description };
 };

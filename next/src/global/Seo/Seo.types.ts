@@ -10,10 +10,3 @@ export type GlobalQueryType = {
   robotsIndex: boolean;
   og_Img: string;
 };
-
-export type SeoQueryType = {
-  seo: {
-    title: string;
-    description: string;
-  };
-};
