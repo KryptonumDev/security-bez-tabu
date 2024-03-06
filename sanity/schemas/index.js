@@ -44,6 +44,10 @@ import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
 import KeyDetails from './components/KeyDetails'
+import AdvancedCtaSection, {
+  advancedCtaSection_LeftSide,
+  advancedCtaSection_RightSide,
+} from './components/AdvancedCtaSection'
 
 export const components = [
   global_Seo,
@@ -81,6 +85,9 @@ export const components = [
   Newsletter,
   CompaniesShowcase,
   KeyDetails,
+  advancedCtaSection_LeftSide,
+  advancedCtaSection_RightSide,
+  AdvancedCtaSection,
 ]
 
 export const schemaTypes = [

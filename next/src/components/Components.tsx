@@ -27,6 +27,10 @@ import ListPillWithIconHeading, {
   type ListPillWithIconHeadingProps,
 } from './_global/ListPillWithIconHeading';
 import RevealImage, { RevealImage_Query, type RevealImageProps } from './_global/RevealImage';
+import AdvancedCtaSection, {
+  AdvancedCtaSection_Query,
+  type AdvancedCtaSectionProps,
+} from './_global/AdvancedCtaSection';
 import { type ImgType } from '@/global/types';
 
 type ComponentMap = {
@@ -39,6 +43,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      AdvancedCtaSection: <AdvancedCtaSection {...(item as unknown as AdvancedCtaSectionProps)} />,
       RevealImage: <RevealImage {...(item as unknown as RevealImageProps)} />,
       Newsletter: <Newsletter {...(item as unknown as NewsletterProps)} />,
       CompaniesShowcase: <CompaniesShowcase {...(item as unknown as CompaniesShowcaseProps)} />,
@@ -75,6 +80,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${AdvancedCtaSection_Query}
       ${ListPillWithIconHeading_Query}
       ${RevealImage_Query}
       ${Newsletter_Query}
