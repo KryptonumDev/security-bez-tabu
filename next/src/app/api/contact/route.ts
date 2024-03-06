@@ -1,7 +1,13 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { removeHtmlTags } from '@/utils/functions';
-import { domain, regex } from '@/global/constants';
+import { REGEX } from '@/global/constants';
+import { removeHtmlTags } from '@/utils/remove-html-tags';
+
+type RequestType = {
+  email: string;
+  message: string;
+  legal: boolean;
+};
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -10,17 +16,12 @@ const emailData = {
   to: 'wojtek@securitybeztabu.pl',
 };
 
-const headers = {
-  'Access-Control-Allow-Origin': domain,
-  'Access-Control-Allow-Methods': 'POST',
-};
+export async function POST(request: Request) {
+  const req = (await request.json()) as RequestType;
+  const { email, message, legal } = req;
 
-export async function POST(request) {
-  const req = await request.json();
-  const { email = '', message = '', legal = false } = req;
-
-  if (!regex.email.test(email.toLowerCase() || !legal)) {
-    return NextResponse.json({ success: false }, { status: 422, headers });
+  if (!REGEX.email.test(email) || !legal) {
+    return NextResponse.json({ success: false }, { status: 422 });
   }
 
   const body = `<p>E-mail: <b>${email}</b></p>
@@ -39,8 +40,8 @@ export async function POST(request) {
       html: body,
       text: removeHtmlTags(body),
     });
-    return NextResponse.json({ success: true }, { headers });
+    return NextResponse.json({ success: true });
   } catch (error) {
-    return NextResponse.json({ success: false }, { headers });
+    return NextResponse.json({ success: false }, { status: 422 });
   }
 }
