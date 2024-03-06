@@ -1,6 +1,6 @@
-import type { Metadata } from 'next';
 import sanityFetch from '@/utils/sanity.fetch';
 import { DEFAULT_TITLE, DOMAIN, LOCALE } from '@/global/constants';
+import type { Metadata } from 'next';
 import type { GlobalQueryType, SeoType } from './Seo.types';
 
 const Seo = async ({ title, description, path, ...props }: SeoType): Promise<Metadata> => {
