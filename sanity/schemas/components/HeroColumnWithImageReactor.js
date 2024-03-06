@@ -1,7 +1,7 @@
 import removeMarkdown from '../../utils/removeMarkdown'
 
 export default {
-  name: 'HeroColumnWithImageRefactor',
+  name: 'HeroColumnWithImageReactor',
   title: 'Sekcja wstępna z kolumną i obrazem',
   type: 'object',
   fields: [
@@ -15,12 +15,6 @@ export default {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'claim',
-      type: 'string',
-      title: 'Claim',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -40,17 +34,6 @@ export default {
       type: 'image',
       title: 'Zdjęcie w orbicie',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'products',
-      type: 'array',
-      of: [
-        {
-          type: 'TitleDescriptionAndImage_Item',
-        },
-      ],
-      title: 'Produkty',
-      validation: (Rule) => Rule.required().min(3).max(3),
     },
   ],
   preview: {
