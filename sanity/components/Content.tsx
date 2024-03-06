@@ -5,6 +5,7 @@ export default {
   of: [
     {type: 'HeroColumnWithImageReactor'},
     {type: 'HeroWithRotatingElipsis'},
+    {type: 'HeroCentralizedTextAndTransparentImage'},
     {type: 'ListPillWithIconHeading'},
     {type: 'RevealImage'},
     {type: 'Newsletter'},
