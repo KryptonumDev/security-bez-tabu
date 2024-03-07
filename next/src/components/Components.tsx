@@ -31,6 +31,10 @@ import HeroImageBackground, {
   type HeroImageBackground,
 } from './_global/HeroImageBackground';
 import RevealImage, { RevealImage_Query, type RevealImageProps } from './_global/RevealImage';
+import HeadingWithNumeratedList, {
+  HeadingWithNumeratedList_Query,
+  type HeadingWithNumeratedListProps,
+} from './_global/HeadingWithNumeratedList';
 import AdvancedCtaSection, {
   AdvancedCtaSection_Query,
   type AdvancedCtaSectionProps,
@@ -47,6 +51,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      HeadingWithNumeratedList: <HeadingWithNumeratedList {...(item as unknown as HeadingWithNumeratedListProps)} />,
       AdvancedCtaSection: <AdvancedCtaSection {...(item as unknown as AdvancedCtaSectionProps)} />,
       HeroImageBackground: <HeroImageBackground {...(item as unknown as HeroImageBackground)} />,
       RevealImage: <RevealImage {...(item as unknown as RevealImageProps)} />,
@@ -85,6 +90,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${HeadingWithNumeratedList_Query}
       ${AdvancedCtaSection_Query}
       ${HeroImageBackground_Query}
       ${ListPillWithIconHeading_Query}

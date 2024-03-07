@@ -44,6 +44,7 @@ import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
 import KeyDetails from './components/KeyDetails'
+import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
 import AdvancedCtaSection, {
   advancedCtaSection_LeftSide,
   advancedCtaSection_RightSide,
@@ -87,6 +88,7 @@ export const components = [
   Newsletter,
   CompaniesShowcase,
   KeyDetails,
+  HeadingWithNumeratedList,
   advancedCtaSection_LeftSide,
   advancedCtaSection_RightSide,
   AdvancedCtaSection,
