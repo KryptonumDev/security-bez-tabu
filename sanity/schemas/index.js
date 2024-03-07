@@ -1,5 +1,5 @@
 // Single Types
-import global, {global_Seo} from './global'
+import global, { global_Seo } from './global'
 import NotFoundPage from './singleTypes/404_Page'
 import PrivacyPolicyPage from './PrivacyPolicy_Page'
 
@@ -19,12 +19,12 @@ import {
   imageAndLink,
   titleDescriptionAndImage,
 } from './components/list'
-import {PrivacyPolicyPage_Content} from './PrivacyPolicy_Page'
+import { PrivacyPolicyPage_Content } from './PrivacyPolicy_Page'
 import CtaSection from './components/CtaSection'
 import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
-import {chart_Bars, chart_Circle, chart_Item, chart_Linear} from './components/chart'
+import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
 import Perks from './components/Perks'
 import Benefits from './components/Benefits'
 import StatsList from './components/StatsList'

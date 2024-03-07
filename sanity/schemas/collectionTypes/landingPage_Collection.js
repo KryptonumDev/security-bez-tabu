@@ -1,4 +1,4 @@
-import {slugify} from '../../utils/slugify'
+import { slugify } from '../../utils/slugify'
 
 export default {
   name: 'landingPage_Collection',
@@ -25,7 +25,7 @@ export default {
         slugify: (input) => `${slugify(input)}`,
       },
       validation: (Rule) =>
-        Rule.custom(({current: slug}) => {
+        Rule.custom(({ current: slug }) => {
           if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
             return 'Slug może zawierać tylko małe litery, cyfry oraz łączniki. Upewnij się, że nie zawiera on znaków specjalnych ani wielkich liter.'
           }
