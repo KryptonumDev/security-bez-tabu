@@ -4,14 +4,23 @@ import styles from './Footer.module.scss';
 const Footer = () => {
   return (
     <footer className={styles.Footer}>
-      <div className="max-width">
+      <div className='max-width'>
         <p>
           Ⓒ Stworzone przez
-          <a href='https://kryptonum.eu/pl' aria-label="Kryptonum">
+          <a
+            href='https://kryptonum.eu/pl'
+            aria-label='Kryptonum'
+          >
             <KryptonumLogo />
           </a>
         </p>
-        <Link href='/polityka-prywatnosci' target='_blank' className={`${styles.legal} link`}>Polityka prywatności</Link>
+        <Link
+          href='/polityka-prywatnosci'
+          target='_blank'
+          className={`${styles.legal} link`}
+        >
+          Polityka prywatności
+        </Link>
       </div>
     </footer>
   );
@@ -53,8 +62,11 @@ const KryptonumLogo = () => (
         gradientUnits='userSpaceOnUse'
       >
         <stop stopColor='#2DD282'></stop>
-        <stop offset='1' stopColor='#90F4E8'></stop>
+        <stop
+          offset='1'
+          stopColor='#90F4E8'
+        ></stop>
       </linearGradient>
     </defs>
   </svg>
-)
+);
