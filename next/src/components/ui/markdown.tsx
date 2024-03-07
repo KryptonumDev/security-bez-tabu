@@ -1,6 +1,6 @@
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import Link from 'next/link';
-import isExternalLink from '@/utils/is-external-link';
+import { isExternalLink } from '@/utils/is-external-link';
 
 const LinkRenderer = ({
   href,
@@ -26,10 +26,9 @@ const LinkRenderer = ({
 };
 
 const ListRenderer = ({
-  children
+  children,
 }: React.LiHTMLAttributes<HTMLLIElement> & {
   children?: React.ReactNode;
-  ordered?: boolean;
 }) => (
   <li>
     <span>{children}</span>
@@ -61,7 +60,16 @@ const Markdown = ({ Tag, components, children, className, ...props }: MarkdownPr
     />
   );
 
-  return className ? <div className={className}>{markdown}</div> : markdown;
+  return className || Object.keys(props).length > 0 ? (
+    <div
+      {...(className && { className: className })}
+      {...props}
+    >
+      {markdown}
+    </div>
+  ) : (
+    markdown
+  );
 };
 
 Markdown.h1 = (props: JSX.IntrinsicAttributes & MarkdownProps) => (
