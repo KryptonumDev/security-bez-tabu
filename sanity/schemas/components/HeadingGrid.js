@@ -1,9 +1,9 @@
 import removeMarkdown from '../../utils/removeMarkdown'
 
 export default {
-  name: 'RevealImage',
+  name: 'HeadingGrid',
   type: 'object',
-  title: 'Seckja z odkrywalnym zdjęciem',
+  title: 'Nagłówek z siatką',
   fields: [
     {
       name: 'heading',
@@ -12,15 +12,10 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'description',
-      type: 'markdown',
-      title: 'Opis',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'img',
-      type: 'image',
-      title: 'Zdjęcie do odkrycia',
+      name: 'list',
+      type: 'array',
+      of: [{type: 'TitleDescriptionAndImage_Item'}],
+      title: 'Lista',
       validation: (Rule) => Rule.required(),
     },
   ],
@@ -30,7 +25,7 @@ export default {
     },
     prepare({heading}) {
       return {
-        title: `[Sekcja z odkrywalnym zdjęciem] - ${removeMarkdown(heading)}`,
+        title: `[Nagłówek z siatką] - ${removeMarkdown(heading)}`,
       }
     },
   },

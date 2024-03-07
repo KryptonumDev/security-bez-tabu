@@ -1,9 +1,9 @@
 import removeMarkdown from '../../utils/removeMarkdown'
 
 export default {
-  name: 'RevealImage',
+  name: 'HeroImageBackground',
+  title: 'Sekcja wstępna ze zdjęciem w tle',
   type: 'object',
-  title: 'Seckja z odkrywalnym zdjęciem',
   fields: [
     {
       name: 'heading',
@@ -18,9 +18,21 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'img',
+      name: 'additionalInfo',
+      type: 'markdown',
+      title: 'Dodatkowe informacje',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'cta',
+      type: 'cta',
+      title: 'CTA',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'image',
       type: 'image',
-      title: 'Zdjęcie do odkrycia',
+      title: 'Zdjęcie',
       validation: (Rule) => Rule.required(),
     },
   ],
@@ -30,7 +42,7 @@ export default {
     },
     prepare({heading}) {
       return {
-        title: `[Sekcja z odkrywalnym zdjęciem] - ${removeMarkdown(heading)}`,
+        title: `[Sekcja Sekcja wstępna ze zdjęciem w tle] - ${removeMarkdown(heading)}`,
       }
     },
   },

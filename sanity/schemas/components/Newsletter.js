@@ -1,3 +1,5 @@
+import removeMarkdown from '../../utils/removeMarkdown'
+
 export default {
   name: 'Newsletter',
   title: 'Newsletter',
