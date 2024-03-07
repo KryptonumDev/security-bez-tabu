@@ -30,7 +30,8 @@ import ListPillWithIconHeading, {
   type ListPillWithIconHeadingProps,
 } from '@/components/_global/ListPillWithIconHeading';
 import RevealImage, { RevealImage_Query, type RevealImageProps } from '@/components/_global/RevealImage';
-import { type ImgType } from '@/global/types';
+import HeadingGrid, { HeadingGrid_Query, HeadingGridProps } from '@/components/_global/HeadingGrid';
+import type { ImgType } from '@/global/types';
 
 type ComponentMapType = {
   RevealImage: RevealImageProps;
@@ -53,6 +54,7 @@ type ComponentMapType = {
   Author: AuthorProps;
   LargeImage: ImgType;
   Charts: ChartsProps;
+  HeadingGrid: HeadingGridProps;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -76,6 +78,7 @@ const ComponentMap = ({ props }) => ({
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
+  HeadingGrid: <HeadingGrid {...(props as HeadingGridProps)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -114,5 +117,6 @@ export const Components_Query = /* groq */ `
     ${Author_Query}
     ${LargeImage_Query}
     ${Charts_Query}
+    ${HeadingGrid_Query}
   },
 `;

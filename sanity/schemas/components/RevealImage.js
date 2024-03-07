@@ -30,7 +30,7 @@ export default {
     },
     prepare({ heading }) {
       return {
-        title: `[Sekcja z okrywalnym zdjęciem] - ${removeMarkdown(heading)}`,
+        title: `[Sekcja z odkrywalnym zdjęciem] - ${removeMarkdown(heading)}`,
       }
     },
   },

@@ -1,8 +1,8 @@
 import removeMarkdown from '../../utils/removeMarkdown'
 
 export default {
-  name: 'Newsletter',
-  title: 'Newsletter',
+  name: 'HeroImageBackground',
+  title: 'Sekcja wstępna ze zdjęciem w tle',
   type: 'object',
   fields: [
     {
@@ -12,15 +12,15 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'paragraph',
+      name: 'description',
       type: 'markdown',
-      title: 'Paragraf',
+      title: 'Opis',
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'image',
-      type: 'image',
-      title: 'Zdjęcie',
+      name: 'additionalInfo',
+      type: 'markdown',
+      title: 'Dodatkowe informacje',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -29,14 +29,20 @@ export default {
       title: 'CTA',
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: 'image',
+      type: 'image',
+      title: 'Zdjęcie',
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {
       heading: 'heading',
     },
-    prepare({ heading }) {
+    prepare({heading}) {
       return {
-        title: `[Newsletter] - ${removeMarkdown(heading)}`,
+        title: `[Sekcja Sekcja wstępna ze zdjęciem w tle] - ${removeMarkdown(heading)}`,
       }
     },
   },
