@@ -1,5 +1,4 @@
 import KeyDetails from './KeyDetails';
-
 export default KeyDetails;
 export type { Props as KeyDetailsProps } from './KeyDetails.types';
 

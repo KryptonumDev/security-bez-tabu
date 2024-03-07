@@ -1,6 +1,6 @@
 import styles from './KeyDetails.module.scss';
-import type { Props } from './KeyDetails.types';
 import Markdown from '@/components/ui/markdown';
+import type { Props } from './KeyDetails.types';
 
 const KeyDetails = ({ list }: Props) => {
   return (

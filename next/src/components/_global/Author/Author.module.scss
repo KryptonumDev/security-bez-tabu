@@ -3,7 +3,7 @@
   grid-template-rows: auto 1fr;
   grid-template-columns: 1fr 1.75fr;
   grid-template-areas: 'h2 h3' 'img copy';
-  column-gap: clamp(84px, calc(92vw/7.68), 134px);
+  column-gap: clamp(84px, calc(92vw / 7.68), 134px);
 
   @media (max-width: 999px) {
     grid-template-columns: 1.66fr 1fr;
@@ -17,12 +17,12 @@
 
   h2 {
     grid-area: h2;
-    margin-bottom: clamp(16px, calc(24vw/7.68), 32px);
+    margin-bottom: clamp(16px, calc(24vw / 7.68), 32px);
   }
 
   h3 {
     grid-area: h3;
-    margin-bottom: clamp(20px, calc(36vw/7.68), 48px);
+    margin-bottom: clamp(20px, calc(36vw / 7.68), 48px);
   }
 
   .img {
@@ -45,11 +45,11 @@
     }
 
     &::before {
-      background: linear-gradient(#0D111F, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0D111F);
+      background: linear-gradient(#0d111f, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0d111f);
     }
 
     &::after {
-      background: linear-gradient(90deg, #0D111F, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0D111F);
+      background: linear-gradient(90deg, #0d111f, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0d111f);
     }
   }
 
@@ -57,7 +57,7 @@
     grid-area: copy;
 
     @media (max-width: 999px) {
-      margin-top: clamp(20px, calc(28vw/7.68), 48px);
+      margin-top: clamp(20px, calc(28vw / 7.68), 48px);
     }
 
     ul {
@@ -67,7 +67,7 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      gap: clamp(8px, calc(16vw/7.68), 20px) 32px;
+      gap: clamp(8px, calc(16vw / 7.68), 20px) 32px;
       list-style-type: none;
 
       li {
@@ -76,8 +76,8 @@
         grid-template-columns: auto 1fr;
 
         .icon {
-          width: clamp(36px, calc(48vw/7.68), 48px);
-          height: clamp(36px, calc(48vw/7.68), 48px);
+          width: clamp(36px, calc(48vw / 7.68), 48px);
+          height: clamp(36px, calc(48vw / 7.68), 48px);
           display: flex;
           align-items: center;
           justify-content: center;
@@ -88,7 +88,7 @@
             width: 42%;
             height: 42%;
             transform: translate3d(0, 0, 0);
-            filter: drop-shadow(0px 0px 30px rgba(29, 164, 253, 0.60)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.60));
+            filter: drop-shadow(0px 0px 30px rgba(29, 164, 253, 0.6)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.6));
           }
         }
 
@@ -99,9 +99,9 @@
     }
 
     .paragraph {
-      margin-top: clamp(20px, calc(28vw/7.68), 48px);
+      margin-top: clamp(20px, calc(28vw / 7.68), 48px);
 
-      &>*:not(:last-child) {
+      & > *:not(:last-child) {
         margin-bottom: 8px;
       }
     }

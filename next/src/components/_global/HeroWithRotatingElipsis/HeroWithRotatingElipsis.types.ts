@@ -1,10 +1,10 @@
-import { type ImgType, type Cta } from '@/global/types';
+import type { ImgType, CtaType } from '@/global/types';
 
 export type Props = {
   heading: string;
   paragraph: string;
   claim: string;
-  cta: Cta;
+  cta: CtaType;
   additionalInfo: string;
   img: ImgType;
   products: {

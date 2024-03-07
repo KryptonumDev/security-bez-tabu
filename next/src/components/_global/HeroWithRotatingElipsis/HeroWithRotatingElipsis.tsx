@@ -1,9 +1,9 @@
 import styles from './HeroWithRotatingElipsis.module.scss';
-import type { Props } from './HeroWithRotatingElipsis.types';
 import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 import Img from '@/components/ui/image';
 import Countdown from '@/components/ui/Countdown';
+import type { Props } from './HeroWithRotatingElipsis.types';
 
 const HeroWithRotatingElipsis = ({ heading, paragraph, claim, cta, additionalInfo, img, products }: Props) => {
   return (

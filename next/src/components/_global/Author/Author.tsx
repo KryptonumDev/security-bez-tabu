@@ -1,7 +1,7 @@
 import styles from './Author.module.scss';
-import type { Props } from './Author.types';
 import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
+import type { Props } from './Author.types';
 
 const Author = ({ heading, img, subheading, achievements, paragraph }: Props) => {
   return (

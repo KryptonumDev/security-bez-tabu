@@ -1,8 +1,8 @@
 import styles from './Faq.module.scss';
-import type { Props } from './Faq.types';
 import Form from './_Form';
 import List from './_List';
 import Markdown from '@/components/ui/markdown';
+import type { Props } from './Faq.types';
 
 const Faq = ({ heading, paragraph, list }: Props) => {
   const mappedList = list.map(({ title, description }) => ({

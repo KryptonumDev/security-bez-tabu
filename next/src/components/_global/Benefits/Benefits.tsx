@@ -1,9 +1,9 @@
 import styles from './Benefits.module.scss';
-import type { Props } from './Benefits.types';
 import Heading from './_Heading';
 import Item from './_Item';
 import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
+import type { Props } from './Benefits.types';
 
 const Benefits = ({ heading, list }: Props) => {
   return (

@@ -1,6 +1,6 @@
 import Img from '@/components/ui/image';
 import styles from './LargeImage.module.scss';
-import { type ImgType } from '@/global/types';
+import type { ImgType } from '@/global/types';
 
 const LargeImage = (img: ImgType) => {
   return (

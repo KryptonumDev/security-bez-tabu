@@ -1,6 +1,5 @@
 'use client';
-
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { animate, useInView } from 'framer-motion';
 
 const Counter = ({ children, ...props }: { children: React.ReactNode }) => {
@@ -9,7 +8,6 @@ const Counter = ({ children, ...props }: { children: React.ReactNode }) => {
     once: true,
   });
 
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
   const match = children?.toString().match(/(.*?)(\d+)(.*)/);
 
   const beforeNumber = match[1];

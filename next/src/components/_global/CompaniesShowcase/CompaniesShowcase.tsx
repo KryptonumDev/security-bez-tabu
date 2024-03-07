@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import styles from './CompaniesShowcase.module.scss';
-import type { Props } from './CompaniesShowcase.types';
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
+import type { Props } from './CompaniesShowcase.types';
 
 const CompaniesShowcase = ({ list, heading }: Props) => {
   return (

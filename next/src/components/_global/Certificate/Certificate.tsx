@@ -1,16 +1,12 @@
 import styles from './Certificate.module.scss';
-import type { Props } from './Certificate.types';
 import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
+import type { Props } from './Certificate.types';
 
-const Certificate = ({
-  heading,
-  paragraph,
-  img,
-}: Props) => {
+const Certificate = ({ heading, paragraph, img }: Props) => {
   return (
     <section className={styles['Certificate']}>
-            <header>
+      <header>
         <Markdown.h2>{heading}</Markdown.h2>
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
       </header>
@@ -51,11 +47,15 @@ const Border = ({ ...props }) => (
         gradientUnits='userSpaceOnUse'
       >
         <stop stopColor='#53BAFD'></stop>
-        <stop offset='1' stopColor='#53BAFD' stopOpacity='0'></stop>
+        <stop
+          offset='1'
+          stopColor='#53BAFD'
+          stopOpacity='0'
+        ></stop>
       </linearGradient>
     </defs>
   </svg>
-)
+);
 
 const Gear = ({ ...props }) => (
   <svg
@@ -96,8 +96,12 @@ const Gear = ({ ...props }) => (
         gradientUnits='userSpaceOnUse'
       >
         <stop stopColor='#53BAFD'></stop>
-        <stop offset='1' stopColor='#53BAFD' stopOpacity='0'></stop>
+        <stop
+          offset='1'
+          stopColor='#53BAFD'
+          stopOpacity='0'
+        ></stop>
       </linearGradient>
     </defs>
   </svg>
-)
+);

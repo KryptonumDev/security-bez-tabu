@@ -1,12 +1,12 @@
 'use client';
 import { useState } from 'react';
-import { type FieldValues, useForm } from 'react-hook-form';
 import Link from 'next/link';
-import styles from './Faq.module.scss';
-import { REGEX } from '@/global/constants';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
+import styles from './Faq.module.scss';
+import { REGEX } from '@/global/constants';
+import { type FieldValues, useForm } from 'react-hook-form';
 
 const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success: React.JSX.Element } }) => {
   const [status, setStatus] = useState({ sending: false, success: undefined as boolean | undefined });

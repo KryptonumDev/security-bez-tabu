@@ -1,4 +1,4 @@
-import { type ImgType } from "@/global/types";
+import type { ImgType } from '@/global/types';
 
 export type Props = {
   heading: string;
@@ -8,4 +8,4 @@ export type Props = {
     name: string;
     position: string;
   }[];
-}
+};

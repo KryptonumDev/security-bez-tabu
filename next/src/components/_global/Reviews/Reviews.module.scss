@@ -1,7 +1,7 @@
 .Reviews {
   header {
-    max-width: calc(586rem/16);
-    margin: 0 auto clamp(28px, calc(36vw/7.68), 64px);
+    max-width: calc(586rem / 16);
+    margin: 0 auto clamp(28px, calc(36vw / 7.68), 64px);
     text-align: center;
   }
 
@@ -10,16 +10,16 @@
 
     @media (min-width: 900px) {
       column-count: 2;
-      gap: clamp(16px, calc(20vw/7.68), 32px);
+      gap: clamp(16px, calc(20vw / 7.68), 32px);
     }
 
     li {
       break-inside: avoid;
-      padding: clamp(20px, calc(24vw/7.68), 24px) clamp(16px, calc(20vw/7.68), 20px);
+      padding: clamp(20px, calc(24vw / 7.68), 24px) clamp(16px, calc(20vw / 7.68), 20px);
       border: 1px solid var(--primary-600);
       background-color: var(--primary-700);
-      box-shadow: 0px 0px 32px 0px rgba(29, 164, 253, .1);
-      margin: clamp(16px, calc(20vw/7.68), 32px) 0;
+      box-shadow: 0px 0px 32px 0px rgba(29, 164, 253, 0.1);
+      margin: clamp(16px, calc(20vw / 7.68), 32px) 0;
 
       &:first-child,
       &:last-child {
@@ -38,23 +38,23 @@
         }
 
         .position {
-          font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(16rem/16));
+          font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
         }
       }
 
       .content {
-        &>*:not(:last-child) {
+        & > *:not(:last-child) {
           margin-bottom: 8px;
         }
       }
 
       .img {
-        width: clamp(48px, calc(64vw/7.68), 64px);
-        height: clamp(48px, calc(64vw/7.68), 64px);
+        width: clamp(48px, calc(64vw / 7.68), 64px);
+        height: clamp(48px, calc(64vw / 7.68), 64px);
         border-radius: 50%;
         border: 1px solid var(--secondary-500);
         background-color: var(--primary-800);
-        box-shadow: 0px 0px 8px 0px rgba(152, 214, 255, .5);
+        box-shadow: 0px 0px 8px 0px rgba(152, 214, 255, 0.5);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -69,7 +69,7 @@
           width: 62%;
           height: 62%;
           transform: translate3d(0, 0, 0);
-          filter: drop-shadow(0px 0px 12px rgba(29, 164, 253, 0.30)) drop-shadow(0px 0px 4px rgba(152, 214, 255, 0.20));
+          filter: drop-shadow(0px 0px 12px rgba(29, 164, 253, 0.3)) drop-shadow(0px 0px 4px rgba(152, 214, 255, 0.2));
         }
       }
     }

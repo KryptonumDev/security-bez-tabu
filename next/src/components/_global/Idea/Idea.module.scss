@@ -5,15 +5,15 @@
     grid-template-columns: 1.4fr 1fr;
   }
 
-  gap: clamp(48px, calc(96vw/7.68), 96px) 32px;
+  gap: clamp(48px, calc(96vw / 7.68), 96px) 32px;
 
   header {
-    >div {
-      max-width: calc(586rem/16);
+    > div {
+      max-width: calc(586rem / 16);
     }
 
     .paragraph {
-      margin: clamp(16px, calc(24vw/7.68), 28px) 0 clamp(32px, calc(42vw/7.68), 64px);
+      margin: clamp(16px, calc(24vw / 7.68), 28px) 0 clamp(32px, calc(42vw / 7.68), 64px);
     }
 
     .claim {
@@ -21,32 +21,32 @@
     }
 
     .btn {
-      margin: clamp(16px, calc(24vw/7.68), 24px) 0 12px;
+      margin: clamp(16px, calc(24vw / 7.68), 24px) 0 12px;
     }
 
     .additionalInfo {
-      font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(16rem/16));
+      font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
     }
 
     .countdown {
-      margin-top: clamp(24px, calc(36vw/7.68), 48px);
+      margin-top: clamp(24px, calc(36vw / 7.68), 48px);
     }
   }
 
   .chartParagraph {
     color: var(--primary-200);
-    margin-bottom: clamp(28px, calc(32vw/7.68), 42px);
+    margin-bottom: clamp(28px, calc(32vw / 7.68), 42px);
   }
 
   .chart {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
-    min-height: clamp(316px, calc(354vw/7.68), 354px);
+    min-height: clamp(316px, calc(354vw / 7.68), 354px);
     overflow: hidden;
 
     .item {
-      padding: clamp(12px, calc(16vw/7.68), 16px) clamp(12px, calc(20vw/7.68), 20px);
+      padding: clamp(12px, calc(16vw / 7.68), 16px) clamp(12px, calc(20vw / 7.68), 20px);
       position: relative;
 
       &::before {
@@ -77,11 +77,11 @@
       &:nth-child(4) {
         margin-top: 48px;
         background: linear-gradient(90deg, var(--primary-800), var(--primary-700));
-        box-shadow: 0px 0px 32px 0px rgba(29, 164, 253, 0.10);
+        box-shadow: 0px 0px 32px 0px rgba(29, 164, 253, 0.1);
       }
 
       .title {
-        font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(16rem/16));
+        font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
         margin-bottom: 4px;
       }
 

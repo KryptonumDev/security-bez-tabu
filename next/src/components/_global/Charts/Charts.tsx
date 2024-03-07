@@ -1,15 +1,15 @@
 import styles from './Charts.module.scss';
-import type { Chart, Props } from './Charts.types';
 import Bars from './_Bars';
 import Circle from './_Circle';
 import Linear from './_Linear';
+import type { Chart, Props } from './Charts.types';
 
 const componenets = (component: Chart) =>
   ({
     chart_Bars: <Bars {...component} />,
     chart_Linear: <Linear {...component} />,
     chart_Circle: <Circle {...component} />,
-  }) as unknown as { [key: string]: JSX.Element };
+  } as unknown as { [key: string]: JSX.Element });
 
 const Charts = ({ charts }: Props) => {
   return (

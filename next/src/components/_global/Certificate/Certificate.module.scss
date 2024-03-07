@@ -5,16 +5,16 @@
     grid-template-columns: 1.75fr 1fr;
   }
 
-  gap: clamp(24px, calc(28vw/7.68), 34px) clamp(84px, calc(92vw/7.68), 134px);
+  gap: clamp(24px, calc(28vw / 7.68), 34px) clamp(84px, calc(92vw / 7.68), 134px);
   align-items: center;
 
   header {
     h2 {
-      margin-bottom: clamp(16px, calc(24vw/7.68), 28px);
+      margin-bottom: clamp(16px, calc(24vw / 7.68), 28px);
     }
 
     .paragraph {
-      max-width: calc(586rem/16);
+      max-width: calc(586rem / 16);
     }
   }
 

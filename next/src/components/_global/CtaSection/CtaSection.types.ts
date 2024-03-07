@@ -7,4 +7,4 @@ export type Props = {
   };
   additionalInfo: string;
   isCountdown: boolean;
-}
+};

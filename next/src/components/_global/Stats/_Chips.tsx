@@ -1,5 +1,4 @@
 'use client';
-
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import styles from './Stats.module.scss';
@@ -9,7 +8,7 @@ const MotionRect = (isInView: boolean, index = 0) => ({
   initial: { opacity: 0 },
   animate: { opacity: isInView ? 1 : 0 },
   transition: {
-    delay: (randomDurations[index]) * 0.35,
+    delay: randomDurations[index] * 0.35,
   },
 });
 const MotionPath = (isInView: boolean, index: number) => ({

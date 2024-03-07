@@ -16,35 +16,35 @@
       pointer-events: auto;
     }
 
-    >div {
-      max-width: calc(586rem/16);
+    > div {
+      max-width: calc(586rem / 16);
     }
 
     .paragraph {
-      margin: clamp(16px, calc(24vw/7.68), 28px) 0 clamp(32px, calc(42vw/7.68), 64px);
+      margin: clamp(16px, calc(24vw / 7.68), 28px) 0 clamp(32px, calc(42vw / 7.68), 64px);
     }
 
     .claim {
-      font-size: clamp(calc(20rem/16), calc(28vw/7.68), calc(28rem/16));
+      font-size: clamp(calc(20rem / 16), calc(28vw / 7.68), calc(28rem / 16));
     }
 
     .btn {
-      margin: clamp(16px, calc(24vw/7.68), 24px) 0 12px;
+      margin: clamp(16px, calc(24vw / 7.68), 24px) 0 12px;
     }
 
     .additionalInfo {
-      font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(16rem/16));
+      font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
     }
 
     .countdown {
-      margin-top: clamp(24px, calc(36vw/7.68), 48px);
+      margin-top: clamp(24px, calc(36vw / 7.68), 48px);
     }
   }
 
   .glow {
     position: absolute;
     right: 0;
-    top: calc(clamp(62px, calc(80vw/7.68), 98px) * -1);
+    top: calc(clamp(62px, calc(80vw / 7.68), 98px) * -1);
     mix-blend-mode: screen;
     transform: translate3d(0, 0, 0);
     filter: blur(75px);
@@ -65,10 +65,10 @@
   align-items: center;
   justify-content: center;
 
-  >div {
+  > div {
     position: absolute;
     border-radius: 50%;
-    box-shadow: 0px 0px 32px 0px rgba(29, 164, 253, .06);
+    box-shadow: 0px 0px 32px 0px rgba(29, 164, 253, 0.06);
 
     &:nth-child(1) {
       width: 100%;
@@ -96,7 +96,7 @@
 
         @keyframes product1 {
           0% {
-            transform: rotate(0deg) scale(.6);
+            transform: rotate(0deg) scale(0.6);
           }
 
           25% {
@@ -104,21 +104,21 @@
           }
 
           50% {
-            transform: rotate(180deg) scale(.6);
+            transform: rotate(180deg) scale(0.6);
           }
 
           100% {
-            transform: rotate(360deg) scale(.6);
+            transform: rotate(360deg) scale(0.6);
           }
         }
 
         @keyframes product2 {
           0% {
-            transform: rotate(0deg) scale(.6);
+            transform: rotate(0deg) scale(0.6);
           }
 
           50% {
-            transform: rotate(180deg) scale(.6);
+            transform: rotate(180deg) scale(0.6);
           }
 
           75% {
@@ -126,7 +126,7 @@
           }
 
           100% {
-            transform: rotate(360deg) scale(.6);
+            transform: rotate(360deg) scale(0.6);
           }
         }
       }
@@ -144,7 +144,7 @@
 
         @keyframes product3 {
           0% {
-            transform: rotate(0deg) scale(.6);
+            transform: rotate(0deg) scale(0.6);
           }
 
           25% {
@@ -152,11 +152,11 @@
           }
 
           50% {
-            transform: rotate(180deg) scale(.6);
+            transform: rotate(180deg) scale(0.6);
           }
 
           100% {
-            transform: rotate(360deg) scale(.6);
+            transform: rotate(360deg) scale(0.6);
           }
         }
       }
@@ -168,17 +168,16 @@
       height: 100%;
       box-shadow: none;
 
-      >div {
+      > div {
         position: absolute;
         width: 6px;
         height: 6px;
-        filter: blur(2px) drop-shadow(0px 0px 8px #1DA4FD);
+        filter: blur(2px) drop-shadow(0px 0px 8px #1da4fd);
         border-radius: 50%;
         background-color: var(--secondary-600);
         animation: glow 10s infinite;
 
         @keyframes glow {
-
           0%,
           25%,
           50%,
@@ -228,10 +227,10 @@
       border-radius: 50%;
       border: 1px solid var(--secondary-600);
       background-color: var(--primary-800);
-      box-shadow: 0px 0px 34px 0px rgba(29, 164, 253, 0.30);
+      box-shadow: 0px 0px 34px 0px rgba(29, 164, 253, 0.3);
       position: relative;
 
-      >div {
+      > div {
         overflow: hidden;
         position: absolute;
         bottom: 0;
@@ -267,7 +266,7 @@
         bottom: -62px;
       }
 
-      >div {
+      > div {
         position: absolute;
         width: 100%;
         height: 150%;
@@ -289,7 +288,7 @@
   }
 
   &:hover {
-    >div {
+    > div {
       &:not(.decorative) {
         animation-play-state: paused;
       }

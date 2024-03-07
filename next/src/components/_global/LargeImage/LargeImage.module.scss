@@ -1,8 +1,8 @@
 .LargeImage {
-  margin: calc(clamp(108px, calc(144vw/7.68), 240px) * -1) calc(var(--pageMargin) * -1);
+  margin: calc(clamp(108px, calc(144vw / 7.68), 240px) * -1) calc(var(--pageMargin) * -1);
 
   @media (min-width: 1280px) {
-    margin: calc(clamp(108px, calc(144vw/7.68), 240px) * -1) calc((100vw - 1200px) / -2);
+    margin: calc(clamp(108px, calc(144vw / 7.68), 240px) * -1) calc((100vw - 1200px) / -2);
   }
 
   position: relative;
@@ -15,7 +15,7 @@
     top: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(#0D111F, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0D111F);
+    background: linear-gradient(#0d111f, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), #0d111f);
     pointer-events: none;
   }
 }
