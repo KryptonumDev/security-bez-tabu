@@ -44,6 +44,7 @@ import AdvancedCtaSection, {
   type AdvancedCtaSectionProps,
 } from './_global/AdvancedCtaSection';
 import { type ImgType } from '@/global/types';
+import HeadingGrid, { HeadingGrid_Query, HeadingGridProps } from './_global/HeadingGrid';
 
 type ComponentMap = {
   Benefits: BenefitsProps;
@@ -67,6 +68,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
       ),
       KeyDetails: <KeyDetails {...(item as KeyDetailsProps)} />,
       HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(item as unknown as HeroWithRotatingElipsisProps)} />,
+      HeadingGrid: <HeadingGrid {...(item as unknown as HeadingGridProps)} />,
       ListPillWithIconHeading: <ListPillWithIconHeading {...(item as ListPillWithIconHeadingProps)} />,
       Benefits: <Benefits {...(item as BenefitsProps)} />,
       Perks: <Perks {...(item as PerksProps)} />,
@@ -95,6 +97,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${HeadingGrid_Query}
       ${CtaSectionWithImage_Query}
       ${HeadingWithNumeratedList_Query}
       ${AdvancedCtaSection_Query}

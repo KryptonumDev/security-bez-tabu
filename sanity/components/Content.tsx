@@ -5,6 +5,7 @@ export default {
   of: [
     {type: 'HeroColumnWithImageReactor'},
     {type: 'HeroWithRotatingElipsis'},
+    {type: 'HeadingGrid'},
     {type: 'HeadingWithNumeratedList'},
     {type: 'AdvancedCtaSection'},
     {type: 'HeroImageBackground'},
