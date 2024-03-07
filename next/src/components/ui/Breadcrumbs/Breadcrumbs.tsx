@@ -1,11 +1,16 @@
 import { Fragment } from 'react';
 import Link from 'next/link';
 import styles from './Breadcrumbs.module.scss';
-import type { Props } from './Breadcrumbs.types';
-import SchemaBreadcrumbs from '@/global/Schema/Breadcrumbs';
+import SchemaBreadcrumbs from './SchemaBreadcrumbs';
+import type { BreadcrumbsType } from './Breadcrumbs.types';
 
-const Breadcrumbs = ({ data = [], visible = true }: Props) => {
-  data = [{ name: 'Strona główna', path: '/' }, ...data];
+const initialSchema = {
+  name: 'Strona główna',
+  path: '',
+};
+
+const Breadcrumbs = ({ data, visible = true }: BreadcrumbsType) => {
+  data = [initialSchema, ...data];
   return (
     <Fragment>
       <SchemaBreadcrumbs data={data} />

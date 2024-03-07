@@ -1,6 +1,6 @@
 import sanityFetch from '@/utils/sanity.fetch';
 import { QueryMetadata } from '@/global/Seo/query-metadata';
-import Hero from '@/components/_notFound/Hero';
+import Hero from '@/components/_pages/NotFound/Hero';
 import { Img_Query } from '@/components/ui/image';
 import { Cta_Query } from '@/components/ui/Button/Button';
 import type { CtaType, ImgType } from '@/global/types';

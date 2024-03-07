@@ -1,8 +1,8 @@
+import Img from '@/components/ui/image';
 import styles from './LargeImage.module.scss';
 import { type ImgType } from '@/global/types';
-import Img from '@/components/ui/image';
 
-const LargeImage = ( img: ImgType) => {
+const LargeImage = (img: ImgType) => {
   return (
     <section className={styles['LargeImage']}>
       <Img

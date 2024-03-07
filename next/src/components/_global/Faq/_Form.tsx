@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { type FieldValues, useForm } from 'react-hook-form';
 import Link from 'next/link';
 import styles from './Faq.module.scss';
-import { regex } from '@/global/constants';
+import { REGEX } from '@/global/constants';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
@@ -44,7 +44,7 @@ const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success:
         type='email'
         register={register('email', {
           required: { value: true, message: `E-mail jest wymagany` },
-          pattern: { value: regex.email, message: `Niepoprawny adres e-mail` },
+          pattern: { value: REGEX.email, message: `Niepoprawny adres e-mail` },
         })}
         errors={errors}
       />

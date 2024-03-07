@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Loader from '../Loader';
 import styles from './Button.module.scss';
 import type { Props } from './Button.types';
-import isExternalLink from '@/utils/is-external-link';
+import { isExternalLink } from '@/utils/is-external-link';
 
 const Button = ({ data, children, href, className, loading, type, disabled, onClick, ...props }: Props) => {
   if (data) {
@@ -50,3 +50,9 @@ const Corner = ({ ...props }) => (
     <path d='M20.52 1.927L2 20h18.52V1.927z'></path>
   </svg>
 );
+
+export const Cta_Query = `
+  theme,
+  text,
+  href,
+`;

@@ -5,9 +5,10 @@ export default Perks;
 
 export const Perks_Query = /* groq */ `
   _type == 'Perks' => {
-  heading,
-  list[] {
-    description,
-    title
-  }
-},`;
+    heading,
+    list[] {
+      description,
+      title,
+    },
+  },
+`;

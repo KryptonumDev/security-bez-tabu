@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Faq.module.scss';
-import { easing } from '@/global/constants';
+import { EASING } from '@/global/constants';
 
 const List = ({
   list,
@@ -39,7 +39,7 @@ const List = ({
             exit={{ height: 0, marginBottom: '0' }}
             transition={{
               duration: 0.5,
-              ease: easing,
+              ease: EASING,
             }}
           >
             {answer}

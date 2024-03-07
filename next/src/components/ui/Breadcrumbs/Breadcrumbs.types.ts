@@ -1,7 +1,7 @@
-export type Props = {
+export type BreadcrumbsType = {
   data?: {
     name: string;
     path: string;
   }[];
-  visible: boolean;
-}
+  visible?: boolean;
+};

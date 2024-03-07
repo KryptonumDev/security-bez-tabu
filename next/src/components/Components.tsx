@@ -78,9 +78,9 @@ const ComponentMap = ({ props }) => ({
   Charts: <Charts {...(props as ChartsProps)} />,
 });
 
-type dataType = ComponentMapType[keyof ComponentMapType] & { _type: string };
+export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
 
-const Components = ({ data }: { data: dataType[] }) => {
+const Components = ({ data }: { data: ComponentsType }) => {
   return data?.map((item) => {
     const componentName = item._type;
     const Component = ComponentMap({ props: item })[componentName];

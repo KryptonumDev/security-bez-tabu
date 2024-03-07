@@ -1,7 +1,7 @@
 'use client';
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import scrollAnimation from '@/utils/scrollAnimation';
+import { scrollAnimation } from '@/utils/scroll-animation';
 
 const Heading = ({ children }: { children: React.ReactNode }) => {
   const wrapper = useRef(null);

@@ -1,8 +1,7 @@
-import { draftMode } from 'next/headers';
 import Link from 'next/link';
-import styles from './Header.module.scss';
-import Button from '@/components/ui/Button';
 import sanityFetch from '@/utils/sanity.fetch';
+import Button from '@/components/ui/Button';
+import styles from './Header.module.scss';
 
 const Header = async () => {
   const { link } = await query();
@@ -41,10 +40,10 @@ export default Header;
 const query = async () => {
   const data = await sanityFetch({
     query: /* groq */ `
-    *[_id == "WyzwanieSecurity_Global"][0] {
-      link,
-    }`,
-    isDraftMode: draftMode().isEnabled,
+      *[_id == "WyzwanieSecurity_Global"][0] {
+        link,
+      }
+    `,
   });
   return data as { link: string };
 };
