@@ -44,6 +44,10 @@ import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
 import KeyDetails from './components/KeyDetails'
+import AdvancedCtaSection, {
+  advancedCtaSection_LeftSide,
+  advancedCtaSection_RightSide,
+} from './components/AdvancedCtaSection'
 import HeroCentralizedTextAndTransparentImage from './components/HeroImageBackground'
 import HeroImageBackground from './components/HeroImageBackground'
 
@@ -83,6 +87,9 @@ export const components = [
   Newsletter,
   CompaniesShowcase,
   KeyDetails,
+  advancedCtaSection_LeftSide,
+  advancedCtaSection_RightSide,
+  AdvancedCtaSection,
   HeroImageBackground,
 ]
 
