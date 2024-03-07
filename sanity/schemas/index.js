@@ -45,6 +45,13 @@ import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
 import KeyDetails from './components/KeyDetails'
 import CtaSectionWithImage from './components/CtaSectionWithImage'
+import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
+import AdvancedCtaSection, {
+  advancedCtaSection_LeftSide,
+  advancedCtaSection_RightSide,
+} from './components/AdvancedCtaSection'
+import HeroCentralizedTextAndTransparentImage from './components/HeroImageBackground'
+import HeroImageBackground from './components/HeroImageBackground'
 
 export const components = [
   global_Seo,
@@ -83,6 +90,11 @@ export const components = [
   CompaniesShowcase,
   KeyDetails,
   CtaSectionWithImage,
+  HeadingWithNumeratedList,
+  advancedCtaSection_LeftSide,
+  advancedCtaSection_RightSide,
+  AdvancedCtaSection,
+  HeroImageBackground,
 ]
 
 export const schemaTypes = [

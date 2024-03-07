@@ -5,6 +5,9 @@ export default {
   of: [
     {type: 'HeroColumnWithImageReactor'},
     {type: 'HeroWithRotatingElipsis'},
+    {type: 'HeadingWithNumeratedList'},
+    {type: 'AdvancedCtaSection'},
+    {type: 'HeroImageBackground'},
     {type: 'ListPillWithIconHeading'},
     {type: 'CtaSectionWithImage'},
     {type: 'RevealImage'},
