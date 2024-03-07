@@ -48,6 +48,8 @@ import AdvancedCtaSection, {
   advancedCtaSection_LeftSide,
   advancedCtaSection_RightSide,
 } from './components/AdvancedCtaSection'
+import HeroCentralizedTextAndTransparentImage from './components/HeroImageBackground'
+import HeroImageBackground from './components/HeroImageBackground'
 
 export const components = [
   global_Seo,
@@ -88,6 +90,7 @@ export const components = [
   advancedCtaSection_LeftSide,
   advancedCtaSection_RightSide,
   AdvancedCtaSection,
+  HeroImageBackground,
 ]
 
 export const schemaTypes = [
