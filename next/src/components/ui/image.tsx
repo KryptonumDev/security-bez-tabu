@@ -1,36 +1,54 @@
-import React from 'react';
 import Image from 'next/image';
-import { type ImgType } from '@/global/types';
+import type { ImgType } from '@/global/types';
 
 const defaultPlaceholder =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMUltCqBwABcQDWMIsO5gAAAABJRU5ErkJggg==';
 
-type ImgProps = {
-  data: ImgType;
-  src?: string;
-  alt?: string;
-  width?: number;
-  height?: number;
-  sizes?: string;
+type ImgProps = (
+  | {
+      data: ImgType;
+      src?: never;
+      width?: number;
+      height?: number;
+      alt?: string;
+    }
+  | {
+      data?: never;
+      src: string;
+      width: number;
+      height: number;
+      alt: string;
+    }
+) & {
+  sizes: string;
   priority?: boolean;
-};
+} & React.HTMLAttributes<HTMLImageElement>;
 
-const Img = ({ data, src = '', alt = '', width, height, sizes, priority = false, ...props }: ImgProps) => (
-  <Image
-    src={data?.asset.url || src}
-    alt={data?.asset.altText || alt}
-    width={data?.asset.metadata?.dimensions?.width || width}
-    height={data?.asset.metadata?.dimensions?.height || height}
-    priority={priority}
-    sizes={sizes}
-    {...(((width || data?.asset.metadata.dimensions?.width) > 40 ||
-      (height || data?.asset.metadata.dimensions?.height) > 40) && {
-      placeholder: 'blur',
-      blurDataURL: data?.asset.metadata?.lqip || defaultPlaceholder,
-    })}
-    {...props}
-  />
-);
+const Img = ({ data, src, width, height, alt, sizes, priority, ...props }: ImgProps) => {
+  const placeholder = data?.asset.metadata?.lqip || defaultPlaceholder;
+  if (data) {
+    src = data.asset.url;
+    width = width || data.asset.metadata.dimensions.width;
+    height = width || data.asset.metadata.dimensions.height;
+    alt = alt || data.asset.altText;
+  }
+
+  return (
+    <Image
+      src={src!}
+      width={width}
+      height={height}
+      alt={alt || ''}
+      sizes={sizes}
+      priority={priority}
+      {...((width! > 40 || height! > 40) && {
+        blurDataURL: placeholder,
+        placeholder: 'blur',
+      })}
+      {...props}
+    />
+  );
+};
 
 export default Img;
 
