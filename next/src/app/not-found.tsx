@@ -1,7 +1,16 @@
-import Hero from '@/components/_notFound/Hero';
-import Seo, { Seo_Query } from '@/global/Seo';
-import { type NotFoundPageQueryProps } from '@/global/types';
 import sanityFetch from '@/utils/sanity.fetch';
+import { QueryMetadata } from '@/global/Seo/query-metadata';
+import Hero from '@/components/_notFound/Hero';
+import { Img_Query } from '@/components/ui/image';
+import { Cta_Query } from '@/components/ui/Button/Button';
+import type { CtaType, ImgType } from '@/global/types';
+
+type PageQueryType = {
+  hero_Heading: string;
+  hero_Paragraph: string;
+  hero_Cta: CtaType;
+  hero_Img: ImgType;
+};
 
 const NotFoundPage = async () => {
   const { hero_Heading, hero_Paragraph, hero_Cta, hero_Img } = await getData();
@@ -20,45 +29,23 @@ const NotFoundPage = async () => {
   );
 };
 
-export async function generateMetadata() {
-  const { seo } = await getData();
-  return Seo({
-    title: seo?.title,
-    description: seo?.description,
-    path: '',
-  });
-}
+export default NotFoundPage;
 
-const getData = async () => {
-  const data = await sanityFetch({
+const getData = async (): Promise<PageQueryType> => {
+  return await sanityFetch<PageQueryType>({
     query: /* groq */ `
-    *[_id == "NotFoundPage"][0] {
-      hero_Heading,
-      hero_Paragraph,
-      hero_Cta {
-        theme,
-        href,
-        text
-      },
-      hero_Img {
-        asset -> {
-          altText,
-          url,
-          metadata {
-            lqip,
-            dimensions {
-              width,
-              height
-            }
-          }
-        }
-      },
-      ${Seo_Query}
-    }
-  `,
-    isDraftMode: true,
+      *[_id == "NotFoundPage"][0] {
+        hero_Heading,
+        hero_Paragraph,
+        hero_Cta {
+          ${Cta_Query}
+        },
+        hero_Img {
+          ${Img_Query}
+        },
+      }
+    `,
   });
-  return data as NotFoundPageQueryProps;
 };
 
-export default NotFoundPage;
+export const generateMetadata = async () => await QueryMetadata('NotFoundPage', '404');
