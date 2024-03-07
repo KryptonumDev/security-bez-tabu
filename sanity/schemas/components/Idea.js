@@ -42,7 +42,7 @@ export default {
     {
       name: 'chart',
       type: 'array',
-      of: [{type: 'TitleAndDescription_Item'}],
+      of: [{ type: 'TitleAndDescription_Item' }],
       title: 'Wykres',
       validation: (Rule) => Rule.required(),
     },

@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'CompaniesShowcase',
@@ -14,7 +14,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'ImageAndLink_Item'}],
+      of: [{ type: 'ImageAndLink_Item' }],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
     },
@@ -23,7 +23,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Przedstawienie firm] - ${removeMarkdown(heading)}`,
       }

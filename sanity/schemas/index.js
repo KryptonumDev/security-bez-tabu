@@ -1,14 +1,19 @@
 // Single Types
-import global, { global_Seo } from './global'
-import NotFoundPage from './singleTypes/404_Page'
-import PrivacyPolicyPage from './PrivacyPolicy_Page'
+import global, { global_Seo } from './singleTypes/global'
+import NotFoundPage from './singleTypes/NotFound_Page'
+import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page'
 
-export const singleTypes = [PrivacyPolicyPage, NotFoundPage]
+export const singleTypes = [
+  PrivacyPolicyPage,
+  NotFoundPage
+];
 
 //Collection Types
 import landingPage_Collection from './collectionTypes/landingPage_Collection'
 
-export const collectionTypes = [landingPage_Collection]
+export const collectionTypes = [
+  landingPage_Collection
+];
 
 // Componenets
 import cta from './components/cta'
@@ -19,7 +24,7 @@ import {
   imageAndLink,
   titleDescriptionAndImage,
 } from './components/list'
-import { PrivacyPolicyPage_Content } from './PrivacyPolicy_Page'
+import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
 import CtaSection from './components/CtaSection'
 import review from './components/review'
 import stats from './components/stats'

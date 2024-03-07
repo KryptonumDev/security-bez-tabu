@@ -6,7 +6,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'TitleAndDescription_Item'}],
+      of: [{ type: 'TitleAndDescription_Item' }],
       title: 'Lista',
     },
   ],
@@ -14,7 +14,7 @@ export default {
     select: {
       title: 'list.0.title',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: `[Kluczowe informacje] - ${title}`,
       }

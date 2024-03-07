@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'Perks',
@@ -27,7 +27,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: `[Co zyskujesz] - ${removeMarkdown(title)}`,
       }

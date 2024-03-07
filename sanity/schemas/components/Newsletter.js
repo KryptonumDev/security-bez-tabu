@@ -32,7 +32,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Newsletter] - ${removeMarkdown(heading)}`,
       }

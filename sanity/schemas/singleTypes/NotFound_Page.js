@@ -1,8 +1,11 @@
+const title = 'Strony nie znaleziono';
+const icon = '🔍';
+
 export default {
   name: 'NotFoundPage',
-  title: 'Nie znaleziono',
+  title: title,
   type: 'document',
-  icon: () => '🔍',
+  icon: () => icon,
   fields: [
     {
       name: 'hero_Heading',

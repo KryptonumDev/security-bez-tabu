@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'HeroWithRotatingElipsis',
@@ -58,7 +58,7 @@ export default {
       heading: 'heading',
       paragraph: 'paragraph',
     },
-    prepare({heading, paragraph}) {
+    prepare({ heading, paragraph }) {
       return {
         title: `[Sekcja wstępna z obrazem i orbitami] - ${removeMarkdown(heading)} - ${removeMarkdown(paragraph)}`,
       }

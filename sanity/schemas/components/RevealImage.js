@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'RevealImage',
@@ -28,7 +28,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Sekcja z okrywalnym zdjęciem] - ${removeMarkdown(heading)}`,
       }

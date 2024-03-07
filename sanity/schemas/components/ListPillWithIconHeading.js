@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'ListPillWithIconHeading',
@@ -14,7 +14,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'TitleDescriptionAndImage_Item'}],
+      of: [{ type: 'TitleDescriptionAndImage_Item' }],
       title: 'lista',
       validation: (Rule) => Rule.required(),
     },
@@ -23,7 +23,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Lista z owalną ikoną i nagłówkiem] - ${removeMarkdown(heading)}`,
       }

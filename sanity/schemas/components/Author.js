@@ -24,7 +24,7 @@ export default {
     {
       name: 'achievements',
       type: 'array',
-      of: [{ type: 'TitleAndImage_Item'}],
+      of: [{ type: 'TitleAndImage_Item' }],
       title: 'osiągnięcia',
       validation: (Rule) => Rule.required(),
     },

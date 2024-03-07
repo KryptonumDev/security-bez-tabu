@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export const titleAndDescription = {
   name: 'TitleAndDescription_Item',
@@ -21,7 +21,7 @@ export const titleAndDescription = {
       title: 'title',
       subtitle: 'description',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
@@ -51,7 +51,7 @@ export const titleAndImage = {
       title: 'title',
       media: 'img',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title: removeMarkdown(title),
         media,
@@ -99,7 +99,7 @@ export const imageAndLink = {
       name: 'name',
       media: 'img',
     },
-    prepare({name, media}) {
+    prepare({ name, media }) {
       return {
         title: name,
         media,
@@ -135,7 +135,7 @@ export const titleDescriptionAndImage = {
       subtitle: 'description',
       media: 'img',
     },
-    prepare({title, subtitle, media}) {
+    prepare({ title, subtitle, media }) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),

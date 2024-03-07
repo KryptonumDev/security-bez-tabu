@@ -1,10 +1,14 @@
-import removeMarkdown from '../utils/removeMarkdown'
+import { removeMarkdown } from "../../utils/remove-markdown"
+
+
+const title = 'Polityka prywatności'
+const icon = '📑'
 
 export default {
   name: 'PrivacyPolicyPage',
-  title: 'Polityka prywatności',
+  title: title,
   type: 'document',
-  icon: () => '📑',
+  icon: () => icon,
   fields: [
     {
       name: 'hero_Heading',
@@ -43,7 +47,7 @@ export default {
     {
       name: 'hero',
       title: 'Hero',
-      options: {collapsible: true},
+      options: { collapsible: true },
     },
   ],
   groups: [
@@ -82,7 +86,7 @@ export const PrivacyPolicyPage_Content = {
       title: 'title',
       description: 'description',
     },
-    prepare({title, description}) {
+    prepare({ title, description }) {
       return {
         title: title,
         subtitle: removeMarkdown(description.join(' | ')),

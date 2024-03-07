@@ -1,14 +1,17 @@
+const title = 'Globalne';
+const icon = '🌍';
+
 export default {
   name: 'global',
-  title: 'Globalne',
+  title: title,
   type: 'document',
-  icon: () => '🌍',
+  icon: () => icon,
   fields: [
     {
       type: 'string',
       name: 'email',
       title: 'Email',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       type: 'string',
@@ -44,7 +47,7 @@ export default {
     {
       name: 'social',
       title: 'Social links',
-      options: {collapsible: true, collapsed: true},
+      options: { collapsible: true, collapsed: true },
     },
   ],
 }
