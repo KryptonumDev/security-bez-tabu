@@ -9,6 +9,7 @@ export default {
     {type: 'AdvancedCtaSection'},
     {type: 'HeroImageBackground'},
     {type: 'ListPillWithIconHeading'},
+    {type: 'CtaSectionWithImage'},
     {type: 'RevealImage'},
     {type: 'Newsletter'},
     {type: 'CompaniesShowcase'},
