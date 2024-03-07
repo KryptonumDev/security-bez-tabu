@@ -1,74 +1,47 @@
 import { notFound } from 'next/navigation';
-import Seo, { Seo_Query } from '@/global/Seo';
+import sanityFetch from '@/utils/sanity.fetch';
+import { QueryMetadata } from '@/global/Seo/query-metadata';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import Components, { Components_Query } from '@/components/Components';
-import sanityFetch from '@/utils/sanity.fetch';
-import { type HomePageQueryProps } from '@/global/types';
-
-export async function generateStaticParams() {
-  const data = await getStaticParams();
-  return data.map(({ slug }) => ({ slug }));
-}
+import type { generateStaticParamsType } from '@/global/types';
+import type { PageQueryType } from './page.types';
 
 export default async function LandingPage({ params: { slug } }: { params: { slug: string } }) {
-  const { content } = await getData(slug);
+  const { name, content } = await query(slug);
+
   return (
     <>
-      <Breadcrumbs visible={false} />
+      <Breadcrumbs data={[{ name: name, path: slug }]} />
       <Components data={content} />
     </>
   );
 }
 
-export async function generateMetadata({ params: { slug } }: { params: { slug: string } }) {
-  const { seo } = await getMetadata(slug);
-  return Seo({
-    title: seo?.title,
-    description: seo?.description,
-    path: `/${slug}`,
-  });
-}
-
-async function getData(slug: string): Promise<HomePageQueryProps> {
-  const data = await sanityFetch<HomePageQueryProps>({
+const query = async (slug: string): Promise<PageQueryType> => {
+  const data = await sanityFetch<PageQueryType>({
     query: /* groq */ `
-  *[_type=='landingPage_Collection' && slug.current == $slug] [0] {
-    ${Components_Query}
-    }
-  `,
-    params: { slug },
-    isDraftMode: true,
-  });
-  if (!data) {
-    notFound();
-  }
-  return data;
-}
-
-async function getMetadata(slug: string) {
-  const data = await sanityFetch<HomePageQueryProps>({
-    query: /* groq */ `
-    *[_type=='landingPage_Collection' && slug.current == $slug] [0] {
-      ${Seo_Query}
-    }
+      *[_type == 'landingPage_Collection' && slug.current == $slug][0] {
+        name,
+        ${Components_Query}
+      }
     `,
     params: { slug },
-    isDraftMode: true,
   });
-  if (!data) {
-    notFound();
-  }
+  !data && notFound();
   return data;
-}
+};
 
-async function getStaticParams() {
-  const data = await sanityFetch<{ slug: string }[]>({
+export const generateMetadata = async ({ params: { slug } }) => {
+  return await QueryMetadata('landingPage_Collection', `/${slug}`, slug);
+};
+
+export async function generateStaticParams(): Promise<generateStaticParamsType> {
+  const collection = await sanityFetch<generateStaticParamsType>({
     query: /* groq */ `
-    *[_type=='landingPage_Collection'] {
-      'slug': slug.current
-    }
-  `,
-    isDraftMode: true,
+      *[_type == 'landingPage_Collection'] {
+        'slug': slug.current
+      }
+    `,
   });
-  return data;
+  return collection.map(({ slug }) => ({ slug }));
 }
