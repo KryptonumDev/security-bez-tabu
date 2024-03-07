@@ -26,6 +26,10 @@ import ListPillWithIconHeading, {
   ListPillWithIconHeading_Query,
   type ListPillWithIconHeadingProps,
 } from './_global/ListPillWithIconHeading';
+import HeroImageBackground, {
+  HeroImageBackground_Query,
+  type HeroImageBackground,
+} from './_global/HeroImageBackground';
 import RevealImage, { RevealImage_Query, type RevealImageProps } from './_global/RevealImage';
 import { type ImgType } from '@/global/types';
 
@@ -39,6 +43,7 @@ const Components = ({ data }: { data: ComponentProps[] }) => {
   return data?.map((item) => {
     const componentType = item._type as keyof ComponentMap;
     const componentMap: Record<string, React.ReactNode> = {
+      HeroImageBackground: <HeroImageBackground {...(item as unknown as HeroImageBackground)} />,
       RevealImage: <RevealImage {...(item as unknown as RevealImageProps)} />,
       Newsletter: <Newsletter {...(item as unknown as NewsletterProps)} />,
       CompaniesShowcase: <CompaniesShowcase {...(item as unknown as CompaniesShowcaseProps)} />,
@@ -75,6 +80,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
       _type,
+      ${HeroImageBackground_Query}
       ${ListPillWithIconHeading_Query}
       ${RevealImage_Query}
       ${Newsletter_Query}

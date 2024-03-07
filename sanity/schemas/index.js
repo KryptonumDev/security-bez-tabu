@@ -44,6 +44,8 @@ import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
 import KeyDetails from './components/KeyDetails'
+import HeroCentralizedTextAndTransparentImage from './components/HeroImageBackground'
+import HeroImageBackground from './components/HeroImageBackground'
 
 export const components = [
   global_Seo,
@@ -81,6 +83,7 @@ export const components = [
   Newsletter,
   CompaniesShowcase,
   KeyDetails,
+  HeroImageBackground,
 ]
 
 export const schemaTypes = [
