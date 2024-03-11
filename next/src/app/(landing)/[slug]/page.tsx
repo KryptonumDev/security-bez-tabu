@@ -39,7 +39,7 @@ export async function generateStaticParams(): Promise<generateStaticParamsType> 
   const collection = await sanityFetch<generateStaticParamsType>({
     query: /* groq */ `
       *[_type == 'landingPage_Collection'] {
-        'slug': slug.current
+        'slug': slug.current,
       }
     `,
     tags: ['landingPage_Collection'],

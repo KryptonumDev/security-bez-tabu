@@ -16,4 +16,5 @@ export const AdvancedCtaSection_Query = /* groq */ `
         ${Cta_Query}
       },
     },
-  },`;
+  },
+  `;
