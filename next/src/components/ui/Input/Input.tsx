@@ -1,6 +1,6 @@
 import Error from '../Error';
 import styles from './Input.module.scss';
-import Textarea from './_TextArea';
+import Textarea from './_Textarea';
 import type { InputTypes } from './Input.types';
 
 const Input = ({ register, label, errors, textarea = false, type = 'text', ...props }: InputTypes) => {

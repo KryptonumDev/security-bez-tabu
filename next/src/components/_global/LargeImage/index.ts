@@ -5,5 +5,5 @@ export default LargeImage;
 export const LargeImage_Query = /* groq */ `
   _type == 'LargeImage' => {
     ${Img_Query}
-  }
+  },
 `;

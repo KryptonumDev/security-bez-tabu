@@ -11,7 +11,7 @@ export const ListPillWithIconHeading_Query = /* groq */ `
       description,
       img {
         ${Img_Query}
-      }
-    }
-  }
+      },
+    },
+  },
 `;

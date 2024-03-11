@@ -14,6 +14,6 @@ export const HeroColumnWithImageReactor_Query = /* groq */ `
     additionalInfo,
     cta {
       ${Cta_Query}
-    }
+    },
   },
 `;

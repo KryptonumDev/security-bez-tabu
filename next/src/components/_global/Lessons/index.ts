@@ -8,7 +8,7 @@ export const Lessons_Query = /* groq */ `
     heading,
     list[] {
       title,
-      lessons[]
-    }
-  }
+      lessons[],
+    },
+  },
 `;

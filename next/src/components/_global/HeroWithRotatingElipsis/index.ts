@@ -17,7 +17,7 @@ export const HeroWithRotatingElipsis_Query = /* groq */ `
       title,
       img {
         ${Img_Query}
-      }
+      },
     },
     claim,
     img {

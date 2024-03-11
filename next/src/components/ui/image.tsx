@@ -57,11 +57,11 @@ export const Img_Query = `
     url,
     altText,
     metadata {
-      lqip,
       dimensions {
         width,
         height,
       },
+      lqip,
     },
   },
 `;

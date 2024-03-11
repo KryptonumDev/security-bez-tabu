@@ -7,6 +7,6 @@ export const KeyDetails_Query = `
     list[] {
       title,
       description,
-    }
+    },
   },
 `;

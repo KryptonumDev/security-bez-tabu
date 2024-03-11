@@ -6,9 +6,9 @@ export const Faq_Query = /* groq */ `
   _type == 'Faq' => {
     heading,
     paragraph,
-      list[] {
-        description,
-        title
-      }
-  }
+    list[] {
+      description,
+      title,
+    },
+  },
 `;

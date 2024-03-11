@@ -1,6 +1,5 @@
 import HeadingGrid from './HeadingGrid';
 import { Img_Query } from '@/components/ui/image';
-
 export default HeadingGrid;
 export type { Props as HeadingGridProps } from './HeadingGrid.types';
 
@@ -12,6 +11,7 @@ export const HeadingGrid_Query = /* groq */ `
       title,
       img {
         ${Img_Query}
-      }
+      },
     },
-  },`;
+  },
+`;
