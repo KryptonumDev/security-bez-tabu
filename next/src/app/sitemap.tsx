@@ -29,5 +29,6 @@ const query = async (): Promise<FetchType> => {
         }
       }
     `,
+    tags: ['landingPage_Collection'],
   });
 };

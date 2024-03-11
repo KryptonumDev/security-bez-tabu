@@ -44,6 +44,7 @@ const query = async (): Promise<PageQueryType> => {
         },
       }
     `,
+    tags: ['PrivacyPolicyPage'],
   });
 };
 

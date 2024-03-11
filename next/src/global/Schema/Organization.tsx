@@ -61,5 +61,6 @@ const query = async () => {
         }
       }
     `,
+    tags: ['WyzwanieSecurity_IndexPage', 'global'],
   });
 };

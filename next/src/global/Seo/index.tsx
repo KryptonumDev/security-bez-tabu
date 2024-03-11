@@ -57,5 +57,6 @@ const query = async (): Promise<GlobalQueryType> => {
         "og_Img": seo.og_Img.asset -> url+"?w=1200"
       }
     `,
+    tags: ['global'],
   });
 };

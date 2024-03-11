@@ -1,6 +1,5 @@
 import AdvancedCtaSection from './AdvancedCtaSection';
-import { Button_Query } from '@/components/ui/Button';
-
+import { Cta_Query } from '@/components/ui/Button';
 export default AdvancedCtaSection;
 export type { Props as AdvancedCtaSectionProps } from './AdvancedCtaSection.types';
 
@@ -14,7 +13,7 @@ export const AdvancedCtaSection_Query = /* groq */ `
       heading,
       additionalInfo,
       cta {
-        ${Button_Query}
+        ${Cta_Query}
       },
     },
   },`;
