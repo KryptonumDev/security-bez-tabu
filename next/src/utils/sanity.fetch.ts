@@ -3,12 +3,10 @@ import { draftMode } from 'next/headers';
 import { createClient, type QueryParams } from 'next-sanity';
 import { requestAsyncStorage } from 'next/dist/client/components/request-async-storage.external';
 
-const NEXT_REVALIDATE = 900;
-
 const projectId = process.env.SANITY_PROJECT_ID;
-const dataset = process.env.SANITY_DATASET || 'production';
 const token = process.env.SANITY_API_TOKEN;
-const apiVersion = '2024-03-05';
+const dataset = 'production';
+const apiVersion = '2024-03-11';
 
 const client = createClient({
   projectId,
@@ -20,9 +18,11 @@ const client = createClient({
 
 export default async function sanityFetch<QueryResponse>({
   query,
+  tags,
   params = {},
 }: {
   query: string;
+  tags?: string[];
   params?: QueryParams;
 }): Promise<QueryResponse> {
   const isDraftMode = requestAsyncStorage.getStore() ? draftMode().isEnabled : false;
@@ -34,8 +34,9 @@ export default async function sanityFetch<QueryResponse>({
       token: token,
       perspective: 'previewDrafts',
     }),
+    cache: isDraftMode || !tags ? 'no-cache' : 'default',
     next: {
-      revalidate: isDraftMode ? 0 : NEXT_REVALIDATE,
+      tags: tags,
     },
   });
 }
