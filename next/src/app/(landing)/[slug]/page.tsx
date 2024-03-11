@@ -28,6 +28,7 @@ const query = async (slug: string): Promise<PageQueryType> => {
         ${Components_Query}
       }
     `,
+    tags: ['landingPage_Collection'],
     params: { slug },
   });
   !data && notFound();
