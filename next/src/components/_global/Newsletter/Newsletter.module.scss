@@ -1,2 +1,94 @@
 .Newsletter {
+  padding: clamp(32px, calc(32vw / 7.68), 48px) clamp(16px, calc(32vw / 7.68), 48px);
+  border: 1px solid var(--primary-700);
+  background: var(--primary-900);
+  display: grid;
+  align-items: center;
+  gap: clamp(32px, calc(32vw / 7.68), 64px);
+  @media (min-width: 1100px) {
+    grid-template-columns: 2.55fr 1fr 2.5fr;
+  }
+  img {
+    max-width: 174px;
+    margin: 0 auto;
+  }
+  @media (max-width: 1099px) {
+    grid-template-columns: 1fr 0.6fr;
+    row-gap: 64px;
+    header {
+      grid-column: 3/1;
+    }
+    img {
+      order: 1;
+    }
+  }
+  @media (max-width: 799px) {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+    header {
+      grid-column: unset;
+    }
+    img {
+      order: unset;
+    }
+  }
+  header {
+    h2 {
+      margin-bottom: clamp(20px, calc(24vw / 7.68), 24px);
+    }
+    .paragraph {
+      font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+    }
+  }
+}
+
+.Form {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  > button {
+    margin-top: 16px;
+  }
+  &:has(.State) {
+    > :not(.State) {
+      visibility: hidden;
+    }
+  }
+}
+
+.State {
+  position: absolute;
+  left: -16px;
+  top: -16px;
+  right: -16px;
+  bottom: -16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--primary-900);
+  h3 {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 8px;
+  }
+  p {
+    margin: 16px 0 32px;
+    font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+  }
+}
+
+.Loading {
+  position: absolute;
+  left: -16px;
+  top: -16px;
+  right: -16px;
+  bottom: -16px;
+  display: grid;
+  place-items: center;
+  border-radius: inherit;
+  background-color: rgba(13, 17, 31, 0.62);
+  backdrop-filter: blur(4px);
+  z-index: 4;
 }

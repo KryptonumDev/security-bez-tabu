@@ -120,7 +120,7 @@ body {
   background-color: var(--primary-900);
   color: var(--primary-100);
   font-size: clamp(1rem, calc(18vw / 7.68), calc(18rem / 16));
-  line-height: 1.55;
+  line-height: 155%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -151,7 +151,7 @@ h6 {
   line-height: 120%;
   overflow-wrap: anywhere;
   font-family: var(--font-secondary);
-  color: var(----primary--200);
+  color: var(--primary-200);
   letter-spacing: -0.01em;
   strong {
     font-weight: 400;

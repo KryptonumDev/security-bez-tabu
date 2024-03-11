@@ -1,8 +1,20 @@
-import type { CtaType, ImgType } from '@/global/types';
+import type { ImgType } from '@/global/types';
+import type { FormStatusTypes } from '@/global/types';
 
-export type Props = {
+export type NewsletterTypes = {
   heading: string;
   paragraph: string;
-  cta: CtaType;
   image: ImgType;
+};
+
+export type StateTypes = {
+  isSuccess: boolean | undefined;
+  setStatus: React.Dispatch<React.SetStateAction<FormStatusTypes>>;
+};
+
+export type StatusIconTypes = {
+  StatusIcon: {
+    Error: React.ReactNode;
+    Success: React.ReactNode;
+  };
 };

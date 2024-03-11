@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import Loader from '../Loader';
 import styles from './Button.module.scss';
 import { isExternalLink } from '@/utils/is-external-link';
 import type { ButtonType } from './Button.types';
 
-const Button = ({ data, children, href, className, loading, ...props }: ButtonType) => {
+const Button = ({ data, children, href, className, ...props }: ButtonType) => {
   if (data) {
     href = data.href;
     children = data.text;
@@ -20,7 +19,6 @@ const Button = ({ data, children, href, className, loading, ...props }: ButtonTy
       className={`${styles['Button']}${className ? ` ${className}` : ''}`}
       {...props}
     >
-      {loading && <Loader />}
       <span dangerouslySetInnerHTML={{ __html: children ?? '' }} />
       <div className={styles.border} />
       <Corner className={styles.corner} />
