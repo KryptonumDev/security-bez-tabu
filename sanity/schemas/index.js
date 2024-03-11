@@ -49,7 +49,7 @@ import ListPillWithIconHeading from './components/ListPillWithIconHeading'
 import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
-import KeyDetails from './components/KeyDetails'
+import KeyDetails, { KeyDetails_List } from './components/KeyDetails'
 import CtaSectionWithImage from './components/CtaSectionWithImage'
 import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
 import AdvancedCtaSection, {
@@ -102,6 +102,7 @@ export const components = [
   advancedCtaSection_RightSide,
   AdvancedCtaSection,
   HeroImageBackground,
+  KeyDetails_List
 ]
 
 export const schemaTypes = [

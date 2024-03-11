@@ -3,6 +3,7 @@ import Markdown from '@/components/ui/markdown';
 import type { Props } from './KeyDetails.types';
 
 const KeyDetails = ({ list }: Props) => {
+
   return (
     <section className={styles['KeyDetails']}>
       {list.map(({ title, description }, i) => (
