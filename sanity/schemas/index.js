@@ -40,10 +40,9 @@ import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
 import HeadingGrid from './components/HeadingGrid'
-
 import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
-import CompaniesShowcase from './components/CompaniesShowcase'
+import CompaniesShowcase, { CompaniesShowcase_List } from './components/CompaniesShowcase'
 import KeyDetails, { KeyDetails_List } from './components/KeyDetails'
 import CtaSectionWithImage from './components/CtaSectionWithImage'
 import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
@@ -89,6 +88,7 @@ export const components = [
   RevealImage,
   Newsletter,
   CompaniesShowcase,
+  CompaniesShowcase_List,
   KeyDetails,
   CtaSectionWithImage,
   HeadingWithNumeratedList,

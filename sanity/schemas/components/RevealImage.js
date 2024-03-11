@@ -6,7 +6,7 @@ const icon = () => '👁️';
 export default {
   name: 'RevealImage',
   type: 'object',
-  title: `${icon()} ${title}`,
+  title,
   icon,
   fields: [
     {

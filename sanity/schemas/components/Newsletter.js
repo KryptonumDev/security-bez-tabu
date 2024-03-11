@@ -5,7 +5,7 @@ const icon = '🗞️';
 
 export default {
   name: 'Newsletter',
-  title: `${icon} ${title}`,
+  title,
   icon: () => icon,
   type: 'object',
   fields: [

@@ -1,3 +1,4 @@
+import { countItems } from '../../utils/count-items';
 import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Lista cech z ikonami i nagłówkiem';
@@ -33,7 +34,7 @@ export default {
     prepare({ heading, list }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
-        subtitle: `${list.length || 0} elementów`,
+        subtitle: countItems(list.length),
         icon,
       }
     },

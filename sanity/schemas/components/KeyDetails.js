@@ -1,3 +1,4 @@
+import { countItems } from '../../utils/count-items';
 import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Kluczowe informacje';
@@ -24,7 +25,7 @@ export default {
     },
     prepare({ list }) {
       return {
-        title: `[${title}] - ${list.length || 0} elementów`,
+        title: `[${title}] - ${countItems(list.length)}`,
         icon,
       }
     },
