@@ -45,7 +45,7 @@ import ListPillWithIconHeading, {
 } from './components/ListPillWithIconHeading'
 import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
-import CompaniesShowcase from './components/CompaniesShowcase'
+import CompaniesShowcase, {CompaniesShowcase_List} from './components/CompaniesShowcase'
 import KeyDetails, {KeyDetails_List} from './components/KeyDetails'
 import CtaSectionWithImage from './components/CtaSectionWithImage'
 import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
@@ -101,6 +101,7 @@ export const components = [
   HeroImageBackground,
   KeyDetails_List,
   ListPillWithIconHeading_List,
+  CompaniesShowcase_List,
 ]
 
 export const schemaTypes = [
