@@ -23,7 +23,7 @@ const Hero = ({
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Button data={cta} />
       </header>
-      <Img data={img} />
+      <Img data={img} sizes='' />
     </section>
   );
 };

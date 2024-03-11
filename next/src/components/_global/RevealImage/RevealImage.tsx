@@ -8,7 +8,7 @@ const RevealImage = ({ description, heading, img }: Props) => {
     <section className={styles['RevealImage']}>
       <Markdown.h2>{heading}</Markdown.h2>
       <Markdown>{description}</Markdown>
-      <Img data={img} />
+      <Img data={img} sizes='' />
     </section>
   );
 };

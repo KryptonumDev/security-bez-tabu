@@ -18,7 +18,7 @@ const Benefits = ({ heading, list }: Props) => {
             index={i}
           >
             <div className={styles.icon}>
-              <Img data={img} />
+              <Img data={img} sizes='' />
             </div>
             <Markdown.h3>{title}</Markdown.h3>
             <Markdown>{description}</Markdown>

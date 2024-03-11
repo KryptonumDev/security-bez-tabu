@@ -9,7 +9,7 @@ const Newsletter = ({ heading, paragraph, cta, image }: Props) => {
     <section className={styles['Newsletter']}>
       <Markdown.h2>{heading}</Markdown.h2>
       <Markdown>{paragraph}</Markdown>
-      <Img data={image} />
+      <Img data={image} sizes='' />
       <Button data={cta} />
     </section>
   );

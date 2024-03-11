@@ -11,7 +11,7 @@ const CtaSectionWithImage = ({ additionalInfo, cta, description, heading, img }:
         <Markdown.h2>{heading}</Markdown.h2>
         <Markdown>{additionalInfo}</Markdown>
         <Markdown>{description}</Markdown>
-        <Img data={img} />
+        <Img data={img} sizes='' />
         <Button data={cta} />
       </div>
     </section>

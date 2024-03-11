@@ -12,7 +12,7 @@ const HeadingGrid = ({ heading, list }: Props) => {
           <div key={index}>
             <Markdown.h3>{title}</Markdown.h3>
             <Markdown>{description}</Markdown>
-            <Img data={img} />
+            <Img data={img} sizes='' />
           </div>
         ))}
       </div>

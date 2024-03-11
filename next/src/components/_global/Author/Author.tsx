@@ -19,7 +19,7 @@ const Author = ({ heading, img, subheading, achievements, paragraph }: Props) =>
           {achievements.map(({ title, img }, i) => (
             <li key={i}>
               <div className={styles.icon}>
-                <Img data={img} />
+                <Img data={img} sizes='' />
               </div>
               <Markdown className={styles.title}>{title}</Markdown>
             </li>

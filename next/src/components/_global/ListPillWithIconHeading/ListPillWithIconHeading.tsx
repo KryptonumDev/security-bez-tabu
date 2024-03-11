@@ -13,7 +13,7 @@ const ListPillWithIconHeading = ({ heading, list }: Props) => {
             key={index}
             className={styles.item}
           >
-            <Img data={img} />
+            <Img data={img} sizes='' />
             <div>
               <Markdown.h4>{title}</Markdown.h4>
               <Markdown>{description}</Markdown>

@@ -11,7 +11,7 @@ const Certificate = ({ heading, paragraph, img }: Props) => {
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
       </header>
       <div className={styles.img}>
-        <Img data={img} />
+        <Img data={img} sizes='' />
         <Border className={styles.border} />
         <Gear className={styles.gear} />
       </div>

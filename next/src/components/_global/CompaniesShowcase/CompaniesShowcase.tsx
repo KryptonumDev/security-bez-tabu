@@ -13,7 +13,7 @@ const CompaniesShowcase = ({ list, heading }: Props) => {
           href={href}
           key={index}
         >
-          <Img data={img} />
+          <Img data={img} sizes='' />
           <Markdown>{name}</Markdown>
         </Link>
       ))}

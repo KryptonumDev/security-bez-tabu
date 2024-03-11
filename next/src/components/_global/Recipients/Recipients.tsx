@@ -18,7 +18,7 @@ const Recipients = ({ heading, list }: Props) => {
             index={i}
           >
             <div className={styles.icon}>
-              <Img data={img} />
+              <Img data={img} sizes='' />
             </div>
             <Markdown>{title}</Markdown>
             <Decoration className={styles.decoration} />
