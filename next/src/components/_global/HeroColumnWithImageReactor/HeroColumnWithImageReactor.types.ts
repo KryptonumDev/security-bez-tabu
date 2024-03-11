@@ -1,9 +1,9 @@
-import type { Cta, ImgType } from '@/global/types';
+import type { CtaType, ImgType } from '@/global/types';
 
-export type Props = {
-  paragraph: string;
-  img: ImgType;
+export type HeroColumnWithImageReactorTypes = {
   heading: string;
-  additionalInfo: string;
-  cta: Cta;
+  paragraph: string;
+  cta: CtaType;
+  additionalInfo?: string;
+  img: ImgType;
 };
