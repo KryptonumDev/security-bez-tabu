@@ -244,6 +244,7 @@ h3,
   bottom: -1px;
   width: 2px;
   background-color: var(--secondary-500);
+  filter: drop-shadow(0px 0px 28px rgba(29, 164, 253, 0.8)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.4));
   &::before,
   &::after {
     content: '';

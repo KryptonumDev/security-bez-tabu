@@ -1,6 +1,6 @@
-export type Props = {
+export type KeyDetailsTypes = {
   list: {
-    title: string;
-    description: string;
+    heading: string;
+    paragraph: string;
   }[];
 };
