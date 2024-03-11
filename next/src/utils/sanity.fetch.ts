@@ -16,7 +16,13 @@ const client = createClient({
   useCdn: false,
 });
 
-/
+/**
+ * Performs a Sanity query in GROQ for fetching data.
+ * @param {string} query - The GROQ query.
+ * @param {string[]} [tags] - Recommended. The tags for Next Caching.
+ * @param {QueryParams} [params={}] - Optional. Used to query dynamic pages, like blog posts.
+ * @returns {Promise<QueryResponse>} Returns a promise of the SEO object.
+ */
 export default async function sanityFetch<QueryResponse>({
   query,
   tags,
