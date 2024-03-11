@@ -33,7 +33,7 @@ const query = async (customQuery: string, dynamicSlug: string, tag: string): Pro
       ${customQuery} {
         "title": seo.title,
         "description": seo.description,
-      },
+      }
     `,
     tags: [tag],
     ...(dynamicSlug && { params: { slug: dynamicSlug } }),
