@@ -12,16 +12,16 @@ const State = ({ isSuccess, setStatus, StatusIcon }: StateTypes & StatusIconType
         {isSuccess ? (
           <>
             <h3>
-              {StatusIcon.Success} <span>Dziękujmey za zapis!</span>
+              {StatusIcon.Success} <span>Dziękujemy za zapis!</span>
             </h3>
-            <p>Twój adres e-mail został pomyślnie zapisany do naszego newslettera!</p>
+            <p>Od teraz będziemy informować Cię o aktualnościach z Security Bez Tabu!</p>
           </>
         ) : (
           <>
             <h3>
-              {StatusIcon.Error} <span>Coś poszło nie tak...</span>
+              {StatusIcon.Error} <span>Nie udało się zapisać...</span>
             </h3>
-            <p>Twój adres e-mail został pomyślnie zapisany do naszego newslettera!</p>
+            <p>Podczas przesyłania informacji pojawił się problem z serwerem. Spróbuj ponownie!</p>
             <Button
               type='button'
               onClick={() => setStatus({ sending: false, success: undefined })}
