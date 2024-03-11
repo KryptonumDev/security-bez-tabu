@@ -1,2 +1,83 @@
 .RevealImage {
+  display: grid;
+  align-items: center;
+  @media (min-width: 1000px) {
+    grid-template-columns: auto auto;
+  }
+  justify-content: space-between;
+  gap: clamp(48px, calc(64vw / 7.68), 78px);
+  header {
+    max-width: calc(484rem / 16);
+    h2 {
+      margin-bottom: clamp(24px, calc(32vw / 7.68), 32px);
+    }
+    .paragraph {
+      font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+      > *:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  .img {
+    max-width: 410px;
+    margin: 0 auto;
+    position: relative;
+    .CuttedEdgeIcon {
+      position: absolute;
+      right: -1px;
+      top: -1px;
+      width: auto;
+      height: clamp(32px, calc(36vw / 7.68), 36px);
+      z-index: 2;
+    }
+    .borderRight {
+      height: calc(100% - clamp(32px, calc(36vw / 7.68), 36px) + 4px);
+      top: calc(clamp(32px, calc(36vw / 7.68), 36px) - 2px);
+    }
+    .overlay {
+      &:hover,
+      &:has(input:focus) {
+        opacity: 0.8;
+      }
+      &:has(input:checked) {
+        opacity: 0;
+      }
+      input {
+        position: absolute;
+        opacity: 0;
+      }
+      cursor: pointer;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(2px);
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .EyeIcon {
+        filter: drop-shadow(0px 0px 24px #1da4fd) drop-shadow(0px 0px 9px #98d6ff);
+        animation: blink 5s infinite;
+        @keyframes blink {
+          0%,
+          25%,
+          50%,
+          75%,
+          100% {
+            opacity: 1;
+          }
+          20%,
+          40%,
+          60%,
+          80% {
+            opacity: 0.62;
+          }
+        }
+      }
+    }
+  }
 }

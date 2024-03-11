@@ -1,7 +1,7 @@
 import type { ImgType } from '@/global/types';
 
-export type Props = {
-  img: ImgType;
+export type RevealImageTypes = {
   heading: string;
-  description: string;
+  paragraph: string;
+  img: ImgType;
 };

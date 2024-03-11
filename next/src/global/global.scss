@@ -97,6 +97,7 @@ iframe {
 img {
   max-width: 100%;
   height: auto;
+  vertical-align: bottom;
 }
 
 :focus {
@@ -232,5 +233,50 @@ h3,
       filter: blur(1px) drop-shadow(0px 0px 16px #1da4fd) drop-shadow(0px 0px 8px #1da4fd)
         drop-shadow(0px 0px 4px #98d6ff);
     }
+  }
+}
+
+.borderLeft,
+.borderRight {
+  z-index: 3;
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  width: 2px;
+  background-color: var(--secondary-500);
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 10px;
+    display: block;
+    background: inherit;
+  }
+}
+.borderLeft {
+  left: -1px;
+  &::before {
+    left: 0;
+    top: -1px;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+  }
+  &::after {
+    left: 0;
+    bottom: -1px;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+  }
+}
+.borderRight {
+  right: -1px;
+  &::before {
+    right: 0;
+    top: -1px;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+  }
+  &::after {
+    right: 0;
+    bottom: -1px;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
   }
 }
