@@ -1,36 +1,43 @@
 import { removeMarkdown } from '../../utils/remove-markdown'
 
+const title = 'Ukryte zdjęcie, które można odkryć';
+const icon = () => '👁️';
+
 export default {
   name: 'RevealImage',
   type: 'object',
-  title: 'Seckja z odkrywalnym zdjęciem',
+  title: `${icon()} ${title}`,
+  icon,
   fields: [
     {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Opis',
-      validation: (Rule) => Rule.required(),
+      title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie do odkrycia',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      paragraph: 'paragraph'
     },
-    prepare({ heading }) {
+    prepare({ heading, paragraph }) {
       return {
-        title: `[Sekcja z odkrywalnym zdjęciem] - ${removeMarkdown(heading)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
+        icon,
       }
     },
   },
