@@ -1,24 +1,31 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
+
+const title = 'Kluczowe informacje';
+const icon = () => '✅';
 
 export default {
   name: 'KeyDetails',
   type: 'object',
-  title: 'Kluczowe informacje',
+  title,
+  icon,
   fields: [
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'KeyDetails_List'}],
+      of: [{
+        type: 'KeyDetails_List'
+      }],
       title: 'Lista',
     },
   ],
   preview: {
     select: {
-      title: 'list.0.title',
+      list: 'list',
     },
-    prepare({title}) {
+    prepare({ list }) {
       return {
-        title: `[Kluczowe informacje] - ${title}`,
+        title: `[${title}] - ${list.length || 0} elementów`,
+        icon,
       }
     },
   },
@@ -30,22 +37,22 @@ export const KeyDetails_List = {
   title: 'Lista kluczowych informacji',
   fields: [
     {
-      name: 'title',
-      type: 'markdown',
-      title: 'Title',
+      name: 'heading',
+      type: 'string',
+      title: 'Nagłówek',
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Description',
+      title: 'Paragraph',
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'description',
+      title: 'heading',
+      subtitle: 'paragraph',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),
