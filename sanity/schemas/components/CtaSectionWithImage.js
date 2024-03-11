@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'CtaSectionWithImage',
@@ -41,7 +41,7 @@ export default {
       heading: 'heading',
       cta: 'cta',
     },
-    prepare({heading, cta}) {
+    prepare({ heading, cta }) {
       return {
         title: `[Sekcja z wezwaniem do działania i zdjęciem] - ${removeMarkdown(heading)}`,
         subtitle: `${cta?.theme} button linked to ${cta?.href}'}`,

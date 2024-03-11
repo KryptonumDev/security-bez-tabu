@@ -1,3 +1,1 @@
-export const removeMarkdown = (markdown: string) => {
-  return markdown?.replace(/\*\*(.*?)\*\*/g, '$1')
-}
+export const removeMarkdown = (markdown: string) => markdown?.replace(/\*\*(.*?)\*\*/g, '$1')

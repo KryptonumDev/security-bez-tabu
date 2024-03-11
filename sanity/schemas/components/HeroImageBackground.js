@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from "../../utils/remove-markdown"
 
 export default {
   name: 'HeroImageBackground',
@@ -40,7 +40,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Sekcja Sekcja wstępna ze zdjęciem w tle] - ${removeMarkdown(heading)}`,
       }

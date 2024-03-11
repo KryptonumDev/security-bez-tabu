@@ -1,4 +1,5 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from "../../utils/remove-markdown"
+
 
 export default {
   name: 'HeadingWithNumeratedList',
@@ -15,7 +16,7 @@ export default {
       name: 'list',
       type: 'array',
       title: 'List',
-      of: [{type: 'TitleAndDescription_Item'}],
+      of: [{ type: 'TitleAndDescription_Item' }],
       validation: (Rule) => Rule.required(),
     },
   ],
@@ -23,7 +24,7 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Nagłówek z listą numerowaną] - ${removeMarkdown(heading)}`,
       }

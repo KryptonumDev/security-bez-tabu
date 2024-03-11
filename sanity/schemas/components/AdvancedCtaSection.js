@@ -1,4 +1,5 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from "../../utils/remove-markdown"
+
 
 export default {
   name: 'AdvancedCtaSection',
@@ -22,7 +23,7 @@ export default {
     select: {
       heading: 'advancedCtaSection_LeftSide.heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[Rozbudowana sekcja z wezwaniem do działania] - ${removeMarkdown(heading)}`,
       }

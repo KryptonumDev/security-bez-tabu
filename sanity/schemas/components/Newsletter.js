@@ -1,4 +1,4 @@
-import removeMarkdown from '../../utils/removeMarkdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 export default {
   name: 'Newsletter',

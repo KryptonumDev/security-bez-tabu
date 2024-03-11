@@ -4,21 +4,6 @@ export default {
   type: "object",
   fields: [
     {
-      name: 'theme',
-      type: 'string',
-      title: 'Typ',
-      options: {
-        list: [
-          { title: 'Primary', value: 'primary' },
-          { title: 'Secondary', value: 'secondary' }
-        ],
-        layout: 'radio',
-        direction: "horizontal"
-      },
-      initialValue: 'primary',
-      validation: Rule => Rule.required()
-    },
-    {
       type: 'string',
       name: 'text',
       title: 'Text',
