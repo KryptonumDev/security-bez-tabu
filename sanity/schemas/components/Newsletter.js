@@ -23,12 +23,6 @@ export default {
       title: 'Zdjęcie',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'cta',
-      type: 'cta',
-      title: 'CTA',
-      validation: (Rule) => Rule.required(),
-    },
   ],
   preview: {
     select: {
