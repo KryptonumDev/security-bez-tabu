@@ -1,23 +1,23 @@
 export default {
   name: "cta",
-  title: "Call to action",
+  title: "Wezwanie do działania",
   type: "object",
   fields: [
     {
-      type: 'string',
       name: 'text',
+      type: 'string',
       title: 'Text',
-      description: 'The text that will appear on the button',
+      description: 'Tekst, który będzie wyświetlany na przycisku',
       validation: Rule => Rule.required()
     },
     {
       name: 'href',
       type: 'string',
       title: 'Link',
-      description: 'Relative or absolute link (https://)',
+      description: 'Link relatywny lub absolutny (rozpoczynający się od https://)',
       validation: Rule => Rule.custom(value => {
         if (value && !value.startsWith('/') && !value.startsWith('https://') && !value.startsWith('#')) {
-          return 'Incorrect URL.';
+          return 'Nieprawidłowy adres URL.';
         }
         return true;
       }).required(),
@@ -26,13 +26,12 @@ export default {
   preview: {
     select: {
       title: 'text',
-      theme: 'theme',
       href: 'href'
     },
-    prepare({ title, theme, href }) {
+    prepare({ title, href }) {
       return {
         title: title,
-        subtitle: `${theme} button linked to ${href}`,
+        subtitle: `prowadzi do ${href}`,
       }
     }
   }
