@@ -15,7 +15,7 @@ const Breadcrumbs = ({ data, visible = true }: BreadcrumbsType) => {
     <Fragment>
       <SchemaBreadcrumbs data={data} />
       {visible && (
-        <nav className={styles.wrapper}>
+        <nav className={styles['Breadcrumbs']}>
           {data.map(({ name, path }, i) => {
             const Item: React.ElementType = i !== data.length - 1 ? Link : 'span';
             return (

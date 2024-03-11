@@ -11,7 +11,10 @@ export default async function LandingPage({ params: { slug } }: { params: { slug
 
   return (
     <>
-      <Breadcrumbs data={[{ name: name, path: slug }]} />
+      <Breadcrumbs
+        data={[{ name: name, path: slug }]}
+        visible={false}
+      />
       <Components data={content} />
     </>
   );
