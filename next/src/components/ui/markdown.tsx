@@ -48,7 +48,14 @@ const Markdown = ({ Tag, components, children, className, ...props }: MarkdownPr
       source={children}
       components={{
         ...(Tag && {
-          p: ({ children }) => <Tag {...props}>{children}</Tag>,
+          p: ({ children }) => (
+            <Tag
+              {...(className && { className: className })}
+              {...props}
+            >
+              {children}
+            </Tag>
+          ),
         }),
         a: LinkRenderer,
         li: ListRenderer,
@@ -56,19 +63,20 @@ const Markdown = ({ Tag, components, children, className, ...props }: MarkdownPr
         ul: ({ children }) => <ul className='unorderedList'>{children}</ul>,
         ...components,
       }}
-      {...props}
     />
   );
 
-  return className || Object.keys(props).length > 0 ? (
+  return Tag ? (
+    markdown
+  ) : (
     <div
       {...(className && { className: className })}
-      {...props}
+      {...(Object.keys(props).length > 0 && {
+        ...props,
+      })}
     >
       {markdown}
     </div>
-  ) : (
-    markdown
   );
 };
 
