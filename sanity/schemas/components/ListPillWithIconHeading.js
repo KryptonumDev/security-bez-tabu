@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/remove-markdown'
+import {removeMarkdown} from '../../utils/remove-markdown'
 
 export default {
   name: 'ListPillWithIconHeading',
@@ -14,7 +14,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{ type: 'TitleDescriptionAndImage_Item' }],
+      of: [{type: 'ListPillWithIconHeading_List'}],
       title: 'lista',
       validation: (Rule) => Rule.required(),
     },
@@ -23,9 +23,46 @@ export default {
     select: {
       heading: 'heading',
     },
-    prepare({ heading }) {
+    prepare({heading}) {
       return {
         title: `[Lista z owalną ikoną i nagłówkiem] - ${removeMarkdown(heading)}`,
+      }
+    },
+  },
+}
+
+export const ListPillWithIconHeading_List = {
+  name: 'ListPillWithIconHeading_List',
+  title: 'Lista z owalną ikoną',
+  type: 'object',
+  fields: [
+    {
+      name: 'title',
+      type: 'markdown',
+      title: 'Title',
+    },
+    {
+      name: 'description',
+      type: 'markdown',
+      title: 'Description',
+    },
+    {
+      name: 'img',
+      type: 'image',
+      title: 'Image',
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+      media: 'img',
+    },
+    prepare({title, subtitle, media}) {
+      return {
+        title: removeMarkdown(title),
+        subtitle: removeMarkdown(subtitle),
+        media,
       }
     },
   },
