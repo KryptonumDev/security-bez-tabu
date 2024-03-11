@@ -1,8 +1,12 @@
 import { removeMarkdown } from '../../utils/remove-markdown'
 
+const title = 'Newsletter';
+const icon = '🗞️';
+
 export default {
   name: 'Newsletter',
-  title: 'Newsletter',
+  title: `${icon} ${title}`,
+  icon: () => icon,
   type: 'object',
   fields: [
     {
@@ -30,7 +34,8 @@ export default {
     },
     prepare({ heading }) {
       return {
-        title: `[Newsletter] - ${removeMarkdown(heading)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        icon: () => icon,
       }
     },
   },
