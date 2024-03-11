@@ -33,7 +33,7 @@ const query = async (customQuery: string, dynamicSlug: string): Promise<QueryTyp
       ${customQuery} {
         "title": seo.title,
         "description": seo.description,
-      }
+      },
     `,
     ...(dynamicSlug && { params: { slug: dynamicSlug } }),
   });
