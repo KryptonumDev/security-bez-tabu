@@ -1,6 +1,6 @@
 import HeroWithRotatingElipsis from './HeroWithRotatingElipsis';
 import { Img_Query } from '@/components/ui/image';
-import { Cta_Query } from '@/components/ui/Button/Button';
+import { Cta_Query } from '@/components/ui/Button';
 export type { Props as HeroWithRotatingElipsisProps } from './HeroWithRotatingElipsis.types';
 export default HeroWithRotatingElipsis;
 

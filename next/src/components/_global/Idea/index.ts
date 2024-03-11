@@ -1,4 +1,4 @@
-import { Cta_Query } from '@/components/ui/Button/Button';
+import { Cta_Query } from '@/components/ui/Button';
 import Idea from './Idea';
 export type { Props as IdeaProps } from './Idea.types';
 export default Idea;
