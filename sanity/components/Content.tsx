@@ -11,7 +11,7 @@ export default {
     {type: 'HeadingWithNumeratedList'},
     {type: 'AdvancedCtaSection'},
     {type: 'HeroImageBackground'},
-    {type: 'ListPillWithIconHeading'},
+    {type: 'TraitsListWithIcons'},
     {type: 'CtaSectionWithImage'},
     {type: 'RevealImage'},
     {type: 'Newsletter'},

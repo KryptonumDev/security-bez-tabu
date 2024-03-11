@@ -1,5 +1,5 @@
 // Single Types
-import global, {global_Seo} from './singleTypes/global'
+import global, { global_Seo } from './singleTypes/global'
 import NotFoundPage from './singleTypes/NotFound_Page'
 import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page'
 
@@ -19,12 +19,12 @@ import {
   imageAndLink,
   titleDescriptionAndImage,
 } from './components/list'
-import {PrivacyPolicyPage_Content} from './singleTypes/PrivacyPolicy_Page'
+import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
 import CtaSection from './components/CtaSection'
 import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
-import {chart_Bars, chart_Circle, chart_Item, chart_Linear} from './components/chart'
+import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
 import Perks from './components/Perks'
 import Benefits from './components/Benefits'
 import StatsList from './components/StatsList'
@@ -40,21 +40,19 @@ import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
 import HeadingGrid from './components/HeadingGrid'
-import ListPillWithIconHeading, {
-  ListPillWithIconHeading_List,
-} from './components/ListPillWithIconHeading'
+
 import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
 import CompaniesShowcase from './components/CompaniesShowcase'
-import KeyDetails, {KeyDetails_List} from './components/KeyDetails'
+import KeyDetails, { KeyDetails_List } from './components/KeyDetails'
 import CtaSectionWithImage from './components/CtaSectionWithImage'
 import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
 import AdvancedCtaSection, {
   advancedCtaSection_LeftSide,
   advancedCtaSection_RightSide,
 } from './components/AdvancedCtaSection'
-import HeroCentralizedTextAndTransparentImage from './components/HeroImageBackground'
 import HeroImageBackground from './components/HeroImageBackground'
+import TraitsListWithIcons, { TraitsListWithIcons_List } from './components/TraitsListWithIcons'
 
 export const components = [
   global_Seo,
@@ -88,7 +86,6 @@ export const components = [
   HeroColumnWithImageReactor,
   HeroWithRotatingElipsis,
   HeadingGrid,
-  ListPillWithIconHeading,
   RevealImage,
   Newsletter,
   CompaniesShowcase,
@@ -100,7 +97,8 @@ export const components = [
   AdvancedCtaSection,
   HeroImageBackground,
   KeyDetails_List,
-  ListPillWithIconHeading_List,
+  TraitsListWithIcons,
+  TraitsListWithIcons_List,
 ]
 
 export const schemaTypes = [
