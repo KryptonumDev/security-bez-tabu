@@ -13,7 +13,7 @@ const Newsletter = ({ heading, paragraph, image }: NewsletterTypes) => {
       </header>
       <Img
         data={image}
-        sizes=''
+        sizes='174px'
       />
       <Form StatusIcon={StatusIcon} />
     </section>
