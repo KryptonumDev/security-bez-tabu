@@ -1,12 +1,16 @@
-import { type Cta } from "@/global/types"
+import type { CtaType } from '@/global/types';
 
-export type Props = {
-  data?: Cta;
-  children?: string;
-  href?: string;
-  className?: string;
-  loading?: boolean;
-  type?: string;
-  disabled?: boolean;
-  onClick?: () => void;
-}
+export type ButtonType = (
+  | {
+      data: CtaType;
+      href?: never;
+      children?: never;
+    }
+  | {
+      data?: never;
+      href?: CtaType['href'];
+      children: CtaType['text'];
+      disabled?: boolean;
+    }
+) & { loading?: boolean } & React.ButtonHTMLAttributes<HTMLButtonElement> &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;

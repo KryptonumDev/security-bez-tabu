@@ -16,6 +16,7 @@ const client = createClient({
   useCdn: false,
 });
 
+/
 export default async function sanityFetch<QueryResponse>({
   query,
   tags,

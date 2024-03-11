@@ -1,18 +1,16 @@
 import styles from './Radio.module.scss';
-import type { Props } from './Radio.types';
+import type { RadioTypes } from './Radio.types';
 
-const Radio = ({
-  register,
-  label,
-  errors,
-  ...props
-}: Props) => {
+const Radio = ({ register, label, errors, ...props }: RadioTypes) => {
   return (
-    <label className={styles.label} aria-invalid={Boolean(errors[register.name])}>
+    <label
+      className={styles.label}
+      aria-invalid={Boolean(errors[register.name])}
+    >
       <input
         {...register}
         name={register.name}
-        type="radio"
+        type='radio'
         {...props}
       />
       <div className={styles.indicator}></div>

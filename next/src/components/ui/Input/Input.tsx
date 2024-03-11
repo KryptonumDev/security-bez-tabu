@@ -1,9 +1,9 @@
 import Error from '../Error';
 import styles from './Input.module.scss';
-import type { Props } from './Input.types';
 import Textarea from './_TextArea';
+import type { InputTypes } from './Input.types';
 
-const Input = ({ register, label, errors, textarea = false, type = 'text', ...props }: Props) => {
+const Input = ({ register, label, errors, textarea = false, type = 'text', ...props }: InputTypes) => {
   return (
     <label
       className={styles.Input}
@@ -25,7 +25,7 @@ const Input = ({ register, label, errors, textarea = false, type = 'text', ...pr
           {...props}
         />
       )}
-      <Error error={errors[register.name]} />
+      {errors && <Error error={errors[register.name]?.message?.toString()} />}
     </label>
   );
 };

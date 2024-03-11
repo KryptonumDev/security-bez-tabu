@@ -1,8 +1,8 @@
 import Error from '../Error';
 import styles from './Checkbox.module.scss';
-import type { Props } from './Checkbox.types';
+import type { CheckboxTypes } from './Checkbox.types';
 
-const Checkbox = ({ register, label, errors, ...props }: Props) => {
+const Checkbox = ({ register, label, errors, ...props }: CheckboxTypes) => {
   return (
     <label
       className={styles.label}
@@ -18,7 +18,7 @@ const Checkbox = ({ register, label, errors, ...props }: Props) => {
         <Check />
       </div>
       <p className='label'>{label}</p>
-      <Error error={errors[register.name]} />
+      {errors && <Error error={errors[register.name]?.message?.toString()} />}
     </label>
   );
 };

@@ -1,14 +1,10 @@
 'use server';
-
+import { QueryType } from './Countdown.types';
 import Client from './_Client';
 import sanityFetch from '@/utils/sanity.fetch';
 
-type QueryResult = {
-  countdown_Date: string;
-}
-
-const Countdown = async ({ ...props}) => {
-    const { countdown_Date } = await query();
+const Countdown = async ({ ...props }) => {
+  const { countdown_Date } = await query();
   const targetDate = new Date(countdown_Date).getTime();
 
   return (
@@ -22,14 +18,14 @@ const Countdown = async ({ ...props}) => {
   );
 };
 
-const query = async () => {
-  const data = await sanityFetch({
+const query = async (): Promise<QueryType> => {
+  return await sanityFetch<QueryType>({
     query: /* groq */ `
     *[_id == "WyzwanieSecurity_Global"][0] {
       countdown_Date,
     }`,
+    tags: ['WyzwanieSecurity_Global'],
   });
-  return data as QueryResult;
 };
 
 const BorderLeft = (

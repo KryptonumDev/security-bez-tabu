@@ -1,7 +1,9 @@
-import type { FieldErrors, FieldValues, UseFormRegisterReturn } from 'react-hook-form';
+import type { FieldErrors } from 'react-hook-form';
 
-export type Props = {
-  register: UseFormRegisterReturn<string>;
-  label: React.JSX.Element;
-  errors: FieldErrors<FieldValues>;
-};
+export type CheckboxTypes = {
+  label: React.ReactNode;
+  register: {
+    name: string;
+  };
+  errors?: FieldErrors;
+} & React.InputHTMLAttributes<HTMLInputElement>;

@@ -1,3 +1,3 @@
 export type QueryType = {
-  link: string;
+  countdown_Date: string;
 };

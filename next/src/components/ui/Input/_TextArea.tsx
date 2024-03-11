@@ -1,11 +1,8 @@
 'use client';
 import { forwardRef } from 'react';
+import type { TextareaType } from './Input.types';
 
-interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-  name?: string;
-}
-
-const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ name, ...props }, ref) => {
+const Textarea = forwardRef<HTMLTextAreaElement, TextareaType>(({ name, ...props }, ref) => {
   const handleExpand = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const textarea = e.target;
     textarea.style.height = 'auto';
@@ -22,6 +19,6 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(({ name, ...prop
   );
 });
 
-Textarea.displayName = 'Textarea';
-
 export default Textarea;
+
+Textarea.displayName = 'Textarea';

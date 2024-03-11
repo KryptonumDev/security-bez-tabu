@@ -43,8 +43,8 @@ const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success:
         label='E-mail'
         type='email'
         register={register('email', {
-          required: { value: true, message: `E-mail jest wymagany` },
-          pattern: { value: REGEX.email, message: `Niepoprawny adres e-mail` },
+          required: { value: true, message: 'E-mail jest wymagany' },
+          pattern: { value: REGEX.email, message: 'Niepoprawny adres e-mail' },
         })}
         errors={errors}
       />
@@ -69,7 +69,7 @@ const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success:
           </>
         }
         register={register('legal', {
-          required: { value: true, message: `Zgoda jest wymagana` },
+          required: { value: true, message: 'Zgoda jest wymagana' },
         })}
         errors={errors}
       />
