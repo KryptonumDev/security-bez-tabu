@@ -29,21 +29,25 @@ import type { ImgType } from '@/global/types';
 import TraitsListWithIcons, {
   TraitsListWithIcons_Query,
   type TraitsListWithIconsTypes,
-} from './_global/TraitsListWithIcons';
+} from '@/components/_global/TraitsListWithIcons';
 import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
-} from './_global/SimpleDescriptiveGrid';
-import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
+} from '@/components/_global/SimpleDescriptiveGrid';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
   DetailedOrderedListTypes,
-} from './_global/DetailedOrderedList';
-import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
-import PersonPresentation, { PersonPresentation_Query, PersonPresentationTypes } from './_global/PersonPresentation';
-import ImageReactor, { ImageReactor_Query, ImageReactorTypes } from './_global/ImageReactor';
-import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleCtaSection';
-import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
+} from '@/components/_global/DetailedOrderedList';
+import AdvancedCtaSection, {
+  AdvancedCtaSection_Query,
+  AdvancedCtaSectionProps,
+} from '@/components/_global/AdvancedCtaSection';
+import PersonPresentation, {
+  PersonPresentation_Query,
+  PersonPresentationTypes,
+} from '@/components/_global/PersonPresentation';
+import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from '@/components/_global/ImageReactor';
+import SimpleCtaSection, { SimpleCtaSection_Query, SimpleCtaSectionTypes } from '@/components/_global/SimpleCtaSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -55,7 +59,7 @@ type ComponentMapType = {
   TraitsListWithIcons: TraitsListWithIconsTypes;
   Benefits: BenefitsProps;
   Perks: PerksProps;
-  SimpleCtaSection: SimpleCtaSectionProps;
+  SimpleCtaSection: SimpleCtaSectionTypes;
   Stats: StatsProps;
   Recipients: RecipientsProps;
   Reviews: ReviewsProps;
@@ -83,7 +87,7 @@ const ComponentMap = ({ props }) => ({
   TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   Benefits: <Benefits {...(props as BenefitsProps)} />,
   Perks: <Perks {...(props as PerksProps)} />,
-  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
+  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionTypes)} />,
   DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
   Stats: <Stats {...(props as StatsProps)} />,
   Recipients: <Recipients {...(props as RecipientsProps)} />,

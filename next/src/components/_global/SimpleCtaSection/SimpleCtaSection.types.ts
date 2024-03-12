@@ -1,10 +1,8 @@
-export type Props = {
+import type { CtaType } from '@/global/types';
+
+export type SimpleCtaSectionTypes = {
   heading: string;
-  cta: {
-    theme: string;
-    href: string;
-    text: string;
-  };
-  additionalInfo: string;
+  cta: CtaType;
+  additionalInfo?: string;
   isCountdown: boolean;
 };
