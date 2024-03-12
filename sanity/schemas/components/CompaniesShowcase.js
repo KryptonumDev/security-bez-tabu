@@ -14,16 +14,18 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'list',
       type: 'array',
-      of: [{
-        type: 'CompaniesShowcase_List'
-      }],
+      of: [
+        {
+          type: 'CompaniesShowcase_List',
+        },
+      ],
       title: 'Lista',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

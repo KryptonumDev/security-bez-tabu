@@ -1,13 +1,50 @@
 import { removeMarkdown } from '../../utils/remove-markdown'
 
-const icon = () => '❓'
-const title = 'FAQ'
+const title = 'Szczegółowa lista numerowana'
+const icon = () => '🔢'
 
 export default {
-  name: 'Faq',
+  name: 'DetailedOrderedList',
+  type: 'object',
   title,
   icon,
+  fields: [
+    {
+      name: 'heading',
+      type: 'markdown',
+      title: 'Nagłówek',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'subheading',
+      type: 'markdown',
+      title: 'Podnagłówek (opcjonalne)',
+    },
+    {
+      name: 'list',
+      type: 'array',
+      of: [{ type: 'DetailedOrderedList_Chapter' }],
+      title: 'Lista',
+      validation: (Rule) => Rule.required(),
+    },
+  ],
+  preview: {
+    select: {
+      title: 'heading',
+    },
+    prepare({ title }) {
+      return {
+        title: `[Lista numerowana] - ${removeMarkdown(title)}`,
+        icon,
+      }
+    },
+  },
+}
+
+export const DetailedOrderedList_Chapter = {
+  name: 'DetailedOrderedList_Chapter',
   type: 'object',
+  title: 'Rozdziały',
   fields: [
     {
       name: 'heading',
@@ -21,13 +58,6 @@ export default {
       title: 'Paragraf',
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'list',
-      type: 'array',
-      of: [{ type: 'Faq_List' }],
-      title: 'Lista',
-      validation: (Rule) => Rule.required(),
-    },
   ],
   preview: {
     select: {
@@ -35,40 +65,7 @@ export default {
     },
     prepare({ title }) {
       return {
-        title: `[Faq] - ${removeMarkdown(title)}`,
-        icon,
-      }
-    },
-  },
-}
-
-export const Faq_List = {
-  name: 'Faq_List',
-  type: 'object',
-  title: 'Lista FAQ',
-  fields: [
-    {
-      name: 'title',
-      type: 'markdown',
-      title: 'Tytuł',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'description',
-      type: 'markdown',
-      title: 'Opis',
-      validation: (Rule) => Rule.required(),
-    },
-  ],
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'description',
-    },
-    prepare({ title, subtitle }) {
-      return {
-        title: removeMarkdown(title),
-        subtitle: removeMarkdown(subtitle),
+        title: title,
       }
     },
   },

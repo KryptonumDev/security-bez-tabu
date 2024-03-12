@@ -1,15 +1,9 @@
-import type { CtaType, ImgType } from '@/global/types';
+import type { CtaType } from '@/global/types';
 
 export type Props = {
-  advancedCtaSection_LeftSide: {
-    heading: string;
-    description: string;
-  };
-  advancedCtaSection_RightSide: {
-    heading: string;
-    additionalInfo: string;
-    image?: ImgType;
-    cta: CtaType;
-    description?: string;
-  };
+  heading: string;
+  description: string;
+  cta: CtaType;
+  secondHeading: string;
+  additionalInfo: string;
 };

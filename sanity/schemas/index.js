@@ -1,5 +1,5 @@
 // Single Types
-import global, { global_Seo } from './singleTypes/global'
+import global, {global_Seo} from './singleTypes/global'
 import NotFoundPage from './singleTypes/NotFound_Page'
 import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page'
 
@@ -19,12 +19,12 @@ import {
   imageAndLink,
   titleDescriptionAndImage,
 } from './components/list'
-import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
-import CtaSection from './components/CtaSection'
+import {PrivacyPolicyPage_Content} from './singleTypes/PrivacyPolicy_Page'
+import SimpleCtaSection from './components/SimpleCtaSection'
 import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
-import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
+import {chart_Bars, chart_Circle, chart_Item, chart_Linear} from './components/chart'
 import Perks from './components/Perks'
 import Benefits from './components/Benefits'
 import StatsList from './components/StatsList'
@@ -33,25 +33,23 @@ import Reviews from './components/Reviews'
 import Idea from './components/Idea'
 import Certificate from './components/Certificate'
 import Lessons from './components/Lessons'
-import Faq from './components/Faq'
+import Faq, {Faq_List} from './components/Faq'
 import Author from './components/Author'
 import Charts from './components/Charts'
 import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
 import HeroWithRotatingElipsis from './components/HeroWithRotatingElipsis'
-import HeadingGrid from './components/HeadingGrid'
 import RevealImage from './components/RevealImage'
 import Newsletter from './components/Newsletter'
-import CompaniesShowcase, { CompaniesShowcase_List } from './components/CompaniesShowcase'
-import KeyDetails, { KeyDetails_List } from './components/KeyDetails'
+import CompaniesShowcase, {CompaniesShowcase_List} from './components/CompaniesShowcase'
+import KeyDetails, {KeyDetails_List} from './components/KeyDetails'
 import CtaSectionWithImage from './components/CtaSectionWithImage'
 import HeadingWithNumeratedList from './components/HeadingWithNumeratedList'
-import AdvancedCtaSection, {
-  advancedCtaSection_LeftSide,
-  advancedCtaSection_RightSide,
-} from './components/AdvancedCtaSection'
+import AdvancedCtaSection from './components/AdvancedCtaSection'
 import HeroImageBackground from './components/HeroImageBackground'
-import TraitsListWithIcons, { TraitsListWithIcons_List } from './components/TraitsListWithIcons'
+import TraitsListWithIcons, {TraitsListWithIcons_List} from './components/TraitsListWithIcons'
+import SimpleDescriptiveGrid, {SimpleDescriptiveGrid_Grid} from './components/SimpleDescriptiveGrid'
+import DetailedOrderedList, {DetailedOrderedList_Chapter} from './components/DetailedOrderedList'
 
 export const components = [
   global_Seo,
@@ -62,7 +60,7 @@ export const components = [
   imageAndLink,
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
-  CtaSection,
+  SimpleCtaSection,
   review,
   stats,
   chapter,
@@ -84,7 +82,6 @@ export const components = [
   Content,
   HeroColumnWithImageReactor,
   HeroWithRotatingElipsis,
-  HeadingGrid,
   RevealImage,
   Newsletter,
   CompaniesShowcase,
@@ -92,13 +89,16 @@ export const components = [
   KeyDetails,
   CtaSectionWithImage,
   HeadingWithNumeratedList,
-  advancedCtaSection_LeftSide,
-  advancedCtaSection_RightSide,
   AdvancedCtaSection,
   HeroImageBackground,
   KeyDetails_List,
   TraitsListWithIcons,
   TraitsListWithIcons_List,
+  SimpleDescriptiveGrid,
+  SimpleDescriptiveGrid_Grid,
+  DetailedOrderedList,
+  DetailedOrderedList_Chapter,
+  Faq_List,
 ]
 
 export const schemaTypes = [

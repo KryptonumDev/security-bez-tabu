@@ -1,7 +1,13 @@
+import { removeMarkdown } from '../../utils/remove-markdown'
+
+const title = 'Opinie'
+const icon = () => '🗣️'
+
 export default {
   name: 'Reviews',
-  title: 'Opinie',
+  title: title,
   type: 'object',
+  icon,
   fields: [
     {
       name: 'heading',
@@ -12,15 +18,19 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'review'}],
+      of: [{ type: 'review' }],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
-    prepare() {
+    select: {
+      title: 'heading',
+    },
+    prepare({ title }) {
       return {
-        title: `[Opinie]`,
+        title: `[Opinie] - ${removeMarkdown(title)}`,
+        icon,
       }
     },
   },

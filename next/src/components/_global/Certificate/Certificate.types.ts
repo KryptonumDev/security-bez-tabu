@@ -1,7 +1,10 @@
-import type { ImgType } from '@/global/types';
+import type { CtaType, ImgType } from '@/global/types';
 
 export type Props = {
   heading: string;
   paragraph: string;
-  img: ImgType;
+  cta: CtaType;
+  additionalInfo: string;
+  imageReactor: ImgType;
+  isHighlighted?: boolean;
 };

@@ -1,7 +1,6 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
 import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
-import CtaSection, { CtaSection_Query, type CtaSectionProps } from '@/components/_global/CtaSection';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
@@ -23,27 +22,37 @@ import HeroColumnWithImageReactor, {
 import Charts, { Charts_Query, type ChartsProps } from '@/components/_global/Charts';
 import CompaniesShowcase, {
   CompaniesShowcase_Query,
-  type CompaniesShowcaseProps,
+  type CompaniesShowcaseTypes,
 } from '@/components/_global/CompaniesShowcase';
 import RevealImage, { RevealImage_Query, type RevealImageTypes } from '@/components/_global/RevealImage';
-import HeadingGrid, { HeadingGrid_Query, HeadingGridProps } from '@/components/_global/HeadingGrid';
 import type { ImgType } from '@/global/types';
 import TraitsListWithIcons, {
   TraitsListWithIcons_Query,
   type TraitsListWithIconsTypes,
 } from './_global/TraitsListWithIcons';
+import SimpleDescriptiveGrid, {
+  SimpleDescriptiveGrid_Query,
+  SimpleDescriptiveGridTypes,
+} from './_global/SimpleDescriptiveGrid';
+import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
+import DetailedOrderedList, {
+  DetailedOrderedList_Query,
+  DetailedOrderedListTypes,
+} from './_global/DetailedOrderedList';
+import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleCtaSection';
+import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
   Newsletter: NewsletterTypes;
-  CompaniesShowcase: CompaniesShowcaseProps;
+  CompaniesShowcase: CompaniesShowcaseTypes;
   HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
   KeyDetails: KeyDetailsTypes;
   HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
   TraitsListWithIcons: TraitsListWithIconsTypes;
   Benefits: BenefitsProps;
   Perks: PerksProps;
-  CtaSection: CtaSectionProps;
+  SimpleCtaSection: SimpleCtaSectionProps;
   Stats: StatsProps;
   Recipients: RecipientsProps;
   Reviews: ReviewsProps;
@@ -54,20 +63,23 @@ type ComponentMapType = {
   Author: AuthorProps;
   LargeImage: ImgType;
   Charts: ChartsProps;
-  HeadingGrid: HeadingGridProps;
+  SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
+  DetailedOrderedList: DetailedOrderedListTypes;
+  AdvnacedCtaSection: AdvancedCtaSectionProps;
 };
 
 const ComponentMap = ({ props }) => ({
   RevealImage: <RevealImage {...(props as RevealImageTypes)} />,
   Newsletter: <Newsletter {...(props as NewsletterTypes)} />,
-  CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseProps)} />,
+  CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseTypes)} />,
   HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
   KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
   HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
   TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   Benefits: <Benefits {...(props as BenefitsProps)} />,
   Perks: <Perks {...(props as PerksProps)} />,
-  CtaSection: <CtaSection {...(props as CtaSectionProps)} />,
+  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
+  DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
   Stats: <Stats {...(props as StatsProps)} />,
   Recipients: <Recipients {...(props as RecipientsProps)} />,
   Reviews: <Reviews {...(props as ReviewsProps)} />,
@@ -78,7 +90,8 @@ const ComponentMap = ({ props }) => ({
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
-  HeadingGrid: <HeadingGrid {...(props as HeadingGridProps)} />,
+  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionProps)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -106,7 +119,7 @@ export const Components_Query = /* groq */ `
     ${HeroWithRotatingElipsis_Query}
     ${Benefits_Query}
     ${Perks_Query}
-    ${CtaSection_Query}
+    ${SimpleCtaSection_Query}
     ${Stats_Query}
     ${Recipients_Query}
     ${Reviews_Query}
@@ -117,6 +130,8 @@ export const Components_Query = /* groq */ `
     ${Author_Query}
     ${LargeImage_Query}
     ${Charts_Query}
-    ${HeadingGrid_Query}
+    ${SimpleDescriptiveGrid_Query}
+    ${DetailedOrderedList_Query}
+    ${AdvancedCtaSection_Query}
   },
 `;

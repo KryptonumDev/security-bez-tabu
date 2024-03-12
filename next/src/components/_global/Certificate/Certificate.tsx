@@ -3,7 +3,7 @@ import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
 import type { Props } from './Certificate.types';
 
-const Certificate = ({ heading, paragraph, img }: Props) => {
+const Certificate = ({ heading, paragraph, cta, additionalInfo, imageReactor, isHighlighted }: Props) => {
   return (
     <section className={styles['Certificate']}>
       <header>
@@ -11,7 +11,10 @@ const Certificate = ({ heading, paragraph, img }: Props) => {
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
       </header>
       <div className={styles.img}>
-        <Img data={img} sizes='' />
+        <Img
+          data={imageReactor}
+          sizes=''
+        />
         <Border className={styles.border} />
         <Gear className={styles.gear} />
       </div>
