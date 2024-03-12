@@ -5,3 +5,8 @@ export type QueryType = {
 export type CountdownTypes = {
   className?: string;
 };
+
+export type ClientTypes = {
+  date: number;
+  animationDelays: string[];
+};
