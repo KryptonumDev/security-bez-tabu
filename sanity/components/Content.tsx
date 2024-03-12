@@ -7,7 +7,7 @@ export default {
   of: [
     {type: 'HeroColumnWithImageReactor'},
     {type: 'HeroWithRotatingElipsis'},
-    {type: 'HeadingGrid'},
+    {type: 'SimpleDescriptiveGrid'},
     {type: 'HeadingWithNumeratedList'},
     {type: 'AdvancedCtaSection'},
     {type: 'HeroImageBackground'},
