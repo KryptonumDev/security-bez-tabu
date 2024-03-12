@@ -4,7 +4,7 @@ import type { ImgType } from '@/global/types';
 const defaultPlaceholder =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMUltCqBwABcQDWMIsO5gAAAABJRU5ErkJggg==';
 
-type ImgProps = (
+type ImgTypes = (
   | {
       data: ImgType;
       src?: never;
@@ -24,12 +24,12 @@ type ImgProps = (
   priority?: boolean;
 } & React.HTMLAttributes<HTMLImageElement>;
 
-const Img = ({ data, src, width, height, alt, sizes, priority, ...props }: ImgProps) => {
+const Img = ({ data, src, width, height, alt, sizes, priority, ...props }: ImgTypes) => {
   const placeholder = data?.asset.metadata?.lqip || defaultPlaceholder;
   if (data) {
     src = data.asset.url;
     width = width || data.asset.metadata.dimensions.width;
-    height = width || data.asset.metadata.dimensions.height;
+    height = height || data.asset.metadata.dimensions.height;
     alt = alt || data.asset.altText;
   }
 
