@@ -32,6 +32,10 @@ import RevealImage, { RevealImage_Query, type RevealImageProps } from '@/compone
 import Reviews, { Reviews_Query, type ReviewsProps } from '@/components/_global/Reviews';
 import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
 import type { ImgType } from '@/global/types';
+import SimpleDescriptiveGrid, {
+  SimpleDescriptiveGrid_Query,
+  SimpleDescriptiveGridTypes,
+} from './_global/SimpleDescriptiveGrid';
 
 type ComponentMapType = {
   RevealImage: RevealImageProps;
@@ -54,7 +58,7 @@ type ComponentMapType = {
   Author: AuthorProps;
   LargeImage: ImgType;
   Charts: ChartsProps;
-  HeadingGrid: HeadingGridProps;
+  SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -78,7 +82,7 @@ const ComponentMap = ({ props }) => ({
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
-  HeadingGrid: <HeadingGrid {...(props as HeadingGridProps)} />,
+  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -117,6 +121,6 @@ export const Components_Query = /* groq */ `
     ${Author_Query}
     ${LargeImage_Query}
     ${Charts_Query}
-    ${HeadingGrid_Query}
+    ${SimpleDescriptiveGrid_Query}
   },
 `;
