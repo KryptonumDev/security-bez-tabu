@@ -50,6 +50,7 @@ import HeroImageBackground from './components/HeroImageBackground'
 import TraitsListWithIcons, {TraitsListWithIcons_List} from './components/TraitsListWithIcons'
 import SimpleDescriptiveGrid, {SimpleDescriptiveGrid_Grid} from './components/SimpleDescriptiveGrid'
 import DetailedOrderedList, {DetailedOrderedList_Chapter} from './components/DetailedOrderedList'
+import PersonPresentation, { PersonPresentation_Achievements } from './components/PersonPresentation'
 
 export const components = [
   global_Seo,
@@ -99,6 +100,8 @@ export const components = [
   DetailedOrderedList,
   DetailedOrderedList_Chapter,
   Faq_List,
+  PersonPresentation_Achievements,
+  PersonPresentation,
 ]
 
 export const schemaTypes = [
