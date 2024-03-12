@@ -43,8 +43,8 @@ export default {
     },
     prepare({heading, cta, isCountdown}) {
       return {
-        title: removeMarkdown(heading),
-        subtitle: `${cta?.theme} button linked to ${cta?.href}${isCountdown && ' | Odliczanie wyświetlone'}`,
+        title: `[Wezwanie do działania] - ${removeMarkdown(heading)}`,
+        subtitle: `Przycisk zalinkowany do ${cta?.href} ${isCountdown ?' | Odliczanie wyświetlone' : ''}`,
         icon,
       }
     },
