@@ -9,6 +9,7 @@ export default {
     {type: 'HeroWithRotatingElipsis'},
     {type: 'SimpleDescriptiveGrid'},
     {type: 'HeadingWithNumeratedList'},
+    {type: 'DetailedOrderedList'},
     {type: 'AdvancedCtaSection'},
     {type: 'HeroImageBackground'},
     {type: 'TraitsListWithIcons'},

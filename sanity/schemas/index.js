@@ -19,7 +19,7 @@ import {
   imageAndLink,
   titleDescriptionAndImage,
 } from './components/list'
-import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
+import {PrivacyPolicyPage_Content} from './singleTypes/PrivacyPolicy_Page'
 import SimpleCtaSection from './components/SimpleCtaSection'
 import review from './components/review'
 import stats from './components/stats'
@@ -52,6 +52,7 @@ import AdvancedCtaSection, {
 import HeroImageBackground from './components/HeroImageBackground'
 import TraitsListWithIcons, {TraitsListWithIcons_List} from './components/TraitsListWithIcons'
 import SimpleDescriptiveGrid, {SimpleDescriptiveGrid_Grid} from './components/SimpleDescriptiveGrid'
+import DetailedOrderedList, {DetailedOrderedList_Chapter} from './components/DetailedOrderedList'
 
 export const components = [
   global_Seo,
@@ -100,6 +101,8 @@ export const components = [
   TraitsListWithIcons_List,
   SimpleDescriptiveGrid,
   SimpleDescriptiveGrid_Grid,
+  DetailedOrderedList,
+  DetailedOrderedList_Chapter,
 ]
 
 export const schemaTypes = [

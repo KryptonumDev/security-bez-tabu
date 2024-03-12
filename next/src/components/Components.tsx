@@ -36,6 +36,7 @@ import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
+import DetailedOrderedList, { DetailedOrderedList_Query, DetailedOrderedListTypes } from './_global/DetailedOrderedList';
 
 type ComponentMapType = {
   RevealImage: RevealImageProps;
@@ -59,6 +60,7 @@ type ComponentMapType = {
   LargeImage: ImgType;
   Charts: ChartsProps;
   SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
+  DetailedOrderedList: DetailedOrderedListTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -72,6 +74,7 @@ const ComponentMap = ({ props }) => ({
   Benefits: <Benefits {...(props as BenefitsProps)} />,
   Perks: <Perks {...(props as PerksProps)} />,
   SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
+  DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
   Stats: <Stats {...(props as StatsProps)} />,
   Recipients: <Recipients {...(props as RecipientsProps)} />,
   Reviews: <Reviews {...(props as ReviewsProps)} />,
@@ -122,5 +125,6 @@ export const Components_Query = /* groq */ `
     ${LargeImage_Query}
     ${Charts_Query}
     ${SimpleDescriptiveGrid_Query}
+    ${DetailedOrderedList_Query}
   },
 `;
