@@ -1,6 +1,6 @@
-import { Img_Query } from '@/components/ui/image';
 import SimpleDescriptiveGrid from './SimpleDescriptiveGrid';
 export default SimpleDescriptiveGrid;
+import { Img_Query } from '@/components/ui/image';
 export type { SimpleDescriptiveGridTypes } from './SimpleDescriptiveGrid.types';
 
 export const SimpleDescriptiveGrid_Query = `
@@ -10,8 +10,8 @@ export const SimpleDescriptiveGrid_Query = `
       icon {
         ${Img_Query}
       },
-      title,
-      description,
-    }
+      heading,
+      paragraph,
+    },
   },
 `;

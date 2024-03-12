@@ -1,15 +1,16 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import { type FieldValues, useForm } from 'react-hook-form';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
 import styles from './Faq.module.scss';
 import { REGEX } from '@/global/constants';
-import { type FieldValues, useForm } from 'react-hook-form';
+import type { FormStatusTypes } from '@/global/types';
 
 const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success: React.JSX.Element } }) => {
-  const [status, setStatus] = useState({ sending: false, success: undefined as boolean | undefined });
+  const [status, setStatus] = useState<FormStatusTypes>({ sending: false, success: undefined });
   const {
     register,
     handleSubmit,
@@ -76,7 +77,6 @@ const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success:
       <Button
         type='submit'
         disabled={status?.sending}
-        loading={status?.sending}
       >
         Wyślij wiadomość
       </Button>
