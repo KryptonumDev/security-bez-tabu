@@ -42,6 +42,7 @@ import DetailedOrderedList, {
 } from './_global/DetailedOrderedList';
 import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
 import PersonPresentation, { PersonPresentation_Query, PersonPresentationTypes } from './_global/PersonPresentation';
+import ImageReactor, { ImageReactor_Query, ImageReactorTypes } from './_global/ImageReactor';
 
 type ComponentMapType = {
   RevealImage: RevealImageProps;
@@ -68,6 +69,7 @@ type ComponentMapType = {
   DetailedOrderedList: DetailedOrderedListTypes;
   AdvnacedCtaSection: AdvancedCtaSectionProps;
   PersonPresentation: PersonPresentationTypes;
+  ImageReactor: ImageReactorTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -95,6 +97,7 @@ const ComponentMap = ({ props }) => ({
   SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
   AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionProps)} />,
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
+  ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -137,5 +140,6 @@ export const Components_Query = /* groq */ `
     ${DetailedOrderedList_Query}
     ${AdvancedCtaSection_Query}
     ${PersonPresentation_Query}
+    ${ImageReactor_Query}
   },
 `;

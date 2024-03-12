@@ -32,5 +32,6 @@ export default {
     {type: 'image', name: 'LargeImage', title: 'Duże zdjęcie'},
     {type: 'Charts'},
     {type: 'PersonPresentation'},
+    {type: 'ImageReactor'},
   ],
 }
