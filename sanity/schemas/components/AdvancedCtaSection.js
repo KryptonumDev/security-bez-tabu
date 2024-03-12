@@ -1,40 +1,13 @@
-import { removeMarkdown } from "../../utils/remove-markdown"
+import {removeMarkdown} from '../../utils/remove-markdown'
 
+const icon = () => '📣'
+const title = 'Rozbudowana sekcja z wezwaniem do działania'
 
 export default {
   name: 'AdvancedCtaSection',
   type: 'object',
-  title: 'Rozbudowana sekcja z wezwaniem do działania',
-  fields: [
-    {
-      name: 'advancedCtaSection_LeftSide',
-      type: 'advancedCtaSection_LeftSide',
-      title: 'Lewa strona',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'advancedCtaSection_RightSide',
-      type: 'advancedCtaSection_RightSide',
-      title: 'Prawa strona',
-      validation: (Rule) => Rule.required(),
-    },
-  ],
-  preview: {
-    select: {
-      heading: 'advancedCtaSection_LeftSide.heading',
-    },
-    prepare({ heading }) {
-      return {
-        title: `[Rozbudowana sekcja z wezwaniem do działania] - ${removeMarkdown(heading)}`,
-      }
-    },
-  },
-}
-
-export const advancedCtaSection_LeftSide = {
-  name: 'advancedCtaSection_LeftSide',
-  type: 'object',
-  title: 'Lewa strona',
+  title,
+  icon,
   fields: [
     {
       name: 'heading',
@@ -48,24 +21,11 @@ export const advancedCtaSection_LeftSide = {
       title: 'Opis',
       validation: (Rule) => Rule.required(),
     },
-  ],
-}
-
-export const advancedCtaSection_RightSide = {
-  name: 'advancedCtaSection_RightSide',
-  type: 'object',
-  title: 'Prawa strona',
-  fields: [
     {
-      name: 'heading',
+      name: 'secondHeading',
       type: 'markdown',
-      title: 'Nagłówek',
+      title: 'Drugi nagłówek',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'description',
-      type: 'markdown',
-      title: 'Opis (opcjonalnie)',
     },
     {
       name: 'cta',
@@ -74,15 +34,21 @@ export const advancedCtaSection_RightSide = {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'image',
-      type: 'image',
-      title: 'Zdjęcie (opcjonalne), obok informacji',
-    },
-    {
       name: 'additionalInfo',
-      type: 'markdown',
-      title: 'Dodatkowe informacje ',
+      type: 'string',
+      title: 'Dodatkowe informacje',
       validation: (Rule) => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      heading: 'heading',
+    },
+    prepare({heading}) {
+      return {
+        title: `[Rozbudowana sekcja z wezwaniem do działania] - ${removeMarkdown(heading)}`,
+        icon,
+      }
+    },
+  },
 }

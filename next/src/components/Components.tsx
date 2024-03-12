@@ -36,7 +36,11 @@ import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
-import DetailedOrderedList, { DetailedOrderedList_Query, DetailedOrderedListTypes } from './_global/DetailedOrderedList';
+import DetailedOrderedList, {
+  DetailedOrderedList_Query,
+  DetailedOrderedListTypes,
+} from './_global/DetailedOrderedList';
+import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageProps;
@@ -61,6 +65,7 @@ type ComponentMapType = {
   Charts: ChartsProps;
   SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
   DetailedOrderedList: DetailedOrderedListTypes;
+  AdvnacedCtaSection: AdvancedCtaSectionProps;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -86,6 +91,7 @@ const ComponentMap = ({ props }) => ({
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
   SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionProps)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -126,5 +132,6 @@ export const Components_Query = /* groq */ `
     ${Charts_Query}
     ${SimpleDescriptiveGrid_Query}
     ${DetailedOrderedList_Query}
+    ${AdvancedCtaSection_Query}
   },
 `;

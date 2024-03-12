@@ -5,16 +5,12 @@ export type { Props as AdvancedCtaSectionProps } from './AdvancedCtaSection.type
 
 export const AdvancedCtaSection_Query = /* groq */ `
   _type == 'AdvancedCtaSection' => {
-    advancedCtaSection_LeftSide {
-      heading,
-      description,
+    heading,
+    description,
+    secondHeading,
+    cta {
+      ${Cta_Query}
     },
-    advancedCtaSection_RightSide {
-      heading,
-      additionalInfo,
-      cta {
-        ${Cta_Query}
-      },
-    },
+    additionalInfo,
   },
   `;

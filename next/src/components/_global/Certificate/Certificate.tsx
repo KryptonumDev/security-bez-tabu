@@ -4,7 +4,6 @@ import Img from '@/components/ui/image';
 import type { Props } from './Certificate.types';
 
 const Certificate = ({ heading, paragraph, cta, additionalInfo, imageReactor, isHighlighted }: Props) => {
-  console.log('Certificate', { heading, paragraph, cta, additionalInfo, imageReactor, isHighlighted });
   return (
     <section className={styles['Certificate']}>
       <header>

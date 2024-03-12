@@ -1,33 +1,40 @@
-import { removeMarkdown } from '../../utils/remove-markdown'
+import {removeMarkdown} from '../../utils/remove-markdown'
+
+const title = 'Przedstawienie firm'
+const icon = () => '🏢'
 
 export default {
   name: 'CompaniesShowcase',
-  title: 'Przedstawienie firm',
+  title,
   type: 'object',
+  icon,
   fields: [
     {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'list',
       type: 'array',
-      of: [{
-        type: 'CompaniesShowcase_List'
-      }],
+      of: [
+        {
+          type: 'CompaniesShowcase_List',
+        },
+      ],
       title: 'Lista',
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
     },
-    prepare({ heading }) {
+    prepare({heading}) {
       return {
         title: `[Przedstawienie firm] - ${removeMarkdown(heading)}`,
+        icon,
       }
     },
   },
@@ -48,7 +55,7 @@ export const CompaniesShowcase_List = {
       type: 'string',
       title: 'Link (optional)',
       description: 'Relative or absolute link (https://)',
-      validation: Rule =>
+      validation: (Rule) =>
         Rule.custom((value) => {
           if (
             value &&
@@ -72,7 +79,7 @@ export const CompaniesShowcase_List = {
       name: 'name',
       media: 'img',
     },
-    prepare({ name, media }) {
+    prepare({name, media}) {
       return {
         title: name,
         media,
