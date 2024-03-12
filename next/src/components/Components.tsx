@@ -4,13 +4,13 @@ import Certificate, { Certificate_Query, type CertificateProps } from '@/compone
 import CtaSection, { CtaSection_Query, type CtaSectionProps } from '@/components/_global/CtaSection';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
-import KeyDetails, { type KeyDetailsProps, KeyDetails_Query } from '@/components/_global/KeyDetails';
+import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from '@/components/_global/Perks';
 import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
 import Reviews, { Reviews_Query, type ReviewsProps } from '@/components/_global/Reviews';
-import Newsletter, { Newsletter_Query, type NewsletterProps } from '@/components/_global/Newsletter';
+import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components/_global/Newsletter';
 import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
 import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
@@ -18,29 +18,29 @@ import HeroWithRotatingElipsis, {
 } from '@/components/_global/HeroWithRotatingElipsis';
 import HeroColumnWithImageReactor, {
   HeroColumnWithImageReactor_Query,
-  type HeroColumnWithImageReactorProps,
+  type HeroColumnWithImageReactorTypes,
 } from '@/components/_global/HeroColumnWithImageReactor';
 import Charts, { Charts_Query, type ChartsProps } from '@/components/_global/Charts';
 import CompaniesShowcase, {
   CompaniesShowcase_Query,
   type CompaniesShowcaseProps,
 } from '@/components/_global/CompaniesShowcase';
-import ListPillWithIconHeading, {
-  ListPillWithIconHeading_Query,
-  type ListPillWithIconHeadingProps,
-} from '@/components/_global/ListPillWithIconHeading';
-import RevealImage, { RevealImage_Query, type RevealImageProps } from '@/components/_global/RevealImage';
+import RevealImage, { RevealImage_Query, type RevealImageTypes } from '@/components/_global/RevealImage';
 import HeadingGrid, { HeadingGrid_Query, HeadingGridProps } from '@/components/_global/HeadingGrid';
 import type { ImgType } from '@/global/types';
+import TraitsListWithIcons, {
+  TraitsListWithIcons_Query,
+  type TraitsListWithIconsTypes,
+} from './_global/TraitsListWithIcons';
 
 type ComponentMapType = {
-  RevealImage: RevealImageProps;
-  Newsletter: NewsletterProps;
+  RevealImage: RevealImageTypes;
+  Newsletter: NewsletterTypes;
   CompaniesShowcase: CompaniesShowcaseProps;
-  HeroColumnWithImageReactor: HeroColumnWithImageReactorProps;
-  KeyDetails: KeyDetailsProps;
+  HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
+  KeyDetails: KeyDetailsTypes;
   HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
-  ListPillWithIconHeading: ListPillWithIconHeadingProps;
+  TraitsListWithIcons: TraitsListWithIconsTypes;
   Benefits: BenefitsProps;
   Perks: PerksProps;
   CtaSection: CtaSectionProps;
@@ -58,13 +58,13 @@ type ComponentMapType = {
 };
 
 const ComponentMap = ({ props }) => ({
-  RevealImage: <RevealImage {...(props as RevealImageProps)} />,
-  Newsletter: <Newsletter {...(props as NewsletterProps)} />,
+  RevealImage: <RevealImage {...(props as RevealImageTypes)} />,
+  Newsletter: <Newsletter {...(props as NewsletterTypes)} />,
   CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseProps)} />,
-  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorProps)} />,
-  KeyDetails: <KeyDetails {...(props as KeyDetailsProps)} />,
+  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
+  KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
   HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
-  ListPillWithIconHeading: <ListPillWithIconHeading {...(props as ListPillWithIconHeadingProps)} />,
+  TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   Benefits: <Benefits {...(props as BenefitsProps)} />,
   Perks: <Perks {...(props as PerksProps)} />,
   CtaSection: <CtaSection {...(props as CtaSectionProps)} />,
@@ -97,9 +97,9 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
     _type,
-    ${ListPillWithIconHeading_Query}
     ${RevealImage_Query}
     ${Newsletter_Query}
+    ${TraitsListWithIcons_Query}
     ${CompaniesShowcase_Query}
     ${HeroColumnWithImageReactor_Query}
     ${KeyDetails_Query}
