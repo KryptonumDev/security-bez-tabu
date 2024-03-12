@@ -19,6 +19,8 @@ import {
   imageAndLink,
   titleDescriptionAndImage,
 } from './components/list'
+import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
+import SimpleCtaSection from './components/SimpleCtaSection'
 import {PrivacyPolicyPage_Content} from './singleTypes/PrivacyPolicy_Page'
 import CtaSection from './components/CtaSection'
 import review from './components/review'
@@ -62,7 +64,7 @@ export const components = [
   imageAndLink,
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
-  CtaSection,
+  SimpleCtaSection,
   review,
   stats,
   chapter,

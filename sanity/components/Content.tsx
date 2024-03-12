@@ -19,7 +19,7 @@ export default {
     {type: 'KeyDetails'},
     {type: 'Perks'},
     {type: 'Benefits'},
-    {type: 'CtaSection'},
+    {type: 'SimpleCtaSection'},
     {type: 'StatsList'},
     {type: 'Recipients'},
     {type: 'Reviews'},
