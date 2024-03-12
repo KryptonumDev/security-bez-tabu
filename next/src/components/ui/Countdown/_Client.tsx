@@ -1,7 +1,5 @@
 'use client';
-
 import { useEffect, useState } from 'react';
-import styles from './Countdown.module.scss';
 
 const calculateTimeLeft = (date: number) => {
   const now = new Date().getTime();
@@ -22,15 +20,7 @@ const calculateTimeLeft = (date: number) => {
   return { days, hours, minutes, seconds };
 };
 
-const Client = ({
-  date,
-  BorderLeft,
-  BorderRight,
-}: {
-  date: number;
-  BorderLeft: React.ReactNode;
-  BorderRight: React.ReactNode;
-}) => {
+const Client = ({ date }: { date: number }) => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(date));
   useEffect(() => {
     const timer = setInterval(() => {
@@ -40,32 +30,54 @@ const Client = ({
   }, [date]);
 
   return (
-    <div className={styles.counter}>
-      {!timeLeft.isExpired && (
-        <>
-          <div>
-            {BorderLeft}
-            <span dangerouslySetInnerHTML={{ __html: `${timeLeft.days} dni` }} />
-            {BorderRight}
-          </div>
-          <div>
-            {BorderLeft}
-            <span dangerouslySetInnerHTML={{ __html: `${timeLeft.hours} godz` }} />
-            {BorderRight}
-          </div>
-          <div>
-            {BorderLeft}
-            <span dangerouslySetInnerHTML={{ __html: `${timeLeft.minutes} min` }} />
-            {BorderRight}
-          </div>
-          <div>
-            {BorderLeft}
-            <span dangerouslySetInnerHTML={{ __html: `${timeLeft.seconds} sek` }} />
-            {BorderRight}
-          </div>
-        </>
-      )}
-    </div>
+    !timeLeft.isExpired && (
+      <>
+        <div>
+          <div
+            className='borderLeft'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <div
+            className='borderRight'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <span dangerouslySetInnerHTML={{ __html: `${timeLeft.days} dni` }} />
+        </div>
+        <div>
+          <div
+            className='borderLeft'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <div
+            className='borderRight'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <span dangerouslySetInnerHTML={{ __html: `${timeLeft.hours} godz` }} />
+        </div>
+        <div>
+          <div
+            className='borderLeft'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <div
+            className='borderRight'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <span dangerouslySetInnerHTML={{ __html: `${timeLeft.minutes} min` }} />
+        </div>
+        <div>
+          <div
+            className='borderLeft'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <div
+            className='borderRight'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
+          <span dangerouslySetInnerHTML={{ __html: `${timeLeft.seconds} sek` }} />
+        </div>
+      </>
+    )
   );
 };
 
