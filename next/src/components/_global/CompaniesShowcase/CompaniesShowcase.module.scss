@@ -1,2 +1,36 @@
 .CompaniesShowcase {
+  header {
+    max-width: calc(586rem / 16);
+    margin: 0 auto clamp(24px, calc(48vw / 7.68), 48px);
+    text-align: center;
+  }
+  ul {
+    list-style-type: none;
+    display: flex;
+    gap: 32px clamp(32px, calc(48vw / 7.68), 48px);
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      li:not(:has(a:hover)) {
+        opacity: 0.62;
+      }
+    }
+    li {
+      margin: auto;
+      width: 140px;
+      text-align: center;
+      a {
+        display: block;
+      }
+      img {
+        width: auto;
+        max-width: 112px;
+        height: 165px;
+        padding: 24px 0;
+        object-fit: contain;
+        margin-bottom: 8px;
+      }
+    }
+  }
 }
