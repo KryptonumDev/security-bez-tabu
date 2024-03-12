@@ -21,8 +21,6 @@ import {
 } from './components/list'
 import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
 import SimpleCtaSection from './components/SimpleCtaSection'
-import {PrivacyPolicyPage_Content} from './singleTypes/PrivacyPolicy_Page'
-import CtaSection from './components/CtaSection'
 import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
