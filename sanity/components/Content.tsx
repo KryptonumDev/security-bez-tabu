@@ -33,5 +33,6 @@ export default {
     {type: 'Charts'},
     {type: 'PersonPresentation'},
     {type: 'ImageReactor'},
+    {type: 'CourseDetails'},
   ],
 }

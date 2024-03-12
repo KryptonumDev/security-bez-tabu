@@ -52,6 +52,7 @@ import SimpleDescriptiveGrid, {SimpleDescriptiveGrid_Grid} from './components/Si
 import DetailedOrderedList, {DetailedOrderedList_Chapter} from './components/DetailedOrderedList'
 import PersonPresentation, {PersonPresentation_Achievements} from './components/PersonPresentation'
 import ImageReactor from './components/ImageReactor'
+import CourseDetails, {CourseDetails_List} from './components/CourseDetails'
 
 export const components = [
   global_Seo,
@@ -104,6 +105,8 @@ export const components = [
   PersonPresentation_Achievements,
   PersonPresentation,
   ImageReactor,
+  CourseDetails,
+  CourseDetails_List,
 ]
 
 export const schemaTypes = [

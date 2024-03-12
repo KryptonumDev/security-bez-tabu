@@ -43,6 +43,7 @@ import PersonPresentation, { PersonPresentation_Query, PersonPresentationTypes }
 import ImageReactor, { ImageReactor_Query, ImageReactorTypes } from './_global/ImageReactor';
 import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleCtaSection';
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
+import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -70,6 +71,7 @@ type ComponentMapType = {
   AdvnacedCtaSection: AdvancedCtaSectionProps;
   PersonPresentation: PersonPresentationTypes;
   ImageReactor: ImageReactorTypes;
+  CourseDettails: CourseDetailsTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -98,6 +100,7 @@ const ComponentMap = ({ props }) => ({
   AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionProps)} />,
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
+  CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -141,5 +144,6 @@ export const Components_Query = /* groq */ `
     ${AdvancedCtaSection_Query}
     ${PersonPresentation_Query}
     ${ImageReactor_Query}
+    ${CourseDetails_Query}
   },
 `;
