@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const icon = () => '❓'
 const title = 'FAQ'
@@ -24,7 +24,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'Faq_List'}],
+      of: [{ type: 'Faq_List' }],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
     },
@@ -33,7 +33,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: `[Faq] - ${removeMarkdown(title)}`,
         icon,
@@ -65,7 +65,7 @@ export const Faq_List = {
       title: 'title',
       subtitle: 'description',
     },
-    prepare({title, subtitle}) {
+    prepare({ title, subtitle }) {
       return {
         title: removeMarkdown(title),
         subtitle: removeMarkdown(subtitle),

@@ -1,12 +1,13 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
+import { countItems } from '../../utils/count-items'
 
-const title = 'Przedstawienie firm'
-const icon = () => '🏢'
+const title = 'Przedstawienie firm';
+const icon = () => '💼';
 
 export default {
   name: 'CompaniesShowcase',
-  title,
   type: 'object',
+  title,
   icon,
   fields: [
     {
@@ -30,10 +31,12 @@ export default {
   preview: {
     select: {
       heading: 'heading',
+      list: 'list',
     },
-    prepare({heading}) {
+    prepare({ heading, list }) {
       return {
-        title: `[Przedstawienie firm] - ${removeMarkdown(heading)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: countItems(list.length),
         icon,
       }
     },
@@ -42,46 +45,37 @@ export default {
 
 export const CompaniesShowcase_List = {
   name: 'CompaniesShowcase_List',
-  title: 'Lista firm',
   type: 'object',
+  title: 'Lista',
   fields: [
     {
       name: 'name',
       type: 'string',
       title: 'Name',
-    },
-    {
-      name: 'href',
-      type: 'string',
-      title: 'Link (optional)',
-      description: 'Relative or absolute link (https://)',
-      validation: (Rule) =>
-        Rule.custom((value) => {
-          if (
-            value &&
-            !value.startsWith('/') &&
-            !value.startsWith('https://') &&
-            !value.startsWith('#')
-          ) {
-            return 'Incorrect URL.'
-          }
-          return true
-        }),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'img',
       type: 'image',
-      title: 'Image',
+      title: 'Logo',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'href',
+      type: 'url',
+      title: 'Link do strony (opcjonalny)',
     },
   ],
   preview: {
     select: {
       name: 'name',
       media: 'img',
+      href: 'href',
     },
-    prepare({name, media}) {
+    prepare({ name, media, href }) {
       return {
         title: name,
+        subtitle: href || 'Brak linka do strony firmy',
         media,
       }
     },

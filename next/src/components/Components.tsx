@@ -1,41 +1,40 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
 import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
-import Charts, { Charts_Query, type ChartsProps } from '@/components/_global/Charts';
-import CompaniesShowcase, {
-  CompaniesShowcase_Query,
-  type CompaniesShowcaseProps,
-} from '@/components/_global/CompaniesShowcase';
-import SimpleCtaSection, { SimpleCtaSection_Query, SimpleCtaSectionProps } from '@/components/_global/SimpleCtaSection';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
-import HeadingGrid, { HeadingGrid_Query, HeadingGridProps } from '@/components/_global/HeadingGrid';
-import HeroColumnWithImageReactor, {
-  HeroColumnWithImageReactor_Query,
-  type HeroColumnWithImageReactorProps,
-} from '@/components/_global/HeroColumnWithImageReactor';
+import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
+import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
+import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
+import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
+import Perks, { type PerksProps, Perks_Query } from '@/components/_global/Perks';
+import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
+import Reviews, { Reviews_Query, type ReviewsProps } from '@/components/_global/Reviews';
+import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components/_global/Newsletter';
+import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
 import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
   type HeroWithRotatingElipsisProps,
 } from '@/components/_global/HeroWithRotatingElipsis';
-import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
-import KeyDetails, { KeyDetails_Query, type KeyDetailsProps } from '@/components/_global/KeyDetails';
-import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
-import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
-import ListPillWithIconHeading, {
-  ListPillWithIconHeading_Query,
-  type ListPillWithIconHeadingProps,
-} from '@/components/_global/ListPillWithIconHeading';
-import Newsletter, { Newsletter_Query, type NewsletterProps } from '@/components/_global/Newsletter';
-import Perks, { Perks_Query, type PerksProps } from '@/components/_global/Perks';
-import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
-import RevealImage, { RevealImage_Query, type RevealImageProps } from '@/components/_global/RevealImage';
-import Reviews, { Reviews_Query, type ReviewsProps } from '@/components/_global/Reviews';
-import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
+import HeroColumnWithImageReactor, {
+  HeroColumnWithImageReactor_Query,
+  type HeroColumnWithImageReactorTypes,
+} from '@/components/_global/HeroColumnWithImageReactor';
+import Charts, { Charts_Query, type ChartsProps } from '@/components/_global/Charts';
+import CompaniesShowcase, {
+  CompaniesShowcase_Query,
+  type CompaniesShowcaseTypes,
+} from '@/components/_global/CompaniesShowcase';
+import RevealImage, { RevealImage_Query, type RevealImageTypes } from '@/components/_global/RevealImage';
 import type { ImgType } from '@/global/types';
+import TraitsListWithIcons, {
+  TraitsListWithIcons_Query,
+  type TraitsListWithIconsTypes,
+} from './_global/TraitsListWithIcons';
 import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
+import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
   DetailedOrderedListTypes,
@@ -43,15 +42,17 @@ import DetailedOrderedList, {
 import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
 import PersonPresentation, { PersonPresentation_Query, PersonPresentationTypes } from './_global/PersonPresentation';
 import ImageReactor, { ImageReactor_Query, ImageReactorTypes } from './_global/ImageReactor';
+import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleCtaSection';
+import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 
 type ComponentMapType = {
-  RevealImage: RevealImageProps;
-  Newsletter: NewsletterProps;
-  CompaniesShowcase: CompaniesShowcaseProps;
-  HeroColumnWithImageReactor: HeroColumnWithImageReactorProps;
-  KeyDetails: KeyDetailsProps;
+  RevealImage: RevealImageTypes;
+  Newsletter: NewsletterTypes;
+  CompaniesShowcase: CompaniesShowcaseTypes;
+  HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
+  KeyDetails: KeyDetailsTypes;
   HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
-  ListPillWithIconHeading: ListPillWithIconHeadingProps;
+  TraitsListWithIcons: TraitsListWithIconsTypes;
   Benefits: BenefitsProps;
   Perks: PerksProps;
   SimpleCtaSection: SimpleCtaSectionProps;
@@ -73,13 +74,13 @@ type ComponentMapType = {
 };
 
 const ComponentMap = ({ props }) => ({
-  RevealImage: <RevealImage {...(props as RevealImageProps)} />,
-  Newsletter: <Newsletter {...(props as NewsletterProps)} />,
-  CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseProps)} />,
-  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorProps)} />,
-  KeyDetails: <KeyDetails {...(props as KeyDetailsProps)} />,
+  RevealImage: <RevealImage {...(props as RevealImageTypes)} />,
+  Newsletter: <Newsletter {...(props as NewsletterTypes)} />,
+  CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseTypes)} />,
+  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
+  KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
   HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
-  ListPillWithIconHeading: <ListPillWithIconHeading {...(props as ListPillWithIconHeadingProps)} />,
+  TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   Benefits: <Benefits {...(props as BenefitsProps)} />,
   Perks: <Perks {...(props as PerksProps)} />,
   SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
@@ -116,9 +117,9 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
     _type,
-    ${ListPillWithIconHeading_Query}
     ${RevealImage_Query}
     ${Newsletter_Query}
+    ${TraitsListWithIcons_Query}
     ${CompaniesShowcase_Query}
     ${HeroColumnWithImageReactor_Query}
     ${KeyDetails_Query}

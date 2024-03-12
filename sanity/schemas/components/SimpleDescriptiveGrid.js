@@ -1,13 +1,14 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { countItems } from '../../utils/count-items';
+import { removeMarkdown } from '../../utils/remove-markdown'
 
-const title = 'Prosta siatka z opisem'
-const icon = '📊'
+const title = 'Prosta siatka z elementami opisowymi'
+const icon = () => '📊';
 
 export default {
   name: 'SimpleDescriptiveGrid',
   type: 'object',
-  title: title,
-  icon: () => icon,
+  title,
+  icon,
   fields: [
     {
       name: 'heading',
@@ -18,7 +19,9 @@ export default {
     {
       name: 'grid',
       type: 'array',
-      of: [{type: 'SimpleDescriptiveGrid_Grid'}],
+      of: [{
+        type: 'SimpleDescriptiveGrid_Grid'
+      }],
       title: 'Siatka',
       validation: (Rule) => Rule.required(),
     },
@@ -26,11 +29,13 @@ export default {
   preview: {
     select: {
       heading: 'heading',
+      grid: 'grid',
     },
-    prepare({heading}) {
+    prepare({ heading, grid }) {
       return {
-        title: `[Nagłówek z siatką] - ${removeMarkdown(heading)}`,
-        icon: () => icon,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: countItems(grid.length),
+        icon,
       }
     },
   },
@@ -39,36 +44,37 @@ export default {
 export const SimpleDescriptiveGrid_Grid = {
   name: 'SimpleDescriptiveGrid_Grid',
   type: 'object',
-  title: 'Prosta siatka z opisem',
+  title: 'Elementy',
   fields: [
     {
       name: 'icon',
       type: 'image',
       title: 'Ikona',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'title',
-      type: 'markdown',
-      title: 'Tytuł',
-      validation: (Rule) => Rule.required(),
+      name: 'heading',
+      type: 'string',
+      title: 'Nagłówek',
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Opis',
+      title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      subtitle: 'description',
+      title: 'heading',
+      paragraph: 'paragraph',
       media: 'icon',
     },
-    prepare({title, subtitle, media}) {
+    prepare({ title, paragraph, media }) {
       return {
-        title: removeMarkdown(title),
-        subtitle: removeMarkdown(subtitle),
+        title,
+        subtitle: removeMarkdown(paragraph),
         media,
       }
     },

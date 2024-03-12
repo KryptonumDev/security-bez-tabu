@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja z wezwaniem do działania'
 const icon = () => '📣'
@@ -41,10 +41,10 @@ export default {
       cta: 'cta',
       isCountdown: 'isCountdown',
     },
-    prepare({heading, cta, isCountdown}) {
+    prepare({ heading, cta, isCountdown }) {
       return {
         title: `[Wezwanie do działania] - ${removeMarkdown(heading)}`,
-        subtitle: `Przycisk zalinkowany do ${cta?.href} ${isCountdown ?' | Odliczanie wyświetlone' : ''}`,
+        subtitle: `Przycisk zalinkowany do ${cta?.href} ${isCountdown ? ' | Odliczanie wyświetlone' : ''}`,
         icon,
       }
     },

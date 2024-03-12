@@ -36,7 +36,7 @@
     }
     .overlay {
       &:hover,
-      &:has(input:focus) {
+      &:has(input:focus-visible) {
         opacity: 0.8;
       }
       &:has(input:checked) {

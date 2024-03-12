@@ -1,0 +1,59 @@
+.TraitsListWithIcons {
+  display: grid;
+  gap: 48px clamp(82px, calc(96vw / 7.68), 116px);
+  @media (min-width: 1050px) {
+    grid-template-columns: 1fr 1.75fr;
+    header {
+      position: sticky;
+      top: 0;
+      max-height: 100vh;
+      max-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  header {
+    max-width: calc(400rem / 16);
+  }
+  ul {
+    max-width: calc(690rem / 16);
+    list-style-type: none;
+    display: grid;
+    gap: clamp(32px, calc(48vw / 7.68), 48px);
+    li {
+      display: grid;
+      gap: 24px;
+      @media (min-width: 500px) {
+        grid-template-columns: auto 1fr;
+      }
+      .icon {
+        width: 64px;
+        height: 144px;
+        display: grid;
+        place-items: center;
+        @media (max-width: 499px) {
+          width: 48px;
+          height: 48px;
+          img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+          }
+        }
+        border-radius: 200px;
+        border: 1px solid var(--secondary-500);
+        background: var(--primary-700);
+      }
+      h3 {
+        margin-bottom: 8px;
+      }
+      .paragraph {
+        font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+        > *:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
+}

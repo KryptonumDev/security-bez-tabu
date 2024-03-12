@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Certyfikat'
 const icon = () => '📜'
@@ -51,7 +51,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: `[Certyfikat] - ${removeMarkdown(title)}`,
         icon,

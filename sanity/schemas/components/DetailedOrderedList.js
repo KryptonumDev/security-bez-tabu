@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Szczegółowa lista numerowana'
 const icon = () => '🔢'
@@ -23,7 +23,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'DetailedOrderedList_Chapter'}],
+      of: [{ type: 'DetailedOrderedList_Chapter' }],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
     },
@@ -32,7 +32,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: `[Lista numerowana] - ${removeMarkdown(title)}`,
         icon,
@@ -63,7 +63,7 @@ export const DetailedOrderedList_Chapter = {
     select: {
       title: 'heading',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: title,
       }

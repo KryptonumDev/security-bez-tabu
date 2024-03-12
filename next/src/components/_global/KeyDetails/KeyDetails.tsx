@@ -10,7 +10,10 @@ const KeyDetails = ({ list }: KeyDetailsTypes) => {
           key={i}
           className={styles.item}
         >
-          <div className='borderLeft'></div>
+          <div
+            className='borderLeft'
+            style={{ animationDelay: `${Math.random() * -5}s` }}
+          ></div>
           <div className={styles.content}>
             <h2 className='h3'>{heading}</h2>
             <Markdown className={styles.paragraph}>{paragraph}</Markdown>

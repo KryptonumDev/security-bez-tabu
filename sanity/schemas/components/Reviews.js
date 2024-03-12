@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Opinie'
 const icon = () => '🗣️'
@@ -18,7 +18,7 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'review'}],
+      of: [{ type: 'review' }],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
     },
@@ -27,7 +27,7 @@ export default {
     select: {
       title: 'heading',
     },
-    prepare({title}) {
+    prepare({ title }) {
       return {
         title: `[Opinie] - ${removeMarkdown(title)}`,
         icon,
