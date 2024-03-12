@@ -35,6 +35,7 @@ export default {
     prepare({title}) {
       return {
         title: `[Lista numerowana] - ${removeMarkdown(title)}`,
+        icon,
       }
     },
   },
