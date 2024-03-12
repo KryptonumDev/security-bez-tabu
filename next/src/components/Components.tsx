@@ -34,7 +34,6 @@ import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
-import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
   DetailedOrderedListTypes,

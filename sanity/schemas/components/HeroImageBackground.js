@@ -1,8 +1,12 @@
 import { removeMarkdown } from "../../utils/remove-markdown"
 
+const icon = () => '⭐️';
+const title = `Sekcja HERO (${icon()}) ze zdjęciem w tle`;
+
 export default {
   name: 'HeroImageBackground',
-  title: 'Sekcja wstępna ze zdjęciem w tle',
+  title,
+  icon,
   type: 'object',
   fields: [
     {
@@ -42,7 +46,8 @@ export default {
     },
     prepare({ heading }) {
       return {
-        title: `[Sekcja Sekcja wstępna ze zdjęciem w tle] - ${removeMarkdown(heading)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        icon,
       }
     },
   },
