@@ -20,7 +20,7 @@ import {
   titleDescriptionAndImage,
 } from './components/list'
 import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
-import CtaSection from './components/CtaSection'
+import SimpleCtaSection from './components/SimpleCtaSection'
 import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
@@ -62,7 +62,7 @@ export const components = [
   imageAndLink,
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
-  CtaSection,
+  SimpleCtaSection,
   review,
   stats,
   chapter,
