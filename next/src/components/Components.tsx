@@ -45,7 +45,8 @@ import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleC
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
-import CourseComparison, { CourseComparison_Query, CourseComparisonTypes } from './_global/CourseComparison';
+import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from './_global/CourseComparison';
+import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -76,6 +77,7 @@ type ComponentMapType = {
   CourseDettails: CourseDetailsTypes;
   BadgeIconSection: BadgeIconSectionTypes;
   CourseComparison: CourseComparisonTypes;
+  VideoSection: VideoSectionTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -107,6 +109,7 @@ const ComponentMap = ({ props }) => ({
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
   BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
   CourseComparison: <CourseComparison {...(props as CourseComparisonTypes)} />,
+  VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -153,5 +156,6 @@ export const Components_Query = /* groq */ `
     ${CourseDetails_Query}
     ${BadgeIconSection_Query}
     ${CourseComparison_Query}
+    ${VideoSection_Query}
   },
 `;
