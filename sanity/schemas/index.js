@@ -54,6 +54,7 @@ import PersonPresentation, {PersonPresentation_Achievements} from './components/
 import ImageReactor from './components/ImageReactor'
 import CourseDetails, {CourseDetails_List} from './components/CourseDetails'
 import BadgeIconSection from './components/BadgeIconSection'
+import PlansComparison, {PlansComparison_Plans} from './components/PlansComparison'
 
 export const components = [
   global_Seo,
@@ -109,6 +110,8 @@ export const components = [
   CourseDetails,
   CourseDetails_List,
   BadgeIconSection,
+  PlansComparison,
+  PlansComparison_Plans,
 ]
 
 export const schemaTypes = [
