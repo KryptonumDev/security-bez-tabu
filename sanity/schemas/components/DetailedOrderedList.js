@@ -17,9 +17,9 @@ export default {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'subheading',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Podnagłówek (opcjonalne)',
+      title: 'Paragraf (opcjonalne)',
     },
     {
       name: 'list',
