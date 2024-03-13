@@ -45,6 +45,7 @@ import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleC
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
+import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from './_global/PlansComparison';
 import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
 
 type ComponentMapType = {
@@ -75,6 +76,7 @@ type ComponentMapType = {
   ImageReactor: ImageReactorTypes;
   CourseDettails: CourseDetailsTypes;
   BadgeIconSection: BadgeIconSectionTypes;
+  PlansComparison: PlansComparisonTypes;
   VideoSection: VideoSectionTypes;
 };
 
@@ -106,6 +108,7 @@ const ComponentMap = ({ props }) => ({
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
   BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
+  PlansComparison: <PlansComparison {...(props as PlansComparisonTypes)} />,
   VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
 });
 
@@ -152,6 +155,7 @@ export const Components_Query = /* groq */ `
     ${ImageReactor_Query}
     ${CourseDetails_Query}
     ${BadgeIconSection_Query}
+    ${PlansComparison_Query}
     ${VideoSection_Query}
   },
 `;

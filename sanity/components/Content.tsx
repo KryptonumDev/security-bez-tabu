@@ -35,6 +35,7 @@ export default {
     {type: 'ImageReactor'},
     {type: 'CourseDetails'},
     {type: 'BadgeIconSection'},
+    {type: 'PlansComparison'},
     {type: 'VideoSection'},
   ],
 }
