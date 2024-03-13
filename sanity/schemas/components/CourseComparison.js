@@ -4,9 +4,9 @@ const icon = () => '📊'
 const title = 'Porównanie kursów'
 
 export default {
-  title,
   name: 'CourseComparison',
   type: 'object',
+  title,
   icon,
   fields: [
     {
@@ -32,10 +32,12 @@ export default {
   preview: {
     select: {
       heading: 'heading',
+      subtitle: 'paragraph',
     },
-    prepare({heading}) {
+    prepare({heading, subtitle}) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: subtitle,
         icon,
       }
     },
