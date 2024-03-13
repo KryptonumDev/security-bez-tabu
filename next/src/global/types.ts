@@ -17,13 +17,6 @@ export type ImgType = {
   };
 };
 
-export type SeoProps = {
-  robotsIndex: boolean;
-  seo: {
-    og_Img: ImgType;
-  };
-};
-
 export type generateStaticParamsType = {
   slug: string;
 }[];
