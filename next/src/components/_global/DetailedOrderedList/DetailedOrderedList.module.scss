@@ -40,7 +40,7 @@
     }
     list-style-type: none;
     border: 1px solid var(--primary-800, #13182a);
-    background: linear-gradient(-90deg, #1b2138, #0d111f 50%);
+    background: var(--gradient-bg);
     padding: 24px clamp(16px, calc(28vw / 7.68), 28px);
     display: grid;
     align-items: flex-start;

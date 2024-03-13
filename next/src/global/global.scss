@@ -33,6 +33,10 @@
   --success-500: #82deac;
   --success-700: #35ca7b;
 
+  --gradient-bg: linear-gradient(-90deg, #1b2138, #0d111f 50%);
+
+  --small-font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+
   --easing: cubic-bezier(0.79, 0.14, 0.15, 0.86);
 
   --pageMargin: clamp(16px, calc(40vw / 7.68), 40px);

@@ -17,7 +17,7 @@
     > li {
       padding: clamp(16px, calc(20vw / 7.68), 20px);
       border: 1px solid var(--primary-700);
-      background: linear-gradient(-90deg, #1b2138, #0d111f 50%);
+      background: var(--gradient-bg);
       .icon {
         width: clamp(48px, calc(60vw / 7.68), 60px);
         height: clamp(48px, calc(60vw / 7.68), 60px);

@@ -1,48 +1,48 @@
 .Lessons {
   header {
     display: grid;
-    gap: clamp(16px, calc(24vw/7.68), 24px) 32px;
-    @media (min-width: 900px){
+    gap: clamp(16px, calc(24vw / 7.68), 24px) 32px;
+    @media (min-width: 900px) {
       grid-template-columns: 1fr 1fr;
     }
     .paragraph {
-      & > *:not(:last-child){
+      & > *:not(:last-child) {
         margin-bottom: 8px;
       }
     }
-    margin-bottom: clamp(32px, calc(48vw/7.68), 80px);
+    margin-bottom: clamp(32px, calc(48vw / 7.68), 80px);
   }
   > ol {
     counter-reset: counter;
     display: grid;
-    gap: clamp(20px, calc(32vw/7.68), 32px);
+    gap: clamp(20px, calc(32vw / 7.68), 32px);
     > li {
       position: sticky;
       top: 0;
-      &:not(:last-child){
+      &:not(:last-child) {
         &::after {
           content: '';
           position: absolute;
           top: calc(100% + 1px);
           left: -1px;
           width: calc(100% + 2px);
-          height: clamp(20px, calc(32vw/7.68), 32px);
+          height: clamp(20px, calc(32vw / 7.68), 32px);
           background-color: var(--primary-900);
         }
       }
       list-style-type: none;
-      border: 1px solid var(--primary-800, #13182A);
-      background: linear-gradient(-90deg, #1B2138, #0D111F 50%);
-      padding: 24px clamp(16px, calc(28vw/7.68), 28px);
+      border: 1px solid var(--primary-800, #13182a);
+      background: var(--gradient-bg);
+      padding: 24px clamp(16px, calc(28vw / 7.68), 28px);
       display: grid;
       align-items: flex-start;
-      gap: clamp(20px, calc(32vw/7.68), 32px);
-      @media (min-width: 1000px){
+      gap: clamp(20px, calc(32vw / 7.68), 32px);
+      @media (min-width: 1000px) {
         grid-template-columns: 1fr 1.2fr;
       }
       counter-increment: counter;
       .title {
-        font-size: clamp(calc(20rem/16), calc(28vw/7.68), calc(28rem/16));
+        font-size: clamp(calc(20rem / 16), calc(28vw / 7.68), calc(28rem / 16));
         display: grid;
         grid-template-columns: auto 1fr;
         align-items: center;
@@ -52,12 +52,12 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          width: clamp(48px, calc(60vw/7.68), 60px);
-          height: clamp(48px, calc(60vw/7.68), 60px);
+          width: clamp(48px, calc(60vw / 7.68), 60px);
+          height: clamp(48px, calc(60vw / 7.68), 60px);
           background-color: var(--primary-800);
           border-radius: 50%;
           color: var(--secondary-500);
-          text-shadow: 0px 0px 24px #1DA4FD, 0px 0px 10px #98D6FF;
+          text-shadow: 0px 0px 24px #1da4fd, 0px 0px 10px #98d6ff;
         }
       }
       > ol {
@@ -78,11 +78,12 @@
             border-left: 2px solid var(--secondary-500);
             margin-left: -2px;
             background-color: var(--primary-700);
-            font-size: clamp(calc(14rem/16), calc(16vw/7.68), calc(16rem/16));
+            font-size: var(--small-font-size);
           }
         }
       }
-      .borderLeft, .borderRight {
+      .borderLeft,
+      .borderRight {
         position: absolute;
         top: -1px;
         height: calc(100% + 2px);
@@ -99,18 +100,18 @@
   .showMore {
     display: block;
     width: fit-content;
-    margin: clamp(32px, calc(48vw/7.68), 80px) auto 0;
+    margin: clamp(32px, calc(48vw / 7.68), 80px) auto 0;
     .progress {
       display: flex;
       gap: 16px;
-      margin-bottom: clamp(20px, calc(28vw/7.68), 28px);
+      margin-bottom: clamp(20px, calc(28vw / 7.68), 28px);
       > div {
         width: 12px;
         height: 12px;
         background: var(--primary-700);
         &:first-child {
           flex-grow: 1;
-          background: linear-gradient(90deg, #53BAFD, rgba(83, 186, 253, 0.00));
+          background: linear-gradient(90deg, #53bafd, rgba(83, 186, 253, 0));
         }
       }
     }

@@ -1,9 +1,9 @@
 import type { CtaType } from '@/global/types';
 
-export type Props = {
+export type AdvancedCtaSectionTypes = {
   heading: string;
-  description: string;
-  cta: CtaType;
+  paragraph: string;
   secondHeading: string;
-  additionalInfo: string;
+  cta: CtaType;
+  additionalInfo?: string;
 };

@@ -1,7 +1,7 @@
 .Faq {
   display: grid;
   grid-template-areas: 'heading' 'faq' 'form';
-  column-gap: clamp(84px, calc(92vw/7.68), 134px);
+  column-gap: clamp(84px, calc(92vw / 7.68), 134px);
 
   @media (min-width: 900px) {
     grid-template-columns: 1fr 1.2fr;
@@ -12,14 +12,14 @@
 
   h2 {
     grid-area: heading;
-    margin-bottom: clamp(24px, calc(36vw/7.68), 64px);
+    margin-bottom: clamp(24px, calc(36vw / 7.68), 64px);
   }
 
   .form {
     grid-area: form;
 
     @media (max-width: 899px) {
-      >p {
+      > p {
         margin-top: 64px;
       }
     }
@@ -32,19 +32,19 @@
 
 .form {
   form {
-    margin-top: clamp(20px, calc(24vw/7.68), 32px);
+    margin-top: clamp(20px, calc(24vw / 7.68), 32px);
     display: grid;
-    gap: clamp(20px, calc(24vw/7.68), 32px);
+    gap: clamp(20px, calc(24vw / 7.68), 32px);
   }
 
   position: relative;
 
   &:has(.state) {
-    >p {
+    > p {
       visibility: hidden;
     }
 
-    form>*:not(.state) {
+    form > *:not(.state) {
       visibility: hidden;
     }
   }
@@ -75,7 +75,7 @@
 
 .faq {
   display: grid;
-  gap: clamp(16px, calc(24vw/7.68), 24px);
+  gap: clamp(16px, calc(24vw / 7.68), 24px);
 
   details {
     position: relative;
@@ -98,44 +98,44 @@
     }
 
     border: 1px solid var(--primary-700);
-    background: linear-gradient(-90deg, #1B2138, #0D111F 50%);
+    background: var(--gradient-bg);
 
     summary {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: clamp(20px, calc(32vw/7.68), 32px);
+      gap: clamp(20px, calc(32vw / 7.68), 32px);
       align-items: center;
-      padding: clamp(16px, calc(20vw/7.68), 20px);
+      padding: clamp(16px, calc(20vw / 7.68), 20px);
 
-      >svg {
+      > svg {
         transform: translate3d(0, 0, 0);
-        filter: drop-shadow(0px 0px 9px #98D6FF);
-        transition: transform .2s var(--easing);
+        filter: drop-shadow(0px 0px 9px #98d6ff);
+        transition: transform 0.2s var(--easing);
       }
     }
 
     .answer {
-      padding: 0 clamp(16px, calc(20vw/7.68), 20px);
+      padding: 0 clamp(16px, calc(20vw / 7.68), 20px);
       overflow: hidden;
 
-      &>*:not(:last-child) {
+      & > *:not(:last-child) {
         margin-bottom: 8px;
       }
     }
 
-    &[data-opened="false"] {
+    &[data-opened='false'] {
       .answer {
         visibility: hidden;
-        transition: visibility .5s;
+        transition: visibility 0.5s;
       }
     }
 
-    &[data-opened="true"] {
+    &[data-opened='true'] {
       &::before {
         transform: scaleX(1);
       }
 
-      summary>svg {
+      summary > svg {
         transform: rotateX(180deg);
       }
     }

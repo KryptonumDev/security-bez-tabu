@@ -10,7 +10,7 @@
   .additionalInfo {
     max-width: calc(356rem / 16);
     margin: 12px auto 0;
-    font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+    font-size: var(--small-font-size);
   }
   .countdown {
     margin: clamp(24px, calc(36vw / 7.68), 48px) auto 0;
