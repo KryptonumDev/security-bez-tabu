@@ -1,3 +1,4 @@
+import { countItems } from '../../utils/count-items'
 import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Szczegółowa lista numerowana'
@@ -13,7 +14,7 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'subheading',
@@ -23,49 +24,55 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{ type: 'DetailedOrderedList_Chapter' }],
+      of: [{
+        type: 'DetailedOrderedList_List'
+      }],
       title: 'Lista',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'heading',
+      heading: 'heading',
+      list: 'list',
     },
-    prepare({ title }) {
+    prepare({ heading, list }) {
       return {
-        title: `[Lista numerowana] - ${removeMarkdown(title)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: countItems(list.length),
         icon,
       }
     },
   },
 }
 
-export const DetailedOrderedList_Chapter = {
-  name: 'DetailedOrderedList_Chapter',
+export const DetailedOrderedList_List = {
+  name: 'DetailedOrderedList_List',
   type: 'object',
-  title: 'Rozdziały',
+  title: 'Lista',
   fields: [
     {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       title: 'heading',
+      subtitle: 'paragraph',
     },
-    prepare({ title }) {
+    prepare({ title, subtitle }) {
       return {
-        title: title,
+        title: removeMarkdown(title),
+        subtitle: removeMarkdown(subtitle),
       }
     },
   },
