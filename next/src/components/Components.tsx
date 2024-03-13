@@ -47,8 +47,10 @@ import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_globa
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
 import CompaniesDescriptiveShowcase, {
   CompaniesDescriptiveShowcase_Query,
-  CompaniesDescriptiveShowcaseTypes,
+  type CompaniesDescriptiveShowcaseTypes,
 } from './_global/CompaniesDescriptiveShowcase';
+import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from './_global/PlansComparison';
+import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -79,6 +81,8 @@ type ComponentMapType = {
   CourseDettails: CourseDetailsTypes;
   BadgeIconSection: BadgeIconSectionTypes;
   CompaniesDescriptiveShowcase: CompaniesDescriptiveShowcaseTypes;
+  PlansComparison: PlansComparisonTypes;
+  VideoSection: VideoSectionTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -110,6 +114,8 @@ const ComponentMap = ({ props }) => ({
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
   BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
   CompaniesDescriptiveShowcase: <CompaniesDescriptiveShowcase {...(props as CompaniesDescriptiveShowcaseTypes)} />,
+  PlansComparison: <PlansComparison {...(props as PlansComparisonTypes)} />,
+  VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -156,5 +162,7 @@ export const Components_Query = /* groq */ `
     ${CourseDetails_Query}
     ${BadgeIconSection_Query}
     ${CompaniesDescriptiveShowcase_Query}
+    ${PlansComparison_Query}
+    ${VideoSection_Query}
   },
 `;

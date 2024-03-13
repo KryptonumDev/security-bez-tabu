@@ -57,6 +57,8 @@ import BadgeIconSection from './components/BadgeIconSection'
 import CompaniesDescriptiveShowcase, {
   CompaniesDescriptiveShowcase_List,
 } from './components/CompaniesDescriptiveShowcase'
+import PlansComparison, {PlansComparison_Plans} from './components/PlansComparison'
+import VideoSection from './components/VideoSection'
 
 export const components = [
   global_Seo,
@@ -114,6 +116,9 @@ export const components = [
   BadgeIconSection,
   CompaniesDescriptiveShowcase,
   CompaniesDescriptiveShowcase_List,
+  PlansComparison,
+  PlansComparison_Plans,
+  VideoSection,
 ]
 
 export const schemaTypes = [
