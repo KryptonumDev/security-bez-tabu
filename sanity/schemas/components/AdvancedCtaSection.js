@@ -1,7 +1,7 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
-const icon = () => '📣'
 const title = 'Rozbudowana sekcja z wezwaniem do działania'
+const icon = () => '📣'
 
 export default {
   name: 'AdvancedCtaSection',
@@ -13,40 +13,41 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Opis',
-      validation: (Rule) => Rule.required(),
+      title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'secondHeading',
       type: 'markdown',
       title: 'Drugi nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
       type: 'cta',
       title: 'CTA',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'additionalInfo',
-      type: 'string',
-      title: 'Dodatkowe informacje',
-      validation: (Rule) => Rule.required(),
+      type: 'markdown',
+      title: 'Dodatkowe informacje (opcjonalnie)',
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      paragraph: 'paragraph',
     },
-    prepare({heading}) {
+    prepare({ heading, paragraph }) {
       return {
-        title: `[Rozbudowana sekcja z wezwaniem do działania] - ${removeMarkdown(heading)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
         icon,
       }
     },
