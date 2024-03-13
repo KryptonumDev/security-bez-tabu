@@ -19,7 +19,7 @@ export default {
     {type: 'CompaniesShowcase'},
     {type: 'KeyDetails'},
     {type: 'Perks'},
-    {type: 'Benefits'},
+    {type: 'BenefitsItems'},
     {type: 'SimpleCtaSection'},
     {type: 'StatsList'},
     {type: 'Recipients'},

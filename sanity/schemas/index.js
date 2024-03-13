@@ -26,7 +26,6 @@ import stats from './components/stats'
 import chapter from './components/chapter'
 import {chart_Bars, chart_Circle, chart_Item, chart_Linear} from './components/chart'
 import Perks from './components/Perks'
-import Benefits from './components/Benefits'
 import StatsList from './components/StatsList'
 import Recipients from './components/Recipients'
 import Reviews from './components/Reviews'
@@ -54,6 +53,7 @@ import PersonPresentation, {PersonPresentation_Achievements} from './components/
 import ImageReactor from './components/ImageReactor'
 import CourseDetails, {CourseDetails_List} from './components/CourseDetails'
 import BadgeIconSection from './components/BadgeIconSection'
+import BenefitsItems, {BenefitsItems_List} from './components/BenefitsItems'
 
 export const components = [
   global_Seo,
@@ -73,7 +73,6 @@ export const components = [
   chart_Circle,
   chart_Item,
   Perks,
-  Benefits,
   StatsList,
   Recipients,
   Reviews,
@@ -109,6 +108,8 @@ export const components = [
   CourseDetails,
   CourseDetails_List,
   BadgeIconSection,
+  BenefitsItems,
+  BenefitsItems_List,
 ]
 
 export const schemaTypes = [

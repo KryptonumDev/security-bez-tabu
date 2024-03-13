@@ -1,5 +1,5 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
-import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
+import BenefitsItems, { BenefitsItems_Query, BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
 import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
@@ -54,7 +54,7 @@ type ComponentMapType = {
   KeyDetails: KeyDetailsTypes;
   HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
   TraitsListWithIcons: TraitsListWithIconsTypes;
-  Benefits: BenefitsProps;
+  BenefitsItems: BenefitsItemsTypes;
   Perks: PerksProps;
   SimpleCtaSection: SimpleCtaSectionProps;
   Stats: StatsProps;
@@ -84,7 +84,7 @@ const ComponentMap = ({ props }) => ({
   KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
   HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
   TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
-  Benefits: <Benefits {...(props as BenefitsProps)} />,
+  BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
   Perks: <Perks {...(props as PerksProps)} />,
   SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
   DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
@@ -129,7 +129,7 @@ export const Components_Query = /* groq */ `
     ${HeroColumnWithImageReactor_Query}
     ${KeyDetails_Query}
     ${HeroWithRotatingElipsis_Query}
-    ${Benefits_Query}
+    ${BenefitsItems_Query}
     ${Perks_Query}
     ${SimpleCtaSection_Query}
     ${Stats_Query}
