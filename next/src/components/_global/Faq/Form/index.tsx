@@ -3,7 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { type FieldValues, useForm } from 'react-hook-form';
 import Button from '@/components/ui/Button';
-import Input from '@/components/Input';
+import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
 import { REGEX } from '@/global/constants';
 import Loading from '@/components/ui/Loading';

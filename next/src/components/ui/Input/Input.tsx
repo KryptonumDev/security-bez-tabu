@@ -1,4 +1,4 @@
-import Error from '../ui/Error';
+import Error from '../Error';
 import Textarea from './_Textarea';
 import styles from './Input.module.scss';
 import type { InputTypes } from './Input.types';
