@@ -1,6 +1,6 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
-import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
+import Faq, { Faq_Query, type FaqTypes } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
@@ -64,7 +64,7 @@ type ComponentMapType = {
   Reviews: ReviewsProps;
   Idea: IdeaProps;
   Lessons: LessonsProps;
-  Faq: FaqProps;
+  Faq: FaqTypes;
   Author: AuthorProps;
   LargeImage: ImgType;
   Charts: ChartsProps;
@@ -92,7 +92,7 @@ const ComponentMap = ({ props }) => ({
   Reviews: <Reviews {...(props as ReviewsProps)} />,
   Idea: <Idea {...(props as IdeaProps)} />,
   Lessons: <Lessons {...(props as LessonsProps)} />,
-  Faq: <Faq {...(props as FaqProps)} />,
+  Faq: <Faq {...(props as FaqTypes)} />,
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
