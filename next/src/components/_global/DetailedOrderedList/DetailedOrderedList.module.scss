@@ -25,19 +25,7 @@
   display: grid;
   gap: clamp(20px, calc(32vw / 7.68), 32px);
   > li {
-    position: sticky;
-    top: 0;
-    &:not(:last-child) {
-      &::after {
-        content: '';
-        position: absolute;
-        top: calc(100% + 1px);
-        left: -1px;
-        width: calc(100% + 2px);
-        height: clamp(20px, calc(32vw / 7.68), 32px);
-        background-color: var(--primary-900);
-      }
-    }
+    position: relative;
     list-style-type: none;
     border: 1px solid var(--primary-800, #13182a);
     background: var(--gradient-bg);
