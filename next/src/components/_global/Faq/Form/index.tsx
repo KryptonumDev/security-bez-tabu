@@ -5,11 +5,13 @@ import { type FieldValues, useForm } from 'react-hook-form';
 import Button from '@/components/ui/Button';
 import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
-import styles from './Faq.module.scss';
 import { REGEX } from '@/global/constants';
+import Loading from '@/components/ui/Loading';
+import State from './State';
 import type { FormStatusTypes } from '@/global/types';
+import type { FormTypes } from '../Faq.types';
 
-const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success: React.JSX.Element } }) => {
+const Form = ({ StatusIcon }: FormTypes) => {
   const [status, setStatus] = useState<FormStatusTypes>({ sending: false, success: undefined });
   const {
     register,
@@ -80,33 +82,12 @@ const Form = ({ StatusIcon }: { StatusIcon: { Error: React.JSX.Element; Success:
       >
         Wyślij wiadomość
       </Button>
-      {status.success !== undefined && (
-        <div
-          className={styles.state}
-          aria-hidden={status.success === undefined}
-          aria-invalid={!status.success}
-        >
-          <h3>
-            {status.success ? StatusIcon.Success : StatusIcon.Error}
-            <span>{status.success ? 'Dziękujemy!' : 'Wystąpił problem'}</span>
-          </h3>
-          <p className={styles.paragraph}>
-            {status.success
-              ? 'Twoja wiadomość właśnie wpadła do naszej skrzynki. Odpowiemy na nią najszybciej jak to możliwe.'
-              : 'Napotkaliśmy drobne problemy podczas przesyłania formularza. Spróbuj przesłać go ponownie.'}
-          </p>
-          {!status.success && (
-            <>
-              <Button
-                type='button'
-                onClick={() => setStatus({ sending: false, success: undefined })}
-              >
-                Wyślij wiadomość ponownie
-              </Button>
-            </>
-          )}
-        </div>
-      )}
+      <Loading sending={status?.sending} />
+      <State
+        isSuccess={status?.success}
+        setStatus={setStatus}
+        StatusIcon={StatusIcon}
+      />
     </form>
   );
 };

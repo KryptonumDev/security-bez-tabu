@@ -78,17 +78,3 @@
     font-size: var(--small-font-size);
   }
 }
-
-.Loading {
-  position: absolute;
-  left: -16px;
-  top: -16px;
-  right: -16px;
-  bottom: -16px;
-  display: grid;
-  place-items: center;
-  border-radius: inherit;
-  background-color: rgba(13, 17, 31, 0.62);
-  backdrop-filter: blur(4px);
-  z-index: 4;
-}

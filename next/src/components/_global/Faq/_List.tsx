@@ -3,18 +3,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './Faq.module.scss';
 import { EASING } from '@/global/constants';
+import type { ListTypes } from './Faq.types';
 
-const List = ({
-  list,
-  indicator,
-}: {
-  list: { question: React.JSX.Element; answer: React.JSX.Element }[];
-  indicator: React.JSX.Element;
-}) => {
+const List = ({ list, indicator }: ListTypes) => {
   const [opened, setOpened] = useState(0);
   const handleClick = (e: React.MouseEvent<HTMLElement>, i: number) => {
     e.preventDefault();
-    setOpened(i);
+    setOpened(i === opened ? -1 : i);
   };
 
   return (
