@@ -45,7 +45,7 @@ import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleC
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
-import PlansComparison, { PlansComparison_Query, PlansComparisonTypes } from './_global/PlansComparison';
+import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from './_global/PlansComparison';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;

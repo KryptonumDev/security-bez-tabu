@@ -44,7 +44,7 @@ export const PlansComparison_Plans = {
     {
       name: 'isMostPopular',
       type: 'boolean',
-      title: 'Najpopularniejszy',
+      title: 'Wyróżnij jako najbardziej popularny',
       initialValue: false,
     },
     {
@@ -76,10 +76,12 @@ export const PlansComparison_Plans = {
   preview: {
     select: {
       heading: 'heading',
+      subtitle: 'price',
     },
-    prepare({heading}) {
+    prepare({heading, subtitle}) {
       return {
         title: `${removeMarkdown(heading)}`,
+        subtitle: `Cena wynozi ${subtitle} zł`,
       }
     },
   },
