@@ -72,7 +72,7 @@ export const PersonPresentation_Achievements = {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'title',
       type: 'text',
       rows: 3,
       title: 'Opis',
@@ -81,12 +81,12 @@ export const PersonPresentation_Achievements = {
   ],
   preview: {
     select: {
-      title: 'description',
+      title: 'title',
       media: 'icon',
     },
     prepare({ title, media }) {
       return {
-        title: removeMarkdown(title),
+        title,
         media,
       }
     },
