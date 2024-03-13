@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja ze zdjęciem z reaktorem'
 const icon = () => '🖼️'
@@ -10,50 +10,49 @@ export default {
   icon,
   fields: [
     {
+      name: 'isHighlighted',
+      type: 'boolean',
+      title: 'Czy sekcja jest wyróżniona?',
+      description: 'Jeśli zaznaczone, sekcja będzie wyróżniona tłem',
+    },
+    {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
       type: 'cta',
-      title: 'CTA (opcjonalne)',
-      options: {
-        collapsible: true,
-        collapsed: true,
-      },
+      title: 'Wezwanie do działania (opcjonalne)',
     },
     {
       name: 'additionalInfo',
       type: 'markdown',
-      title: 'dodatkowe informacje (opcjonalne)',
+      title: 'Dodatkowe informacje (opcjonalne)',
     },
     {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'isHighlighted',
-      type: 'boolean',
-      title: 'Jest wyróżniony?',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'heading',
+      heading: 'heading',
+      paragraph: 'paragraph',
     },
-    prepare({title}) {
+    prepare({ heading, paragraph }) {
       return {
-        title: `[Sekcja ze zdjęciem z reaktorem] - ${removeMarkdown(title)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
         icon,
       }
     },
