@@ -1,4 +1,4 @@
-import styles from '../Newsletter.module.scss';
+import styles from './Loading.module.scss';
 import type { LoadingTypes } from './Loading.types';
 
 const Loading = ({ sending }: LoadingTypes) => {
