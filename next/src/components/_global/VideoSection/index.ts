@@ -11,7 +11,7 @@ export const VideoSection_Query = `
         path,
         originalFilename,
         size,
-      }
-    }
+      },
+    },
   },
 `;

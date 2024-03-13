@@ -45,7 +45,7 @@ import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleC
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
-import VideoSection, { VideoSection_Query, VideoSectionTypes } from './_global/VideoSection';
+import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
