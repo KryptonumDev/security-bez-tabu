@@ -1,53 +1,59 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Prezentacja osoby'
 const icon = () => '👤'
 
 export default {
   name: 'PersonPresentation',
-  title,
   type: 'object',
+  title,
   icon,
   fields: [
     {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie osoby',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'subheading',
       type: 'markdown',
       title: 'Podnagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'achievements',
       type: 'array',
-      of: [{type: 'PersonPresentation_Achievements'}],
+      of: [{
+        type: 'PersonPresentation_Achievements'
+      }],
       title: 'Osiągnięcia',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'heading',
+      heading: 'heading',
+      subheading: 'subheading',
+      media: 'img',
     },
-    prepare({title}) {
+    prepare({ heading, subheading, media }) {
       return {
-        title: `[Prezentacja osoby] - ${removeMarkdown(title)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(subheading),
+        media,
         icon,
       }
     },
@@ -63,13 +69,14 @@ export const PersonPresentation_Achievements = {
       name: 'icon',
       type: 'image',
       title: 'Ikona',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'description',
-      type: 'markdown',
+      type: 'text',
+      rows: 3,
       title: 'Opis',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -77,7 +84,7 @@ export const PersonPresentation_Achievements = {
       title: 'description',
       media: 'icon',
     },
-    prepare({title, media}) {
+    prepare({ title, media }) {
       return {
         title: removeMarkdown(title),
         media,
