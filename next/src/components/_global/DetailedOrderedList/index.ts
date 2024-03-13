@@ -5,7 +5,7 @@ export type { DetailedOrderedListTypes } from './DetailedOrderedList.types';
 export const DetailedOrderedList_Query = `
   _type == "DetailedOrderedList" => {
     heading,
-    subheading,
+    paragraph,
     list[] {
       heading,
       paragraph,

@@ -1,3 +1,97 @@
 .DetailedOrderedList {
-  
+  header {
+    h2 {
+      max-width: calc(768rem / 16);
+    }
+    .paragraph {
+      & > *:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+    &:has(.paragraph) {
+      display: grid;
+      gap: clamp(16px, calc(24vw / 7.68), 24px) 32px;
+      @media (min-width: 900px) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    margin-bottom: clamp(32px, calc(48vw / 7.68), 64px);
+  }
+}
+
+.List {
+  counter-reset: counter;
+  display: grid;
+  gap: clamp(20px, calc(32vw / 7.68), 32px);
+  > li {
+    position: sticky;
+    top: 0;
+    &:not(:last-child) {
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(100% + 1px);
+        left: -1px;
+        width: calc(100% + 2px);
+        height: clamp(20px, calc(32vw / 7.68), 32px);
+        background-color: var(--primary-900);
+      }
+    }
+    list-style-type: none;
+    border: 1px solid var(--primary-800, #13182a);
+    background: linear-gradient(-90deg, #1b2138, #0d111f 50%);
+    padding: 24px clamp(16px, calc(28vw / 7.68), 28px);
+    display: grid;
+    align-items: flex-start;
+    gap: clamp(20px, calc(32vw / 7.68), 32px);
+    @media (min-width: 1000px) {
+      grid-template-columns: 1fr 1.2fr;
+    }
+    counter-increment: counter;
+    h3 {
+      font-size: clamp(calc(20rem / 16), calc(28vw / 7.68), calc(28rem / 16));
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 12px;
+      &::before {
+        content: counter(counter);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(48px, calc(60vw / 7.68), 60px);
+        height: clamp(48px, calc(60vw / 7.68), 60px);
+        background-color: var(--primary-800);
+        border-radius: 50%;
+        color: var(--secondary-500);
+        text-shadow: 0px 0px 24px #1da4fd, 0px 0px 10px #98d6ff;
+      }
+    }
+    .paragraph {
+      & > *:not(:last-child) {
+        margin-bottom: 8px;
+      }
+    }
+  }
+}
+
+.showMore {
+  display: block;
+  width: fit-content;
+  margin: clamp(32px, calc(48vw / 7.68), 80px) auto 0;
+  .progress {
+    display: flex;
+    gap: 16px;
+    margin-bottom: clamp(20px, calc(28vw / 7.68), 28px);
+    > div {
+      width: 12px;
+      height: 12px;
+      background: var(--primary-700);
+      &:first-child {
+        flex-grow: 1;
+        background: linear-gradient(90deg, #53bafd, rgba(83, 186, 253, 0));
+      }
+    }
+  }
 }
