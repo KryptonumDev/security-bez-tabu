@@ -1,8 +1,8 @@
-import styles from './Content.module.scss';
-import type { Props } from './Content.types';
 import Markdown from '@/components/ui/markdown';
+import styles from './Content.module.scss';
+import type { ContentTypes } from './Content.types';
 
-const Content = ({ content }: Props) => {
+const Content = ({ content }: ContentTypes) => {
   return (
     <section className={styles['Content']}>
       <ol>
