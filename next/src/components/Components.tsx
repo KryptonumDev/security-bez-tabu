@@ -44,6 +44,7 @@ import ImageReactor, { ImageReactor_Query, ImageReactorTypes } from './_global/I
 import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleCtaSection';
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
+import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -72,6 +73,7 @@ type ComponentMapType = {
   PersonPresentation: PersonPresentationTypes;
   ImageReactor: ImageReactorTypes;
   CourseDettails: CourseDetailsTypes;
+  BadgeIconSection: BadgeIconSectionTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -101,6 +103,7 @@ const ComponentMap = ({ props }) => ({
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
+  BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -145,5 +148,6 @@ export const Components_Query = /* groq */ `
     ${PersonPresentation_Query}
     ${ImageReactor_Query}
     ${CourseDetails_Query}
+    ${BadgeIconSection_Query}
   },
 `;

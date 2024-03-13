@@ -53,6 +53,7 @@ import DetailedOrderedList, {DetailedOrderedList_Chapter} from './components/Det
 import PersonPresentation, {PersonPresentation_Achievements} from './components/PersonPresentation'
 import ImageReactor from './components/ImageReactor'
 import CourseDetails, {CourseDetails_List} from './components/CourseDetails'
+import BadgeIconSection from './components/BadgeIconSection'
 
 export const components = [
   global_Seo,
@@ -107,6 +108,7 @@ export const components = [
   ImageReactor,
   CourseDetails,
   CourseDetails_List,
+  BadgeIconSection,
 ]
 
 export const schemaTypes = [

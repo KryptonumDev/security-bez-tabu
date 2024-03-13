@@ -34,5 +34,6 @@ export default {
     {type: 'PersonPresentation'},
     {type: 'ImageReactor'},
     {type: 'CourseDetails'},
+    {type: 'BadgeIconSection'},
   ],
 }
