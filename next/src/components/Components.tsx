@@ -1,6 +1,5 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
-import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
@@ -40,7 +39,7 @@ import DetailedOrderedList, {
 } from '@/components/_global/DetailedOrderedList';
 import AdvancedCtaSection, {
   AdvancedCtaSection_Query,
-  AdvancedCtaSectionProps,
+  AdvancedCtaSectionTypes,
 } from '@/components/_global/AdvancedCtaSection';
 import PersonPresentation, {
   PersonPresentation_Query,
@@ -64,7 +63,6 @@ type ComponentMapType = {
   Recipients: RecipientsProps;
   Reviews: ReviewsProps;
   Idea: IdeaProps;
-  Certificate: CertificateProps;
   Lessons: LessonsProps;
   Faq: FaqProps;
   Author: AuthorProps;
@@ -72,7 +70,7 @@ type ComponentMapType = {
   Charts: ChartsProps;
   SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
   DetailedOrderedList: DetailedOrderedListTypes;
-  AdvnacedCtaSection: AdvancedCtaSectionProps;
+  AdvnacedCtaSection: AdvancedCtaSectionTypes;
   PersonPresentation: PersonPresentationTypes;
   ImageReactor: ImageReactorTypes;
 };
@@ -93,14 +91,13 @@ const ComponentMap = ({ props }) => ({
   Recipients: <Recipients {...(props as RecipientsProps)} />,
   Reviews: <Reviews {...(props as ReviewsProps)} />,
   Idea: <Idea {...(props as IdeaProps)} />,
-  Certificate: <Certificate {...(props as CertificateProps)} />,
   Lessons: <Lessons {...(props as LessonsProps)} />,
   Faq: <Faq {...(props as FaqProps)} />,
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
   SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
-  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionProps)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
 });
@@ -135,7 +132,6 @@ export const Components_Query = /* groq */ `
     ${Recipients_Query}
     ${Reviews_Query}
     ${Idea_Query}
-    ${Certificate_Query}
     ${Lessons_Query}
     ${Faq_Query}
     ${Author_Query}
