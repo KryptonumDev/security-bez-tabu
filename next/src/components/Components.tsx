@@ -102,9 +102,9 @@ const ComponentMap = ({ props }) => ({
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
 });
 
-export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
+export type ComponentsTypes = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
 
-const Components = ({ data }: { data: ComponentsType }) => {
+const Components = ({ data }: { data: ComponentsTypes }) => {
   return data?.map((item) => {
     const componentName = item._type;
     const Component = ComponentMap({ props: item })[componentName];
