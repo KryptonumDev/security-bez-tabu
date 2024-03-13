@@ -6,7 +6,7 @@ export default {
     {
       name: 'text',
       type: 'string',
-      title: 'Text',
+      title: 'Tekst',
       description: 'Tekst, który będzie wyświetlany na przycisku',
       validation: Rule => Rule.required()
     },
