@@ -14,7 +14,7 @@ const Faq = ({ heading, paragraph, list }: FaqTypes) => {
     <section className={styles['Faq']}>
       <Markdown.h2>{heading}</Markdown.h2>
       <div className={styles['Form']}>
-        <Markdown>{paragraph}</Markdown>
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Form StatusIcon={StatusIcon} />
       </div>
       <List

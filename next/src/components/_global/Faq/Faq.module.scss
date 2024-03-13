@@ -15,7 +15,7 @@
   .Form {
     grid-area: form;
     @media (max-width: 899px) {
-      > p {
+      > .paragraph {
         margin-top: 64px;
       }
     }
