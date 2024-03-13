@@ -31,7 +31,6 @@ import StatsList from './components/StatsList'
 import Recipients from './components/Recipients'
 import Reviews from './components/Reviews'
 import Idea from './components/Idea'
-import Certificate from './components/Certificate'
 import Lessons from './components/Lessons'
 import Faq, { Faq_List } from './components/Faq'
 import Author from './components/Author'
@@ -76,7 +75,6 @@ export const components = [
   Recipients,
   Reviews,
   Idea,
-  Certificate,
   Lessons,
   Faq,
   Author,

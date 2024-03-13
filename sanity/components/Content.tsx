@@ -25,7 +25,6 @@ export default {
     {type: 'Recipients'},
     {type: 'Reviews'},
     {type: 'Idea'},
-    {type: 'Certificate'},
     {type: 'Lessons'},
     {type: 'Faq'},
     {type: 'Author'},
