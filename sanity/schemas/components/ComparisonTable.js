@@ -85,9 +85,9 @@ export const ComparisonTable_Row = {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'paragraph',
+      name: 'description',
       type: 'string',
-      title: 'Paragraf',
+      title: 'Opis',
       validation: (Rule) => Rule.required(),
     },
   ],

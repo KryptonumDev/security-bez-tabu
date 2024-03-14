@@ -10,7 +10,7 @@ export const ComparisonTable_Query = `
       heading,
       rows[] {
         title,
-        paragraph
+        description
       }
     }
   },

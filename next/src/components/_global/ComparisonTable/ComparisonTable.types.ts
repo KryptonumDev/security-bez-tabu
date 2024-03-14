@@ -4,8 +4,8 @@ export type ComparisonTableTypes = {
   table: {
     heading: string;
     rows: {
-      paragraph: string;
       title: string;
+      description: string;
     }[];
   }[];
 };
