@@ -1,6 +1,6 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
 
-const title = 'Sekcja z ikoną w kształcie odznaki';
+const title = 'Sekcja tekstowa i ikonką';
 const icon = () => '🏅';
 
 export default {
@@ -31,10 +31,14 @@ export default {
   preview: {
     select: {
       heading: 'heading',
+      paragraph: 'paragraph',
+      media: 'icon',
     },
-    prepare({ heading }) {
+    prepare({ heading, paragraph, media }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
+        media,
         icon,
       };
     },
