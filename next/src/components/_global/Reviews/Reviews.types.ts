@@ -1,11 +1,11 @@
 import type { ImgType } from '@/global/types';
 
-export type Props = {
+export type ReviewsTypes = {
   heading: string;
   list: {
-    img?: ImgType | undefined;
-    content: string;
+    img?: ImgType;
     name: string;
-    position: string;
+    position?: string;
+    text: string;
   }[];
 };

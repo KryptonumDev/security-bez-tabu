@@ -7,7 +7,7 @@ import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from '@/components/_global/Perks';
 import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
-import Reviews, { Reviews_Query, type ReviewsProps } from '@/components/_global/Reviews';
+import Reviews, { Reviews_Query, type ReviewsTypes } from '@/components/_global/Reviews';
 import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components/_global/Newsletter';
 import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
 import HeroWithRotatingElipsis, {
@@ -61,7 +61,7 @@ type ComponentMapType = {
   SimpleCtaSection: SimpleCtaSectionTypes;
   Stats: StatsProps;
   Recipients: RecipientsProps;
-  Reviews: ReviewsProps;
+  Reviews: ReviewsTypes;
   Idea: IdeaTypes;
   Lessons: LessonsProps;
   Faq: FaqTypes;
@@ -89,7 +89,7 @@ const ComponentMap = ({ data }) => ({
   DetailedOrderedList: <DetailedOrderedList {...(data as DetailedOrderedListTypes)} />,
   Stats: <Stats {...(data as StatsProps)} />,
   Recipients: <Recipients {...(data as RecipientsProps)} />,
-  Reviews: <Reviews {...(data as ReviewsProps)} />,
+  Reviews: <Reviews {...(data as ReviewsTypes)} />,
   Idea: <Idea {...(data as IdeaTypes)} />,
   Lessons: <Lessons {...(data as LessonsProps)} />,
   Faq: <Faq {...(data as FaqTypes)} />,

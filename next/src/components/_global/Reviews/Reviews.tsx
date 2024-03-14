@@ -1,43 +1,39 @@
-import styles from './Reviews.module.scss';
-import type { Props } from './Reviews.types';
-import Item from './_Item';
-import Heading from './_Heading';
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
+import styles from './Reviews.module.scss';
+import Heading from './_Heading';
+import Item from './_Item';
+import type { ReviewsTypes } from './Reviews.types';
 
-const Reviews = ({ heading, list }: Props) => {
-  const mappedList = list.map(({ img, content, ...props }) => ({
-    img: img ? (
-      <Img
-        data={img}
-        sizes='64px'
-      />
-    ) : (
-      <UserPlaceholder />
-    ),
-    content: <Markdown className={styles.content}>{content}</Markdown>,
-    ...props,
-  }));
-
+const Reviews = ({ heading, list }: ReviewsTypes) => {
   return (
     <section className={styles['Reviews']}>
       <Heading>
         <Markdown.h2>{heading}</Markdown.h2>
       </Heading>
       <ul className={styles.list}>
-        {mappedList.map(({ img, name, position, content }, i) => (
+        {list.map(({ img, name, position, text }, i) => (
           <Item
             key={i}
             className={styles.item}
           >
             <div className={styles.author}>
-              <div className={styles.img}>{img}</div>
+              <div className={styles.img}>
+                {img ? (
+                  <Img
+                    data={img}
+                    sizes='64px'
+                  />
+                ) : (
+                  <UserPlaceholder />
+                )}
+              </div>
               <div>
                 <h3>{name}</h3>
                 <p className={styles.position}>{position}</p>
               </div>
             </div>
-            {content}
+            <Markdown className={styles.text}>{text}</Markdown>
           </Item>
         ))}
       </ul>

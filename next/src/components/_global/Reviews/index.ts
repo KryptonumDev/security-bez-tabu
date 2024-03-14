@@ -1,18 +1,18 @@
-import { Img_Query } from '@/components/ui/image';
 import Reviews from './Reviews';
-export type { Props as ReviewsProps } from './Reviews.types';
 export default Reviews;
+import { Img_Query } from '@/components/ui/image';
+export type { ReviewsTypes } from './Reviews.types';
 
 export const Reviews_Query = /* groq */ `
   _type == 'Reviews' => {
     heading,
-    list[] {
-      name,
-      position,
-      content,
+    list[] -> {
       img {
         ${Img_Query}
       },
+      name,
+      position,
+      text,
     },
   },
 `;
