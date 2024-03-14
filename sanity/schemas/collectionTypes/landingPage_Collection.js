@@ -18,31 +18,30 @@ export default {
       options: {
         source: 'name',
       },
-      description:
-        'Do adresu URL zostanie dodany automatycznie prefix "/landing" - np. "/landing/twoj-slug"',
+      description: 'Do adresu URL zostanie dodany automatycznie prefix "/landing" - np. "/landing/twoj-slug"',
       options: {
         source: 'name',
         slugify: (input) => `${slugify(input)}`,
       },
-      validation: (Rule) =>
+      validation: Rule => {
         Rule.custom(({ current: slug }) => {
           if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) {
-            return 'Slug może zawierać tylko małe litery, cyfry oraz łączniki. Upewnij się, że nie zawiera on znaków specjalnych ani wielkich liter.'
+            return 'Slug może zawierać tylko małe litery, cyfry oraz myślniki. Upewnij się, że nie zawiera on znaków specjalnych ani wielkich liter.'
           }
           return true
-        }).required(),
+        }).required()
+      },
     },
     {
       name: 'countdown_Date',
       type: 'datetime',
-      title: 'Data do odliczania',
-      validation: (Rule) => Rule.required(),
+      title: 'Data do odliczania (opcjonalnie)',
     },
     {
       name: 'link',
       type: 'url',
       title: 'Link globalny (np. w nawigacji)',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'content',
