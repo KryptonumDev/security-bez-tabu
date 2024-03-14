@@ -1,3 +1,45 @@
 .CourseComparison {
-  
+  header {
+    max-width: calc(579rem / 16);
+    margin: 0 auto;
+    text-align: center;
+    h2 {
+      margin-bottom: clamp(16px, calc(24vw / 7.68), 24px);
+    }
+    margin-bottom: clamp(48px, calc(82vw / 7.68), 82px);
+  }
+  .plans {
+    max-width: calc(933rem / 16);
+    margin: 0 auto;
+    display: grid;
+    gap: clamp(24px, calc(32vw / 7.68), 32px);
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    .item {
+      &[data-highlighted='true'] {
+        h3 {
+          color: var(--secondary-500);
+        }
+        ol {
+          border: 1px solid var(--secondary-500);
+          background: var(--gradient-bg);
+        }
+      }
+      h3 {
+        margin-bottom: clamp(8px, calc(16vw / 7.68), 24px);
+      }
+      ol {
+        padding: clamp(16px, calc(24vw / 7.68), 24px);
+        list-style-type: none;
+        display: grid;
+        gap: clamp(16px, calc(24vw / 7.68), 24px);
+        li {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 8px;
+        }
+      }
+    }
+  }
 }

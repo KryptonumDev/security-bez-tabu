@@ -7,11 +7,12 @@ export const CourseComparison_Query = `
     heading,
     paragraph,
     plans[] {
+      isHighlighted,
       heading,
       list[] {
         name,
-        isPositive
-      }
-    }
+        isPositive,
+      },
+    },
   },
 `;
