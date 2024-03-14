@@ -1,9 +1,9 @@
 import Img from '@/components/ui/image';
 import Markdown from '@/components/ui/markdown';
 import styles from './BenefitsItems.module.scss';
-import type { BenefitsItemsTypes } from './BenefitsItems.types';
 import Heading from './_Heading';
 import Item from './_Item';
+import type { BenefitsItemsTypes } from './BenefitsItems.types';
 
 const BenefitsItems = ({ heading, list }: BenefitsItemsTypes) => {
   return (

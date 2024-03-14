@@ -13,7 +13,7 @@ export const PlansComparison_Query = `
       features[],
       cta {
         ${Cta_Query}
-      }
-    }
+      },
+    },
   },
 `;

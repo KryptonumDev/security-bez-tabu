@@ -1,11 +1,11 @@
-import { type CtaType } from '@/global/types';
+import type { CtaType } from '@/global/types';
 
 export type PlansComparisonTypes = {
   heading: string;
   plans: {
-    isMostPopular: boolean;
+    isMostPopular?: boolean;
     heading: string;
-    price: number;
+    price: string;
     features: string[];
     cta: CtaType;
   }[];
