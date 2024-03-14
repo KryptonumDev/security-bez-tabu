@@ -48,11 +48,13 @@ export default {
     select: {
       heading: 'heading',
       paragraph: 'paragraph',
+      media: 'img',
     },
-    prepare({ heading, paragraph }) {
+    prepare({ heading, paragraph, media }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
         subtitle: removeMarkdown(paragraph),
+        media,
         icon,
       }
     },
