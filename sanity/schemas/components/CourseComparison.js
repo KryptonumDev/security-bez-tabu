@@ -53,6 +53,13 @@ export const CourseComparison_Plans = {
   title: 'Plany',
   fields: [
     {
+      name: 'isHighlighted',
+      type: 'boolean',
+      title: 'Czy jest wyróżniony?',
+      initialValue: false,
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
