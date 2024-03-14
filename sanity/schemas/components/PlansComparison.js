@@ -1,7 +1,8 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
+import { countItems } from '../../utils/count-items'
 
-const icon = () => '🔍'
 const title = 'Porównanie planów'
+const icon = () => '🔍'
 
 export default {
   name: 'PlansComparison',
@@ -13,23 +14,27 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'plans',
       type: 'array',
-      of: [{type: 'PlansComparison_Plans'}],
+      of: [{
+        type: 'PlansComparison_Plans'
+      }],
       title: 'Plany',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      plans: 'plans',
     },
-    prepare({heading}) {
+    prepare({ heading, plans }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: countItems(plans.length),
         icon,
       }
     },
@@ -49,28 +54,30 @@ export const PlansComparison_Plans = {
     },
     {
       name: 'heading',
-      type: 'markdown',
+      type: 'string',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'price',
-      type: 'number',
+      type: 'string',
       title: 'Cena',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'features',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{
+        type: 'string'
+      }],
       title: 'Cechy',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
       type: 'cta',
       title: 'CTA',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -78,10 +85,10 @@ export const PlansComparison_Plans = {
       heading: 'heading',
       subtitle: 'price',
     },
-    prepare({heading, subtitle}) {
+    prepare({ heading, subtitle }) {
       return {
-        title: `${removeMarkdown(heading)}`,
-        subtitle: `Cena wynozi ${subtitle} zł`,
+        title: removeMarkdown(heading),
+        subtitle,
       }
     },
   },
