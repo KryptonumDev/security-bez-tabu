@@ -1,4 +1,4 @@
-import { removeMarkdown } from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown';
 
 const icon = () => '⭐️';
 const title = `Sekcja HERO (${icon()}) z orbitami i zdjęciem`;
@@ -50,7 +50,7 @@ export default {
       type: 'array',
       of: [
         {
-          type: 'TitleDescriptionAndImage_Item',
+          type: 'HeroWithRotatingElipsis_Products',
         },
       ],
       title: 'Produkty',
@@ -67,7 +67,47 @@ export default {
         title: `[${title}] - ${removeMarkdown(heading)}`,
         subtitle: removeMarkdown(paragraph),
         icon,
-      }
+      };
+    },
+  },
+};
+
+export const HeroWithRotatingElipsis_Products = {
+  name: 'HeroWithRotatingElipsis_Products',
+  title: 'Produkty',
+  type: 'object',
+  fields: [
+    {
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'title',
+      type: 'string',
+      title: 'Tytuł',
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'description',
+      type: 'string',
+      title: 'Opis',
+      validation: Rule => Rule.required(),
+    },
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      description: 'description',
+      image: 'img',
+    },
+    prepare({ title, description, image }) {
+      return {
+        title: title,
+        subtitle: description,
+        media: image,
+      };
     },
   },
 };

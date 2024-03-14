@@ -1,5 +1,5 @@
 import Charts from './Charts';
-export type { Props as ChartsProps } from './Charts.types';
+export type { ChartsTypes } from './Charts.types';
 export default Charts;
 
 export const Charts_Query = /* groq */ `
@@ -7,20 +7,20 @@ export const Charts_Query = /* groq */ `
     charts[] {
       title,
       _type,
-      _type == 'chart_Bars' => {
+      _type == 'Charts_Bars' => {
         charts[] {
           title,
           number,
         },
       },
-      _type == 'chart_Linear' => {
+      _type == 'Charts_Linear' => {
         isAngle,
         item {
           number,
           title,
         },
       },
-      _type == 'chart_Circle' => {
+      _type == 'Charts_Circle' => {
         item {
           number,
           title,

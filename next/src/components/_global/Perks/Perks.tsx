@@ -1,11 +1,11 @@
+import { PerksTypes } from '.';
 import styles from './Perks.module.scss';
-import type { Props } from './Perks.types';
 import Chips from './_Chips';
 import Heading from './_Heading';
 import Item from './_Item';
 import Markdown from '@/components/ui/markdown';
 
-const Perks = ({ heading, list }: Props) => {
+const Perks = ({ heading, list }: PerksTypes) => {
   return (
     <section className={styles['Perks']}>
       <Heading>

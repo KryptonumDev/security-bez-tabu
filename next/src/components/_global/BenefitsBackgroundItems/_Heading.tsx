@@ -3,18 +3,18 @@ import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { scrollAnimation } from '@/utils/scroll-animation';
 
-const Item = ({ children, index }: { children: React.ReactNode; index: number }) => {
+const Heading = ({ children }: { children: React.ReactNode }) => {
   const wrapper = useRef(null);
   const isInView = useInView(wrapper, { once: true, margin: '0px 0px -13% 0px' });
 
   return (
-    <motion.li
+    <motion.header
       ref={wrapper}
-      {...scrollAnimation(isInView, (index + 1) * 0.1)}
+      {...scrollAnimation(isInView)}
     >
       {children}
-    </motion.li>
+    </motion.header>
   );
 };
 
-export default Item;
+export default Heading;

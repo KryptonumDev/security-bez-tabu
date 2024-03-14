@@ -26,7 +26,6 @@ export default {
     { type: 'CompaniesShowcase' },
     { type: 'KeyDetails' },
     { type: 'Perks' },
-    { type: 'Benefits' },
     { type: 'SimpleCtaSection' },
     { type: 'StatsList' },
     { type: 'BenefitsItems' },
@@ -35,7 +34,7 @@ export default {
     { type: 'Idea' },
     { type: 'Lessons' },
     { type: 'Faq' },
-    { type: 'image', name: 'LargeImage', title: 'Duże zdjęcie' },
+    { type: 'image', name: 'LargeImage', title: 'Duże zdjęcie', icon: () => '🖼️' },
     { type: 'Charts' },
     { type: 'PersonPresentation' },
     { type: 'ImageReactor' },
@@ -46,6 +45,7 @@ export default {
     { type: 'CourseComparison' },
     { type: 'CompaniesDescriptiveShowcase' },
     { type: 'PlansComparison' },
-    { type: 'VideoSection' }
+    { type: 'VideoSection' },
+    { type: 'BenefitsBackgroundItems' },
   ],
 };

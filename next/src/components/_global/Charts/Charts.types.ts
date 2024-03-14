@@ -1,16 +1,16 @@
-export type Props = {
+export type ChartsTypes = {
   _type: string;
   charts: Chart[];
 };
 
 export type Chart = {
-  title: string;
   _type: string;
+  title: string;
   charts: {
     title: string;
     number: number;
   }[];
-  isAngle: boolean;
+  isAngle?: boolean;
   item: {
     number: number;
     title: string;

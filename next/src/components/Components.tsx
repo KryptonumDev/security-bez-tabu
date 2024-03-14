@@ -5,11 +5,11 @@ import Idea, { Idea_Query, type IdeaTypes } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
-import Perks, { type PerksProps, Perks_Query } from '@/components/_global/Perks';
+import Perks, { Perks_Query, type PerksTypes } from '@/components/_global/Perks';
 import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
 import Reviews, { Reviews_Query, type ReviewsTypes } from '@/components/_global/Reviews';
 import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components/_global/Newsletter';
-import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
+import StatsList, { StatsList_Query, type StatsListTypes } from '@/components/_global/StatsList';
 import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
   type HeroWithRotatingElipsisTypes,
@@ -18,7 +18,7 @@ import HeroColumnWithImageReactor, {
   HeroColumnWithImageReactor_Query,
   type HeroColumnWithImageReactorTypes,
 } from '@/components/_global/HeroColumnWithImageReactor';
-import Charts, { Charts_Query, type ChartsProps } from '@/components/_global/Charts';
+import Charts, { Charts_Query, type ChartsTypes } from '@/components/_global/Charts';
 import CompaniesShowcase, {
   CompaniesShowcase_Query,
   type CompaniesShowcaseTypes,
@@ -33,7 +33,10 @@ import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
-import AdvancedCtaSection, { AdvancedCtaSection_Query, type AdvancedCtaSectionTypes } from '@/components/_global/AdvancedCtaSection';
+import AdvancedCtaSection, {
+  AdvancedCtaSection_Query,
+  type AdvancedCtaSectionTypes,
+} from '@/components/_global/AdvancedCtaSection';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
   type DetailedOrderedListTypes,
@@ -46,16 +49,35 @@ import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from '@/comp
 import { SimpleCtaSection_Query, type SimpleCtaSectionTypes } from '@/components/_global/SimpleCtaSection';
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, type CourseDetailsTypes } from '@/components/_global/CourseDetails';
-import BadgeIconSection, { BadgeIconSection_Query, type BadgeIconSectionTypes } from '@/components/_global/BadgeIconSection';
-import TeamIntroduction, { TeamIntroduction_Query, type TeamIntroductionTypes } from '@/components/_global/TeamIntroduction';
-import ComparisonTable, { ComparisonTable_Query, type ComparisonTableTypes } from '@/components/_global/ComparisonTable';
-import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from '@/components/_global/CourseComparison';
+import BadgeIconSection, {
+  BadgeIconSection_Query,
+  type BadgeIconSectionTypes,
+} from '@/components/_global/BadgeIconSection';
+import TeamIntroduction, {
+  TeamIntroduction_Query,
+  type TeamIntroductionTypes,
+} from '@/components/_global/TeamIntroduction';
+import ComparisonTable, {
+  ComparisonTable_Query,
+  type ComparisonTableTypes,
+} from '@/components/_global/ComparisonTable';
+import CourseComparison, {
+  CourseComparison_Query,
+  type CourseComparisonTypes,
+} from '@/components/_global/CourseComparison';
 import CompaniesDescriptiveShowcase, {
   CompaniesDescriptiveShowcase_Query,
   type CompaniesDescriptiveShowcaseTypes,
 } from '@/components/_global/CompaniesDescriptiveShowcase';
-import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from '@/components/_global/PlansComparison';
+import PlansComparison, {
+  PlansComparison_Query,
+  type PlansComparisonTypes,
+} from '@/components/_global/PlansComparison';
 import VideoSection, { VideoSection_Query, type VideoSectionTypes } from '@/components/_global/VideoSection';
+import BenefitsBackgroundItems, {
+  BenefitsBackgroundItems_Query,
+  type BenefitsBackgroundItemsTypes,
+} from './_global/BenefitsBackgroundItems';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -66,9 +88,9 @@ type ComponentMapType = {
   HeroWithRotatingElipsis: HeroWithRotatingElipsisTypes;
   TraitsListWithIcons: TraitsListWithIconsTypes;
   BenefitsItems: BenefitsItemsTypes;
-  Perks: PerksProps;
+  Perks: PerksTypes;
   SimpleCtaSection: SimpleCtaSectionTypes;
-  Stats: StatsProps;
+  StatsList: StatsListTypes;
   Recipients: RecipientsProps;
   Reviews: ReviewsTypes;
   Idea: IdeaTypes;
@@ -76,7 +98,7 @@ type ComponentMapType = {
   Faq: FaqTypes;
   Author: AuthorProps;
   LargeImage: ImgType;
-  Charts: ChartsProps;
+  Charts: ChartsTypes;
   SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
   DetailedOrderedList: DetailedOrderedListTypes;
   AdvnacedCtaSection: AdvancedCtaSectionTypes;
@@ -90,6 +112,7 @@ type ComponentMapType = {
   CompaniesDescriptiveShowcase: CompaniesDescriptiveShowcaseTypes;
   PlansComparison: PlansComparisonTypes;
   VideoSection: VideoSectionTypes;
+  BenefitsBackgroundItems: BenefitsBackgroundItemsTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -98,21 +121,21 @@ const ComponentMap = ({ props }) => ({
   CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseTypes)} />,
   HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
   KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
-  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
+  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisTypes)} />,
   TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
-  Perks: <Perks {...(props as PerksProps)} />,
+  Perks: <Perks {...(props as PerksTypes)} />,
   SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionTypes)} />,
   DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
-  Stats: <Stats {...(props as StatsProps)} />,
+  StatsList: <StatsList {...(props as StatsListTypes)} />,
   Recipients: <Recipients {...(props as RecipientsProps)} />,
-  Reviews: <Reviews {...(props as ReviewsProps)} />,
-  Idea: <Idea {...(props as IdeaProps)} />,
+  Reviews: <Reviews {...(props as ReviewsTypes)} />,
+  Idea: <Idea {...(props as IdeaTypes)} />,
   Lessons: <Lessons {...(props as LessonsProps)} />,
   Faq: <Faq {...(props as FaqTypes)} />,
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
-  Charts: <Charts {...(props as ChartsProps)} />,
+  Charts: <Charts {...(props as ChartsTypes)} />,
   SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
   AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
@@ -125,6 +148,7 @@ const ComponentMap = ({ props }) => ({
   CompaniesDescriptiveShowcase: <CompaniesDescriptiveShowcase {...(props as CompaniesDescriptiveShowcaseTypes)} />,
   PlansComparison: <PlansComparison {...(props as PlansComparisonTypes)} />,
   VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
+  BenefitsBackgroundItems: <BenefitsBackgroundItems {...(props as BenefitsBackgroundItemsTypes)} />,
 });
 
 export type ComponentsTypes = {
@@ -132,10 +156,10 @@ export type ComponentsTypes = {
   countdown_Date?: string;
 };
 
-const Components = ({ data, countdown_Date }: ComponentsTypes) => {
+const Components = ({ data }: { data: ComponentsTypes }) => {
   return data?.map((item) => {
     const componentName = item._type;
-    const Component = ComponentMap({ data: { ...item, countdown_Date } })[componentName];
+    const Component = ComponentMap({ props: item })[componentName];
     if (!Component) return null;
     return Component;
   });
@@ -156,7 +180,7 @@ export const Components_Query = /* groq */ `
     ${BenefitsItems_Query}
     ${Perks_Query}
     ${SimpleCtaSection_Query}
-    ${Stats_Query}
+    ${StatsList_Query}
     ${Recipients_Query}
     ${Reviews_Query}
     ${Idea_Query}
@@ -178,5 +202,6 @@ export const Components_Query = /* groq */ `
     ${CompaniesDescriptiveShowcase_Query}
     ${PlansComparison_Query}
     ${VideoSection_Query}
+    ${BenefitsBackgroundItems_Query}
   },
 `;
