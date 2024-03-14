@@ -54,6 +54,15 @@ import ImageReactor from './components/ImageReactor'
 import CourseDetails, {CourseDetails_List} from './components/CourseDetails'
 import BadgeIconSection from './components/BadgeIconSection'
 import BenefitsItems, {BenefitsItems_List} from './components/BenefitsItems'
+import CourseComparison, {
+  CourseComparison_List,
+  CourseComparison_Plans,
+} from './components/CourseComparison'
+import CompaniesDescriptiveShowcase, {
+  CompaniesDescriptiveShowcase_List,
+} from './components/CompaniesDescriptiveShowcase'
+import PlansComparison, {PlansComparison_Plans} from './components/PlansComparison'
+import VideoSection from './components/VideoSection'
 
 export const components = [
   global_Seo,
@@ -110,6 +119,14 @@ export const components = [
   BadgeIconSection,
   BenefitsItems,
   BenefitsItems_List,
+  CourseComparison,
+  CourseComparison_Plans,
+  CourseComparison_List,
+  CompaniesDescriptiveShowcase,
+  CompaniesDescriptiveShowcase_List,
+  PlansComparison,
+  PlansComparison_Plans,
+  VideoSection,
 ]
 
 export const schemaTypes = [

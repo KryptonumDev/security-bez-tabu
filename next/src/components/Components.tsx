@@ -45,6 +45,13 @@ import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleC
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
+import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from './_global/CourseComparison';
+import CompaniesDescriptiveShowcase, {
+  CompaniesDescriptiveShowcase_Query,
+  type CompaniesDescriptiveShowcaseTypes,
+} from './_global/CompaniesDescriptiveShowcase';
+import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from './_global/PlansComparison';
+import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -74,6 +81,10 @@ type ComponentMapType = {
   ImageReactor: ImageReactorTypes;
   CourseDettails: CourseDetailsTypes;
   BadgeIconSection: BadgeIconSectionTypes;
+  CourseComparison: CourseComparisonTypes;
+  CompaniesDescriptiveShowcase: CompaniesDescriptiveShowcaseTypes;
+  PlansComparison: PlansComparisonTypes;
+  VideoSection: VideoSectionTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -104,6 +115,10 @@ const ComponentMap = ({ props }) => ({
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
   BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
+  CourseComparison: <CourseComparison {...(props as CourseComparisonTypes)} />,
+  CompaniesDescriptiveShowcase: <CompaniesDescriptiveShowcase {...(props as CompaniesDescriptiveShowcaseTypes)} />,
+  PlansComparison: <PlansComparison {...(props as PlansComparisonTypes)} />,
+  VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -149,5 +164,9 @@ export const Components_Query = /* groq */ `
     ${ImageReactor_Query}
     ${CourseDetails_Query}
     ${BadgeIconSection_Query}
+    ${CourseComparison_Query}
+    ${CompaniesDescriptiveShowcase_Query}
+    ${PlansComparison_Query}
+    ${VideoSection_Query}
   },
 `;
