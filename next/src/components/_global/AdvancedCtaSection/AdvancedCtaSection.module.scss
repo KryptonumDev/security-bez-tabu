@@ -1,3 +1,31 @@
 .AdvancedCtaSection {
-  
+  padding: clamp(32px, calc(64vw / 7.68), 64px) clamp(24px, calc(64vw / 7.68), 64px);
+  border: 1px solid var(--primary-700);
+  background: var(--gradient-bg);
+  display: grid;
+  gap: 48px;
+  align-items: center;
+  @media (min-width: 1000px) {
+    justify-content: space-between;
+    grid-template-columns: auto auto;
+  }
+  header {
+    max-width: calc(451rem / 16);
+    h2 {
+      margin-bottom: 24px;
+    }
+  }
+  > div {
+    max-width: calc(379rem / 16);
+    h3 {
+      margin-bottom: 32px;
+    }
+    > a {
+      width: 100%;
+    }
+    .additionalInfo {
+      margin-top: 24px;
+      font-size: var(--small-font-size);
+    }
+  }
 }

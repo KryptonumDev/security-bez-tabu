@@ -1,7 +1,7 @@
+import SimpleCtaSection from './SimpleCtaSection';
+export default SimpleCtaSection;
 import { Cta_Query } from '@/components/ui/Button';
-import CtaSection from './SimpleCtaSection';
-export type { Props as SimpleCtaSectionProps } from './SimpleCtaSection.types';
-export default CtaSection;
+export type { SimpleCtaSectionTypes } from './SimpleCtaSection.types';
 
 export const SimpleCtaSection_Query = /* groq */ `
   _type == 'SimpleCtaSection' => {

@@ -1,16 +1,18 @@
 .SimpleCtaSection {
-  max-width: calc(586rem / 16);
-  margin: 0 auto;
-  text-align: center;
-  h2 {
-    font-size: clamp(calc(20rem / 16), calc(28vw / 7.68), calc(28rem / 16));
+  header {
+    max-width: calc(460rem / 16);
+    margin: 0 auto;
   }
+  text-align: center;
   .cta {
-    margin: clamp(16px, calc(24vw / 7.68), 24px) 0 12px;
+    margin: 24px auto 0;
+  }
+  .additionalInfo {
+    max-width: calc(356rem / 16);
+    margin: 12px auto 0;
+    font-size: var(--small-font-size);
   }
   .countdown {
-    > div {
-      margin: clamp(24px, calc(36vw / 7.68), 48px) auto 0;
-    }
+    margin: clamp(24px, calc(36vw / 7.68), 48px) auto 0;
   }
 }

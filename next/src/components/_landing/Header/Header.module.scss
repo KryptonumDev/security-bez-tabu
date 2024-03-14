@@ -1,24 +1,32 @@
 .wrapper {
   position: sticky;
-  top: clamp(28px, calc(36vw/7.68), 42px);
+  top: clamp(28px, calc(36vw / 7.68), 42px);
   z-index: 9;
   pointer-events: none;
   > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 32px;
   }
   .logo {
     pointer-events: auto;
     display: block;
-    @media (min-width: 600px){
-      backdrop-filter: blur(4px);
-      padding: 5px;
-      margin: -5px;
+    position: relative;
+    &::before {
+      content: '';
+      width: 200%;
+      height: 200%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      mask-image: radial-gradient(rgba(0, 0, 0, 1) 21%, rgba(0, 0, 0, 0) 82%);
+      backdrop-filter: blur(13px);
+      z-index: -1;
     }
-    @media (max-width: 599px){
-      width: 84px;
+    @media (max-width: 599px) {
+      width: 76px;
       .logotype {
         display: none;
       }

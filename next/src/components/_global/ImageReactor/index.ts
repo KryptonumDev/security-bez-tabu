@@ -1,13 +1,14 @@
-import { Cta_Query } from '@/components/ui/Button';
 import ImageReactor from './ImageReactor';
-import { Img_Query } from '@/components/ui/image';
 export default ImageReactor;
+import { Cta_Query } from '@/components/ui/Button';
+import { Img_Query } from '@/components/ui/image';
 export type { ImageReactorTypes } from './ImageReactor.types';
 
 export const ImageReactor_Query = `
   _type == "ImageReactor" => {
-    paragraph,
+    isHighlighted,
     heading,
+    paragraph,
     cta {
       ${Cta_Query}
     },
@@ -15,6 +16,5 @@ export const ImageReactor_Query = `
     img {
       ${Img_Query}
     },
-    isHighlighted,
   },
 `;

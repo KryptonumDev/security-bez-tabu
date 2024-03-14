@@ -7,10 +7,10 @@ import Input from '@/components/ui/Input';
 import Checkbox from '@/components/ui/Checkbox';
 import styles from '../Newsletter.module.scss';
 import { REGEX } from '@/global/constants';
-import Loading from './_Loading';
 import State from './_State';
 import type { FormStatusTypes } from '@/global/types';
 import type { StatusIconTypes } from '../Newsletter.types';
+import Loading from '@/components/ui/Loading';
 
 const Form = ({ StatusIcon }: StatusIconTypes) => {
   const [status, setStatus] = useState<FormStatusTypes>({ sending: false, success: undefined });
@@ -80,12 +80,12 @@ const Form = ({ StatusIcon }: StatusIconTypes) => {
       >
         Zapisz się!
       </Button>
+      <Loading sending={status?.sending} />
       <State
         isSuccess={status?.success}
         setStatus={setStatus}
         StatusIcon={StatusIcon}
       />
-      <Loading sending={status?.sending} />
     </form>
   );
 };

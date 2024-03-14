@@ -1,3 +1,39 @@
 .SimpleDescriptiveGrid {
-  
+  header {
+    max-width: calc(586rem / 16);
+    margin-bottom: clamp(32px, calc(64vw / 7.68), 64px);
+  }
+  ul {
+    list-style-type: none;
+    display: grid;
+    gap: 20px;
+    @media (min-width: 900px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    li {
+      border: 1px solid var(--primary-700);
+      background: var(--gradient-bg);
+      padding: 20px clamp(16px, calc(20vw / 7.68), 20px) 24px;
+      .icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: var(--primary-700);
+        display: grid;
+        place-items: center;
+        img {
+          filter: drop-shadow(0px 0px 24px #1da4fd) drop-shadow(0px 0px 9px #98d6ff);
+        }
+      }
+      h3 {
+        margin: 16px 0 8px;
+      }
+      .paragraph {
+        font-size: var(--small-font-size);
+        > *:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
 }

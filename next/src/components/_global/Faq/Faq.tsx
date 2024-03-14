@@ -1,10 +1,10 @@
-import styles from './Faq.module.scss';
-import Form from './_Form';
-import List from './_List';
 import Markdown from '@/components/ui/markdown';
-import type { Props } from './Faq.types';
+import styles from './Faq.module.scss';
+import Form from './Form';
+import List from './_List';
+import type { FaqTypes } from './Faq.types';
 
-const Faq = ({ heading, paragraph, list }: Props) => {
+const Faq = ({ heading, paragraph, list }: FaqTypes) => {
   const mappedList = list.map(({ title, description }) => ({
     question: <Markdown components={{ p: 'span' }}>{title}</Markdown>,
     answer: <Markdown>{description}</Markdown>,
@@ -13,8 +13,8 @@ const Faq = ({ heading, paragraph, list }: Props) => {
   return (
     <section className={styles['Faq']}>
       <Markdown.h2>{heading}</Markdown.h2>
-      <div className={styles.form}>
-        <Markdown>{paragraph}</Markdown>
+      <div className={styles['Form']}>
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Form StatusIcon={StatusIcon} />
       </div>
       <List

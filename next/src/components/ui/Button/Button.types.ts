@@ -12,5 +12,6 @@ export type ButtonType = (
       children: CtaType['text'];
       disabled?: boolean;
     }
-) & { loading?: boolean } & React.ButtonHTMLAttributes<HTMLButtonElement> &
+) &
+  React.ButtonHTMLAttributes<HTMLButtonElement> &
   React.AnchorHTMLAttributes<HTMLAnchorElement>;

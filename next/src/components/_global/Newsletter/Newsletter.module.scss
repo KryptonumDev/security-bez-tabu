@@ -37,7 +37,7 @@
       margin-bottom: clamp(20px, calc(24vw / 7.68), 24px);
     }
     .paragraph {
-      font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+      font-size: var(--small-font-size);
     }
   }
 }
@@ -75,20 +75,6 @@
   }
   p {
     margin: 16px 0 32px;
-    font-size: clamp(calc(14rem / 16), calc(16vw / 7.68), calc(16rem / 16));
+    font-size: var(--small-font-size);
   }
-}
-
-.Loading {
-  position: absolute;
-  left: -16px;
-  top: -16px;
-  right: -16px;
-  bottom: -16px;
-  display: grid;
-  place-items: center;
-  border-radius: inherit;
-  background-color: rgba(13, 17, 31, 0.62);
-  backdrop-filter: blur(4px);
-  z-index: 4;
 }

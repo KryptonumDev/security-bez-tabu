@@ -12,7 +12,7 @@ type RequestType = {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const emailData = {
-  from: 'Wyzwanie Security <kontakt@wyzwaniesecurity.pl>',
+  from: 'Security Bez Tabu <kontakt@securitybeztabu.pl>',
   to: 'wojtek@securitybeztabu.pl',
 };
 

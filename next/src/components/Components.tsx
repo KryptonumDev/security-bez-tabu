@@ -1,7 +1,6 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import BenefitsItems, { BenefitsItems_Query, type BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
-import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
-import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
+import Faq, { Faq_Query, type FaqTypes } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
@@ -29,37 +28,34 @@ import type { ImgType } from '@/global/types';
 import TraitsListWithIcons, {
   TraitsListWithIcons_Query,
   type TraitsListWithIconsTypes,
-} from './_global/TraitsListWithIcons';
+} from '@/components/_global/TraitsListWithIcons';
 import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
-  type SimpleDescriptiveGridTypes,
+  SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
+import AdvancedCtaSection, { AdvancedCtaSection_Query, type AdvancedCtaSectionTypes } from '@/components/_global/AdvancedCtaSection';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
   type DetailedOrderedListTypes,
-} from './_global/DetailedOrderedList';
-import AdvancedCtaSection, {
-  AdvancedCtaSection_Query,
-  type AdvancedCtaSectionProps,
-} from './_global/AdvancedCtaSection';
+} from '@/components/_global/DetailedOrderedList';
 import PersonPresentation, {
   PersonPresentation_Query,
   type PersonPresentationTypes,
-} from './_global/PersonPresentation';
-import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from './_global/ImageReactor';
-import { SimpleCtaSection_Query, type SimpleCtaSectionProps } from './_global/SimpleCtaSection';
+} from '@/components/_global/PersonPresentation';
+import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from '@/components/_global/ImageReactor';
+import { SimpleCtaSection_Query, type SimpleCtaSectionTypes } from '@/components/_global/SimpleCtaSection';
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
-import CourseDetails, { CourseDetails_Query, type CourseDetailsTypes } from './_global/CourseDetails';
-import BadgeIconSection, { BadgeIconSection_Query, type BadgeIconSectionTypes } from './_global/BadgeIconSection';
-import TeamIntroduction, { TeamIntroduction_Query, type TeamIntroductionTypes } from './_global/TeamIntroduction';
-import ComparisonTable, { ComparisonTable_Query, type ComparisonTableTypes } from './_global/ComparisonTable';
-import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from './_global/CourseComparison';
+import CourseDetails, { CourseDetails_Query, type CourseDetailsTypes } from '@/components/_global/CourseDetails';
+import BadgeIconSection, { BadgeIconSection_Query, type BadgeIconSectionTypes } from '@/components/_global/BadgeIconSection';
+import TeamIntroduction, { TeamIntroduction_Query, type TeamIntroductionTypes } from '@/components/_global/TeamIntroduction';
+import ComparisonTable, { ComparisonTable_Query, type ComparisonTableTypes } from '@/components/_global/ComparisonTable';
+import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from '@/components/_global/CourseComparison';
 import CompaniesDescriptiveShowcase, {
   CompaniesDescriptiveShowcase_Query,
   type CompaniesDescriptiveShowcaseTypes,
-} from './_global/CompaniesDescriptiveShowcase';
-import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from './_global/PlansComparison';
-import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
+} from '@/components/_global/CompaniesDescriptiveShowcase';
+import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from '@/components/_global/PlansComparison';
+import VideoSection, { VideoSection_Query, type VideoSectionTypes } from '@/components/_global/VideoSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -71,20 +67,19 @@ type ComponentMapType = {
   TraitsListWithIcons: TraitsListWithIconsTypes;
   BenefitsItems: BenefitsItemsTypes;
   Perks: PerksProps;
-  SimpleCtaSection: SimpleCtaSectionProps;
+  SimpleCtaSection: SimpleCtaSectionTypes;
   Stats: StatsProps;
   Recipients: RecipientsProps;
   Reviews: ReviewsProps;
   Idea: IdeaProps;
-  Certificate: CertificateProps;
   Lessons: LessonsProps;
-  Faq: FaqProps;
+  Faq: FaqTypes;
   Author: AuthorProps;
   LargeImage: ImgType;
   Charts: ChartsProps;
   SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
   DetailedOrderedList: DetailedOrderedListTypes;
-  AdvnacedCtaSection: AdvancedCtaSectionProps;
+  AdvnacedCtaSection: AdvancedCtaSectionTypes;
   PersonPresentation: PersonPresentationTypes;
   ImageReactor: ImageReactorTypes;
   CourseDettails: CourseDetailsTypes;
@@ -107,20 +102,19 @@ const ComponentMap = ({ props }) => ({
   TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
   Perks: <Perks {...(props as PerksProps)} />,
-  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
+  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionTypes)} />,
   DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
   Stats: <Stats {...(props as StatsProps)} />,
   Recipients: <Recipients {...(props as RecipientsProps)} />,
   Reviews: <Reviews {...(props as ReviewsProps)} />,
   Idea: <Idea {...(props as IdeaProps)} />,
-  Certificate: <Certificate {...(props as CertificateProps)} />,
   Lessons: <Lessons {...(props as LessonsProps)} />,
-  Faq: <Faq {...(props as FaqProps)} />,
+  Faq: <Faq {...(props as FaqTypes)} />,
   Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsProps)} />,
   SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
-  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionProps)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
@@ -163,7 +157,6 @@ export const Components_Query = /* groq */ `
     ${Recipients_Query}
     ${Reviews_Query}
     ${Idea_Query}
-    ${Certificate_Query}
     ${Lessons_Query}
     ${Faq_Query}
     ${Author_Query}

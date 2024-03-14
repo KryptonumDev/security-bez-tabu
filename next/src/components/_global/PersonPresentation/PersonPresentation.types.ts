@@ -5,8 +5,8 @@ export type PersonPresentationTypes = {
   img: ImgType;
   subheading: string;
   achievements: {
+    title: string;
     icon: ImgType;
-    description: string;
   }[];
   paragraph: string;
 };

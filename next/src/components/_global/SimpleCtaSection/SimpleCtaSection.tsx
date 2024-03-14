@@ -2,17 +2,19 @@ import Button from '@/components/ui/Button';
 import Countdown from '@/components/ui/Countdown';
 import Markdown from '@/components/ui/markdown';
 import styles from './SimpleCtaSection.module.scss';
-import type { Props } from './SimpleCtaSection.types';
+import type { SimpleCtaSectionTypes } from './SimpleCtaSection.types';
 
-const SimpleCtaSection = ({ heading, cta, additionalInfo, isCountdown }: Props) => {
+const SimpleCtaSection = ({ heading, cta, additionalInfo, isCountdown }: SimpleCtaSectionTypes) => {
   return (
     <section className={styles['SimpleCtaSection']}>
-      <Markdown.h2>{heading}</Markdown.h2>
+      <header>
+        <Markdown.h2 className='h3'>{heading}</Markdown.h2>
+      </header>
       <Button
         data={cta}
         className={styles.cta}
       />
-      <Markdown>{additionalInfo}</Markdown>
+      <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>
       {isCountdown && <Countdown className={styles.countdown} />}
     </section>
   );

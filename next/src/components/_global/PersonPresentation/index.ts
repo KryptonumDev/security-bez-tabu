@@ -1,6 +1,6 @@
-import { Img_Query } from '@/components/ui/image';
 import PersonPresentation from './PersonPresentation';
 export default PersonPresentation;
+import { Img_Query } from '@/components/ui/image';
 export type { PersonPresentationTypes } from './PersonPresentation.types';
 
 export const PersonPresentation_Query = `
@@ -14,7 +14,7 @@ export const PersonPresentation_Query = `
       icon {
         ${Img_Query}
       },
-      description,
+      title,
     },
     paragraph,
   },
