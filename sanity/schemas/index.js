@@ -23,7 +23,6 @@ import chapter from './components/chapter';
 import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart';
 import Perks, { Perks_List } from './components/Perks';
 import StatsList, { StatsList_List } from './components/StatsList';
-import Recipients from './components/Recipients';
 import Reviews from './components/Reviews';
 import Idea, { Idea_List } from './components/Idea';
 import Lessons from './components/Lessons';
@@ -36,8 +35,6 @@ import RevealImage from './components/RevealImage';
 import Newsletter from './components/Newsletter';
 import CompaniesShowcase, { CompaniesShowcase_List } from './components/CompaniesShowcase';
 import KeyDetails, { KeyDetails_List } from './components/KeyDetails';
-import CtaSectionWithImage from './components/CtaSectionWithImage';
-import HeadingWithNumeratedList from './components/HeadingWithNumeratedList';
 import AdvancedCtaSection from './components/AdvancedCtaSection';
 import HeroImageBackground from './components/HeroImageBackground';
 import TraitsListWithIcons, { TraitsListWithIcons_List } from './components/TraitsListWithIcons';
@@ -76,7 +73,6 @@ export const components = [
   chart_Item,
   Perks,
   StatsList,
-  Recipients,
   Reviews,
   Idea,
   Lessons,
@@ -90,8 +86,6 @@ export const components = [
   CompaniesShowcase,
   CompaniesShowcase_List,
   KeyDetails,
-  CtaSectionWithImage,
-  HeadingWithNumeratedList,
   AdvancedCtaSection,
   HeroImageBackground,
   KeyDetails_List,

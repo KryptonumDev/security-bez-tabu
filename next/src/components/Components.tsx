@@ -1,12 +1,9 @@
-import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import BenefitsItems, { BenefitsItems_Query, type BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
 import Faq, { Faq_Query, type FaqTypes } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaTypes } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
-import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
 import Perks, { Perks_Query, type PerksTypes } from '@/components/_global/Perks';
-import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
 import Reviews, { Reviews_Query, type ReviewsTypes } from '@/components/_global/Reviews';
 import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components/_global/Newsletter';
 import StatsList, { StatsList_Query, type StatsListTypes } from '@/components/_global/StatsList';
@@ -31,7 +28,7 @@ import TraitsListWithIcons, {
 } from '@/components/_global/TraitsListWithIcons';
 import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
-  SimpleDescriptiveGridTypes,
+  type SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
 import AdvancedCtaSection, {
   AdvancedCtaSection_Query,
@@ -46,8 +43,10 @@ import PersonPresentation, {
   type PersonPresentationTypes,
 } from '@/components/_global/PersonPresentation';
 import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from '@/components/_global/ImageReactor';
-import { SimpleCtaSection_Query, type SimpleCtaSectionTypes } from '@/components/_global/SimpleCtaSection';
-import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
+import SimpleCtaSection, {
+  SimpleCtaSection_Query,
+  type SimpleCtaSectionTypes,
+} from '@/components/_global/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, type CourseDetailsTypes } from '@/components/_global/CourseDetails';
 import BadgeIconSection, {
   BadgeIconSection_Query,
@@ -78,33 +77,35 @@ import BenefitsBackgroundItems, {
   BenefitsBackgroundItems_Query,
   type BenefitsBackgroundItemsTypes,
 } from './_global/BenefitsBackgroundItems';
+import HeroImageBackground, {
+  HeroImageBackground_Query,
+  type HeroImageBackgroundTypes,
+} from './_global/HeroImageBackground';
 
 type ComponentMapType = {
+  HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
+  HeroWithRotatingElipsis: HeroWithRotatingElipsisTypes;
+  HeroImageBackground: HeroImageBackgroundTypes;
+  SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
+  DetailedOrderedList: DetailedOrderedListTypes;
+  AdvancedCtaSection: AdvancedCtaSectionTypes;
+  TraitsListWithIcons: TraitsListWithIconsTypes;
   RevealImage: RevealImageTypes;
   Newsletter: NewsletterTypes;
   CompaniesShowcase: CompaniesShowcaseTypes;
-  HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
   KeyDetails: KeyDetailsTypes;
-  HeroWithRotatingElipsis: HeroWithRotatingElipsisTypes;
-  TraitsListWithIcons: TraitsListWithIconsTypes;
-  BenefitsItems: BenefitsItemsTypes;
   Perks: PerksTypes;
   SimpleCtaSection: SimpleCtaSectionTypes;
   StatsList: StatsListTypes;
-  Recipients: RecipientsProps;
+  BenefitsItems: BenefitsItemsTypes;
   Reviews: ReviewsTypes;
   Idea: IdeaTypes;
-  Lessons: LessonsProps;
   Faq: FaqTypes;
-  Author: AuthorProps;
   LargeImage: ImgType;
   Charts: ChartsTypes;
-  SimpleDescriptiveGrid: SimpleDescriptiveGridTypes;
-  DetailedOrderedList: DetailedOrderedListTypes;
-  AdvnacedCtaSection: AdvancedCtaSectionTypes;
   PersonPresentation: PersonPresentationTypes;
   ImageReactor: ImageReactorTypes;
-  CourseDettails: CourseDetailsTypes;
+  CourseDetails: CourseDetailsTypes;
   BadgeIconSection: BadgeIconSectionTypes;
   TeamIntroduction: TeamIntroductionTypes;
   ComparisonTable: ComparisonTableTypes;
@@ -116,28 +117,26 @@ type ComponentMapType = {
 };
 
 const ComponentMap = ({ props }) => ({
+  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
+  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisTypes)} />,
+  HeroImageBackground: <HeroImageBackground {...(props as HeroImageBackgroundTypes)} />,
+  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
+  DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
+  TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
   RevealImage: <RevealImage {...(props as RevealImageTypes)} />,
   Newsletter: <Newsletter {...(props as NewsletterTypes)} />,
   CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseTypes)} />,
-  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
   KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
-  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisTypes)} />,
-  TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
-  BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
   Perks: <Perks {...(props as PerksTypes)} />,
   SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionTypes)} />,
-  DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
   StatsList: <StatsList {...(props as StatsListTypes)} />,
-  Recipients: <Recipients {...(props as RecipientsProps)} />,
+  BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
   Reviews: <Reviews {...(props as ReviewsTypes)} />,
   Idea: <Idea {...(props as IdeaTypes)} />,
-  Lessons: <Lessons {...(props as LessonsProps)} />,
   Faq: <Faq {...(props as FaqTypes)} />,
-  Author: <Author {...(props as AuthorProps)} />,
   LargeImage: <LargeImage {...(props as ImgType)} />,
   Charts: <Charts {...(props as ChartsTypes)} />,
-  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
-  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
   PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
   ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
@@ -170,6 +169,7 @@ export default Components;
 export const Components_Query = /* groq */ `
   content[] {
     _type,
+    ${HeroImageBackground_Query}
     ${RevealImage_Query}
     ${Newsletter_Query}
     ${TraitsListWithIcons_Query}
@@ -181,12 +181,9 @@ export const Components_Query = /* groq */ `
     ${Perks_Query}
     ${SimpleCtaSection_Query}
     ${StatsList_Query}
-    ${Recipients_Query}
     ${Reviews_Query}
     ${Idea_Query}
-    ${Lessons_Query}
     ${Faq_Query}
-    ${Author_Query}
     ${LargeImage_Query}
     ${Charts_Query}
     ${SimpleDescriptiveGrid_Query}
