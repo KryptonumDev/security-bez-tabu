@@ -21,6 +21,7 @@ export default {
     { type: 'Perks' },
     { type: 'SimpleCtaSection' },
     { type: 'StatsList' },
+    { type: 'BenefitsItems' },
     { type: 'Recipients' },
     { type: 'Reviews' },
     { type: 'Idea' },
@@ -38,6 +39,6 @@ export default {
     { type: 'CourseComparison' },
     { type: 'CompaniesDescriptiveShowcase' },
     { type: 'PlansComparison' },
-    { type: 'VideoSection' },
+    { type: 'VideoSection' }
   ],
 };
