@@ -1,5 +1,5 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
-import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
+import BenefitsItems, { BenefitsItems_Query, BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
 import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
@@ -46,6 +46,13 @@ import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
 import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
 import ComparisonTable, { ComparisonTable_Query, ComparisonTableTypes } from './_global/ComparisonTable';
+import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from './_global/CourseComparison';
+import CompaniesDescriptiveShowcase, {
+  CompaniesDescriptiveShowcase_Query,
+  type CompaniesDescriptiveShowcaseTypes,
+} from './_global/CompaniesDescriptiveShowcase';
+import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from './_global/PlansComparison';
+import VideoSection, { VideoSection_Query, type VideoSectionTypes } from './_global/VideoSection';
 
 type ComponentMapType = {
   RevealImage: RevealImageTypes;
@@ -55,7 +62,7 @@ type ComponentMapType = {
   KeyDetails: KeyDetailsTypes;
   HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
   TraitsListWithIcons: TraitsListWithIconsTypes;
-  Benefits: BenefitsProps;
+  BenefitsItems: BenefitsItemsTypes;
   Perks: PerksProps;
   SimpleCtaSection: SimpleCtaSectionProps;
   Stats: StatsProps;
@@ -76,6 +83,10 @@ type ComponentMapType = {
   CourseDettails: CourseDetailsTypes;
   BadgeIconSection: BadgeIconSectionTypes;
   ComparisonTable: ComparisonTableTypes;
+  CourseComparison: CourseComparisonTypes;
+  CompaniesDescriptiveShowcase: CompaniesDescriptiveShowcaseTypes;
+  PlansComparison: PlansComparisonTypes;
+  VideoSection: VideoSectionTypes;
 };
 
 const ComponentMap = ({ props }) => ({
@@ -86,7 +97,7 @@ const ComponentMap = ({ props }) => ({
   KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
   HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
   TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
-  Benefits: <Benefits {...(props as BenefitsProps)} />,
+  BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
   Perks: <Perks {...(props as PerksProps)} />,
   SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionProps)} />,
   DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
@@ -107,6 +118,10 @@ const ComponentMap = ({ props }) => ({
   CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
   BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
   ComparisonTable: <ComparisonTable {...(props as ComparisonTableTypes)} />,
+  CourseComparison: <CourseComparison {...(props as CourseComparisonTypes)} />,
+  CompaniesDescriptiveShowcase: <CompaniesDescriptiveShowcase {...(props as CompaniesDescriptiveShowcaseTypes)} />,
+  PlansComparison: <PlansComparison {...(props as PlansComparisonTypes)} />,
+  VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
 });
 
 export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
@@ -132,7 +147,7 @@ export const Components_Query = /* groq */ `
     ${HeroColumnWithImageReactor_Query}
     ${KeyDetails_Query}
     ${HeroWithRotatingElipsis_Query}
-    ${Benefits_Query}
+    ${BenefitsItems_Query}
     ${Perks_Query}
     ${SimpleCtaSection_Query}
     ${Stats_Query}
@@ -153,5 +168,9 @@ export const Components_Query = /* groq */ `
     ${CourseDetails_Query}
     ${BadgeIconSection_Query}
     ${ComparisonTable_Query}
+    ${CourseComparison_Query}
+    ${CompaniesDescriptiveShowcase_Query}
+    ${PlansComparison_Query}
+    ${VideoSection_Query}
   },
 `;

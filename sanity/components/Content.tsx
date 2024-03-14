@@ -19,7 +19,7 @@ export default {
     {type: 'CompaniesShowcase'},
     {type: 'KeyDetails'},
     {type: 'Perks'},
-    {type: 'Benefits'},
+    {type: 'BenefitsItems'},
     {type: 'SimpleCtaSection'},
     {type: 'StatsList'},
     {type: 'Recipients'},
@@ -36,5 +36,9 @@ export default {
     {type: 'CourseDetails'},
     {type: 'BadgeIconSection'},
     {type: 'ComparisonTable'},
+    {type: 'CourseComparison'},
+    {type: 'CompaniesDescriptiveShowcase'},
+    {type: 'PlansComparison'},
+    {type: 'VideoSection'},
   ],
 }

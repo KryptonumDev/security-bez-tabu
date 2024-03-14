@@ -1,10 +1,9 @@
 import type { ImgType } from '@/global/types';
 
-export type Props = {
+export type BenefitsItemsTypes = {
   heading: string;
   list: {
-    title: string;
-    description: string;
-    img: ImgType;
+    icon: ImgType;
+    paragraph: string;
   }[];
 };

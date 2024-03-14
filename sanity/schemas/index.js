@@ -26,7 +26,6 @@ import stats from './components/stats'
 import chapter from './components/chapter'
 import {chart_Bars, chart_Circle, chart_Item, chart_Linear} from './components/chart'
 import Perks from './components/Perks'
-import Benefits from './components/Benefits'
 import StatsList from './components/StatsList'
 import Recipients from './components/Recipients'
 import Reviews from './components/Reviews'
@@ -58,6 +57,16 @@ import ComparisonTable, {
   ComparisonTable_Column,
   ComparisonTable_Row,
 } from './components/ComparisonTable'
+import BenefitsItems, {BenefitsItems_List} from './components/BenefitsItems'
+import CourseComparison, {
+  CourseComparison_List,
+  CourseComparison_Plans,
+} from './components/CourseComparison'
+import CompaniesDescriptiveShowcase, {
+  CompaniesDescriptiveShowcase_List,
+} from './components/CompaniesDescriptiveShowcase'
+import PlansComparison, {PlansComparison_Plans} from './components/PlansComparison'
+import VideoSection from './components/VideoSection'
 
 export const components = [
   global_Seo,
@@ -77,7 +86,6 @@ export const components = [
   chart_Circle,
   chart_Item,
   Perks,
-  Benefits,
   StatsList,
   Recipients,
   Reviews,
@@ -116,6 +124,16 @@ export const components = [
   ComparisonTable,
   ComparisonTable_Column,
   ComparisonTable_Row,
+  BenefitsItems,
+  BenefitsItems_List,
+  CourseComparison,
+  CourseComparison_Plans,
+  CourseComparison_List,
+  CompaniesDescriptiveShowcase,
+  CompaniesDescriptiveShowcase_List,
+  PlansComparison,
+  PlansComparison_Plans,
+  VideoSection,
 ]
 
 export const schemaTypes = [
