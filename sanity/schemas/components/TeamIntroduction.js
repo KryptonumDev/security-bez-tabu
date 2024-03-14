@@ -62,7 +62,7 @@ export const TeamIntroduction_List = {
     {
       name: 'description',
       type: 'text',
-      title: 'Opis',
+      title: 'Opis (opcjonalne)',
     },
   ],
 }
