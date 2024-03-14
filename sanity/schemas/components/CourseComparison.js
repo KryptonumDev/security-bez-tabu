@@ -1,7 +1,8 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
+import { countItems } from '../../utils/count-items'
 
-const icon = () => '📊'
 const title = 'Porównanie kursów'
+const icon = () => '📊'
 
 export default {
   name: 'CourseComparison',
@@ -13,20 +14,22 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'plans',
       type: 'array',
-      of: [{type: 'CourseComparison_Plans'}],
+      of: [{
+        type: 'CourseComparison_Plans'
+      }],
       title: 'Plany',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -34,10 +37,10 @@ export default {
       heading: 'heading',
       subtitle: 'paragraph',
     },
-    prepare({heading, subtitle}) {
+    prepare({ heading, subtitle }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
-        subtitle: subtitle,
+        subtitle: removeMarkdown(subtitle),
         icon,
       }
     },
@@ -53,23 +56,27 @@ export const CourseComparison_Plans = {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'CourseComparison_List'}],
+      of: [{
+        type: 'CourseComparison_List'
+      }],
       title: 'Lista',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      list: 'list',
     },
-    prepare({heading}) {
+    prepare({ heading, list }) {
       return {
-        title: `${removeMarkdown(heading)}`,
+        title: removeMarkdown(heading),
+        subtitle: countItems(list.length),
       }
     },
   },
@@ -81,26 +88,27 @@ export const CourseComparison_List = {
   title: 'Lista',
   fields: [
     {
-      name: 'name',
-      type: 'markdown',
-      title: 'Nazwa',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'isPositive',
       type: 'boolean',
       title: 'Czy jest pozytywny?',
       initialValue: true,
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Nazwa',
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
+      isPositive: 'isPositive',
       name: 'name',
     },
-    prepare({name}) {
+    prepare({ isPositive, name }) {
       return {
-        title: `${removeMarkdown(name)}`,
+        title: `[${isPositive ? '+' : '-'}] - ${removeMarkdown(name)}`,
       }
     },
   },
