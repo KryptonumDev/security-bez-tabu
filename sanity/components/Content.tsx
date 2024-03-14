@@ -34,7 +34,6 @@ export default {
     {type: 'Idea'},
     {type: 'Lessons'},
     {type: 'Faq'},
-    {type: 'Author'},
     {type: 'image', name: 'LargeImage', title: 'Duże zdjęcie'},
     {type: 'Charts'},
     {type: 'PersonPresentation'},

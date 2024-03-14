@@ -41,7 +41,6 @@ import Reviews from './components/Reviews'
 import Idea from './components/Idea'
 import Lessons from './components/Lessons'
 import Faq from './components/Faq'
-import Author from './components/Author'
 import Charts from './components/Charts'
 import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
@@ -84,7 +83,6 @@ export const components = [
   Idea,
   Lessons,
   Faq,
-  Author,
   Charts,
   Content,
   HeroColumnWithImageReactor,
