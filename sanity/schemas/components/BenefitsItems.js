@@ -1,12 +1,13 @@
+import { countItems } from '../../utils/count-items';
 import { removeMarkdown } from '../../utils/remove-markdown';
 
-const icon = () => '👍';
 const title = 'Zalety';
+const icon = () => '👍';
 
 export default {
   name: 'BenefitsItems',
-  title: 'Zalety',
   type: 'object',
+  title: 'Zalety',
   icon,
   fields: [
     {
@@ -30,10 +31,12 @@ export default {
   preview: {
     select: {
       heading: 'heading',
+      list: 'list',
     },
-    prepare({ heading }) {
+    prepare({ heading, list }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: countItems(list.length),
         icon,
       };
     },
