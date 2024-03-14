@@ -1,7 +1,7 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import Benefits, { Benefits_Query, type BenefitsProps } from '@/components/_global/Benefits';
 import Faq, { Faq_Query, type FaqTypes } from '@/components/_global/Faq';
-import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
+import Idea, { Idea_Query, type IdeaTypes } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
@@ -12,7 +12,7 @@ import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components
 import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
 import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
-  type HeroWithRotatingElipsisProps,
+  type HeroWithRotatingElipsisTypes,
 } from '@/components/_global/HeroWithRotatingElipsis';
 import HeroColumnWithImageReactor, {
   HeroColumnWithImageReactor_Query,
@@ -54,7 +54,7 @@ type ComponentMapType = {
   CompaniesShowcase: CompaniesShowcaseTypes;
   HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
   KeyDetails: KeyDetailsTypes;
-  HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
+  HeroWithRotatingElipsis: HeroWithRotatingElipsisTypes;
   TraitsListWithIcons: TraitsListWithIconsTypes;
   Benefits: BenefitsProps;
   Perks: PerksProps;
@@ -62,7 +62,7 @@ type ComponentMapType = {
   Stats: StatsProps;
   Recipients: RecipientsProps;
   Reviews: ReviewsProps;
-  Idea: IdeaProps;
+  Idea: IdeaTypes;
   Lessons: LessonsProps;
   Faq: FaqTypes;
   Author: AuthorProps;
@@ -75,39 +75,42 @@ type ComponentMapType = {
   ImageReactor: ImageReactorTypes;
 };
 
-const ComponentMap = ({ props }) => ({
-  RevealImage: <RevealImage {...(props as RevealImageTypes)} />,
-  Newsletter: <Newsletter {...(props as NewsletterTypes)} />,
-  CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseTypes)} />,
-  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
-  KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
-  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
-  TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
-  Benefits: <Benefits {...(props as BenefitsProps)} />,
-  Perks: <Perks {...(props as PerksProps)} />,
-  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionTypes)} />,
-  DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
-  Stats: <Stats {...(props as StatsProps)} />,
-  Recipients: <Recipients {...(props as RecipientsProps)} />,
-  Reviews: <Reviews {...(props as ReviewsProps)} />,
-  Idea: <Idea {...(props as IdeaProps)} />,
-  Lessons: <Lessons {...(props as LessonsProps)} />,
-  Faq: <Faq {...(props as FaqTypes)} />,
-  Author: <Author {...(props as AuthorProps)} />,
-  LargeImage: <LargeImage {...(props as ImgType)} />,
-  Charts: <Charts {...(props as ChartsProps)} />,
-  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
-  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
-  PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
-  ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
+const ComponentMap = ({ data }) => ({
+  RevealImage: <RevealImage {...(data as RevealImageTypes)} />,
+  Newsletter: <Newsletter {...(data as NewsletterTypes)} />,
+  CompaniesShowcase: <CompaniesShowcase {...(data as CompaniesShowcaseTypes)} />,
+  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(data as HeroColumnWithImageReactorTypes)} />,
+  KeyDetails: <KeyDetails {...(data as KeyDetailsTypes)} />,
+  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(data as HeroWithRotatingElipsisTypes)} />,
+  TraitsListWithIcons: <TraitsListWithIcons {...(data as TraitsListWithIconsTypes)} />,
+  Benefits: <Benefits {...(data as BenefitsProps)} />,
+  Perks: <Perks {...(data as PerksProps)} />,
+  SimpleCtaSection: <SimpleCtaSection {...(data as SimpleCtaSectionTypes)} />,
+  DetailedOrderedList: <DetailedOrderedList {...(data as DetailedOrderedListTypes)} />,
+  Stats: <Stats {...(data as StatsProps)} />,
+  Recipients: <Recipients {...(data as RecipientsProps)} />,
+  Reviews: <Reviews {...(data as ReviewsProps)} />,
+  Idea: <Idea {...(data as IdeaTypes)} />,
+  Lessons: <Lessons {...(data as LessonsProps)} />,
+  Faq: <Faq {...(data as FaqTypes)} />,
+  Author: <Author {...(data as AuthorProps)} />,
+  LargeImage: <LargeImage {...(data as ImgType)} />,
+  Charts: <Charts {...(data as ChartsProps)} />,
+  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(data as SimpleDescriptiveGridTypes)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(data as AdvancedCtaSectionTypes)} />,
+  PersonPresentation: <PersonPresentation {...(data as PersonPresentationTypes)} />,
+  ImageReactor: <ImageReactor {...(data as ImageReactorTypes)} />,
 });
 
-export type ComponentsTypes = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
+export type ComponentsTypes = {
+  data: ComponentMapType[keyof ComponentMapType] & { _type: string }[];
+  countdown_Date?: string;
+};
 
-const Components = ({ data }: { data: ComponentsTypes }) => {
+const Components = ({ data, countdown_Date }: ComponentsTypes) => {
   return data?.map((item) => {
     const componentName = item._type;
-    const Component = ComponentMap({ props: item })[componentName];
+    const Component = ComponentMap({ data: { ...item, countdown_Date } })[componentName];
     if (!Component) return null;
     return Component;
   });

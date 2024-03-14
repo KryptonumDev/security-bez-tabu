@@ -1,6 +1,6 @@
 import type { ImgType, CtaType } from '@/global/types';
 
-export type Props = {
+export type HeroWithRotatingElipsisTypes = {
   heading: string;
   paragraph: string;
   claim: string;
@@ -12,4 +12,5 @@ export type Props = {
     description: string;
     img: ImgType;
   }[];
+  countdown_Date?: string;
 };
