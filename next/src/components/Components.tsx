@@ -33,7 +33,10 @@ import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
   SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
-import AdvancedCtaSection, { AdvancedCtaSection_Query, type AdvancedCtaSectionTypes } from '@/components/_global/AdvancedCtaSection';
+import AdvancedCtaSection, {
+  AdvancedCtaSection_Query,
+  type AdvancedCtaSectionTypes,
+} from '@/components/_global/AdvancedCtaSection';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
   type DetailedOrderedListTypes,
@@ -46,15 +49,30 @@ import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from '@/comp
 import { SimpleCtaSection_Query, type SimpleCtaSectionTypes } from '@/components/_global/SimpleCtaSection';
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
 import CourseDetails, { CourseDetails_Query, type CourseDetailsTypes } from '@/components/_global/CourseDetails';
-import BadgeIconSection, { BadgeIconSection_Query, type BadgeIconSectionTypes } from '@/components/_global/BadgeIconSection';
-import TeamIntroduction, { TeamIntroduction_Query, type TeamIntroductionTypes } from '@/components/_global/TeamIntroduction';
-import ComparisonTable, { ComparisonTable_Query, type ComparisonTableTypes } from '@/components/_global/ComparisonTable';
-import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from '@/components/_global/CourseComparison';
+import BadgeIconSection, {
+  BadgeIconSection_Query,
+  type BadgeIconSectionTypes,
+} from '@/components/_global/BadgeIconSection';
+import TeamIntroduction, {
+  TeamIntroduction_Query,
+  type TeamIntroductionTypes,
+} from '@/components/_global/TeamIntroduction';
+import ComparisonTable, {
+  ComparisonTable_Query,
+  type ComparisonTableTypes,
+} from '@/components/_global/ComparisonTable';
+import CourseComparison, {
+  CourseComparison_Query,
+  type CourseComparisonTypes,
+} from '@/components/_global/CourseComparison';
 import CompaniesDescriptiveShowcase, {
   CompaniesDescriptiveShowcase_Query,
   type CompaniesDescriptiveShowcaseTypes,
 } from '@/components/_global/CompaniesDescriptiveShowcase';
-import PlansComparison, { PlansComparison_Query, type PlansComparisonTypes } from '@/components/_global/PlansComparison';
+import PlansComparison, {
+  PlansComparison_Query,
+  type PlansComparisonTypes,
+} from '@/components/_global/PlansComparison';
 import VideoSection, { VideoSection_Query, type VideoSectionTypes } from '@/components/_global/VideoSection';
 
 type ComponentMapType = {
@@ -92,39 +110,39 @@ type ComponentMapType = {
   VideoSection: VideoSectionTypes;
 };
 
-const ComponentMap = ({ props }) => ({
-  RevealImage: <RevealImage {...(props as RevealImageTypes)} />,
-  Newsletter: <Newsletter {...(props as NewsletterTypes)} />,
-  CompaniesShowcase: <CompaniesShowcase {...(props as CompaniesShowcaseTypes)} />,
-  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(props as HeroColumnWithImageReactorTypes)} />,
-  KeyDetails: <KeyDetails {...(props as KeyDetailsTypes)} />,
-  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(props as HeroWithRotatingElipsisProps)} />,
-  TraitsListWithIcons: <TraitsListWithIcons {...(props as TraitsListWithIconsTypes)} />,
-  BenefitsItems: <BenefitsItems {...(props as BenefitsItemsTypes)} />,
-  Perks: <Perks {...(props as PerksProps)} />,
-  SimpleCtaSection: <SimpleCtaSection {...(props as SimpleCtaSectionTypes)} />,
-  DetailedOrderedList: <DetailedOrderedList {...(props as DetailedOrderedListTypes)} />,
-  Stats: <Stats {...(props as StatsProps)} />,
-  Recipients: <Recipients {...(props as RecipientsProps)} />,
-  Reviews: <Reviews {...(props as ReviewsProps)} />,
-  Idea: <Idea {...(props as IdeaProps)} />,
-  Lessons: <Lessons {...(props as LessonsProps)} />,
-  Faq: <Faq {...(props as FaqTypes)} />,
-  Author: <Author {...(props as AuthorProps)} />,
-  LargeImage: <LargeImage {...(props as ImgType)} />,
-  Charts: <Charts {...(props as ChartsProps)} />,
-  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(props as SimpleDescriptiveGridTypes)} />,
-  AdvancedCtaSection: <AdvancedCtaSection {...(props as AdvancedCtaSectionTypes)} />,
-  PersonPresentation: <PersonPresentation {...(props as PersonPresentationTypes)} />,
-  ImageReactor: <ImageReactor {...(props as ImageReactorTypes)} />,
-  CourseDetails: <CourseDetails {...(props as CourseDetailsTypes)} />,
-  BadgeIconSection: <BadgeIconSection {...(props as BadgeIconSectionTypes)} />,
-  TeamIntroduction: <TeamIntroduction {...(props as TeamIntroductionTypes)} />,
-  ComparisonTable: <ComparisonTable {...(props as ComparisonTableTypes)} />,
-  CourseComparison: <CourseComparison {...(props as CourseComparisonTypes)} />,
-  CompaniesDescriptiveShowcase: <CompaniesDescriptiveShowcase {...(props as CompaniesDescriptiveShowcaseTypes)} />,
-  PlansComparison: <PlansComparison {...(props as PlansComparisonTypes)} />,
-  VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
+const ComponentMap = ({ data }) => ({
+  RevealImage: <RevealImage {...(data as RevealImageTypes)} />,
+  Newsletter: <Newsletter {...(data as NewsletterTypes)} />,
+  CompaniesShowcase: <CompaniesShowcase {...(data as CompaniesShowcaseTypes)} />,
+  HeroColumnWithImageReactor: <HeroColumnWithImageReactor {...(data as HeroColumnWithImageReactorTypes)} />,
+  KeyDetails: <KeyDetails {...(data as KeyDetailsTypes)} />,
+  HeroWithRotatingElipsis: <HeroWithRotatingElipsis {...(data as HeroWithRotatingElipsisTypes)} />,
+  TraitsListWithIcons: <TraitsListWithIcons {...(data as TraitsListWithIconsTypes)} />,
+  BenefitsItems: <BenefitsItems {...(data as BenefitsItemsTypes)} />,
+  Perks: <Perks {...(data as PerksProps)} />,
+  SimpleCtaSection: <SimpleCtaSection {...(data as SimpleCtaSectionTypes)} />,
+  DetailedOrderedList: <DetailedOrderedList {...(data as DetailedOrderedListTypes)} />,
+  Stats: <Stats {...(data as StatsProps)} />,
+  Recipients: <Recipients {...(data as RecipientsProps)} />,
+  Reviews: <Reviews {...(data as ReviewsTypes)} />,
+  Idea: <Idea {...(data as IdeaTypes)} />,
+  Lessons: <Lessons {...(data as LessonsProps)} />,
+  Faq: <Faq {...(data as FaqTypes)} />,
+  Author: <Author {...(data as AuthorProps)} />,
+  LargeImage: <LargeImage {...(data as ImgType)} />,
+  Charts: <Charts {...(data as ChartsProps)} />,
+  SimpleDescriptiveGrid: <SimpleDescriptiveGrid {...(data as SimpleDescriptiveGridTypes)} />,
+  AdvancedCtaSection: <AdvancedCtaSection {...(data as AdvancedCtaSectionTypes)} />,
+  PersonPresentation: <PersonPresentation {...(data as PersonPresentationTypes)} />,
+  ImageReactor: <ImageReactor {...(data as ImageReactorTypes)} />,
+  CourseDetails: <CourseDetails {...(data as CourseDetailsTypes)} />,
+  BadgeIconSection: <BadgeIconSection {...(data as BadgeIconSectionTypes)} />,
+  TeamIntroduction: <TeamIntroduction {...(data as TeamIntroductionTypes)} />,
+  ComparisonTable: <ComparisonTable {...(data as ComparisonTableTypes)} />,
+  CourseComparison: <CourseComparison {...(data as CourseComparisonTypes)} />,
+  CompaniesDescriptiveShowcase: <CompaniesDescriptiveShowcase {...(data as CompaniesDescriptiveShowcaseTypes)} />,
+  PlansComparison: <PlansComparison {...(data as PlansComparisonTypes)} />,
+  VideoSection: <VideoSection {...(data as VideoSectionTypes)} />,
 });
 
 export type ComponentsTypes = {
