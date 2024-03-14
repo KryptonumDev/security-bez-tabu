@@ -1,16 +1,16 @@
-import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemas'
-import {media} from 'sanity-plugin-media'
+import { defineConfig } from 'sanity'
+import { deskTool } from 'sanity/desk'
+import { visionTool } from '@sanity/vision'
+import { schemaTypes } from './schemas'
+import { media } from 'sanity-plugin-media'
 
-import {markdownSchema} from 'sanity-plugin-markdown'
-import {CustomMarkdownInput} from './components/Markdown'
-import {collectionTypes} from './schemas'
-import {singleTypes} from './schemas'
+import { markdownSchema } from 'sanity-plugin-markdown'
+import { CustomMarkdownInput } from './components/Markdown'
+import { collectionTypes } from './schemas'
+import { singleTypes } from './schemas'
 
 const createListItem = (S, singleType) => {
-  const {title, name, icon} = singleType
+  const { title, name, icon } = singleType
   return S.listItem()
     .title(title)
     .id(name)
@@ -34,16 +34,18 @@ export default defineConfig({
           .items([
             createListItem(
               S,
-              schemaTypes.find(({name}) => name === 'global'),
+              schemaTypes.find(({ name }) => name === 'global'),
             ),
             S.divider(),
             createDocumentTypeListItem(S, 'landingPage_Collection'),
+            S.divider(),
+            createDocumentTypeListItem(S, 'reviews_Collection'),
             S.divider(),
             ...singleTypes.map((item) => createListItem(S, item)),
           ]),
     }),
     visionTool(),
-    markdownSchema({input: CustomMarkdownInput}),
+    markdownSchema({ input: CustomMarkdownInput }),
     media(),
   ],
   schema: {

@@ -13,23 +13,28 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'list',
       type: 'array',
-      of: [{ type: 'review' }],
+      of: [{
+        type: 'reference',
+        to: {
+          type: 'reviews_Collection'
+        },
+      }],
       title: 'Lista',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'heading',
+      heading: 'heading',
     },
-    prepare({ title }) {
+    prepare({ heading }) {
       return {
-        title: `[Opinie] - ${removeMarkdown(title)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
         icon,
       }
     },

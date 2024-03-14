@@ -131,14 +131,6 @@ export default {
       fieldset: 'reviews',
     },
     {
-      name: 'reviews_List',
-      type: 'array',
-      of: [{ type: 'review' }],
-      title: 'List',
-      validation: Rule => Rule.required(),
-      fieldset: 'reviews',
-    },
-    {
       name: 'idea_Heading',
       type: 'markdown',
       title: 'Nagłówek',
