@@ -1,7 +1,7 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown';
 
-const icon = () => '👍'
-const title = 'Zalety'
+const icon = () => '👍';
+const title = 'Zalety';
 
 export default {
   name: 'BenefitsItems',
@@ -13,7 +13,7 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'list',
@@ -24,21 +24,21 @@ export default {
         },
       ],
       title: 'Lista',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
         icon,
-      }
+      };
     },
   },
-}
+};
 
 export const BenefitsItems_List = {
   name: 'BenefitsItems_List',
@@ -49,13 +49,13 @@ export const BenefitsItems_List = {
       name: 'icon',
       type: 'image',
       title: 'Ikona',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
@@ -63,11 +63,11 @@ export const BenefitsItems_List = {
       paragraph: 'paragraph',
       media: 'icon',
     },
-    prepare({paragraph, media}) {
+    prepare({ paragraph, media }) {
       return {
         title: `${removeMarkdown(paragraph)}`,
         media,
-      }
+      };
     },
   },
-}
+};

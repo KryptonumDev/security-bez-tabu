@@ -1,7 +1,7 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown';
 
-const title = 'Opisowe przedstawienie firm'
-const icon = () => '🏢'
+const title = 'Opisowe przedstawienie firm';
+const icon = () => '🏢';
 
 export default {
   name: 'CompaniesDescriptiveShowcase',
@@ -13,34 +13,34 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'list',
       type: 'array',
       title: 'Lista',
-      of: [{type: 'CompaniesDescriptiveShowcase_List'}],
-      validation: (Rule) => Rule.required(),
+      of: [{ type: 'CompaniesDescriptiveShowcase_List' }],
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
         icon,
-      }
+      };
     },
   },
-}
+};
 
 export const CompaniesDescriptiveShowcase_List = {
   title: 'Lista',
@@ -51,19 +51,19 @@ export const CompaniesDescriptiveShowcase_List = {
       name: 'img',
       type: 'image',
       title: 'Zdjęcie',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'heading',
       type: 'string',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
-}
+};

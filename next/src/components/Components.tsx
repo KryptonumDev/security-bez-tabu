@@ -1,5 +1,5 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
-import BenefitsItems, { BenefitsItems_Query, BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
+import BenefitsItems, { BenefitsItems_Query, type BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
 import Certificate, { Certificate_Query, type CertificateProps } from '@/components/_global/Certificate';
 import Faq, { Faq_Query, type FaqProps } from '@/components/_global/Faq';
 import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
@@ -32,21 +32,27 @@ import TraitsListWithIcons, {
 } from './_global/TraitsListWithIcons';
 import SimpleDescriptiveGrid, {
   SimpleDescriptiveGrid_Query,
-  SimpleDescriptiveGridTypes,
+  type SimpleDescriptiveGridTypes,
 } from './_global/SimpleDescriptiveGrid';
 import DetailedOrderedList, {
   DetailedOrderedList_Query,
-  DetailedOrderedListTypes,
+  type DetailedOrderedListTypes,
 } from './_global/DetailedOrderedList';
-import AdvancedCtaSection, { AdvancedCtaSection_Query, AdvancedCtaSectionProps } from './_global/AdvancedCtaSection';
-import PersonPresentation, { PersonPresentation_Query, PersonPresentationTypes } from './_global/PersonPresentation';
-import ImageReactor, { ImageReactor_Query, ImageReactorTypes } from './_global/ImageReactor';
-import { SimpleCtaSection_Query, SimpleCtaSectionProps } from './_global/SimpleCtaSection';
+import AdvancedCtaSection, {
+  AdvancedCtaSection_Query,
+  type AdvancedCtaSectionProps,
+} from './_global/AdvancedCtaSection';
+import PersonPresentation, {
+  PersonPresentation_Query,
+  type PersonPresentationTypes,
+} from './_global/PersonPresentation';
+import ImageReactor, { ImageReactor_Query, type ImageReactorTypes } from './_global/ImageReactor';
+import { SimpleCtaSection_Query, type SimpleCtaSectionProps } from './_global/SimpleCtaSection';
 import SimpleCtaSection from './_global/SimpleCtaSection/SimpleCtaSection';
-import CourseDetails, { CourseDetails_Query, CourseDetailsTypes } from './_global/CourseDetails';
-import BadgeIconSection, { BadgeIconSection_Query, BadgeIconSectionTypes } from './_global/BadgeIconSection';
-import TeamIntroduction, { TeamIntroduction_Query, TeamIntroductionTypes } from './_global/TeamIntroduction';
-import ComparisonTable, { ComparisonTable_Query, ComparisonTableTypes } from './_global/ComparisonTable';
+import CourseDetails, { CourseDetails_Query, type CourseDetailsTypes } from './_global/CourseDetails';
+import BadgeIconSection, { BadgeIconSection_Query, type BadgeIconSectionTypes } from './_global/BadgeIconSection';
+import TeamIntroduction, { TeamIntroduction_Query, type TeamIntroductionTypes } from './_global/TeamIntroduction';
+import ComparisonTable, { ComparisonTable_Query, type ComparisonTableTypes } from './_global/ComparisonTable';
 import CourseComparison, { CourseComparison_Query, type CourseComparisonTypes } from './_global/CourseComparison';
 import CompaniesDescriptiveShowcase, {
   CompaniesDescriptiveShowcase_Query,
