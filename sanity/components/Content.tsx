@@ -36,6 +36,8 @@ export default {
     {type: 'CourseDetails'},
     {type: 'BadgeIconSection'},
     {type: 'CourseComparison'},
+    {type: 'CompaniesDescriptiveShowcase'},
+    {type: 'PlansComparison'},
     {type: 'VideoSection'},
   ],
 }

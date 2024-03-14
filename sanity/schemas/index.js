@@ -58,6 +58,10 @@ import CourseComparison, {
   CourseComparison_List,
   CourseComparison_Plans,
 } from './components/CourseComparison'
+import CompaniesDescriptiveShowcase, {
+  CompaniesDescriptiveShowcase_List,
+} from './components/CompaniesDescriptiveShowcase'
+import PlansComparison, {PlansComparison_Plans} from './components/PlansComparison'
 import VideoSection from './components/VideoSection'
 
 export const components = [
@@ -117,6 +121,10 @@ export const components = [
   CourseComparison,
   CourseComparison_Plans,
   CourseComparison_List,
+  CompaniesDescriptiveShowcase,
+  CompaniesDescriptiveShowcase_List,
+  PlansComparison,
+  PlansComparison_Plans,
   VideoSection,
 ]
 
