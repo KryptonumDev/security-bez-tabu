@@ -11,10 +11,12 @@ export const singleTypes = [
 // Collection Types
 import landingPage_Collection from './collectionTypes/landingPage_Collection'
 import reviews_Collection from './collectionTypes/reviews_Collection'
+import faq_Collection from './collectionTypes/faq_Collection'
 
 export const collectionTypes = [
   landingPage_Collection,
   reviews_Collection,
+  faq_Collection,
 ]
 
 // Componenets
@@ -38,7 +40,7 @@ import Recipients from './components/Recipients'
 import Reviews from './components/Reviews'
 import Idea from './components/Idea'
 import Lessons from './components/Lessons'
-import Faq, { Faq_List } from './components/Faq'
+import Faq from './components/Faq'
 import Author from './components/Author'
 import Charts from './components/Charts'
 import Content from '../components/Content'
@@ -103,7 +105,6 @@ export const components = [
   SimpleDescriptiveGrid_Grid,
   DetailedOrderedList,
   DetailedOrderedList_List,
-  Faq_List,
   PersonPresentation_Achievements,
   PersonPresentation,
   ImageReactor,

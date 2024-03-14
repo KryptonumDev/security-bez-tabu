@@ -244,16 +244,6 @@ export default {
       fieldset: 'faq',
     },
     {
-      name: 'faq_List',
-      type: 'array',
-      of: [{
-        type: 'TitleAndDescription_Item'
-      }],
-      title: 'Lista',
-      validation: Rule => Rule.required(),
-      fieldset: 'faq',
-    },
-    {
       name: 'author_Heading',
       type: 'markdown',
       title: 'Nagłówek',

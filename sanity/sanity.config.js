@@ -39,6 +39,8 @@ export default defineConfig({
             S.divider(),
             createDocumentTypeListItem(S, 'landingPage_Collection'),
             S.divider(),
+            createDocumentTypeListItem(S, 'faq_Collection'),
+            S.divider(),
             createDocumentTypeListItem(S, 'reviews_Collection'),
             S.divider(),
             ...singleTypes.map((item) => createListItem(S, item)),

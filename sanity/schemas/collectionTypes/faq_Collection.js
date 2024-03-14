@@ -1,30 +1,29 @@
-const title = 'Zbiór opinii';
-const icon = () => '🗣️';
+const title = 'Zbiór pytań i odpowiedzi FAQ';
+const icon = () => '❓';
 
 export default {
-  name: 'reviews_Collection',
+  name: 'faq_Collection',
   type: 'document',
   title,
   icon,
   fields: [
     {
       name: 'question',
-      type: 'markdown',
-      title: 'Tytuł',
+      type: 'string',
+      title: 'Pytanie',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'answer',
       type: 'markdown',
-      title: 'Opis',
+      title: 'Odpowiedź',
       validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'position',
-      media: 'img'
+      title: 'question',
+      subtitle: 'answer',
     },
   },
 }
