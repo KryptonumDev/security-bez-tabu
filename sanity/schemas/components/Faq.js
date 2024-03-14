@@ -1,3 +1,4 @@
+import { countItems } from '../../utils/count-items'
 import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja FAQ'
@@ -24,7 +25,12 @@ export default {
     {
       name: 'list',
       type: 'array',
-      of: [{ type: 'Faq_List' }],
+      of: [{
+        type: 'reference',
+        to: {
+          type: 'faq_Collection',
+        },
+      }],
       title: 'Lista',
       validation: Rule => Rule.required(),
     },
@@ -32,45 +38,13 @@ export default {
   preview: {
     select: {
       heading: 'heading',
-      paragraph: 'paragraph',
+      list: 'list',
     },
-    prepare({ heading, paragraph }) {
+    prepare({ heading, list }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
-        subtitle: removeMarkdown(paragraph),
+        subtitle: countItems(list.lenght),
         icon,
-      }
-    },
-  },
-}
-
-export const Faq_List = {
-  name: 'Faq_List',
-  type: 'object',
-  title: 'Lista FAQ',
-  fields: [
-    {
-      name: 'title',
-      type: 'markdown',
-      title: 'Tytuł',
-      validation: Rule => Rule.required(),
-    },
-    {
-      name: 'description',
-      type: 'markdown',
-      title: 'Opis',
-      validation: Rule => Rule.required(),
-    },
-  ],
-  preview: {
-    select: {
-      title: 'title',
-      subtitle: 'description',
-    },
-    prepare({ title, subtitle }) {
-      return {
-        title: removeMarkdown(title),
-        subtitle: removeMarkdown(subtitle),
       }
     },
   },

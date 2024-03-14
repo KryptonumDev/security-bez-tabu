@@ -11,12 +11,11 @@ type FetchType = {
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { landings } = await query();
   const sitemap = [
-    ...landings.map((route) => ({
-      url: `${DOMAIN}/${route}`,
+    ...landings.map(({ slug }) => ({
+      url: `${DOMAIN}/${slug}`,
       lastModified: new Date(),
     })),
   ];
-
   return sitemap;
 }
 

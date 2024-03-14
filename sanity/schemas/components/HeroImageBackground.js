@@ -5,9 +5,9 @@ const title = `Sekcja HERO (${icon()}) ze zdjęciem w tle`;
 
 export default {
   name: 'HeroImageBackground',
+  type: 'object',
   title,
   icon,
-  type: 'object',
   fields: [
     {
       name: 'heading',

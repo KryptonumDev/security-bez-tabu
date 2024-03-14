@@ -4,8 +4,8 @@ export type FaqTypes = {
   heading: string;
   paragraph: string;
   list: {
-    title: string;
-    description: string;
+    question: string;
+    answer: string;
   }[];
 };
 

@@ -5,9 +5,9 @@ import List from './_List';
 import type { FaqTypes } from './Faq.types';
 
 const Faq = ({ heading, paragraph, list }: FaqTypes) => {
-  const mappedList = list.map(({ title, description }) => ({
-    question: <Markdown components={{ p: 'span' }}>{title}</Markdown>,
-    answer: <Markdown>{description}</Markdown>,
+  const mappedList = list.map(({ question, answer }) => ({
+    question: <Markdown.span>{question}</Markdown.span>,
+    answer: <Markdown>{answer}</Markdown>,
   }));
 
   return (

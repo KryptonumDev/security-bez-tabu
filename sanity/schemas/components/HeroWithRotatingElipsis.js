@@ -1,7 +1,7 @@
-import { removeMarkdown } from '../../utils/remove-markdown';
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const icon = () => '⭐️';
-const title = `Sekcja HERO (${icon()}) z obrazem i orbitami`;
+const title = `Sekcja HERO (${icon()}) z orbitami i zdjęciem`;
 
 export default {
   name: 'HeroWithRotatingElipsis',
@@ -64,9 +64,10 @@ export default {
     },
     prepare({ heading, paragraph }) {
       return {
-        title: `[Sekcja wstępna z obrazem i orbitami] - ${removeMarkdown(heading)} - ${removeMarkdown(paragraph)}`,
+        title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
         icon,
-      };
+      }
     },
   },
 };

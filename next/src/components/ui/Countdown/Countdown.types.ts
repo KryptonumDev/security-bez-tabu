@@ -1,8 +1,5 @@
-export type QueryType = {
-  countdown_Date: string;
-};
-
 export type CountdownTypes = {
+  date?: string;
   className?: string;
 };
 

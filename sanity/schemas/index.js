@@ -3,12 +3,21 @@ import global, { global_Seo } from './singleTypes/global'
 import NotFoundPage from './singleTypes/NotFound_Page'
 import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page'
 
-export const singleTypes = [PrivacyPolicyPage, NotFoundPage]
+export const singleTypes = [
+  PrivacyPolicyPage,
+  NotFoundPage,
+]
 
-//Collection Types
+// Collection Types
 import landingPage_Collection from './collectionTypes/landingPage_Collection'
+import reviews_Collection from './collectionTypes/reviews_Collection'
+import faq_Collection from './collectionTypes/faq_Collection'
 
-export const collectionTypes = [landingPage_Collection]
+export const collectionTypes = [
+  landingPage_Collection,
+  reviews_Collection,
+  faq_Collection,
+]
 
 // Componenets
 import cta from './components/cta'
@@ -21,7 +30,6 @@ import {
 } from './components/list'
 import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
 import SimpleCtaSection from './components/SimpleCtaSection'
-import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
 import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
@@ -31,8 +39,7 @@ import Recipients from './components/Recipients'
 import Reviews from './components/Reviews'
 import Idea from './components/Idea'
 import Lessons from './components/Lessons'
-import Faq, { Faq_List } from './components/Faq'
-import Author from './components/Author'
+import Faq from './components/Faq'
 import Charts from './components/Charts'
 import Content from '../components/Content'
 import HeroColumnWithImageReactor from './components/HeroColumnWithImageReactor'
@@ -78,7 +85,6 @@ export const components = [
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
   SimpleCtaSection,
-  review,
   stats,
   chapter,
   chart_Bars,
@@ -92,7 +98,6 @@ export const components = [
   Idea,
   Lessons,
   Faq,
-  Author,
   Charts,
   Content,
   HeroColumnWithImageReactor,
@@ -113,7 +118,6 @@ export const components = [
   SimpleDescriptiveGrid_Grid,
   DetailedOrderedList,
   DetailedOrderedList_List,
-  Faq_List,
   PersonPresentation_Achievements,
   PersonPresentation,
   ImageReactor,

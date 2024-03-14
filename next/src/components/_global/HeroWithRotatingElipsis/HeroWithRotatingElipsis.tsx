@@ -3,9 +3,18 @@ import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 import Img from '@/components/ui/image';
 import Countdown from '@/components/ui/Countdown';
-import type { Props } from './HeroWithRotatingElipsis.types';
+import type { HeroWithRotatingElipsisTypes } from './HeroWithRotatingElipsis.types';
 
-const HeroWithRotatingElipsis = ({ heading, paragraph, claim, cta, additionalInfo, img, products }: Props) => {
+const HeroWithRotatingElipsis = ({
+  heading,
+  paragraph,
+  claim,
+  cta,
+  additionalInfo,
+  img,
+  products,
+  countdown_Date,
+}: HeroWithRotatingElipsisTypes) => {
   return (
     <section className={styles['HeroWithRotatingElipsis']}>
       <header>
@@ -18,7 +27,10 @@ const HeroWithRotatingElipsis = ({ heading, paragraph, claim, cta, additionalInf
             className={styles.btn}
           />
           <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>
-          <Countdown className={styles.countdown} />
+          <Countdown
+            date={countdown_Date}
+            className={styles.countdown}
+          />
         </div>
       </header>
       <div className={styles.orbit}>

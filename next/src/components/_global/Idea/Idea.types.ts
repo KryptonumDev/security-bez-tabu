@@ -1,6 +1,6 @@
 import type { CtaType } from '@/global/types';
 
-export type Props = {
+export type IdeaTypes = {
   heading: string;
   paragraph: string;
   claim: string;
@@ -11,4 +11,5 @@ export type Props = {
     title: string;
     description: string;
   }[];
+  countdown_Date?: string;
 };

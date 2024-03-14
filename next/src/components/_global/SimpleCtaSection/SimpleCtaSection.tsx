@@ -4,7 +4,7 @@ import Markdown from '@/components/ui/markdown';
 import styles from './SimpleCtaSection.module.scss';
 import type { SimpleCtaSectionTypes } from './SimpleCtaSection.types';
 
-const SimpleCtaSection = ({ heading, cta, additionalInfo, isCountdown }: SimpleCtaSectionTypes) => {
+const SimpleCtaSection = ({ heading, cta, additionalInfo, isCountdown, countdown_Date }: SimpleCtaSectionTypes) => {
   return (
     <section className={styles['SimpleCtaSection']}>
       <header>
@@ -15,7 +15,13 @@ const SimpleCtaSection = ({ heading, cta, additionalInfo, isCountdown }: SimpleC
         className={styles.cta}
       />
       <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>
-      {isCountdown && <Countdown className={styles.countdown} />}
+
+      {isCountdown && (
+        <Countdown
+          date={countdown_Date}
+          className={styles.countdown}
+        />
+      )}
     </section>
   );
 };

@@ -7,7 +7,7 @@ import type { generateStaticParamsType } from '@/global/types';
 import type { PageQueryType } from './page.types';
 
 export default async function LandingPage({ params: { slug } }: { params: { slug: string } }) {
-  const { name, content } = await query(slug);
+  const { name, countdown_Date, content } = await query(slug);
 
   return (
     <>
@@ -15,7 +15,10 @@ export default async function LandingPage({ params: { slug } }: { params: { slug
         data={[{ name: name, path: slug }]}
         visible={false}
       />
-      <Components data={content} />
+      <Components
+        data={content}
+        countdown_Date={countdown_Date}
+      />
     </>
   );
 }
@@ -25,6 +28,7 @@ const query = async (slug: string): Promise<PageQueryType> => {
     query: /* groq */ `
       *[_type == 'landingPage_Collection' && slug.current == $slug][0] {
         name,
+        countdown_Date,
         ${Components_Query}
       }
     `,

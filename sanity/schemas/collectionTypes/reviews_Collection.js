@@ -1,7 +1,11 @@
+const title = 'Zbiór opinii';
+const icon = () => '🗣️';
+
 export default {
-  name: "review",
-  title: "Opinia",
-  type: "object",
+  name: 'reviews_Collection',
+  type: 'document',
+  title,
+  icon,
   fields: [
     {
       name: 'img',
@@ -20,24 +24,17 @@ export default {
       title: 'Stanowisko (opcjonlanie)',
     },
     {
-      name: 'content',
+      name: 'text',
       type: 'markdown',
-      title: 'Treść',
+      title: 'Treść opinii',
       validation: Rule => Rule.required()
     },
   ],
   preview: {
     select: {
-      img: 'img',
-      name: 'name',
-      position: 'position'
+      title: 'name',
+      subtitle: 'position',
+      media: 'img'
     },
-    prepare({ img, name, position }) {
-      return {
-        title: name,
-        subtitle: position,
-        media: img,
-      }
-    }
-  }
+  },
 }
