@@ -58,6 +58,7 @@ import CourseComparison, {
   CourseComparison_List,
   CourseComparison_Plans,
 } from './components/CourseComparison'
+import VideoSection from './components/VideoSection'
 
 export const components = [
   global_Seo,
@@ -116,6 +117,7 @@ export const components = [
   CourseComparison,
   CourseComparison_Plans,
   CourseComparison_List,
+  VideoSection,
 ]
 
 export const schemaTypes = [
