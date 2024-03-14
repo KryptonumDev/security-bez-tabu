@@ -58,15 +58,9 @@ export const CourseComparison_Plans = {
     {
       name: 'list',
       type: 'array',
-      of: [{type: 'string'}],
+      of: [{type: 'CourseComparison_List'}],
       title: 'Lista',
       validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'positive',
-      type: 'boolean',
-      title: 'Czy jest pozytywny?',
-      initialValue: true,
     },
   ],
   preview: {
@@ -76,6 +70,37 @@ export const CourseComparison_Plans = {
     prepare({heading}) {
       return {
         title: `${removeMarkdown(heading)}`,
+      }
+    },
+  },
+}
+
+export const CourseComparison_List = {
+  name: 'CourseComparison_List',
+  type: 'object',
+  title: 'Lista',
+  fields: [
+    {
+      name: 'name',
+      type: 'markdown',
+      title: 'Nazwa',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'isPositive',
+      type: 'boolean',
+      title: 'Czy jest pozytywny?',
+      initialValue: true,
+      validation: (Rule) => Rule.required(),
+    },
+  ],
+  preview: {
+    select: {
+      name: 'name',
+    },
+    prepare({name}) {
+      return {
+        title: `${removeMarkdown(name)}`,
       }
     },
   },

@@ -3,7 +3,9 @@ export type CourseComparisonTypes = {
   paragraph: string;
   plans: {
     heading: string;
-    list: string[];
-    positive: boolean;
+    list: {
+      name: string;
+      isPositive: boolean;
+    }
   };
 };

@@ -8,8 +8,10 @@ export const CourseComparison_Query = `
     paragraph,
     plans[] {
       heading,
-      list[],
-      positive
+      list[] {
+        name,
+        isPositive
+      }
     }
   },
 `;
