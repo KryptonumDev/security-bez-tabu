@@ -1,8 +1,8 @@
 import HeroWithRotatingElipsis from './HeroWithRotatingElipsis';
+export default HeroWithRotatingElipsis;
 import { Img_Query } from '@/components/ui/image';
 import { Cta_Query } from '@/components/ui/Button';
-export type { Props as HeroWithRotatingElipsisProps } from './HeroWithRotatingElipsis.types';
-export default HeroWithRotatingElipsis;
+export type { HeroWithRotatingElipsisTypes } from './HeroWithRotatingElipsis.types';
 
 export const HeroWithRotatingElipsis_Query = /* groq */ `
   _type == 'HeroWithRotatingElipsis' => {

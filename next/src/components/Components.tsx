@@ -1,18 +1,18 @@
 import Author, { Author_Query, type AuthorProps } from '@/components/_global/Author';
 import BenefitsItems, { BenefitsItems_Query, type BenefitsItemsTypes } from '@/components/_global/BenefitsItems';
 import Faq, { Faq_Query, type FaqTypes } from '@/components/_global/Faq';
-import Idea, { Idea_Query, type IdeaProps } from '@/components/_global/Idea';
+import Idea, { Idea_Query, type IdeaTypes } from '@/components/_global/Idea';
 import KeyDetails, { type KeyDetailsTypes, KeyDetails_Query } from '@/components/_global/KeyDetails';
 import LargeImage, { LargeImage_Query } from '@/components/_global/LargeImage';
 import Lessons, { Lessons_Query, type LessonsProps } from '@/components/_global/Lessons';
 import Perks, { type PerksProps, Perks_Query } from '@/components/_global/Perks';
 import Recipients, { Recipients_Query, type RecipientsProps } from '@/components/_global/Recipients';
-import Reviews, { Reviews_Query, type ReviewsProps } from '@/components/_global/Reviews';
+import Reviews, { Reviews_Query, type ReviewsTypes } from '@/components/_global/Reviews';
 import Newsletter, { Newsletter_Query, type NewsletterTypes } from '@/components/_global/Newsletter';
 import Stats, { Stats_Query, type StatsProps } from '@/components/_global/Stats';
 import HeroWithRotatingElipsis, {
   HeroWithRotatingElipsis_Query,
-  type HeroWithRotatingElipsisProps,
+  type HeroWithRotatingElipsisTypes,
 } from '@/components/_global/HeroWithRotatingElipsis';
 import HeroColumnWithImageReactor, {
   HeroColumnWithImageReactor_Query,
@@ -63,15 +63,15 @@ type ComponentMapType = {
   CompaniesShowcase: CompaniesShowcaseTypes;
   HeroColumnWithImageReactor: HeroColumnWithImageReactorTypes;
   KeyDetails: KeyDetailsTypes;
-  HeroWithRotatingElipsis: HeroWithRotatingElipsisProps;
+  HeroWithRotatingElipsis: HeroWithRotatingElipsisTypes;
   TraitsListWithIcons: TraitsListWithIconsTypes;
   BenefitsItems: BenefitsItemsTypes;
   Perks: PerksProps;
   SimpleCtaSection: SimpleCtaSectionTypes;
   Stats: StatsProps;
   Recipients: RecipientsProps;
-  Reviews: ReviewsProps;
-  Idea: IdeaProps;
+  Reviews: ReviewsTypes;
+  Idea: IdeaTypes;
   Lessons: LessonsProps;
   Faq: FaqTypes;
   Author: AuthorProps;
@@ -127,12 +127,15 @@ const ComponentMap = ({ props }) => ({
   VideoSection: <VideoSection {...(props as VideoSectionTypes)} />,
 });
 
-export type ComponentsType = ComponentMapType[keyof ComponentMapType] & { _type: string }[];
+export type ComponentsTypes = {
+  data: ComponentMapType[keyof ComponentMapType] & { _type: string }[];
+  countdown_Date?: string;
+};
 
-const Components = ({ data }: { data: ComponentsType }) => {
+const Components = ({ data, countdown_Date }: ComponentsTypes) => {
   return data?.map((item) => {
     const componentName = item._type;
-    const Component = ComponentMap({ props: item })[componentName];
+    const Component = ComponentMap({ data: { ...item, countdown_Date } })[componentName];
     if (!Component) return null;
     return Component;
   });

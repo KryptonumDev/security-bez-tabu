@@ -3,12 +3,19 @@ import global, { global_Seo } from './singleTypes/global'
 import NotFoundPage from './singleTypes/NotFound_Page'
 import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page'
 
-export const singleTypes = [PrivacyPolicyPage, NotFoundPage]
+export const singleTypes = [
+  PrivacyPolicyPage,
+  NotFoundPage,
+]
 
-//Collection Types
+// Collection Types
 import landingPage_Collection from './collectionTypes/landingPage_Collection'
+import reviews_Collection from './collectionTypes/reviews_Collection'
 
-export const collectionTypes = [landingPage_Collection]
+export const collectionTypes = [
+  landingPage_Collection,
+  reviews_Collection,
+]
 
 // Componenets
 import cta from './components/cta'
@@ -21,7 +28,6 @@ import {
 } from './components/list'
 import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page'
 import SimpleCtaSection from './components/SimpleCtaSection'
-import review from './components/review'
 import stats from './components/stats'
 import chapter from './components/chapter'
 import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart'
@@ -78,7 +84,6 @@ export const components = [
   titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
   SimpleCtaSection,
-  review,
   stats,
   chapter,
   chart_Bars,

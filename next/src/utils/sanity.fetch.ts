@@ -1,5 +1,4 @@
 'use server';
-import { draftMode } from 'next/headers';
 import { createClient, type QueryParams } from 'next-sanity';
 import { requestAsyncStorage } from 'next/dist/client/components/request-async-storage.external';
 
@@ -32,7 +31,7 @@ export default async function sanityFetch<QueryResponse>({
   tags?: string[];
   params?: QueryParams;
 }): Promise<QueryResponse> {
-  const isDraftMode = requestAsyncStorage.getStore() ? draftMode().isEnabled : false;
+  const isDraftMode = !!requestAsyncStorage.getStore()?.draftMode.isEnabled;
   if (isDraftMode && !token) {
     throw new Error('The `SANITY_API_TOKEN` environment variable is required.');
   }

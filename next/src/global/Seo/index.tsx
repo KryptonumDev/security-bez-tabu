@@ -1,10 +1,10 @@
 import sanityFetch from '@/utils/sanity.fetch';
 import { DEFAULT_TITLE, DOMAIN, LOCALE } from '@/global/constants';
 import type { Metadata } from 'next';
-import type { GlobalQueryType, SeoType } from './Seo.types';
+import type { GlobalQueryTypes, SeoTypes } from './Seo.types';
 
-const Seo = async ({ title, description, path, ...props }: SeoType): Promise<Metadata> => {
-  const { robotsIndex, og_Img } = await query();
+const Seo = async ({ title, description, path, ...props }: SeoTypes): Promise<Metadata> => {
+  const { og_Img } = await query();
 
   const url = `${DOMAIN}${path}`;
 
@@ -16,11 +16,6 @@ const Seo = async ({ title, description, path, ...props }: SeoType): Promise<Met
   };
 
   const metadata: Metadata = {
-    ...(!robotsIndex && {
-      robots: {
-        index: false,
-      },
-    }),
     metadataBase: new URL(DOMAIN),
     title: seo.title,
     description: seo.description,
@@ -49,11 +44,10 @@ const Seo = async ({ title, description, path, ...props }: SeoType): Promise<Met
 
 export default Seo;
 
-const query = async (): Promise<GlobalQueryType> => {
-  return await sanityFetch<GlobalQueryType>({
+const query = async (): Promise<GlobalQueryTypes> => {
+  return await sanityFetch<GlobalQueryTypes>({
     query: /* groq */ `
       *[_id == "global"][0] {
-        robotsIndex,
         "og_Img": seo.og_Img.asset -> url+"?w=1200"
       }
     `,

@@ -1,11 +1,11 @@
 import styles from './Idea.module.scss';
 import Chart from './_Chart';
-import type { Props } from './Idea.types';
 import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 import Countdown from '@/components/ui/Countdown';
+import type { IdeaTypes } from './Idea.types';
 
-const Idea = ({ heading, paragraph, claim, cta, additionalInfo, chartParagraph, chart }: Props) => {
+const Idea = ({ heading, paragraph, claim, cta, additionalInfo, chartParagraph, chart, countdown_Date }: IdeaTypes) => {
   const newCharts = chart.map(({ title, description }) => ({
     title: <Markdown className={styles.title}>{title}</Markdown>,
     description: <Markdown className={styles.description}>{description}</Markdown>,
@@ -23,7 +23,10 @@ const Idea = ({ heading, paragraph, claim, cta, additionalInfo, chartParagraph, 
             className={styles.btn}
           />
           <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>
-          <Countdown className={styles.countdown} />
+          <Countdown
+            date={countdown_Date}
+            className={styles.countdown}
+          />
         </div>
       </header>
       <div>

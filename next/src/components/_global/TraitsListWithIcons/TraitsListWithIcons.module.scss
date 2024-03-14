@@ -32,14 +32,14 @@
         height: 144px;
         display: grid;
         place-items: center;
+        img {
+          width: clamp(24px, calc(32vw/7.68), 32px);
+          height: clamp(24px, calc(32vw/7.68), 32px);
+          object-fit: contain;
+        }
         @media (max-width: 499px) {
           width: 48px;
           height: 48px;
-          img {
-            width: 24px;
-            height: 24px;
-            object-fit: contain;
-          }
         }
         border-radius: 200px;
         border: 1px solid var(--secondary-500);

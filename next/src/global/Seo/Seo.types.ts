@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 
-export type SeoType = {
+export type SeoTypes = {
   title: string;
   description: string;
   path: string;
 } & Metadata;
 
-export type GlobalQueryType = {
-  robotsIndex: boolean;
+export type GlobalQueryTypes = {
   og_Img: string;
 };
