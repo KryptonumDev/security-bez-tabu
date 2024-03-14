@@ -19,7 +19,6 @@ export default {
     { type: 'CompaniesShowcase' },
     { type: 'KeyDetails' },
     { type: 'Perks' },
-    { type: 'Benefits' },
     { type: 'SimpleCtaSection' },
     { type: 'StatsList' },
     { type: 'Recipients' },
