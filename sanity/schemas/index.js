@@ -53,6 +53,10 @@ import PersonPresentation, {PersonPresentation_Achievements} from './components/
 import ImageReactor from './components/ImageReactor'
 import CourseDetails, {CourseDetails_List} from './components/CourseDetails'
 import BadgeIconSection from './components/BadgeIconSection'
+import ComparisonTable, {
+  ComparisonTable_Column,
+  ComparisonTable_Row,
+} from './components/ComparisonTable'
 import BenefitsItems, {BenefitsItems_List} from './components/BenefitsItems'
 import CourseComparison, {
   CourseComparison_List,
@@ -117,6 +121,9 @@ export const components = [
   CourseDetails,
   CourseDetails_List,
   BadgeIconSection,
+  ComparisonTable,
+  ComparisonTable_Column,
+  ComparisonTable_Row,
   BenefitsItems,
   BenefitsItems_List,
   CourseComparison,
