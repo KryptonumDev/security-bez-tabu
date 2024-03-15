@@ -26,6 +26,7 @@
 }
 
 .Form {
+  max-width: calc(483rem / 16);
   form {
     margin-top: clamp(20px, calc(24vw / 7.68), 32px);
     display: grid;
