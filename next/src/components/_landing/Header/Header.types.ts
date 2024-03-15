@@ -1,3 +1,5 @@
-export type QueryType = {
-  link: string;
+import type { CtaType } from '@/global/types';
+
+export type HeaderTypes = {
+  cta: CtaType;
 };

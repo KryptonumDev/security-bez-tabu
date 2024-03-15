@@ -1,24 +1,28 @@
 import { notFound } from 'next/navigation';
 import sanityFetch from '@/utils/sanity.fetch';
 import { QueryMetadata } from '@/global/Seo/query-metadata';
+import Header from '@/components/_landing/Header';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import Components, { Components_Query } from '@/components/Components';
 import type { generateStaticParamsType } from '@/global/types';
 import type { PageQueryType } from './page.types';
 
 export default async function LandingPage({ params: { slug } }: { params: { slug: string } }) {
-  const { name, countdown_Date, content } = await query(slug);
+  const { cta, name, countdown_Date, content } = await query(slug);
 
   return (
     <>
-      <Breadcrumbs
-        data={[{ name: name, path: slug }]}
-        visible={false}
-      />
-      <Components
-        data={content}
-        countdown_Date={countdown_Date}
-      />
+      <Header cta={cta} />
+      <main id='main'>
+        <Breadcrumbs
+          data={[{ name: name, path: slug }]}
+          visible={false}
+        />
+        <Components
+          data={content}
+          countdown_Date={countdown_Date}
+        />
+      </main>
     </>
   );
 }
@@ -28,6 +32,7 @@ const query = async (slug: string): Promise<PageQueryType> => {
     query: /* groq */ `
       *[_type == 'landingPage_Collection' && slug.current == $slug][0] {
         name,
+        cta,
         countdown_Date,
         ${Components_Query}
       }

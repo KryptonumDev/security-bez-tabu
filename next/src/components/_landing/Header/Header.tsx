@@ -1,12 +1,9 @@
 import Link from 'next/link';
-import sanityFetch from '@/utils/sanity.fetch';
 import Button from '@/components/ui/Button';
 import styles from './Header.module.scss';
-import type { QueryType } from './Header.types';
+import type { HeaderTypes } from './Header.types';
 
-const Header = async () => {
-  const { link } = await query();
-
+const Header = ({ cta }: HeaderTypes) => {
   return (
     <>
       <a
@@ -25,11 +22,9 @@ const Header = async () => {
             <Logo />
           </Link>
           <Button
-            href={link}
+            data={cta}
             className={styles.cta}
-          >
-            Dołączam do wyzwania
-          </Button>
+          />
         </div>
       </header>
     </>
@@ -37,17 +32,6 @@ const Header = async () => {
 };
 
 export default Header;
-
-const query = async (): Promise<QueryType> => {
-  return await sanityFetch<QueryType>({
-    query: /* groq */ `
-      *[_id == "WyzwanieSecurity_Global"][0] {
-        link,
-      }
-    `,
-    tags: ['WyzwanieSecurity_Global'],
-  });
-};
 
 const Logo = () => (
   <svg
