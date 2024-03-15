@@ -9,6 +9,10 @@
     justify-content: space-between;
     grid-template-columns: auto auto;
   }
+  @media (max-width: 999px) {
+    margin: 0 auto;
+    max-width: calc(608rem / 16);
+  }
   header {
     max-width: calc(451rem / 16);
     h2 {
