@@ -7,7 +7,7 @@
   ul {
     list-style-type: none;
     display: flex;
-    gap: 32px clamp(32px, calc(48vw / 7.68), 48px);
+    gap: clamp(32px, calc(48vw / 7.68), 48px) clamp(32px, calc(48vw / 7.68), 64px);
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -17,7 +17,6 @@
       }
     }
     li {
-      margin: auto;
       width: 140px;
       text-align: center;
       a {
