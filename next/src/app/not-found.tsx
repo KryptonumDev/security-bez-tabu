@@ -4,6 +4,7 @@ import Hero from '@/components/_pages/NotFound/Hero';
 import { Img_Query } from '@/components/ui/image';
 import { Cta_Query } from '@/components/ui/Button';
 import type { CtaType, ImgType } from '@/global/types';
+import Header from '@/components/_landing/Header';
 
 type PageQueryType = {
   hero_Heading: string;
@@ -17,14 +18,17 @@ const NotFoundPage = async () => {
 
   return (
     <>
-      <Hero
-        {...{
-          heading: hero_Heading,
-          paragraph: hero_Paragraph,
-          cta: hero_Cta,
-          img: hero_Img,
-        }}
-      />
+      <Header />
+      <main>
+        <Hero
+          {...{
+            heading: hero_Heading,
+            paragraph: hero_Paragraph,
+            cta: hero_Cta,
+            img: hero_Img,
+          }}
+        />
+      </main>
     </>
   );
 };

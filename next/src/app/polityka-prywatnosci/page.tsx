@@ -1,5 +1,6 @@
 import sanityFetch from '@/utils/sanity.fetch';
 import { QueryMetadata } from '@/global/Seo/query-metadata';
+import Header from '@/components/_landing/Header';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import Hero from '@/components/_pages/PrivacyPolicy/Hero';
 import Content from '@/components/_pages/PrivacyPolicy/Content';
@@ -15,17 +16,20 @@ const PrivacyPolicyPage = async () => {
 
   return (
     <>
-      <Breadcrumbs
-        data={[bradcrumbs]}
-        visible={false}
-      />
-      <Hero
-        {...{
-          heading: hero_Heading,
-          paragraph: hero_Paragraph,
-        }}
-      />
-      <Content {...{ content }} />
+      <Header />
+      <main>
+        <Breadcrumbs
+          data={[bradcrumbs]}
+          visible={false}
+        />
+        <Hero
+          {...{
+            heading: hero_Heading,
+            paragraph: hero_Paragraph,
+          }}
+        />
+        <Content {...{ content }} />
+      </main>
     </>
   );
 };

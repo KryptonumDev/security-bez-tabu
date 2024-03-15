@@ -21,10 +21,12 @@ const Header = ({ cta }: HeaderTypes) => {
           >
             <Logo />
           </Link>
-          <Button
-            data={cta}
-            className={styles.cta}
-          />
+          {cta && (
+            <Button
+              data={cta}
+              className={styles.cta}
+            />
+          )}
         </div>
       </header>
     </>

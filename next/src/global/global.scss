@@ -126,12 +126,6 @@ body {
   color: var(--primary-100);
   font-size: clamp(1rem, calc(18vw / 7.68), calc(18rem / 16));
   line-height: 155%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  footer {
-    margin-top: auto;
-  }
 }
 
 main,
@@ -144,7 +138,7 @@ main,
 main {
   display: grid;
   row-gap: clamp(108px, calc(144vw / 7.68), 240px);
-  margin: clamp(62px, calc(80vw / 7.68), 98px) auto clamp(108px, calc(144vw / 7.68), 240px);
+  margin: clamp(82px, calc(96vw / 7.68), 124px) auto clamp(108px, calc(144vw / 7.68), 240px);
 }
 h1,
 h2,
