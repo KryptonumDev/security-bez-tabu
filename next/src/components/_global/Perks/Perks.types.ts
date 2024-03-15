@@ -1,4 +1,4 @@
-export type Props = {
+export type PerksTypes = {
   heading: string;
   list: {
     title: string;

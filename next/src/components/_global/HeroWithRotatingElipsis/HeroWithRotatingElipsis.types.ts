@@ -8,9 +8,9 @@ export type HeroWithRotatingElipsisTypes = {
   additionalInfo: string;
   img: ImgType;
   products: {
+    img: ImgType;
     title: string;
     description: string;
-    img: ImgType;
   }[];
   countdown_Date?: string;
 };

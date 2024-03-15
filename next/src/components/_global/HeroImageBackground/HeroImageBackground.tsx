@@ -1,10 +1,10 @@
 import Markdown from '@/components/ui/markdown';
 import styles from './HeroImageBackground.module.scss';
-import type { Props } from './HeroImageBackground.types';
+import type { HeroImageBackgroundTypes } from './HeroImageBackground.types';
 
-const HeroImageBackground = ({ heading, additionalInfo }: Props) => {
+const HeroImageBackground = ({ heading, additionalInfo }: HeroImageBackgroundTypes) => {
   return (
-    <section className={styles['HeroCentralizedTextAndTransparentImage']}>
+    <section className={styles['HeroImageBackground']}>
       <Markdown.h2>{heading}</Markdown.h2>
       <Markdown>{additionalInfo}</Markdown>
     </section>

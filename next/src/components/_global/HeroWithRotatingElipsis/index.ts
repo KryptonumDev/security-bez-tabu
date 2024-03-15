@@ -4,24 +4,24 @@ import { Img_Query } from '@/components/ui/image';
 import { Cta_Query } from '@/components/ui/Button';
 export type { HeroWithRotatingElipsisTypes } from './HeroWithRotatingElipsis.types';
 
-export const HeroWithRotatingElipsis_Query = /* groq */ `
+export const HeroWithRotatingElipsis_Query = `
   _type == 'HeroWithRotatingElipsis' => {
-    additionalInfo,
+    heading,
+    paragraph,
+    claim,
     cta {
       ${Cta_Query}
     },
-    heading,
-    paragraph,
+    additionalInfo,
+    img {
+      ${Img_Query}
+    },
     products[] {
-      description,
-      title,
       img {
         ${Img_Query}
       },
-    },
-    claim,
-    img {
-      ${Img_Query}
+      title,
+      description,
     },
   },
 `;

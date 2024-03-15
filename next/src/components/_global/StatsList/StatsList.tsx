@@ -1,12 +1,12 @@
-import styles from './Stats.module.scss';
-import type { Props } from './Stats.types';
+import styles from './StatsList.module.scss';
+import type { StatsListTypes } from './StatsList.types';
 import Chips from './_Chips';
 import Counter from './_Counter';
 import Item from './_Item';
 
-const Stats = ({ list }: Props) => {
+const StatsList = ({ list }: StatsListTypes) => {
   return (
-    <section className={styles['Stats']}>
+    <section className={styles['StatsList']}>
       <ul>
         {list.map(({ number, name }, i) => (
           <Item
@@ -25,4 +25,4 @@ const Stats = ({ list }: Props) => {
   );
 };
 
-export default Stats;
+export default StatsList;

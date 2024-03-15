@@ -11,7 +11,7 @@ const Linear = ({
     number: number;
     title: string;
   };
-  isAngle: boolean;
+  isAngle?: boolean;
 }) => {
   const wrapper = useRef(null);
   const isInView = useInView(wrapper, { once: true, margin: '0px 0px -33% 0px' });

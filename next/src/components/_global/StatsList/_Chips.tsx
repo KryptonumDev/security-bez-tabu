@@ -1,7 +1,7 @@
 'use client';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import styles from './Stats.module.scss';
+import styles from './StatsList.module.scss';
 
 const randomDurations = Array.from({ length: 5 }).map(() => 4 + Math.random() * 4);
 const MotionRect = (isInView: boolean, index = 0) => ({

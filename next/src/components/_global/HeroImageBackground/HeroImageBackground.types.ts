@@ -1,6 +1,6 @@
 import type { CtaType, ImgType } from '@/global/types';
 
-export type Props = {
+export type HeroImageBackgroundTypes = {
   heading: string;
   description: string;
   additionalInfo: string;
