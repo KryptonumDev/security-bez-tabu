@@ -1,11 +1,12 @@
 .RevealImage {
   display: grid;
   align-items: center;
+  gap: clamp(48px, calc(64vw / 7.68), 78px);
+  justify-content: center;
   @media (min-width: 1000px) {
+    justify-content: space-between;
     grid-template-columns: auto auto;
   }
-  justify-content: space-between;
-  gap: clamp(48px, calc(64vw / 7.68), 78px);
   header {
     max-width: calc(484rem / 16);
     h2 {
