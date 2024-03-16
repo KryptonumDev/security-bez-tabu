@@ -4,7 +4,7 @@
     margin: 0 auto clamp(28px, calc(36vw / 7.68), 64px);
     text-align: center;
   }
-  >ul {
+  > ul {
     display: grid;
     @media (min-width: 550px) {
       grid-template-columns: 1fr 1fr;
@@ -14,7 +14,7 @@
     }
     gap: clamp(12px, calc(20vw / 7.68), 20px);
     list-style-type: none;
-    >li {
+    > li {
       padding: clamp(16px, calc(20vw / 7.68), 20px);
       border: 1px solid var(--primary-700);
       background: linear-gradient(-90deg, #1b2138, #0d111f 50%);
@@ -29,8 +29,8 @@
         img {
           width: 42%;
           height: 42%;
+          filter: drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.6));
           transform: translate3d(0, 0, 0);
-          filter: drop-shadow(0px 0px 30px rgba(29, 164, 253, 0.6)) drop-shadow(0px 0px 12px rgba(152, 214, 255, 0.6));
         }
       }
       h3 {
