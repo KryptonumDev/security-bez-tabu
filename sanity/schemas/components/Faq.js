@@ -43,7 +43,7 @@ export default {
     prepare({ heading, list }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
-        subtitle: countItems(list.lenght),
+        subtitle: countItems(list.length),
         icon,
       }
     },
