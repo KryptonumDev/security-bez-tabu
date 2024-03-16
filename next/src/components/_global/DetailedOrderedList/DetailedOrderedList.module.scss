@@ -15,7 +15,6 @@
         grid-template-columns: 1fr 1fr;
       }
     }
-
     margin-bottom: clamp(32px, calc(48vw / 7.68), 64px);
   }
 }
@@ -57,6 +56,24 @@
       }
     }
     .paragraph {
+      ol {
+        list-style-type: none;
+        counter-reset: counter;
+        li {
+          counter-increment: counter;
+          display: grid;
+          grid-template-columns: 52px 1fr;
+          align-items: flex-start;
+          gap: 12px;
+          &::before {
+            content: '00' counter(counter);
+            font-size: var(--small-font-size);
+            border-left: 2px solid var(--secondary-500, #53bafd);
+            background: var(--primary-700, #1d2239);
+            padding: 0 8px;
+          }
+        }
+      }
       & > *:not(:last-child) {
         margin-bottom: 8px;
       }
