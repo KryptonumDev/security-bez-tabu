@@ -1,7 +1,8 @@
 import { removeMarkdown } from '../../utils/remove-markdown';
+import { countItems } from '../../utils/count-items';
 
-const title = 'Zalety w tle';
-const icon = () => '👍';
+const title = 'Sekcja Zalety - kafelki z tłem';
+const icon = () => '✅';
 
 export default {
   name: 'BenefitsBackgroundItems',
@@ -30,12 +31,12 @@ export default {
   preview: {
     select: {
       heading: 'heading',
-      subtitle: 'list',
+      list: 'list',
     },
-    prepare({ heading, subtitle }) {
+    prepare({ heading, list }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
-        subtitle: `ilość elementów: ${subtitle.length}`,
+        subtitle: countItems(list),
       };
     },
   },
@@ -54,7 +55,7 @@ export const BenefitsBackgroundItems_List = {
     },
     {
       name: 'title',
-      type: 'markdown',
+      type: 'string',
       title: 'Tytuł',
       validation: Rule => Rule.required(),
     },
@@ -71,9 +72,9 @@ export const BenefitsBackgroundItems_List = {
       paragraph: 'paragraph',
       media: 'icon',
     },
-    prepare({ paragraph, media, title }) {
+    prepare({ title, paragraph, media }) {
       return {
-        title: `${removeMarkdown(title)}`,
+        title,
         subtitle: removeMarkdown(paragraph),
         media,
       };
