@@ -6,5 +6,5 @@ export type BenefitsBackgroundItemsTypes = {
     icon: ImgType;
     title: string;
     paragraph: string;
-  };
+  }[];
 };

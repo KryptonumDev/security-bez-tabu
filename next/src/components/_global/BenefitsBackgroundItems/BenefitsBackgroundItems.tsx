@@ -1,9 +1,9 @@
 import Markdown from '@/components/ui/markdown';
-import styles from './BenefitsBackgroundItems.module.scss';
-import type { BenefitsBackgroundItemsTypes } from './BenefitsBackgroundItems.types';
 import Heading from './_Heading';
-import Item from './_Item';
 import Img from '@/components/ui/image';
+import styles from './BenefitsBackgroundItems.module.scss';
+import Item from './_Item';
+import type { BenefitsBackgroundItemsTypes } from './BenefitsBackgroundItems.types';
 
 const BenefitsBackgroundItems = ({ heading, list }: BenefitsBackgroundItemsTypes) => {
   return (
