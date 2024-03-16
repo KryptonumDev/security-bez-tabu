@@ -15,10 +15,8 @@ export const collectionTypes = [landingPage_Collection, reviews_Collection, faq_
 // Componenets
 import cta from './components/cta';
 import seo from './components/seo';
-import { titleAndDescription, titleAndImage, imageAndLink, titleDescriptionAndImage } from './components/list';
 import { PrivacyPolicyPage_Content } from './singleTypes/PrivacyPolicy_Page';
 import SimpleCtaSection from './components/SimpleCtaSection';
-import stats from './components/stats';
 import chapter from './components/chapter';
 import { chart_Bars, chart_Circle, chart_Item, chart_Linear } from './components/chart';
 import Perks, { Perks_List } from './components/Perks';
@@ -59,13 +57,8 @@ export const components = [
   global_Seo,
   cta,
   seo,
-  titleAndDescription,
-  titleAndImage,
-  imageAndLink,
-  titleDescriptionAndImage,
   PrivacyPolicyPage_Content,
   SimpleCtaSection,
-  stats,
   chapter,
   chart_Bars,
   chart_Linear,

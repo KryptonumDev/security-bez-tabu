@@ -11,7 +11,9 @@ export default {
       name: 'list',
       type: 'array',
       title: 'Lista',
-      of: [{ type: 'StatsList_List' }],
+      of: [{
+        type: 'StatsList_List'
+      }],
       validation: Rule => Rule.required(),
     },
   ],
