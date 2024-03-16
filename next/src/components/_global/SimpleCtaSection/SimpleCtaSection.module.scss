@@ -1,6 +1,6 @@
 .SimpleCtaSection {
   header {
-    max-width: calc(460rem / 16);
+    max-width: calc(586rem / 16);
     margin: 0 auto;
   }
   text-align: center;
@@ -8,8 +8,7 @@
     margin: 24px auto 0;
   }
   .additionalInfo {
-    max-width: calc(356rem / 16);
-    margin: 12px auto 0;
+    margin-top: 12px;
     font-size: var(--small-font-size);
   }
   .countdown {
