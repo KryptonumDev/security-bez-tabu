@@ -23,7 +23,7 @@ export default {
     },
     prepare({ stats }) {
       return {
-        title: `[${title}] - liczba statystyk: ${stats.length}`,
+        title: `[${title}] - liczba statystyk: ${stats.length || 0}`,
         icon,
       };
     },

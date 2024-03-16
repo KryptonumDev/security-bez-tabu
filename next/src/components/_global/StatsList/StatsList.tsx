@@ -1,8 +1,8 @@
-import styles from './StatsList.module.scss';
-import type { StatsListTypes } from './StatsList.types';
 import Chips from './_Chips';
 import Counter from './_Counter';
 import Item from './_Item';
+import styles from './StatsList.module.scss';
+import type { StatsListTypes } from './StatsList.types';
 
 const StatsList = ({ list }: StatsListTypes) => {
   return (
