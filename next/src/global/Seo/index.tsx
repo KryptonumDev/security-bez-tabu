@@ -3,7 +3,7 @@ import { DEFAULT_TITLE, DOMAIN, LOCALE } from '@/global/constants';
 import type { Metadata } from 'next';
 import type { GlobalQueryTypes, SeoTypes } from './Seo.types';
 
-const Seo = async ({ title, description, path, ...props }: SeoTypes): Promise<Metadata> => {
+const Seo = async ({ title, description, path, img, ...props }: SeoTypes): Promise<Metadata> => {
   const { og_Img } = await query();
 
   const url = `${DOMAIN}${path}`;
@@ -12,7 +12,7 @@ const Seo = async ({ title, description, path, ...props }: SeoTypes): Promise<Me
     title: title || DEFAULT_TITLE,
     description: description || '',
     url,
-    ogImage: og_Img || '',
+    ogImage: img || og_Img || '',
   };
 
   const metadata: Metadata = {
