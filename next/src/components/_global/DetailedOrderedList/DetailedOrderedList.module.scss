@@ -66,11 +66,16 @@
           align-items: flex-start;
           gap: 12px;
           &::before {
-            content: '00' counter(counter);
+            content: '0' counter(counter);
             font-size: var(--small-font-size);
             border-left: 2px solid var(--secondary-500, #53bafd);
             background: var(--primary-700, #1d2239);
             padding: 0 8px;
+          }
+          &:nth-child(-n + 9) {
+            &::before {
+              content: '00' counter(counter);
+            }
           }
         }
       }
