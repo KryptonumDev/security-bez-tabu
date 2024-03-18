@@ -10,6 +10,7 @@ const DraftModeInfo = () => (
       right: 5,
       bottom: 5,
       fontSize: '0.8125rem',
+      zIndex: '99',
     }}
   >
     Draft mode is enabled
