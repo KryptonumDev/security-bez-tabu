@@ -12,11 +12,13 @@ const HeroImageBackground = ({ heading, paragraph, cta, img }: HeroImageBackgrou
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Button data={cta} />
       </header>
-      <Img
-        data={img}
-        sizes='520px'
-        className={styles.img}
-      />
+      <div className={styles.img}>
+        <Img
+          data={img}
+          sizes='520px'
+          priority={true}
+        />
+      </div>
     </section>
   );
 };
