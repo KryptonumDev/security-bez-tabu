@@ -24,7 +24,7 @@ export default {
     {
       name: 'cta',
       type: 'cta',
-      title: 'CTA',
+      title: 'Wezwanie do działania',
       validation: Rule => Rule.required(),
     },
     {

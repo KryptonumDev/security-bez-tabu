@@ -1,12 +1,22 @@
 import Markdown from '@/components/ui/markdown';
+import Button from '@/components/ui/Button';
+import Img from '@/components/ui/image';
 import styles from './HeroImageBackground.module.scss';
 import type { HeroImageBackgroundTypes } from './HeroImageBackground.types';
 
-const HeroImageBackground = ({ heading, additionalInfo }: HeroImageBackgroundTypes) => {
+const HeroImageBackground = ({ heading, paragraph, cta, img }: HeroImageBackgroundTypes) => {
   return (
     <section className={styles['HeroImageBackground']}>
-      <Markdown.h2>{heading}</Markdown.h2>
-      <Markdown>{additionalInfo}</Markdown>
+      <header>
+        <Markdown.h1>{heading}</Markdown.h1>
+        <Markdown className={styles.paragraph}>{paragraph}</Markdown>
+        <Button data={cta} />
+      </header>
+      <Img
+        data={img}
+        sizes='520px'
+        className={styles.img}
+      />
     </section>
   );
 };
