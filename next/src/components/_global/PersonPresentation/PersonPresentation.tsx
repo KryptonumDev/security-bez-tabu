@@ -21,7 +21,7 @@ const PersonPresentation = ({ heading, img, subheading, achievements, paragraph 
               <div className={styles.icon}>
                 <Img
                   data={icon}
-                  sizes=''
+                  sizes='20px'
                 />
               </div>
               <Markdown className={styles.title}>{title}</Markdown>
