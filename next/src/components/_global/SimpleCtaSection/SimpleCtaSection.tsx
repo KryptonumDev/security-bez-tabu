@@ -14,8 +14,7 @@ const SimpleCtaSection = ({ heading, cta, additionalInfo, isCountdown, countdown
         data={cta}
         className={styles.cta}
       />
-      <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>
-
+      {additionalInfo && <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>}
       {isCountdown && (
         <Countdown
           date={countdown_Date}
