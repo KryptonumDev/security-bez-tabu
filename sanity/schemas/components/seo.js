@@ -25,5 +25,11 @@ export default {
         Rule.required(),
       ]
     },
+    {
+      name: 'img',
+      type: 'image',
+      title: 'Zdjęcie (opcjonalnie)',
+      description: 'Zdjęcie (Open Graph Image) w formacie PNG, które pojawia się np. podczas udostępniania strony w mediach społecznościowych.',
+    },
   ]
 }
