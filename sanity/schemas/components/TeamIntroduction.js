@@ -58,7 +58,7 @@ export const TeamIntroduction_List = {
       validation: Rule => Rule.required(),
     },
     {
-      name: 'heading',
+      name: 'name',
       type: 'string',
       title: 'Imię i nazwisko',
       validation: Rule => Rule.required(),
