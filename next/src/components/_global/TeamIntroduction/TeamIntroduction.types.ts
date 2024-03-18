@@ -5,7 +5,7 @@ export type TeamIntroductionTypes = {
   paragraph: string;
   list: {
     img: ImgType;
-    heading: string;
-    description: string;
+    name: string;
+    description?: string;
   }[];
 };

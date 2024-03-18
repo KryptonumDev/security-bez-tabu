@@ -1,6 +1,6 @@
-import { Img_Query } from '@/components/ui/image';
 import TeamIntroduction from './TeamIntroduction';
 export default TeamIntroduction;
+import { Img_Query } from '@/components/ui/image';
 export type { TeamIntroductionTypes } from './TeamIntroduction.types';
 
 export const TeamIntroduction_Query = `
@@ -11,8 +11,8 @@ export const TeamIntroduction_Query = `
       img {
         ${Img_Query}
       },
-      heading,
+      name,
       description
-    }
+    },
   },
 `;

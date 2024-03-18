@@ -1,3 +1,50 @@
 .TeamIntroduction {
-  
+  header {
+    display: grid;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: clamp(48px, calc(64vw / 7.68), 64px);
+    @media (min-width: 850px) {
+      grid-template-columns: auto auto;
+    }
+    h2 {
+      max-width: calc(406rem / 16);
+    }
+    .paragraph {
+      max-width: calc(640rem / 16);
+      & > *:not(:last-child) {
+        margin-bottom: 12px;
+      }
+    }
+  }
+  .list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(32px, calc(32vw / 7.68), 48px);
+    .item {
+      clip-path: polygon(0 100%, 100% 100%, 100% 24px, 60% 24px, 52% 0, 0 0);
+      list-style-type: none;
+      max-width: 355px;
+      width: calc(33.3% - clamp(32px, calc(32vw / 7.68), 48px) * 0.67);
+      @media (max-width: 999px) {
+        width: calc(50% - clamp(32px, calc(32vw / 7.68), 48px) * 0.5);
+      }
+      @media (max-width: 699px) {
+        width: 100%;
+      }
+      background: var(--gradient-bg);
+      border: 1px solid var(--primary-600);
+      > div {
+        padding: clamp(12px, calc(24vw / 7.68), 24px) clamp(16px, calc(24vw / 7.68), 24px);
+      }
+      .description {
+        margin-top: 12px;
+        & > *:not(:last-child) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+  }
 }
