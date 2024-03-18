@@ -1,3 +1,4 @@
+import { countItems } from '../../utils/count-items';
 import { removeMarkdown } from '../../utils/remove-markdown';
 
 const title = 'Opisowe przedstawienie firm';
@@ -25,17 +26,21 @@ export default {
       name: 'list',
       type: 'array',
       title: 'Lista',
-      of: [{ type: 'CompaniesDescriptiveShowcase_List' }],
+      of: [{
+        type: 'CompaniesDescriptiveShowcase_List'
+      }],
       validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      list: 'list',
     },
-    prepare({ heading }) {
+    prepare({ heading, list }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: countItems(list.length),
         icon,
       };
     },
@@ -43,26 +48,26 @@ export default {
 };
 
 export const CompaniesDescriptiveShowcase_List = {
-  title: 'Lista',
   name: 'CompaniesDescriptiveShowcase_List',
   type: 'object',
+  title: 'Lista',
   fields: [
     {
       name: 'img',
       type: 'image',
-      title: 'Zdjęcie',
+      title: 'Logo',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'heading',
+      name: 'name',
       type: 'string',
-      title: 'Nagłówek',
+      title: 'Nazwa',
       validation: Rule => Rule.required(),
     },
     {
-      name: 'paragraph',
+      name: 'description',
       type: 'markdown',
-      title: 'Paragraf',
+      title: 'Opis',
       validation: Rule => Rule.required(),
     },
   ],
