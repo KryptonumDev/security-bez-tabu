@@ -1,7 +1,7 @@
 import Markdown from '@/components/ui/markdown';
+import Img from '@/components/ui/image';
 import styles from './CompaniesDescriptiveShowcase.module.scss';
 import type { CompaniesDescriptiveShowcaseTypes } from './CompaniesDescriptiveShowcase.types';
-import Img from '@/components/ui/image';
 
 const CompaniesDescriptiveShowcase = ({ heading, paragraph, list }: CompaniesDescriptiveShowcaseTypes) => {
   return (
@@ -20,7 +20,7 @@ const CompaniesDescriptiveShowcase = ({ heading, paragraph, list }: CompaniesDes
               data={img}
               sizes='108px'
             />
-            <p>{name}</p>
+            <h3>{name}</h3>
             <Markdown className={styles.description}>{description}</Markdown>
           </div>
         ))}

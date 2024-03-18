@@ -12,7 +12,7 @@ export const CompaniesDescriptiveShowcase_Query = `
         ${Img_Query}
       },
       name,
-      desription,
+      description,
     },
   },
 `;
