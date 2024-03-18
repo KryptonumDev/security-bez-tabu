@@ -211,7 +211,6 @@ h3,
 
 .orderedList,
 .unorderedList {
-  padding-left: 1rem;
   display: grid;
   gap: clamp(4px, calc(8vw / 7.68), 8px);
 }
