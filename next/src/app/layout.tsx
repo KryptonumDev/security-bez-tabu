@@ -4,14 +4,19 @@ import { Saira, IBM_Plex_Sans_Hebrew } from '@/global/fonts';
 import { LOCALE, THEME_COLOR } from '@/global/constants';
 import SchemaOrganization from '@/global/Schema/Organization';
 import Footer from '@/components/_landing/Footer';
+import { requestAsyncStorage } from 'next/dist/client/components/request-async-storage.external';
+import DraftModeInfo from '@/components/ui/DraftModeInfo';
+import { draftMode } from 'next/headers';
 
 export const viewport = {
   themeColor: THEME_COLOR,
 };
 
 const isProduction = process.env.NODE_ENV === 'production';
+const isDraftMode = !isProduction && !!requestAsyncStorage.getStore()?.draftMode.isEnabled;
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  draftMode().enable();
   return (
     <html lang={LOCALE}>
       <head>
@@ -32,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${Saira.className} ${IBM_Plex_Sans_Hebrew.variable}`}>
         {children}
         <Footer />
+        {isDraftMode && <DraftModeInfo />}
         {isProduction && (
           <noscript
             dangerouslySetInnerHTML={{
