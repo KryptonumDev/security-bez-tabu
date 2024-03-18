@@ -1,3 +1,91 @@
 .CourseDetails {
-  
+  header {
+    max-width: calc(570rem / 16);
+    text-align: center;
+    margin: 0 auto clamp(48px, calc(64vw / 7.68), 64px);
+  }
+  .list {
+    counter-reset: counter;
+    > li {
+      list-style-type: none;
+      counter-increment: counter;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(16px, calc(32vw / 7.68), 48px);
+      &::before {
+        content: counter(counter);
+        width: 50px;
+        height: 65px;
+        border-radius: 65px;
+        border: 1px solid var(--primary-300);
+        transition-delay: 0.8s;
+        background-color: var(--primary-900);
+        display: grid;
+        place-items: center;
+      }
+      &:nth-child(-n + 9) {
+        &::before {
+          content: '0' counter(counter);
+        }
+      }
+      &:not(:last-child) {
+        > div {
+          padding-bottom: 48px;
+          position: relative;
+          &::before,
+          &::after {
+            content: '';
+            z-index: -1;
+            position: absolute;
+            left: calc(clamp(16px, calc(32vw / 7.68), 48px) * -1 - 25px);
+            top: 65px;
+            width: 1px;
+            height: 100%;
+          }
+          &::before {
+            background-color: var(--primary-300);
+          }
+          &::after {
+            background-color: var(--secondary-500);
+            transform-origin: top;
+            transform: scaleY(0);
+            transition: transform 0.8s var(--easing);
+          }
+        }
+      }
+      &[data-visible='true'] {
+        &::before {
+          border-color: var(--secondary-500);
+          transition-delay: 0s;
+        }
+        > div {
+          &::after {
+            transform: scaleY(1);
+          }
+        }
+      }
+      .header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 8px;
+        align-items: center;
+        margin: 12px 0 32px;
+        h3 {
+          max-width: calc(659rem / 16);
+        }
+        .duration {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 8px;
+          align-items: center;
+        }
+      }
+      .paragraph {
+        max-width: calc(659rem / 16);
+        & > *:not(:last-child) {
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
 }

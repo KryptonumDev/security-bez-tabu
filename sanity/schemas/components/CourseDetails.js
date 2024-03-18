@@ -49,7 +49,7 @@ export const CourseDetails_List = {
     {
       name: 'heading',
       type: 'markdown',
-      title: 'Nagłówek',
+      title: 'string',
       validation: Rule => Rule.required(),
     },
     {
