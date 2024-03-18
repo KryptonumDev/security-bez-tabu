@@ -13,40 +13,38 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'description',
+      name: 'paragraph',
       type: 'markdown',
-      title: 'Opis',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'additionalInfo',
-      type: 'markdown',
-      title: 'Dodatkowe informacje',
-      validation: (Rule) => Rule.required(),
+      title: 'Paragraf',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'cta',
       type: 'cta',
       title: 'CTA',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
-      name: 'image',
+      name: 'img',
       type: 'image',
       title: 'Zdjęcie',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      paragraph: 'paragraph',
+      media: 'img',
     },
-    prepare({ heading }) {
+    prepare({ heading, paragraph, media }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
+        media,
         icon,
       }
     },
