@@ -11,8 +11,8 @@ export const CompaniesDescriptiveShowcase_Query = `
       img {
         ${Img_Query}
       },
-      heading,
-      paragraph,
-    } ,
+      name,
+      desription,
+    },
   },
 `;

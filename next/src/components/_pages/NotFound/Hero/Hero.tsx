@@ -4,12 +4,7 @@ import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 import Img from '@/components/ui/image';
 
-const Hero = ({
-  heading,
-  paragraph,
-  cta,
-  img
-}: Props) => {
+const Hero = ({ heading, paragraph, cta, img }: Props) => {
   return (
     <section className={styles['Hero']}>
       <header>
@@ -23,7 +18,11 @@ const Hero = ({
         <Markdown className={styles.paragraph}>{paragraph}</Markdown>
         <Button data={cta} />
       </header>
-      <Img data={img} sizes='' />
+      <Img
+        data={img}
+        sizes='(max-width: 600px) 100vw, (max-width: 1049px) 516px, 100vw'
+        className={styles.img}
+      />
     </section>
   );
 };

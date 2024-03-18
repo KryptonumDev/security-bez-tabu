@@ -15,7 +15,7 @@ const CompaniesShowcase = ({ list, heading }: CompaniesShowcaseTypes) => {
             <>
               <Img
                 data={img}
-                sizes=''
+                sizes='112px'
               />
               <p>{name}</p>
             </>

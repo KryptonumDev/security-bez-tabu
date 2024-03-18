@@ -20,7 +20,7 @@ const BenefitsBackgroundItems = ({ heading, list }: BenefitsBackgroundItemsTypes
             <div className={styles.icon}>
               <Img
                 data={icon}
-                sizes=''
+                sizes='24px'
               />
             </div>
             <Markdown.h3>{title}</Markdown.h3>

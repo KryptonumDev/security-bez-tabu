@@ -1,10 +1,17 @@
 .Hero {
+  display: grid;
+  gap: 32px clamp(48px, calc(64vw / 7.68), 82px);
+  @media (min-width: 1050px) {
+    grid-template-columns: 1.1fr 1fr;
+  }
+  header {
+    max-width: calc(689rem / 16);
+  }
   .decorationText {
     font-size: clamp(calc(96rem / 16), calc(128vw / 7.68), calc(128rem / 16));
     color: var(--primary-700);
     font-family: var(--font-secondary);
     position: relative;
-
     &::before {
       content: attr(data-text);
       pointer-events: none;
@@ -28,15 +35,10 @@
       }
     }
   }
-
-  display: grid;
-  gap: 32px clamp(48px, calc(64vw / 7.68), 82px);
-
-  @media (min-width: 1050px) {
-    grid-template-columns: 1.1fr 1fr;
-  }
-
   .paragraph {
     margin: clamp(16px, calc(24vw / 7.68), 28px) 0 clamp(28px, calc(32vw / 7.68), 32px);
+  }
+  .img {
+    max-width: 516px;
   }
 }

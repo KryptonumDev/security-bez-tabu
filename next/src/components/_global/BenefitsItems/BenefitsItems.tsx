@@ -20,7 +20,7 @@ const BenefitsItems = ({ heading, list }: BenefitsItemsTypes) => {
             <div className={styles.icon}>
               <Img
                 data={icon}
-                sizes=''
+                sizes='28px'
               />
             </div>
             <Markdown>{paragraph}</Markdown>

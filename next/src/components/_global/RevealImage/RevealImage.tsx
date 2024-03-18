@@ -16,7 +16,7 @@ const RevealImage = ({ heading, paragraph, img }: RevealImageTypes) => {
         <CuttedEdgeIcon className={styles.CuttedEdgeIcon} />
         <Img
           data={img}
-          sizes=''
+          sizes='410px'
         />
         <label className={styles.overlay}>
           <input type='checkbox' />
