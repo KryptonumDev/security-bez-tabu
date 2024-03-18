@@ -12,6 +12,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/dokumentacja-iso-27001',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
