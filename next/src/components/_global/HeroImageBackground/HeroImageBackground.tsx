@@ -15,7 +15,7 @@ const HeroImageBackground = ({ heading, paragraph, cta, img }: HeroImageBackgrou
       <div className={styles.img}>
         <Img
           data={img}
-          sizes='520px'
+          sizes='(max-width: 767px) 408px, 520px'
           priority={true}
         />
       </div>
