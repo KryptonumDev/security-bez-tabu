@@ -21,8 +21,6 @@ export const QueryMetadata = async (name: string, path: string, dynamicSlug?: st
 
   const { title, description, img } = await query(customQuery, dynamicSlug, name);
 
-  console.log(img);
-
   return Seo({
     title,
     description,
