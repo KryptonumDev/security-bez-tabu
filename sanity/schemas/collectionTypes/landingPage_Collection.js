@@ -41,7 +41,6 @@ export default {
       name: 'cta',
       type: 'cta',
       title: 'Globalne wezwanie do działania (np. w nawigacji)',
-      validation: Rule => Rule.required(),
       options: {
         collapsible: true,
         collapsed: true,
