@@ -1,5 +1,6 @@
 'use server';
 import { createClient, type QueryParams } from 'next-sanity';
+import { draftMode } from 'next/headers';
 import { requestAsyncStorage } from 'next/dist/client/components/request-async-storage.external';
 
 const projectId = process.env.SANITY_PROJECT_ID;
@@ -7,7 +8,7 @@ const token = process.env.SANITY_API_TOKEN;
 const dataset = 'production';
 const apiVersion = '2024-03-11';
 
-const isDraftMode = !!requestAsyncStorage.getStore()?.draftMode.isEnabled;
+const isDraftMode = requestAsyncStorage?.getStore() ? draftMode().isEnabled : false;
 
 if (isDraftMode && !token) {
   throw new Error('The `SANITY_API_TOKEN` environment variable is required.');

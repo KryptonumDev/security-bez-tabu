@@ -18,7 +18,6 @@ const Video = ({ url, PlayIcon, ...props }: VideoTypes) => {
   return (
     <div
       {...props}
-      data-playing={isPlaying}
       data-controls={controls}
     >
       <button
