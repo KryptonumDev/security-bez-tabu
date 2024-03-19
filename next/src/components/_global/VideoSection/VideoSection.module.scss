@@ -1,3 +1,28 @@
 .VideoSection {
-  
+  max-width: calc(1000rem / 16);
+  width: 100%;
+  margin: 0 auto;
+  header {
+    max-width: calc(384rem / 16);
+    margin-bottom: clamp(32px, calc(64vw / 7.68), 64px);
+  }
+  .video {
+    cursor: pointer;
+    position: relative;
+    display: grid;
+    place-items: center;
+    &[data-playing='true'] {
+      svg {
+        scale: 0;
+      }
+    }
+    svg {
+      transition: scale 0.2s var(--easing);
+      position: absolute;
+    }
+    video {
+      aspect-ratio: 16 / 9;
+      width: 100%;
+    }
+  }
 }

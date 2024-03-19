@@ -25,6 +25,7 @@
       border-spacing: 0px;
       border-collapse: separate;
       border: 1px solid var(--primary-600);
+      display: block;
       position: relative;
       &[data-highlighted='true'] {
         background: var(--gradient-bg);

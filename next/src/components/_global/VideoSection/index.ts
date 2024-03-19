@@ -6,12 +6,7 @@ export const VideoSection_Query = `
   _type == "VideoSection" => {
     heading,
     video {
-      asset -> {
-        url,
-        path,
-        originalFilename,
-        size,
-      },
+      'url': asset -> url,
     },
   },
 `;
