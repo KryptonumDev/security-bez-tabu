@@ -32,7 +32,6 @@ export default async function sanityFetch<QueryResponse>({
   params?: QueryParams;
 }): Promise<QueryResponse> {
   const isDraftMode = !!requestAsyncStorage.getStore()?.draftMode.isEnabled;
-  console.log(isDraftMode);
   if (isDraftMode && !token) {
     throw new Error('The `SANITY_API_TOKEN` environment variable is required.');
   }
