@@ -11,7 +11,23 @@
     position: relative;
     display: grid;
     place-items: center;
+    button {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 2;
+    }
     &[data-playing='true'] {
+      svg {
+        scale: 0;
+      }
+    }
+    &[data-controls='true'] {
+      button {
+        display: none;
+      }
       svg {
         scale: 0;
       }
