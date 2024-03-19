@@ -1,14 +1,31 @@
 import sanityFetch from '@/utils/sanity.fetch';
 import { DOMAIN } from '@/global/constants';
 
+type QueryTypes = {
+  OrganizationSchema: {
+    name?: string;
+    description?: string;
+  };
+  email?: string;
+  phone?: string;
+  instagram?: string;
+  facebook?: string;
+  youtube?: string;
+  linkedin?: string;
+};
+
 const SchemaOrganization = async () => {
   const {
-    seo,
-    global: { email, phone, instagram, facebook },
-  }: {
-    seo?: { description: string; title: string };
-    global?: { email?: string; phone?: number; instagram?: string; facebook?: string };
+    OrganizationSchema: { name: OrganizationSchema_Name, description: OrganizationSchema_Description },
+    email = '',
+    phone = '',
+    instagram = '',
+    facebook = '',
+    youtube = '',
+    linkedin = '',
   } = await query();
+
+  const socialMediaUrls = [instagram, facebook, youtube, linkedin].filter(Boolean);
 
   return (
     <script
@@ -17,13 +34,13 @@ const SchemaOrganization = async () => {
         __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@type': 'Organization',
-          name: seo?.title,
           url: `${DOMAIN}`,
-          email: email || '',
-          telephone: phone || '',
+          ...(email && { email: email }),
+          ...(phone && { telephone: phone }),
+          ...(OrganizationSchema_Name && { name: OrganizationSchema_Name }),
+          ...(OrganizationSchema_Description && { description: OrganizationSchema_Description }),
           logo: `${DOMAIN}/security-bez-tabu-logo.png`,
           image: `${DOMAIN}/security-bez-tabu-logo.png`,
-          description: seo?.description,
           OpeningHoursSpecification: {
             '@type': 'OpeningHoursSpecification',
             dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
@@ -36,7 +53,7 @@ const SchemaOrganization = async () => {
               email: email,
             },
           ],
-          sameAs: [instagram || '', facebook || ''],
+          sameAs: [socialMediaUrls],
         }),
       }}
     />
@@ -45,22 +62,22 @@ const SchemaOrganization = async () => {
 
 export default SchemaOrganization;
 
-const query = async () => {
-  return await sanityFetch({
+const query = async (): Promise<QueryTypes> => {
+  return await sanityFetch<QueryTypes>({
     query: /* groq */ `
-      *[_id == "WyzwanieSecurity_IndexPage"][0] {
-        seo {
-          title,
-          description
+      *[_type == "global"][0] {
+        OrganizationSchema {
+          name,
+          description,
         },
-        "global": *[_id=="global"][0] {
-          email,
-          phone,
-          instagram,
-          facebook,
-        }
+        email,
+        phone,
+        instagram,
+        facebook,
+        youtube,
+        linkedin,
       }
     `,
-    tags: ['WyzwanieSecurity_IndexPage', 'global'],
+    tags: ['global'],
   });
 };
