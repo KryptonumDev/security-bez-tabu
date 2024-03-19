@@ -1,3 +1,4 @@
+import type { HTMLMotionProps } from 'framer-motion';
 import type { ImgType } from '@/global/types';
 
 export type BenefitsItemsTypes = {
@@ -7,3 +8,8 @@ export type BenefitsItemsTypes = {
     paragraph: string;
   }[];
 };
+
+export type ItemTypes = {
+  children: React.ReactNode;
+  index: number;
+} & HTMLMotionProps<'li'>;

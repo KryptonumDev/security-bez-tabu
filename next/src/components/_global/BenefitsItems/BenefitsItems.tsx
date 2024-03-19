@@ -11,11 +11,12 @@ const BenefitsItems = ({ heading, list }: BenefitsItemsTypes) => {
       <Heading>
         <Markdown.h2>{heading}</Markdown.h2>
       </Heading>
-      <ul>
+      <ul className={styles.list}>
         {list.map(({ icon, paragraph }, i) => (
           <Item
             key={i}
             index={i}
+            className={styles.item}
           >
             <div className={styles.icon}>
               <Img
