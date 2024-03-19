@@ -4,6 +4,7 @@ import { Saira, IBM_Plex_Sans_Hebrew } from '@/global/fonts';
 import { LOCALE, THEME_COLOR } from '@/global/constants';
 import SchemaOrganization from '@/global/Schema/Organization';
 import Footer from '@/components/_landing/Footer';
+import CookieConsent from '@/components/_global/CookieConsent';
 import { requestAsyncStorage } from 'next/dist/client/components/request-async-storage.external';
 import DraftModeInfo from '@/components/ui/DraftModeInfo';
 
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         {isDraftMode && <DraftModeInfo />}
+        {!isProduction && <CookieConsent />}
         {isProduction && (
           <noscript
             dangerouslySetInnerHTML={{
