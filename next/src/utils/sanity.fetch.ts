@@ -36,10 +36,6 @@ export default async function sanityFetch<QueryResponse>({
     throw new Error('The `SANITY_API_TOKEN` environment variable is required.');
   }
   return await client.fetch<QueryResponse>(query, params, {
-    ...(isDraftMode && {
-      token: token,
-      perspective: 'previewDrafts',
-    }),
     cache: isDraftMode || !tags ? 'no-cache' : 'default',
     next: {
       tags: tags,
