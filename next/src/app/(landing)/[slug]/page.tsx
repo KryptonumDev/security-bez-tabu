@@ -57,5 +57,8 @@ export async function generateStaticParams(): Promise<generateStaticParamsType> 
     `,
     tags: ['landingPage_Collection'],
   });
-  return collection.map(({ slug }) => ({ slug }));
+
+  return collection.map(({ slug }) => ({
+    slug,
+  }));
 }
