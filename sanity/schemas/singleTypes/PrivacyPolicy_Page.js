@@ -1,6 +1,5 @@
 import { removeMarkdown } from "../../utils/remove-markdown"
 
-
 const title = 'Polityka prywatności'
 const icon = '📑'
 

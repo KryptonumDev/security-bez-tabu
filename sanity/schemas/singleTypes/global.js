@@ -1,11 +1,11 @@
 const title = 'Globalne';
-const icon = '🌍';
+const icon = () => '🌍';
 
 export default {
   name: 'global',
-  title: title,
   type: 'document',
-  icon: () => icon,
+  title,
+  icon,
   fields: [
     {
       type: 'string',
@@ -31,6 +31,10 @@ export default {
       fieldset: 'social',
     },
     {
+      name: 'CookieConsent',
+      type: 'CookieConsent',
+    },
+    {
       name: 'seo',
       type: 'global_Seo',
       title: 'Global SEO',
@@ -39,7 +43,7 @@ export default {
   fieldsets: [
     {
       name: 'social',
-      title: 'Social links',
+      title: 'Linki do mediów społecznościowych',
       options: { collapsible: true, collapsed: true },
     },
   ],
@@ -55,7 +59,7 @@ export const global_Seo = {
       type: 'image',
       title: 'OG Image',
       description:
-        'An image that is visible when sharing the page on social media. The dimensions of the photo should be 1200x630px',
+        'Obraz widoczny podczas udostępniania strony w mediach społecznościowych. Zdjęcie powinno być w formacie PNG. Wymiary zdjęcia powinny wynosić 1200x630px.',
     },
   ],
 }

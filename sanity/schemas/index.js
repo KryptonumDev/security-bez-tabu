@@ -3,14 +3,21 @@ import global, { global_Seo } from './singleTypes/global';
 import NotFoundPage from './singleTypes/NotFound_Page';
 import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page';
 
-export const singleTypes = [PrivacyPolicyPage, NotFoundPage];
+export const singleTypes = [
+  PrivacyPolicyPage,
+  NotFoundPage,
+];
 
 // Collection Types
 import landingPage_Collection from './collectionTypes/landingPage_Collection';
 import reviews_Collection from './collectionTypes/reviews_Collection';
 import faq_Collection from './collectionTypes/faq_Collection';
 
-export const collectionTypes = [landingPage_Collection, reviews_Collection, faq_Collection];
+export const collectionTypes = [
+  landingPage_Collection,
+  reviews_Collection,
+  faq_Collection
+];
 
 // Componenets
 import cta from './components/cta';
@@ -52,9 +59,14 @@ import CompaniesDescriptiveShowcase, {
 import PlansComparison, { PlansComparison_Plans } from './components/PlansComparison';
 import VideoSection from './components/VideoSection';
 import BenefitsBackgroundItems, { BenefitsBackgroundItems_List } from './components/BenefitsBackgroundItems';
+import CookieConsent, { CookieConsent_Details, CookieConsent_Details_List, CookieConsent_Details_List_Cookies } from './components/CookieConsent';
 
 export const components = [
   global_Seo,
+  CookieConsent,
+  CookieConsent_Details,
+  CookieConsent_Details_List,
+  CookieConsent_Details_List_Cookies,
   cta,
   seo,
   PrivacyPolicyPage_Content,
