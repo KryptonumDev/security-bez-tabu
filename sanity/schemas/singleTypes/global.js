@@ -31,6 +31,18 @@ export default {
       fieldset: 'social',
     },
     {
+      type: 'url',
+      name: 'youtube',
+      title: 'YouTube',
+      fieldset: 'social',
+    },
+    {
+      type: 'url',
+      name: 'linkedin',
+      title: 'LinkedIn',
+      fieldset: 'social',
+    },
+    {
       name: 'CookieConsent',
       type: 'CookieConsent',
     },
