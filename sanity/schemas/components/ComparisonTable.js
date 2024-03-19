@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const icon = () => '📐'
 const title = 'Tabela porównawcza'
@@ -13,29 +13,33 @@ export default {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'paragraph',
       type: 'markdown',
       title: 'Paragraf',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'table',
       type: 'array',
       title: 'Tabela',
-      of: [{type: 'ComparisonTable_Column'}],
-      validation: (Rule) => Rule.required(),
+      of: [{
+        type: 'ComparisonTable_Column'
+      }],
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
+      paragraph: 'paragraph',
     },
-    prepare({heading}) {
+    prepare({ heading, paragraph }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
+        subtitle: removeMarkdown(paragraph),
         icon,
       }
     },
@@ -48,24 +52,33 @@ export const ComparisonTable_Column = {
   title: 'Kolumna',
   fields: [
     {
+      name: 'isHighlighted',
+      type: 'boolean',
+      title: 'Czy element jest wyróżniony?',
+      initialValue: false,
+      validation: Rule => Rule.required(),
+    },
+    {
       name: 'heading',
-      type: 'markdown',
+      type: 'string',
       title: 'Nazwa tabeli',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'rows',
       type: 'array',
-      of: [{type: 'ComparisonTable_Row'}],
+      of: [{
+        type: 'ComparisonTable_Row'
+      }],
       title: 'Wiersze',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: removeMarkdown(heading),
       }
@@ -82,13 +95,13 @@ export const ComparisonTable_Row = {
       name: 'title',
       type: 'string',
       title: 'Tytuł',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
     {
       name: 'description',
       type: 'string',
       title: 'Opis',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
     },
   ],
 }
