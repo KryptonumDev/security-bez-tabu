@@ -108,4 +108,16 @@ export const ComparisonTable_Row = {
       validation: Rule => Rule.required(),
     },
   ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'description',
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title,
+        subtitle,
+      }
+    },
+  },
 }
