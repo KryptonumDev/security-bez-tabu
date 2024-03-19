@@ -1,5 +1,5 @@
 // Single Types
-import global, { global_Seo } from './singleTypes/global';
+import global, { global_OrganizationSchema, global_Seo } from './singleTypes/global';
 import NotFoundPage from './singleTypes/NotFound_Page';
 import PrivacyPolicyPage from './singleTypes/PrivacyPolicy_Page';
 
@@ -62,7 +62,9 @@ import BenefitsBackgroundItems, { BenefitsBackgroundItems_List } from './compone
 import CookieConsent, { CookieConsent_Details, CookieConsent_Details_List, CookieConsent_Details_List_Cookies } from './components/CookieConsent';
 
 export const components = [
+  global,
   global_Seo,
+  global_OrganizationSchema,
   CookieConsent,
   CookieConsent_Details,
   CookieConsent_Details_List,
@@ -134,8 +136,6 @@ export const components = [
 ];
 
 export const schemaTypes = [
-  global,
-  // Restruzturize
   ...components,
   ...singleTypes,
   ...collectionTypes,

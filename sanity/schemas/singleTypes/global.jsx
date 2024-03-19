@@ -43,6 +43,21 @@ export default {
       fieldset: 'social',
     },
     {
+      type: 'global_OrganizationSchema',
+      name: 'OrganizationSchema',
+      title: 'Uporządkowane dane organizacji',
+      description: (
+        <a
+          href='https://developers.google.com/search/docs/appearance/structured-data/organization?hl=pl'
+          target='_blank'
+          rel='noreferrer'
+        >
+          Więcej informacji o Schema
+        </a>
+      ),
+      options: { collapsible: true, collapsed: true },
+    },
+    {
       name: 'CookieConsent',
       type: 'CookieConsent',
     },
@@ -59,7 +74,7 @@ export default {
       options: { collapsible: true, collapsed: true },
     },
   ],
-}
+};
 
 export const global_Seo = {
   name: 'global_Seo',
@@ -74,4 +89,23 @@ export const global_Seo = {
         'Obraz widoczny podczas udostępniania strony w mediach społecznościowych. Zdjęcie powinno być w formacie PNG. Wymiary zdjęcia powinny wynosić 1200x630px.',
     },
   ],
-}
+};
+
+export const global_OrganizationSchema = {
+  name: 'global_OrganizationSchema',
+  title: 'Global SEO',
+  type: 'object',
+  fields: [
+    {
+      name: 'name',
+      type: 'string',
+      title: 'Nazwa Twojej organizacji',
+    },
+    {
+      name: 'description',
+      type: 'text',
+      rows: 3,
+      title: 'Szczegółowy opis Twojej organizacji',
+    },
+  ],
+};
