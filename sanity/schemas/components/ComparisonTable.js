@@ -1,3 +1,4 @@
+import { countItems } from '../../utils/count-items'
 import { removeMarkdown } from '../../utils/remove-markdown'
 
 const icon = () => '📐'
@@ -76,11 +77,14 @@ export const ComparisonTable_Column = {
   ],
   preview: {
     select: {
+      isHighlighted: 'isHighlighted',
       heading: 'heading',
+      rows: 'rows',
     },
-    prepare({ heading }) {
+    prepare({ isHighlighted, heading, rows }) {
       return {
-        title: removeMarkdown(heading),
+        title: `${isHighlighted ? '[Wyróżniony] ' : ''}${removeMarkdown(heading)}`,
+        subtitle: countItems(rows.length),
       }
     },
   },
