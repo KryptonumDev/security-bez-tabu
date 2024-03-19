@@ -1,4 +1,4 @@
-import {removeMarkdown} from '../../utils/remove-markdown'
+import { removeMarkdown } from '../../utils/remove-markdown'
 
 const title = 'Sekcja z filmem'
 const icon = () => '🎬'
@@ -10,24 +10,30 @@ export default {
   icon,
   fields: [
     {
-      name: 'video',
-      type: 'file',
-      title: 'Film',
-      description: 'Najlepiej skompresowany w formacie mp4',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'heading',
       type: 'markdown',
       title: 'Nagłówek',
-      validation: (Rule) => Rule.required(),
+      validation: Rule => Rule.required(),
+    },
+    {
+      name: 'video',
+      type: 'file',
+      title: 'Plik wideo',
+      description: 'Skompresowany film w formacie .mp4',
+      validation: Rule =>
+        Rule.custom(({ asset: { _ref } }) => {
+          if (!_ref.includes('mp4')) {
+            return 'Plik musi być w formacie .mp4'
+          }
+          return true
+        }).required(),
     },
   ],
   preview: {
     select: {
       heading: 'heading',
     },
-    prepare({heading}) {
+    prepare({ heading }) {
       return {
         title: `[${title}] - ${removeMarkdown(heading)}`,
         icon,
