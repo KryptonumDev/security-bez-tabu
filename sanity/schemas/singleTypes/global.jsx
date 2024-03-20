@@ -60,6 +60,7 @@ export default {
     {
       name: 'CookieConsent',
       type: 'CookieConsent',
+      title: 'Baner z informacją o ciasteczkach',
     },
     {
       name: 'seo',
@@ -93,7 +94,6 @@ export const global_Seo = {
 
 export const global_OrganizationSchema = {
   name: 'global_OrganizationSchema',
-  title: 'Global SEO',
   type: 'object',
   fields: [
     {
