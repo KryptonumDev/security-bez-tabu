@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     gap: clamp(16px, calc(24vw / 7.68), 24px);
     .item {
+      width: 100%;
       @media (min-width: 800px) {
         width: calc(50% - clamp(16px, calc(24vw / 7.68), 24px) * 0.5);
       }
