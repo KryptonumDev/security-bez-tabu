@@ -1,9 +1,9 @@
-import { PerksTypes } from '.';
+import Markdown from '@/components/ui/markdown';
 import styles from './Perks.module.scss';
-import Chips from './_Chips';
 import Heading from './_Heading';
 import Item from './_Item';
-import Markdown from '@/components/ui/markdown';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
+import type { PerksTypes } from '.';
 
 const Perks = ({ heading, list }: PerksTypes) => {
   return (
@@ -11,11 +11,12 @@ const Perks = ({ heading, list }: PerksTypes) => {
       <Heading>
         <Markdown.h2>{heading}</Markdown.h2>
       </Heading>
-      <ul>
+      <ul className={styles.list}>
         {list.map(({ title, description }, i) => (
           <Item
             key={i}
             index={i}
+            className={styles.item}
           >
             <div>
               <Markdown.h3>{title}</Markdown.h3>
@@ -25,7 +26,7 @@ const Perks = ({ heading, list }: PerksTypes) => {
           </Item>
         ))}
       </ul>
-      <Chips />
+      <ChipsAnimation positionX='left' />
     </section>
   );
 };

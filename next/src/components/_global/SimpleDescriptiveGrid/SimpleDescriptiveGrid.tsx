@@ -2,6 +2,7 @@ import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
 import styles from './SimpleDescriptiveGrid.module.scss';
 import type { SimpleDescriptiveGridTypes } from './SimpleDescriptiveGrid.types';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
 
 const SimpleDescriptiveGrid = ({ heading, grid }: SimpleDescriptiveGridTypes) => {
   return (
@@ -9,9 +10,12 @@ const SimpleDescriptiveGrid = ({ heading, grid }: SimpleDescriptiveGridTypes) =>
       <header>
         <Markdown.h2>{heading}</Markdown.h2>
       </header>
-      <ul>
+      <ul className={styles.list}>
         {grid.map(({ icon, heading, paragraph }, i) => (
-          <li key={i}>
+          <li
+            key={i}
+            className={styles.item}
+          >
             <div className={styles.icon}>
               <Img
                 data={icon}
@@ -23,6 +27,10 @@ const SimpleDescriptiveGrid = ({ heading, grid }: SimpleDescriptiveGridTypes) =>
           </li>
         ))}
       </ul>
+      <ChipsAnimation
+        positionX='left'
+        positionY='bottom'
+      />
     </section>
   );
 };

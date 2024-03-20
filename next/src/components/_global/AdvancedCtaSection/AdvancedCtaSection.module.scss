@@ -1,4 +1,5 @@
 .AdvancedCtaSection {
+  position: relative;
   padding: clamp(32px, calc(64vw / 7.68), 64px) clamp(24px, calc(64vw / 7.68), 64px);
   border: 1px solid var(--primary-700);
   background: var(--gradient-bg);

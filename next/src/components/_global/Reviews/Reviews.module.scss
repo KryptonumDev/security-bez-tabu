@@ -1,4 +1,5 @@
 .Reviews {
+  position: relative;
   header {
     max-width: calc(586rem / 16);
     margin: 0 auto clamp(28px, calc(36vw / 7.68), 64px);

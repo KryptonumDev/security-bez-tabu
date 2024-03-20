@@ -1,13 +1,10 @@
 .LargeImage {
   margin: calc(clamp(108px, calc(144vw / 7.68), 240px) * -1) calc(var(--pageMargin) * -1);
-
   @media (min-width: 1280px) {
     margin: calc(clamp(108px, calc(144vw / 7.68), 240px) * -1) calc((100vw - 1200px) / -2);
   }
-
   position: relative;
   text-align: center;
-
   &::before {
     content: '';
     position: absolute;

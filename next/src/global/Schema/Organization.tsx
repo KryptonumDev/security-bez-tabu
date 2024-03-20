@@ -17,12 +17,12 @@ type QueryTypes = {
 const SchemaOrganization = async () => {
   const {
     OrganizationSchema: { name: OrganizationSchema_Name, description: OrganizationSchema_Description },
-    email = '',
-    phone = '',
-    instagram = '',
-    facebook = '',
-    youtube = '',
-    linkedin = '',
+    email,
+    phone,
+    instagram,
+    facebook,
+    youtube,
+    linkedin,
   } = await query();
 
   const socialMediaUrls = [instagram, facebook, youtube, linkedin].filter(Boolean);

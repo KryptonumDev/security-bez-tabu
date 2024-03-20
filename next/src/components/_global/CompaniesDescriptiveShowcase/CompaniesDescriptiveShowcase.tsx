@@ -2,6 +2,7 @@ import Markdown from '@/components/ui/markdown';
 import Img from '@/components/ui/image';
 import styles from './CompaniesDescriptiveShowcase.module.scss';
 import type { CompaniesDescriptiveShowcaseTypes } from './CompaniesDescriptiveShowcase.types';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
 
 const CompaniesDescriptiveShowcase = ({ heading, paragraph, list }: CompaniesDescriptiveShowcaseTypes) => {
   return (
@@ -25,6 +26,10 @@ const CompaniesDescriptiveShowcase = ({ heading, paragraph, list }: CompaniesDes
           </div>
         ))}
       </div>
+      <ChipsAnimation
+        positionX='right'
+        positionY='top'
+      />
     </section>
   );
 };

@@ -21,46 +21,5 @@
       }
     }
   }
-
   position: relative;
-  .chip {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    transform: translate(10%, 80%);
-    @media (max-width: 999px) {
-      transform: translate(10%, 62%);
-    }
-    svg {
-      width: clamp(198px, calc(314vw / 7.68), 420px);
-      height: auto;
-      &:last-child {
-        position: absolute;
-        top: 0;
-        g {
-          animation: glow 8s infinite;
-        }
-      }
-    }
-    @keyframes glow {
-      0%,
-      25%,
-      50%,
-      75%,
-      100% {
-        opacity: 1;
-      }
-      20%,
-      40%,
-      60%,
-      80% {
-        opacity: 0.62;
-      }
-    }
-    margin-right: calc(var(--pageMargin) * -1);
-    @media (min-width: 1280px) {
-      margin-right: calc((100vw - 1200px) / -2);
-    }
-  }
 }

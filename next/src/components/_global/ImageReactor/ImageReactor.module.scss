@@ -1,4 +1,5 @@
 .ImageReactor {
+  position: relative;
   &[data-highlighted='true'] {
     padding: clamp(24px, calc(48vw / 7.68), 48px);
     border: 1px solid var(--primary-700);

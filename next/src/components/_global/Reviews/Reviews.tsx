@@ -4,6 +4,7 @@ import styles from './Reviews.module.scss';
 import Heading from './_Heading';
 import Item from './_Item';
 import type { ReviewsTypes } from './Reviews.types';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
 
 const Reviews = ({ heading, list }: ReviewsTypes) => {
   return (
@@ -37,6 +38,10 @@ const Reviews = ({ heading, list }: ReviewsTypes) => {
           </Item>
         ))}
       </ul>
+      <ChipsAnimation
+        positionX='right'
+        positionY='bottom'
+      />
     </section>
   );
 };

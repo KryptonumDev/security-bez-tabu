@@ -2,6 +2,7 @@ import Markdown from '@/components/ui/markdown';
 import Button from '@/components/ui/Button';
 import styles from './AdvancedCtaSection.module.scss';
 import type { AdvancedCtaSectionTypes } from './AdvancedCtaSection.types';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
 
 const AdvancedCtaSection = ({ heading, paragraph, secondHeading, cta, additionalInfo }: AdvancedCtaSectionTypes) => {
   return (
@@ -15,6 +16,10 @@ const AdvancedCtaSection = ({ heading, paragraph, secondHeading, cta, additional
         <Button data={cta} />
         {additionalInfo && <Markdown className={styles.additionalInfo}>{additionalInfo}</Markdown>}
       </div>
+      <ChipsAnimation
+        positionX='left'
+        positionY='center'
+      />
     </section>
   );
 };

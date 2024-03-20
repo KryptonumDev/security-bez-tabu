@@ -5,9 +5,9 @@ import Header from '@/components/_landing/Header';
 import Breadcrumbs from '@/components/ui/Breadcrumbs';
 import Components, { Components_Query } from '@/components/Components';
 import type { generateStaticParamsType } from '@/global/types';
-import type { PageQueryType } from './page.types';
+import type { PageQueryType, PageTypes } from './page.types';
 
-export default async function LandingPage({ params: { slug } }: { params: { slug: string } }) {
+export default async function LandingPage({ params: { slug } }: PageTypes) {
   const { cta, name, countdown_Date, content } = await query(slug);
 
   return (

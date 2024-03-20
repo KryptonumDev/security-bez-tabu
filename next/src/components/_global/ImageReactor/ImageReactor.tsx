@@ -3,6 +3,7 @@ import Button from '@/components/ui/Button';
 import Img from '@/components/ui/image';
 import styles from './ImageReactor.module.scss';
 import type { ImageReactorTypes } from './ImageReactor.types';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
 
 const ImageReactor = ({ heading, paragraph, cta, additionalInfo, img, isHighlighted }: ImageReactorTypes) => {
   return (
@@ -30,6 +31,10 @@ const ImageReactor = ({ heading, paragraph, cta, additionalInfo, img, isHighligh
           sizes='300px'
         />
       </div>
+      <ChipsAnimation
+        positionX='left'
+        positionY='top'
+      />
     </section>
   );
 };

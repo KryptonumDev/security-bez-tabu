@@ -1,16 +1,17 @@
 .SimpleDescriptiveGrid {
+  position: relative;
   header {
     max-width: calc(586rem / 16);
     margin-bottom: clamp(32px, calc(64vw / 7.68), 64px);
   }
-  ul {
+  .list {
     list-style-type: none;
     display: grid;
     gap: 20px;
     @media (min-width: 900px) {
       grid-template-columns: 1fr 1fr;
     }
-    li {
+    .item {
       border: 1px solid var(--primary-700);
       background: var(--gradient-bg);
       padding: 20px clamp(16px, calc(20vw / 7.68), 20px) 24px;

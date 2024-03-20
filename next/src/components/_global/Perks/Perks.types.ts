@@ -1,3 +1,5 @@
+import type { HTMLMotionProps } from 'framer-motion';
+
 export type PerksTypes = {
   heading: string;
   list: {
@@ -5,3 +7,8 @@ export type PerksTypes = {
     description: string;
   }[];
 };
+
+export type ItemTypes = {
+  children: React.ReactNode;
+  index: number;
+} & HTMLMotionProps<'li'>;

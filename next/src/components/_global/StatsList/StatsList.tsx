@@ -1,7 +1,7 @@
-import Chips from './_Chips';
 import Counter from './_Counter';
 import Item from './_Item';
 import styles from './StatsList.module.scss';
+import ChipsAnimation from '@/components/ui/ChipsAnimation';
 import type { StatsListTypes } from './StatsList.types';
 
 const StatsList = ({ list }: StatsListTypes) => {
@@ -20,7 +20,7 @@ const StatsList = ({ list }: StatsListTypes) => {
           </Item>
         ))}
       </ul>
-      <Chips />
+      <ChipsAnimation positionX='right' />
     </section>
   );
 };
