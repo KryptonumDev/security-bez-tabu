@@ -18,6 +18,7 @@
       width: 200%;
       height: 200%;
       position: absolute;
+      pointer-events: none;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
