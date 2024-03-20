@@ -22,7 +22,8 @@
           color: var(--secondary-500);
         }
         ol {
-          border: 1px solid var(--secondary-500);
+          border-left: 1px solid var(--secondary-500);
+          border-right: 1px solid var(--secondary-500);
           background: var(--gradient-bg);
         }
       }
