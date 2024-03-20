@@ -119,12 +119,13 @@ img {
 
 html,
 body {
-  overflow: clip;
+  overflow-x: clip;
 }
 html {
   scroll-padding-top: 123px;
 }
 body {
+  overflow: clip;
   min-width: 320px;
   -webkit-tap-highlight-color: transparent;
   background-color: var(--primary-900);

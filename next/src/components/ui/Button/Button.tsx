@@ -14,7 +14,7 @@ const Button = ({ data, children, href, className, ...props }: ButtonType) => {
 
   return (
     <Element
-      href={href || ''}
+      {...(href && { href })}
       {...(href && isExternal && { target: '_blank', rel: 'noopener' })}
       className={`${styles['Button']}${className ? ` ${className}` : ''}`}
       {...props}
