@@ -1,4 +1,6 @@
 .HeroImageBackground {
+  position: relative;
+  max-width: calc(2560rem / 16);
   header {
     max-width: calc(908rem / 16);
     margin: 0 auto;
@@ -14,13 +16,17 @@
     }
   }
   .img {
-    position: absolute;
-    right: 0;
-    top: 0;
     z-index: -1;
     max-width: clamp(408px, calc(408vw / 7.68), 520px);
+    position: absolute;
+    top: calc((clamp(82px, calc(96vw / 7.68), 124px) + 74px) * -1);
+    right: calc(var(--pageMargin) * -1);
+    @media (min-width: 1280px) {
+      right: calc((min(100vw, 1920px) - 1200px) / -2);
+    }
+    transform: translateX(20%);
     @media (max-width: 1099px) {
-      transform: translateX(20%);
+      transform: translateX(40%);
     }
     &::before {
       content: '';
@@ -33,9 +39,9 @@
         linear-gradient(rgba(0, 0, 0, 0) 62%, var(--primary-900));
     }
   }
-  @media (max-width: 599px) {
+  @media (max-width: 999px) {
     position: relative;
-    margin-bottom: 80%;
+    margin-bottom: 76%;
     .img {
       transform: translateX(var(--pageMargin));
       top: 80%;
