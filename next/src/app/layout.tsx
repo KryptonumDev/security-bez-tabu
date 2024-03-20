@@ -37,7 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         {isDraftMode && <DraftModeInfo />}
-        {!isProduction && <CookieConsent />}
+        {isProduction && <CookieConsent />}
         {isProduction && (
           <noscript
             dangerouslySetInnerHTML={{
